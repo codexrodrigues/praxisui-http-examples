@@ -160,6 +160,7 @@ Notes:
 - Some authenticated examples are intentionally excluded when the published environment is unstable for them. At this stage, `vw-resumo-missoes/options/by-ids` returned `500` and is not part of the auth smoke whitelist.
 - `config/ui`, `ai-context`, and other protected config surfaces are intentionally excluded from `smoke:auth` until a stable execution profile is confirmed for the published environment as committed, including any required allowed-origin behavior.
 - `ui_get_table.http` remains a protected contract example for selector shape and lookup semantics, but the specific `componentId` currently checked in this repo is not confirmed on the published backend and should not be treated as runtime-confirmed.
+- For `config/ui`, prefer confirmed protected validation examples such as missing-tenant, invalid-origin, and legacy-component-type before using selector-only examples like `ui_get_table.http`.
 - Read runtime-usability fields together: `selectorConfirmed: true` with `publishedBackendConfirmed: false` means the contract or selector is still useful, but the concrete committed record should not be treated as confirmed on the published backend.
 - Do not infer canonical persistence contracts from `illustrative-only` or `legacy` examples.
 - When an example conflicts with runtime behavior, the backend/runtime wins.

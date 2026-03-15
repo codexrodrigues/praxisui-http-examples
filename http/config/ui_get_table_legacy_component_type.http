@@ -10,15 +10,19 @@
 ### referenceOnly: false
 ### runtimeRecordConfirmed: true
 ### selectorConfirmed: true
-### publishedBackendConfirmed: false
-### knownPublishedFailure: false
+### publishedBackendConfirmed: true
+### knownPublishedFailure: true
 ### selectionGuidance: protected-contract-read
+### note: Known published failure: this example isolates the legacy logical componentType on /ui with an allowed Origin.
+### note: Do not choose this example by default when the goal is a successful config read.
 
 @baseUrl = https://praxis-api-quickstart.onrender.com
 @tenantId = demo
 @userId = demo-user-1
+@allowedOrigin = http://localhost:4301
 
 GET {{baseUrl}}/api/praxis/config/ui?componentType=table&componentId=table-config:employees
 Accept: application/json
+Origin: {{allowedOrigin}}
 X-Tenant-ID: {{tenantId}}
 X-User-ID: {{userId}}

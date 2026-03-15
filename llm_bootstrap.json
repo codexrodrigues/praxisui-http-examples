@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "reviewedAt": "2026-03-15",
+  "defaultBaseUrl": "https://praxis-api-quickstart.onrender.com",
+  "goal": "Answer what a cold LLM can use now without opening the full manifest.",
+  "startHere": [
+    "Start with public metadata endpoints.",
+    "If business data is needed, move to the auth-light lane and prefer tenant-scoped headers for stable behavior.",
+    "Use protected config endpoints for contract understanding only.",
+    "Avoid destructive, unstable, or reference-only examples by default."
+  ],
+  "safeFirst": {
+    "publicMetadata": {
+      "description": "No login, no tenant headers, no mutation.",
+      "minimumHeaders": {
+        "Accept": "application/json"
+      },
+      "exampleIds": [
+        "health",
+        "openapi-docs",
+        "schemas-catalog",
+        "filtered-schema-request-funcionarios",
+        "filtered-schema-response-funcionarios"
+      ]
+    },
+    "authLightOperational": {
+      "description": "Operational reads that work on the published backend with lightweight tenant-scoped headers and no real session auth.",
+      "minimumHeaders": {
+        "Accept": "application/json"
+      },
+      "minimumHeadersNotes": [
+        "Add Content-Type: application/json for POST bodies."
+      ],
+      "recommendedHeaders": {
+        "X-Tenant-ID": "demo",
+        "X-Env": "public",
+        "X-User-ID": "example-user"
+      },
+      "exampleIds": [
+        "cargos-options-by-ids",
+        "expansion-detail-perfil-heroi-advanced",
+        "expansion-detail-resource-resolver-funcionario",
+        "funcionarios-filter-basic",
+        "funcionarios-options-filter",
+        "vw-perfil-heroi-filter-basic",
+        "vw-perfil-heroi-by-ids",
+        "vw-perfil-heroi-options-filter",
+        "vw-ranking-reputacao-filter-basic",
+        "vw-ranking-reputacao-options-filter",
+        "vw-resumo-missoes-filter-basic"
+      ]
+    }
+  },
+  "protectedContract": {
+    "description": "Canonically useful contracts that are not the default operational lane.",
+    "groups": [
+      {
+        "name": "config-ui",
+        "minimumHeaders": {
+          "Accept": "application/json",
+          "Origin": "http://localhost:4301",
+          "X-Tenant-ID": "demo"
+        },
+        "recommendedHeaders": {
+          "X-User-ID": "demo-user-1",
+          "X-Env": "local"
+        },
+        "exampleIds": [
+          "ui-get-table-config",
+          "ui-get-table-config-if-none-match",
+          "ui-put-table-config",
+          "ui-put-form-config",
+          "ui-put-tabs-config",
+          "ui-put-global-config",
+          "ui-delete-tabs-config",
+          "ui-get-table-config-missing-tenant",
+          "ui-delete-tabs-config-not-found",
+          "ui-get-table-config-legacy-component-type",
+          "ui-get-invalid-origin"
+        ]
+      },
+      {
+        "name": "ai-config",
+        "minimumHeaders": {
+          "Accept": "application/json",
+          "Origin": "http://localhost:4301",
+          "X-Tenant-ID": "demo"
+        },
+        "recommendedHeaders": {
+          "X-Env": "local"
+        },
+        "exampleIds": [
+          "ai-context-get-table",
+          "ai-context-post-table",
+          "ai-registry-template-get-table",
+          "ai-registry-template-put-table",
+          "ai-registry-template-delete-table"
+        ]
+      }
+    ]
+  },
+  "avoidByDefault": [
+    "destructive writes and deletes",
+    "referenceOnly examples",
+    "cursor pagination examples",
+    "troubleshooting or negative-path examples",
+    "protected config writes",
+    "published-backend unstable examples"
+  ],
+  "answerOrder": [
+    "public metadata",
+    "auth-light operational reads",
+    "protected contract endpoints",
+    "avoid destructive and reference-only examples unless explicitly requested"
+  ]
+}
