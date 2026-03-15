@@ -1,0 +1,17 @@
+{
+  "payload": {
+    "group": {
+      "selectedIndex": 0
+    },
+    "tabs": [
+      {
+        "id": "t1",
+        "textLabel": "Geral"
+      },
+      {
+        "id": "t2",
+        "textLabel": "Pedidos"
+      }
+    ]
+  }
+}

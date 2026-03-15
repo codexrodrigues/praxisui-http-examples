@@ -1,0 +1,13 @@
+### status: runtime-confirmed,recommended
+### public: false
+### authRequired: true
+### destructive: false
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@userId = demo-user-1
+@envId = local
+
+GET {{baseUrl}}/api/praxis/config/ui?componentType=praxis-table&componentId=table-config:employees
+Accept: application/json
+X-User-ID: {{userId}}
+X-Env: {{envId}}

@@ -1,0 +1,19 @@
+### status: runtime-confirmed,recommended
+### public: false
+### authRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@userId = demo-user-1
+@envId = local
+
+PUT {{baseUrl}}/api/praxis/config/ui?componentType=praxis-dynamic-form&componentId=praxis-form-config-employee-form:edit&scope=user
+Content-Type: application/json
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}
+X-Env: {{envId}}
+
+< ../../payloads/config/ui_put_form.json

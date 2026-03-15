@@ -1,0 +1,12 @@
+{
+  "payload": {
+    "dialog": {
+      "variants": {
+        "danger": {
+          "panelClass": "pdx-dialog--variant-danger",
+          "closeOnBackdropClick": false
+        }
+      }
+    }
+  }
+}

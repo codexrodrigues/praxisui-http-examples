@@ -1,0 +1,9 @@
+### status: runtime-confirmed,recommended
+### public: true
+### authRequired: false
+### destructive: false
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+
+GET {{baseUrl}}/schemas/filtered?path=/api/human-resources/funcionarios/filter&operation=post&schemaType=response
+Accept: application/json

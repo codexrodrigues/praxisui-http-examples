@@ -1,0 +1,14 @@
+{
+  "nomeCompleto": "Nova Integracao",
+  "cpf": "12345678901",
+  "dataNascimento": "1995-04-10",
+  "email": "nova.integracao@example.com",
+  "telefone": "+5511999999999",
+  "salario": 9500.0,
+  "dataAdmissao": "2024-01-15",
+  "ativo": true,
+  "cargoId": 1,
+  "departamentoId": 1,
+  "fotoPerfilUrl": "https://example.com/avatar/nova-integracao.png",
+  "estadoCivil": "SOLTEIRO"
+}

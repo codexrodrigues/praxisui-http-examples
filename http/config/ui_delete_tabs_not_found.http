@@ -1,0 +1,14 @@
+### status: runtime-confirmed,recommended
+### public: false
+### authRequired: true
+### destructive: true
+### requiresTenantHeaders: true
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@userId = demo-user-1
+
+DELETE {{baseUrl}}/api/praxis/config/ui?componentType=praxis-tabs&componentId=tabs:cliente-tabs:missing&scope=user
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}

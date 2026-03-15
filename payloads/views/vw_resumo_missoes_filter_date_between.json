@@ -1,0 +1,8 @@
+{
+  "qtdHeroisBetween": [1, 8],
+  "qtdEventosBetween": [1, 20],
+  "primeiraAcaoBetween": [
+    "2025-01-01T00:00:00Z",
+    "2026-12-31T23:59:59Z"
+  ]
+}

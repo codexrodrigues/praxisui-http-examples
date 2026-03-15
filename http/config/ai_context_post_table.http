@@ -1,0 +1,16 @@
+### status: runtime-confirmed,recommended
+### public: false
+### authRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@envId = local
+
+POST {{baseUrl}}/api/praxis/config/ai-context/praxis-table?componentType=table&environment={{envId}}
+Content-Type: application/json
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+
+< ../../payloads/config/ai_context_post_table.json

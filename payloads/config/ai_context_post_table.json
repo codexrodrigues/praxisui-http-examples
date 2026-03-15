@@ -1,0 +1,16 @@
+{
+  "currentState": {
+    "columns": [],
+    "behavior": {
+      "pagination": {
+        "enabled": true
+      }
+    }
+  },
+  "resourcePath": "/api/orders",
+  "schemaContext": {
+    "path": "/api/orders",
+    "operation": "GET",
+    "schemaType": "response"
+  }
+}

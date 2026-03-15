@@ -1,0 +1,9 @@
+### status: runtime-confirmed,recommended
+### public: true
+### authRequired: false
+### destructive: false
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+
+GET {{baseUrl}}/v3/api-docs
+Accept: application/json

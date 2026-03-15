@@ -1,0 +1,16 @@
+### status: runtime-confirmed,recommended
+### public: false
+### authRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@userId = example-user
+@envId = public
+
+GET {{baseUrl}}/api/human-resources/bases/by-ids?ids=1,2,3
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}
+X-Env: {{envId}}

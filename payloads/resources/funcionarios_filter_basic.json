@@ -1,0 +1,7 @@
+{
+  "nomeCompleto": "Tony",
+  "ativo": true,
+  "cargoId": 1,
+  "departamentoId": 1,
+  "dataAdmissaoRange": ["2020-01-01", "2026-12-31"]
+}

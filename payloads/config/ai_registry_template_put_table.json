@@ -1,0 +1,22 @@
+{
+  "componentId": "praxis-table",
+  "registryType": "template",
+  "content": {
+    "templateMeta": {
+      "defaultVariantId": "columns",
+      "variants": [
+        "columns",
+        "actions"
+      ]
+    },
+    "config": {
+      "columns": [
+        {
+          "field": "status",
+          "header": "Status",
+          "type": "string"
+        }
+      ]
+    }
+  }
+}

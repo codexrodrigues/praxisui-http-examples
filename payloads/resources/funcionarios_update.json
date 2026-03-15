@@ -1,0 +1,15 @@
+{
+  "id": 1,
+  "nomeCompleto": "Tony Stark Atualizado",
+  "cpf": "12345678901",
+  "dataNascimento": "1980-05-29",
+  "email": "tony.stark.updated@example.com",
+  "telefone": "+5511988887777",
+  "salario": 12500.0,
+  "dataAdmissao": "2020-01-02",
+  "ativo": true,
+  "cargoId": 1,
+  "departamentoId": 1,
+  "fotoPerfilUrl": "https://example.com/avatar/tony-stark-updated.png",
+  "estadoCivil": "CASADO"
+}

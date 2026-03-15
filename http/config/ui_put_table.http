@@ -1,0 +1,21 @@
+### status: runtime-confirmed,recommended
+### public: false
+### authRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@userId = demo-user-1
+@envId = local
+@updatedBy = demo
+
+PUT {{baseUrl}}/api/praxis/config/ui?componentType=praxis-table&componentId=table-config:employees&scope=user
+Content-Type: application/json
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}
+X-Env: {{envId}}
+X-Updated-By: {{updatedBy}}
+
+< ../../payloads/config/ui_put_table.json

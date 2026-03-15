@@ -1,0 +1,19 @@
+{
+  "payload": {
+    "columns": [
+      {
+        "field": "id",
+        "header": "ID",
+        "type": "string",
+        "width": "80px",
+        "visible": true,
+        "sortable": true
+      },
+      {
+        "field": "status",
+        "header": "Status",
+        "type": "string"
+      }
+    ]
+  }
+}

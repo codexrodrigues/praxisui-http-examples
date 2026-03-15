@@ -1,0 +1,27 @@
+{
+  "payload": {
+    "metadata": {
+      "version": "2.0.0",
+      "source": "local",
+      "schemaId": "path:/api/employees#request",
+      "schemaContext": {
+        "path": "/api/employees",
+        "operation": "POST",
+        "schemaType": "request"
+      }
+    },
+    "behavior": {
+      "confirmOnUnsavedChanges": true,
+      "trackHistory": true,
+      "focusFirstError": true
+    },
+    "fieldMetadata": [
+      {
+        "name": "fullName",
+        "label": "Full name",
+        "controlType": "input",
+        "dataType": "text"
+      }
+    ]
+  }
+}

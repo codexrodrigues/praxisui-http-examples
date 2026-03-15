@@ -1,0 +1,7 @@
+{
+  "codinome": "aegis",
+  "scorePublicoBetween": [70, 100],
+  "scoreGovernamentalBetween": [60, 100],
+  "mediaBetween": [70, 100],
+  "posicaoBetween": [1, 20]
+}

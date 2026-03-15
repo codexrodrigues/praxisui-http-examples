@@ -1,0 +1,9 @@
+### status: runtime-confirmed,recommended
+### public: true
+### authRequired: false
+### destructive: false
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+
+GET {{baseUrl}}/actuator/health
+Accept: application/json

@@ -1,0 +1,12 @@
+### status: runtime-confirmed,recommended
+### public: false
+### authRequired: true
+### destructive: true
+### requiresTenantHeaders: true
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+
+DELETE {{baseUrl}}/api/praxis/config/ai-registry/templates/praxis-table
+Accept: application/json
+X-Tenant-ID: {{tenantId}}

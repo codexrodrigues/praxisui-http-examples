@@ -1,0 +1,15 @@
+### status: runtime-confirmed,recommended
+### public: false
+### authRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+
+POST {{baseUrl}}/api/praxis/config/ai/suggestions
+Content-Type: application/json
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+
+< ../../payloads/config/ai_suggestions_table.json

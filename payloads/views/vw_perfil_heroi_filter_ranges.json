@@ -1,0 +1,6 @@
+{
+  "cargo": "defensor",
+  "scorePublicoBetween": [70, 100],
+  "scoreGovernamentalBetween": [60, 100],
+  "scoreMedioBetween": [70, 100]
+}

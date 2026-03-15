@@ -1,0 +1,25 @@
+{
+  "componentId": "praxis-table",
+  "componentType": "table",
+  "currentState": {
+    "columns": [],
+    "behavior": {}
+  },
+  "dataProfile": {
+    "rowCount": 120,
+    "columns": {
+      "status": {
+        "inferredType": "string",
+        "cardinality": 3,
+        "topValues": [
+          "Ativo",
+          "Inativo"
+        ]
+      }
+    }
+  },
+  "variantId": "columns",
+  "maxSuggestions": 5,
+  "forceRefresh": false,
+  "locale": "pt-BR"
+}
