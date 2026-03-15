@@ -1,8 +1,20 @@
-### status: runtime-confirmed,recommended
+### status: none
 ### public: false
 ### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
 ### destructive: true
 ### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: true
+### selectionGuidance: protected-contract-write
+### note: Known published failure: this committed delete path is for not-found behavior and should not be chosen as a successful example.
+### note: Do not choose this example by default for LLM operational flows.
 
 @baseUrl = https://praxis-api-quickstart.onrender.com
 @tenantId = demo

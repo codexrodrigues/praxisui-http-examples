@@ -1,8 +1,23 @@
 ### status: runtime-confirmed,recommended
 ### public: false
 ### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
 ### destructive: false
 ### requiresTenantHeaders: true
+### llmOperational: true
+### protectedContract: false
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: true
+### knownPublishedFailure: false
+### accessMode: auth-light
+### selectionGuidance: safe-first-auth-light
+### note: This example does not require login, cookies, or bearer auth.
+### note: authRequired is a legacy compatibility alias here; read sessionAuthRequired and tenantScopedHeadersRequired instead.
+### note: Accepted now on the published backend: Accept.
+### note: Default recommended stable scoped trio: X-Tenant-ID, X-User-ID, X-Env.
 
 @baseUrl = https://praxis-api-quickstart.onrender.com
 @tenantId = demo

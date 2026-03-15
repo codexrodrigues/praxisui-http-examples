@@ -6,7 +6,11 @@ const manifest = JSON.parse(fs.readFileSync(path.join(root, 'examples.manifest.j
 const baseUrl = process.env.BASE_URL || manifest.defaultBaseUrl;
 
 const publicExamples = (manifest.examples ?? []).filter(
-  (example) => example.public === true && example.authRequired === false && example.destructive === false,
+  (example) =>
+    example.public === true &&
+    example.sessionAuthRequired === false &&
+    example.tenantScopedHeadersRequired === false &&
+    example.destructive === false,
 );
 
 for (const example of publicExamples) {

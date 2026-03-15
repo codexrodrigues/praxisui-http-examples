@@ -1,15 +1,27 @@
-### status: runtime-confirmed,recommended
+### status: none
 ### public: false
 ### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
 ### destructive: false
 ### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### selectionGuidance: protected-contract-read
 
 @baseUrl = https://praxis-api-quickstart.onrender.com
 @tenantId = demo
 @userId = demo-user-1
+@allowedOrigin = http://localhost:4301
 
 GET {{baseUrl}}/api/praxis/config/ui?componentType=praxis-table&componentId=table-config:employees
 Accept: application/json
+Origin: {{allowedOrigin}}
 X-Tenant-ID: {{tenantId}}
 X-User-ID: {{userId}}
 If-None-Match: "00000000-0000-0000-0000-000000000003"

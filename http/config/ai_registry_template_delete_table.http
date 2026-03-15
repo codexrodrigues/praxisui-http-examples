@@ -1,8 +1,18 @@
-### status: runtime-confirmed,recommended
+### status: none
 ### public: false
 ### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
 ### destructive: true
 ### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### selectionGuidance: protected-contract-write
 
 @baseUrl = https://praxis-api-quickstart.onrender.com
 @tenantId = demo

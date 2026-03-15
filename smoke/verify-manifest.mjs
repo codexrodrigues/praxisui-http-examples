@@ -12,6 +12,23 @@ const allowedStatuses = new Set([
   'legacy',
   'illustrative-only',
 ]);
+const allowedResponseShapeHints = new Set([
+  'health-status',
+  'openapi-document',
+  'array<schema-catalog-entry>',
+  'filtered-schema',
+  'page<option>',
+  'array<option>',
+  'restApiResponse<page<row>>',
+  'detail-schema',
+  'config-record',
+  'row',
+  'array<row>',
+  'mutation-result',
+  'error-response',
+  'array<suggestion>',
+  'ai-clarification-response',
+]);
 
 const errors = [];
 const seenIds = new Set();
@@ -38,11 +55,16 @@ for (const example of manifest.examples ?? []) {
     errors.push(`Duplicate example id: ${example.id}`);
   }
   seenIds.add(example.id);
-  if (example.llmOperational === true && example.referenceOnly === true) {
-    errors.push(`Example ${example.id} cannot be both llmOperational and referenceOnly.`);
+  const declaredLayers = [
+    example.llmOperational === true,
+    example.protectedContract === true,
+    example.referenceOnly === true,
+  ].filter(Boolean).length;
+  if (declaredLayers > 1) {
+    errors.push(`Example ${example.id} cannot declare more than one surface layer.`);
   }
-  if (example.llmOperational !== true && example.referenceOnly !== true) {
-    errors.push(`Example ${example.id} must declare either llmOperational=true or referenceOnly=true.`);
+  if (declaredLayers === 0) {
+    errors.push(`Example ${example.id} must declare one surface layer: llmOperational, protectedContract, or referenceOnly.`);
   }
   if (example.httpFile) {
     if (seenHttpFiles.has(example.httpFile)) {
@@ -61,6 +83,50 @@ for (const example of manifest.examples ?? []) {
     if (!allowedStatuses.has(status)) {
       errors.push(`Invalid status "${status}" in ${example.id}`);
     }
+  }
+
+  if (typeof example.sessionAuthRequired !== 'boolean') {
+    errors.push(`Example ${example.id} must declare sessionAuthRequired as boolean.`);
+  }
+
+  if (typeof example.tenantScopedHeadersRequired !== 'boolean') {
+    errors.push(`Example ${example.id} must declare tenantScopedHeadersRequired as boolean.`);
+  }
+
+  if (
+    typeof example.authRequired !== 'boolean' ||
+    example.authRequired !==
+      (example.sessionAuthRequired === true || example.tenantScopedHeadersRequired === true)
+  ) {
+    errors.push(
+      `Example ${example.id} must keep deprecated authRequired aligned with sessionAuthRequired || tenantScopedHeadersRequired.`,
+    );
+  }
+
+  if (
+    example.requiresTenantHeaders === true &&
+    example.tenantScopedHeadersRequired !== true
+  ) {
+    errors.push(`Example ${example.id} cannot keep requiresTenantHeaders true while tenantScopedHeadersRequired is false.`);
+  }
+
+  for (const field of [
+    'runtimeRecordConfirmed',
+    'selectorConfirmed',
+    'publishedBackendConfirmed',
+    'knownPublishedFailure',
+  ]) {
+    if (typeof example[field] !== 'boolean') {
+      errors.push(`Example ${example.id} must declare ${field} as boolean.`);
+    }
+  }
+
+  if (example.publishedBackendConfirmed === true && example.runtimeRecordConfirmed !== true) {
+    errors.push(`Example ${example.id} cannot set publishedBackendConfirmed true while runtimeRecordConfirmed is false.`);
+  }
+
+  if (typeof example.responseShapeHint !== 'string' || !allowedResponseShapeHints.has(example.responseShapeHint)) {
+    errors.push(`Example ${example.id} must declare a valid responseShapeHint.`);
   }
 
   for (const payloadFile of example.payloadFiles ?? []) {

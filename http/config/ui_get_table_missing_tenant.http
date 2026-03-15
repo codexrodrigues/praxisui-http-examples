@@ -1,13 +1,28 @@
-### status: runtime-confirmed,recommended
+### status: runtime-confirmed
 ### public: false
 ### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
 ### destructive: false
+### requiresTenantHeaders: false
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: true
+### knownPublishedFailure: true
+### selectionGuidance: protected-contract-read
+### note: Known published failure: this is an intentional missing-header validation example, not a successful read path.
+### note: Do not choose this example by default when the goal is to fetch a config record.
 
 @baseUrl = https://praxis-api-quickstart.onrender.com
 @userId = demo-user-1
 @envId = local
+@allowedOrigin = http://localhost:4301
 
 GET {{baseUrl}}/api/praxis/config/ui?componentType=praxis-table&componentId=table-config:employees
 Accept: application/json
+Origin: {{allowedOrigin}}
 X-User-ID: {{userId}}
 X-Env: {{envId}}

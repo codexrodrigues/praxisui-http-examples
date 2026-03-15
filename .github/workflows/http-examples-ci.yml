@@ -70,3 +70,6 @@ jobs:
 
       - name: Smoke the LLM operational surface
         run: npm run smoke:llm-surface
+
+      - name: Validate corpus promises for LLM usage
+        run: npm run smoke:corpus-promises

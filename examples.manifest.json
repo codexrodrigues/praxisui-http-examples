@@ -10,81 +10,152 @@
     {
       "id": "health",
       "httpFile": "http/metadata/health.http",
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "llmOperational": true,
       "public": true,
       "authRequired": false,
       "destructive": false,
-      "canonicalFor": ["service availability check"],
-      "notFor": ["schema inference"],
+      "canonicalFor": [
+        "service availability check"
+      ],
+      "notFor": [
+        "schema inference"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/README.md"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "health-status",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "openapi-docs",
       "httpFile": "http/metadata/openapi_docs.http",
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "llmOperational": true,
       "public": true,
       "authRequired": false,
       "destructive": false,
-      "canonicalFor": ["public endpoint discovery", "request and response shapes"],
-      "notFor": ["x-ui field-level canonicality"],
+      "canonicalFor": [
+        "public endpoint discovery",
+        "request and response shapes"
+      ],
+      "notFor": [
+        "x-ui field-level canonicality"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/README.md",
         "../praxis-metadata-starter/docs/spec/README.md"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "openapi-document",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "schemas-catalog",
       "httpFile": "http/metadata/schemas_catalog.http",
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "llmOperational": true,
       "public": true,
       "authRequired": false,
       "destructive": false,
-      "canonicalFor": ["lightweight metadata discovery"],
-      "notFor": ["full per-resource x-ui contract"],
+      "canonicalFor": [
+        "lightweight metadata discovery"
+      ],
+      "notFor": [
+        "full per-resource x-ui contract"
+      ],
       "sourceOfTruth": [
         "../praxis-metadata-starter/README.md",
         "../praxis-api-quickstart/README.md"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "array<schema-catalog-entry>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "filtered-schema-request-funcionarios",
       "httpFile": "http/metadata/filtered_schema_request_funcionarios.http",
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "llmOperational": true,
       "public": true,
       "authRequired": false,
       "destructive": false,
-      "canonicalFor": ["request-side filtered schema"],
-      "notFor": ["full OpenAPI enumeration"],
+      "canonicalFor": [
+        "request-side filtered schema"
+      ],
+      "notFor": [
+        "full OpenAPI enumeration"
+      ],
       "sourceOfTruth": [
         "../praxis-metadata-starter/docs/spec/README.md",
         "../praxis-api-quickstart/README.md"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "filtered-schema",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "filtered-schema-response-funcionarios",
       "httpFile": "http/metadata/filtered_schema_response_funcionarios.http",
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "llmOperational": true,
       "public": true,
       "authRequired": false,
       "destructive": false,
-      "canonicalFor": ["response-side filtered schema"],
-      "notFor": ["write payload generation"],
+      "canonicalFor": [
+        "response-side filtered schema"
+      ],
+      "notFor": [
+        "write payload generation"
+      ],
       "sourceOfTruth": [
         "../praxis-metadata-starter/docs/spec/README.md",
         "../praxis-api-quickstart/README.md"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "filtered-schema",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "cargos-options-filter",
@@ -92,130 +163,244 @@
       "payloadFiles": [
         "payloads/resources/options_filter_body.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["remote options lookup"],
-      "notFor": ["public unauthenticated smoke"],
+      "canonicalFor": [
+        "remote options lookup"
+      ],
+      "notFor": [
+        "public unauthenticated smoke"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/README.md"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "page<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "cargos-options-by-ids",
       "httpFile": "http/resources/cargos_options_by_ids.http",
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "llmOperational": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["options rehydration by ids"],
-      "notFor": ["public unauthenticated smoke"],
+      "canonicalFor": [
+        "options rehydration by ids"
+      ],
+      "notFor": [
+        "public unauthenticated smoke"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/README.md"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "expansion-detail-funcionario-basic",
       "httpFile": "http/expansion-detail/funcionario_schema_basic.http",
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
-      "canonicalFor": ["contextual detail schema"],
-      "notFor": ["CRUD native contract claims"],
+      "canonicalFor": [
+        "contextual detail schema"
+      ],
+      "notFor": [
+        "CRUD native contract claims"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/README.md",
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/ExpansionDetailController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "detail-schema",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "expansion-detail-perfil-heroi-advanced",
       "httpFile": "http/expansion-detail/perfil_heroi_schema_advanced.http",
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "llmOperational": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
-      "canonicalFor": ["advanced contextual detail schema", "tabs-based expansion detail"],
-      "notFor": ["CRUD native contract claims"],
+      "canonicalFor": [
+        "advanced contextual detail schema",
+        "tabs-based expansion detail"
+      ],
+      "notFor": [
+        "CRUD native contract claims"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/README.md",
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/ExpansionDetailController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "detail-schema",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "expansion-detail-resource-resolver-funcionario",
       "httpFile": "http/expansion-detail/resource_resolver_funcionario.http",
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "llmOperational": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
-      "canonicalFor": ["resourceId-based expansion resolution"],
-      "notFor": ["CRUD native contract claims"],
+      "canonicalFor": [
+        "resourceId-based expansion resolution"
+      ],
+      "notFor": [
+        "CRUD native contract claims"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/README.md",
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/ExpansionDetailController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "detail-schema",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "expansion-detail-resource-resolver-invalid-row",
       "httpFile": "http/expansion-detail/resource_resolver_invalid_row.http",
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
-      "canonicalFor": ["resourceId resolver validation behavior"],
-      "notFor": ["successful detail rendering"],
+      "canonicalFor": [
+        "resourceId resolver validation behavior"
+      ],
+      "notFor": [
+        "successful detail rendering"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/README.md",
         "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/hr/controller/ExpansionDetailControllerTest.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "error-response",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "expansion-detail-resource-resolver-unsupported-resource",
       "httpFile": "http/expansion-detail/resource_resolver_unsupported_resource.http",
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
-      "canonicalFor": ["resourceId resolver unsupported-resource behavior"],
-      "notFor": ["successful detail rendering"],
+      "canonicalFor": [
+        "resourceId resolver unsupported-resource behavior"
+      ],
+      "notFor": [
+        "successful detail rendering"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/README.md",
         "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/hr/controller/ExpansionDetailControllerTest.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "error-response",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "funcionarios-get-by-id",
       "httpFile": "http/resources/funcionarios_get_by_id.http",
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["entity fetch by id", "detail view hydration"],
-      "notFor": ["public unauthenticated smoke"],
+      "canonicalFor": [
+        "entity fetch by id",
+        "detail view hydration"
+      ],
+      "notFor": [
+        "public unauthenticated smoke"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FuncionarioController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "row",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "funcionarios-filter-basic",
@@ -223,19 +408,34 @@
       "payloadFiles": [
         "payloads/resources/funcionarios_filter_basic.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "llmOperational": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["typed server-side filtering", "table data loading"],
-      "notFor": ["public unauthenticated smoke"],
+      "canonicalFor": [
+        "typed server-side filtering",
+        "table data loading"
+      ],
+      "notFor": [
+        "public unauthenticated smoke"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FuncionarioController.java",
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/filter/FuncionarioFilterDTO.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "funcionarios-filter-cursor",
@@ -243,18 +443,33 @@
       "payloadFiles": [
         "payloads/resources/funcionarios_filter_basic.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["cursor pagination", "large list traversal"],
-      "notFor": ["public unauthenticated smoke"],
+      "canonicalFor": [
+        "cursor pagination",
+        "large list traversal"
+      ],
+      "notFor": [
+        "public unauthenticated smoke"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FuncionarioController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "funcionarios-locate",
@@ -262,18 +477,32 @@
       "payloadFiles": [
         "payloads/resources/funcionarios_filter_basic.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["row location in filtered results"],
-      "notFor": ["public unauthenticated smoke"],
+      "canonicalFor": [
+        "row location in filtered results"
+      ],
+      "notFor": [
+        "public unauthenticated smoke"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FuncionarioController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "funcionarios-options-filter",
@@ -281,34 +510,63 @@
       "payloadFiles": [
         "payloads/resources/options_filter_body.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "llmOperational": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["remote options lookup", "form select hydration"],
-      "notFor": ["public unauthenticated smoke"],
+      "canonicalFor": [
+        "remote options lookup",
+        "form select hydration"
+      ],
+      "notFor": [
+        "public unauthenticated smoke"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FuncionarioController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "page<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "funcionarios-options-by-ids",
       "httpFile": "http/resources/funcionarios_options_by_ids.http",
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["options rehydration by ids"],
-      "notFor": ["public unauthenticated smoke"],
+      "canonicalFor": [
+        "options rehydration by ids"
+      ],
+      "notFor": [
+        "public unauthenticated smoke"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FuncionarioController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "funcionarios-create",
@@ -316,19 +574,34 @@
       "payloadFiles": [
         "payloads/resources/funcionarios_create.json"
       ],
-      "status": ["runtime-confirmed"],
+      "status": [
+        "runtime-confirmed"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": true,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["entity creation", "write lifecycle examples"],
-      "notFor": ["public smoke", "non-mutating examples"],
+      "canonicalFor": [
+        "entity creation",
+        "write lifecycle examples"
+      ],
+      "notFor": [
+        "public smoke",
+        "non-mutating examples"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FuncionarioController.java",
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/FuncionarioDTO.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "row",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "funcionarios-update",
@@ -336,35 +609,65 @@
       "payloadFiles": [
         "payloads/resources/funcionarios_update.json"
       ],
-      "status": ["runtime-confirmed"],
+      "status": [
+        "runtime-confirmed"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": true,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["entity update", "write lifecycle examples"],
-      "notFor": ["public smoke", "non-mutating examples"],
+      "canonicalFor": [
+        "entity update",
+        "write lifecycle examples"
+      ],
+      "notFor": [
+        "public smoke",
+        "non-mutating examples"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FuncionarioController.java",
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/FuncionarioDTO.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "row",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "funcionarios-delete",
       "httpFile": "http/resources/funcionarios_delete.http",
-      "status": ["runtime-confirmed"],
+      "status": [
+        "runtime-confirmed"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": true,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["entity deletion", "write lifecycle examples"],
-      "notFor": ["public smoke", "non-mutating examples"],
+      "canonicalFor": [
+        "entity deletion",
+        "write lifecycle examples"
+      ],
+      "notFor": [
+        "public smoke",
+        "non-mutating examples"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FuncionarioController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "mutation-result",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "funcionarios-delete-batch",
@@ -372,18 +675,33 @@
       "payloadFiles": [
         "payloads/resources/funcionarios_delete_batch.json"
       ],
-      "status": ["runtime-confirmed"],
+      "status": [
+        "runtime-confirmed"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": true,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["batch deletion", "bulk write lifecycle examples"],
-      "notFor": ["public smoke", "non-mutating examples"],
+      "canonicalFor": [
+        "batch deletion",
+        "bulk write lifecycle examples"
+      ],
+      "notFor": [
+        "public smoke",
+        "non-mutating examples"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FuncionarioController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "mutation-result",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "bases-filter-basic",
@@ -391,19 +709,34 @@
       "payloadFiles": [
         "payloads/resources/bases_filter_basic.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["typed server-side filtering", "resource pattern reuse"],
-      "notFor": ["public unauthenticated smoke"],
+      "canonicalFor": [
+        "typed server-side filtering",
+        "resource pattern reuse"
+      ],
+      "notFor": [
+        "public unauthenticated smoke"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/BaseController.java",
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/filter/BaseFilterDTO.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "bases-options-filter",
@@ -411,34 +744,64 @@
       "payloadFiles": [
         "payloads/resources/bases_filter_basic.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["remote options lookup", "resource pattern reuse"],
-      "notFor": ["public unauthenticated smoke"],
+      "canonicalFor": [
+        "remote options lookup",
+        "resource pattern reuse"
+      ],
+      "notFor": [
+        "public unauthenticated smoke"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/BaseController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "page<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "bases-by-ids",
       "httpFile": "http/resources/bases_by_ids.http",
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["resource rehydration by ids", "resource pattern reuse"],
-      "notFor": ["public unauthenticated smoke"],
+      "canonicalFor": [
+        "resource rehydration by ids",
+        "resource pattern reuse"
+      ],
+      "notFor": [
+        "public unauthenticated smoke"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/BaseController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<row>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-perfil-heroi-filter-basic",
@@ -446,19 +809,33 @@
       "payloadFiles": [
         "payloads/views/vw_perfil_heroi_filter_basic.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "llmOperational": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["aggregated hero profile filtering"],
-      "notFor": ["mutation flows"],
+      "canonicalFor": [
+        "aggregated hero profile filtering"
+      ],
+      "notFor": [
+        "mutation flows"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java",
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/filter/VwPerfilHeroiFilterDTO.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-perfil-heroi-filter-ranges",
@@ -466,19 +843,33 @@
       "payloadFiles": [
         "payloads/views/vw_perfil_heroi_filter_ranges.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["range-based hero profile filtering"],
-      "notFor": ["mutation flows"],
+      "canonicalFor": [
+        "range-based hero profile filtering"
+      ],
+      "notFor": [
+        "mutation flows"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java",
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/filter/VwPerfilHeroiFilterDTO.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-perfil-heroi-filter-cursor",
@@ -486,18 +877,32 @@
       "payloadFiles": [
         "payloads/views/vw_perfil_heroi_filter_basic.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["cursor pagination on aggregated hero profiles"],
-      "notFor": ["offset pagination examples"],
+      "canonicalFor": [
+        "cursor pagination on aggregated hero profiles"
+      ],
+      "notFor": [
+        "offset pagination examples"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-perfil-heroi-locate",
@@ -505,50 +910,92 @@
       "payloadFiles": [
         "payloads/views/vw_perfil_heroi_locate.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["locating rows inside filtered hero profile lists"],
-      "notFor": ["page content retrieval"],
+      "canonicalFor": [
+        "locating rows inside filtered hero profile lists"
+      ],
+      "notFor": [
+        "page content retrieval"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-perfil-heroi-all",
       "httpFile": "http/views/vw_perfil_heroi_all.http",
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["full aggregated hero profile listing"],
-      "notFor": ["scalable large-list navigation"],
+      "canonicalFor": [
+        "full aggregated hero profile listing"
+      ],
+      "notFor": [
+        "scalable large-list navigation"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<row>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-perfil-heroi-by-ids",
       "httpFile": "http/views/vw_perfil_heroi_by_ids.http",
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "llmOperational": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["rehydrating aggregated hero profiles by id"],
-      "notFor": ["general pagination"],
+      "canonicalFor": [
+        "rehydrating aggregated hero profiles by id"
+      ],
+      "notFor": [
+        "general pagination"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<row>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-perfil-heroi-options-filter",
@@ -556,34 +1003,62 @@
       "payloadFiles": [
         "payloads/views/vw_perfil_heroi_filter_basic.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "llmOperational": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["lookup options from aggregated hero profiles"],
-      "notFor": ["full entity projection"],
+      "canonicalFor": [
+        "lookup options from aggregated hero profiles"
+      ],
+      "notFor": [
+        "full entity projection"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "page<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-perfil-heroi-options-by-ids",
       "httpFile": "http/views/vw_perfil_heroi_options_by_ids.http",
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["rehydrating selected aggregated hero profile options"],
-      "notFor": ["full entity projection"],
+      "canonicalFor": [
+        "rehydrating selected aggregated hero profile options"
+      ],
+      "notFor": [
+        "full entity projection"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-ranking-reputacao-filter-basic",
@@ -591,19 +1066,33 @@
       "payloadFiles": [
         "payloads/views/vw_ranking_reputacao_filter_basic.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "llmOperational": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["aggregated reputation ranking filtering"],
-      "notFor": ["mutation flows"],
+      "canonicalFor": [
+        "aggregated reputation ranking filtering"
+      ],
+      "notFor": [
+        "mutation flows"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwRankingReputacaoController.java",
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/filter/VwRankingReputacaoFilterDTO.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-ranking-reputacao-filter-score-ranges",
@@ -611,19 +1100,33 @@
       "payloadFiles": [
         "payloads/views/vw_ranking_reputacao_filter_score_ranges.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["score-range ranking filters"],
-      "notFor": ["mutation flows"],
+      "canonicalFor": [
+        "score-range ranking filters"
+      ],
+      "notFor": [
+        "mutation flows"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwRankingReputacaoController.java",
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/filter/VwRankingReputacaoFilterDTO.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-ranking-reputacao-filter-cursor",
@@ -631,18 +1134,32 @@
       "payloadFiles": [
         "payloads/views/vw_ranking_reputacao_filter_basic.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["cursor pagination on ranking views"],
-      "notFor": ["offset pagination examples"],
+      "canonicalFor": [
+        "cursor pagination on ranking views"
+      ],
+      "notFor": [
+        "offset pagination examples"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwRankingReputacaoController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-ranking-reputacao-locate",
@@ -650,18 +1167,32 @@
       "payloadFiles": [
         "payloads/views/vw_ranking_reputacao_filter_basic.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["locating rows inside ranking lists"],
-      "notFor": ["page content retrieval"],
+      "canonicalFor": [
+        "locating rows inside ranking lists"
+      ],
+      "notFor": [
+        "page content retrieval"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwRankingReputacaoController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-ranking-reputacao-options-filter",
@@ -669,34 +1200,62 @@
       "payloadFiles": [
         "payloads/views/vw_ranking_reputacao_filter_basic.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "llmOperational": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["lookup options from ranking views"],
-      "notFor": ["full entity projection"],
+      "canonicalFor": [
+        "lookup options from ranking views"
+      ],
+      "notFor": [
+        "full entity projection"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwRankingReputacaoController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "page<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-ranking-reputacao-options-by-ids",
       "httpFile": "http/views/vw_ranking_reputacao_options_by_ids.http",
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["rehydrating selected ranking options"],
-      "notFor": ["full entity projection"],
+      "canonicalFor": [
+        "rehydrating selected ranking options"
+      ],
+      "notFor": [
+        "full entity projection"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwRankingReputacaoController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "funcionarios-options-for-ranking",
@@ -704,19 +1263,33 @@
       "payloadFiles": [
         "payloads/views/funcionarios_options_for_ranking.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["dependent options endpoint referenced by ranking filters"],
-      "notFor": ["full funcionario listing"],
+      "canonicalFor": [
+        "dependent options endpoint referenced by ranking filters"
+      ],
+      "notFor": [
+        "full funcionario listing"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/filter/VwRankingReputacaoFilterDTO.java",
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FuncionarioController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "page<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-resumo-missoes-filter-basic",
@@ -724,19 +1297,33 @@
       "payloadFiles": [
         "payloads/views/vw_resumo_missoes_filter_basic.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "llmOperational": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["operational mission summary filtering"],
-      "notFor": ["mutation flows"],
+      "canonicalFor": [
+        "operational mission summary filtering"
+      ],
+      "notFor": [
+        "mutation flows"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwResumoMissoeController.java",
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/filter/VwResumoMissoeFilterDTO.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-resumo-missoes-filter-date-between",
@@ -744,19 +1331,33 @@
       "payloadFiles": [
         "payloads/views/vw_resumo_missoes_filter_date_between.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["temporal range mission filtering"],
-      "notFor": ["mutation flows"],
+      "canonicalFor": [
+        "temporal range mission filtering"
+      ],
+      "notFor": [
+        "mutation flows"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwResumoMissoeController.java",
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/filter/VwResumoMissoeFilterDTO.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-resumo-missoes-filter-on-date",
@@ -764,18 +1365,32 @@
       "payloadFiles": [
         "payloads/views/vw_resumo_missoes_filter_on_date.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["single-date mission filtering"],
-      "notFor": ["range filtering examples"],
+      "canonicalFor": [
+        "single-date mission filtering"
+      ],
+      "notFor": [
+        "range filtering examples"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/filter/VwResumoMissoeFilterDTO.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-resumo-missoes-filter-last-days",
@@ -783,18 +1398,32 @@
       "payloadFiles": [
         "payloads/views/vw_resumo_missoes_filter_last_days.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["relative-date mission filtering"],
-      "notFor": ["absolute date range examples"],
+      "canonicalFor": [
+        "relative-date mission filtering"
+      ],
+      "notFor": [
+        "absolute date range examples"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/filter/VwResumoMissoeFilterDTO.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-resumo-missoes-filter-cursor",
@@ -802,18 +1431,32 @@
       "payloadFiles": [
         "payloads/views/vw_resumo_missoes_filter_basic.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["cursor pagination on mission summary views"],
-      "notFor": ["offset pagination examples"],
+      "canonicalFor": [
+        "cursor pagination on mission summary views"
+      ],
+      "notFor": [
+        "offset pagination examples"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwResumoMissoeController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-resumo-missoes-locate",
@@ -821,18 +1464,32 @@
       "payloadFiles": [
         "payloads/views/vw_resumo_missoes_filter_basic.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["locating rows inside mission summary lists"],
-      "notFor": ["page content retrieval"],
+      "canonicalFor": [
+        "locating rows inside mission summary lists"
+      ],
+      "notFor": [
+        "page content retrieval"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwResumoMissoeController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-resumo-missoes-options-filter",
@@ -840,69 +1497,119 @@
       "payloadFiles": [
         "payloads/views/vw_resumo_missoes_filter_basic.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["lookup options from mission summaries"],
-      "notFor": ["full entity projection"],
+      "canonicalFor": [
+        "lookup options from mission summaries"
+      ],
+      "notFor": [
+        "full entity projection"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwResumoMissoeController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "page<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-resumo-missoes-options-by-ids",
       "httpFile": "http/views/vw_resumo_missoes_options_by_ids.http",
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["rehydrating selected mission summary options"],
-      "notFor": ["full entity projection"],
+      "canonicalFor": [
+        "rehydrating selected mission summary options"
+      ],
+      "notFor": [
+        "full entity projection"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwResumoMissoeController.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<option>",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": true
     },
     {
       "id": "ui-get-table-config",
       "httpFile": "http/config/ui_get_table.http",
-      "status": ["runtime-confirmed", "recommended"],
-      "referenceOnly": true,
+      "status": [],
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["reading remote table config", "resolved user to tenant lookup"],
-      "notFor": ["public unauthenticated smoke"],
+      "canonicalFor": [
+        "reading remote table config",
+        "resolved user to tenant lookup"
+      ],
+      "notFor": [
+        "public unauthenticated smoke",
+        "confirmed record availability on the published backend without further evidence"
+      ],
       "sourceOfTruth": [
         "../praxis-config-starter/README.md",
         "../praxis-ui-angular/tools/requests/praxis-config-ui.http",
         "../praxis-ui-landing-page/public/llms-full.txt"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "config-record",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "ui-get-table-config-if-none-match",
       "httpFile": "http/config/ui_get_table_if_none_match.http",
-      "status": ["runtime-confirmed", "recommended"],
-      "referenceOnly": true,
+      "status": [],
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["etag revalidation on remote ui config"],
-      "notFor": ["initial config read without cache context"],
+      "canonicalFor": [
+        "etag revalidation on remote ui config"
+      ],
+      "notFor": [
+        "initial config read without cache context",
+        "direct Render execution without a prior confirmed config read and allowed Origin header"
+      ],
       "sourceOfTruth": [
         "../praxis-config-starter/README.md",
         "../praxis-ui-landing-page/public/llms-full.txt"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "config-record",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "ui-put-table-config",
@@ -910,20 +1617,31 @@
       "payloadFiles": [
         "payloads/config/ui_put_table.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
-      "referenceOnly": true,
+      "status": [],
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
-      "destructive": false,
+      "destructive": true,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["persisting remote table config"],
-      "notFor": ["partial merge semantics"],
+      "canonicalFor": [
+        "persisting remote table config"
+      ],
+      "notFor": [
+        "partial merge semantics"
+      ],
       "sourceOfTruth": [
         "../praxis-config-starter/README.md",
         "../praxis-ui-angular/tools/requests/praxis-config-ui.http",
         "../praxis-ui-landing-page/public/llms-full.txt"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "config-record",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "ui-put-form-config",
@@ -931,19 +1649,30 @@
       "payloadFiles": [
         "payloads/config/ui_put_form.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
-      "referenceOnly": true,
+      "status": [],
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
-      "destructive": false,
+      "destructive": true,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["persisting remote form config"],
-      "notFor": ["schema inference from current backend state"],
+      "canonicalFor": [
+        "persisting remote form config"
+      ],
+      "notFor": [
+        "schema inference from current backend state"
+      ],
       "sourceOfTruth": [
         "../praxis-config-starter/README.md",
         "../praxis-ui-landing-page/public/llms-full.txt"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "config-record",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "ui-put-tabs-config",
@@ -951,19 +1680,30 @@
       "payloadFiles": [
         "payloads/config/ui_put_tabs.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
-      "referenceOnly": true,
+      "status": [],
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
-      "destructive": false,
+      "destructive": true,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["persisting remote tabs config"],
-      "notFor": ["tab content route resolution"],
+      "canonicalFor": [
+        "persisting remote tabs config"
+      ],
+      "notFor": [
+        "tab content route resolution"
+      ],
       "sourceOfTruth": [
         "../praxis-config-starter/README.md",
         "../praxis-ui-landing-page/public/llms-full.txt"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "config-record",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "ui-put-global-config",
@@ -971,121 +1711,210 @@
       "payloadFiles": [
         "payloads/config/ui_put_global_config.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
-      "referenceOnly": true,
+      "status": [],
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
-      "destructive": false,
+      "destructive": true,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["persisting tenant-scoped global config"],
-      "notFor": ["per-user component personalization"],
+      "canonicalFor": [
+        "persisting tenant-scoped global config"
+      ],
+      "notFor": [
+        "per-user component personalization"
+      ],
       "sourceOfTruth": [
         "../praxis-config-starter/README.md",
         "../praxis-ui-angular/docs/REMOTE-CONFIG-STORAGE-E2E.md",
         "../praxis-ui-landing-page/public/llms-full.txt"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "config-record",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "ui-delete-tabs-config",
       "httpFile": "http/config/ui_delete_tabs.http",
-      "status": ["runtime-confirmed", "recommended"],
-      "referenceOnly": true,
+      "status": [],
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
       "destructive": true,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["deleting remote tabs config"],
-      "notFor": ["safe read-only demos"],
+      "canonicalFor": [
+        "deleting remote tabs config"
+      ],
+      "notFor": [
+        "safe read-only demos",
+        "confirmed successful delete on the published backend without further evidence"
+      ],
       "sourceOfTruth": [
         "../praxis-config-starter/README.md",
         "../praxis-ui-landing-page/public/llms-full.txt"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "mutation-result",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "ui-get-table-config-missing-tenant",
       "httpFile": "http/config/ui_get_table_missing_tenant.http",
-      "status": ["runtime-confirmed"],
-      "referenceOnly": true,
+      "status": [
+        "runtime-confirmed"
+      ],
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
-      "canonicalFor": ["showing required headers for remote ui config"],
-      "notFor": ["successful config reads"],
+      "canonicalFor": [
+        "showing required headers for remote ui config"
+      ],
+      "notFor": [
+        "successful config reads"
+      ],
       "sourceOfTruth": [
         "../praxis-config-starter/README.md",
         "../praxis-ui-landing-page/public/llms-full.txt"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "error-response",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": true
     },
     {
       "id": "ui-delete-tabs-config-not-found",
       "httpFile": "http/config/ui_delete_tabs_not_found.http",
-      "status": ["runtime-confirmed"],
-      "referenceOnly": true,
+      "status": [],
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
       "destructive": true,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["showing delete 404 behavior for missing ui config"],
-      "notFor": ["safe read-only demos"],
+      "canonicalFor": [
+        "showing delete 404 behavior for missing ui config"
+      ],
+      "notFor": [
+        "safe read-only demos",
+        "direct Render execution without an allowed Origin header"
+      ],
       "sourceOfTruth": [
         "../praxis-ui-landing-page/public/llms-full.txt",
         "../praxis-config-starter/README.md"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "error-response",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": true
     },
     {
       "id": "ui-get-table-config-legacy-component-type",
       "httpFile": "http/config/ui_get_table_legacy_component_type.http",
-      "status": ["runtime-confirmed", "legacy"],
-      "referenceOnly": true,
+      "status": [
+        "runtime-confirmed",
+        "legacy"
+      ],
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["showing that legacy logical componentType should not be used on /ui"],
-      "notFor": ["canonical selector-based persistence"],
+      "canonicalFor": [
+        "showing that legacy logical componentType should not be used on /ui"
+      ],
+      "notFor": [
+        "canonical selector-based persistence"
+      ],
       "sourceOfTruth": [
         "../praxis-config-starter/README.md",
         "../praxis-ui-landing-page/public/llms-full.txt"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "config-record",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "ui-get-invalid-origin",
       "httpFile": "http/config/ui_get_invalid_origin.http",
-      "status": ["runtime-confirmed"],
-      "referenceOnly": true,
+      "status": [
+        "runtime-confirmed"
+      ],
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["showing origin restriction on config endpoints"],
-      "notFor": ["same-origin or allowed-origin success cases"],
+      "canonicalFor": [
+        "showing origin restriction on config endpoints"
+      ],
+      "notFor": [
+        "same-origin or allowed-origin success cases"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/security/ConfigOriginRestrictionFilterTest.java"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "error-response",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": true
     },
     {
       "id": "ai-context-get-table",
       "httpFile": "http/config/ai_context_get_table.http",
-      "status": ["runtime-confirmed", "recommended"],
-      "referenceOnly": true,
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["bootstrapping ai context from persisted runtime state"],
-      "notFor": ["deterministic editing over unsaved changes"],
+      "canonicalFor": [
+        "bootstrapping ai context from persisted runtime state"
+      ],
+      "notFor": [
+        "deterministic editing over unsaved changes"
+      ],
       "sourceOfTruth": [
         "../praxis-config-starter/README.md",
         "../praxis-config-starter/docs/ai-context-runtime-state-decision.md",
         "../praxis-ui-landing-page/public/llms-full.txt"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "config-record",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "ai-context-post-table",
@@ -1093,37 +1922,63 @@
       "payloadFiles": [
         "payloads/config/ai_context_post_table.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
-      "referenceOnly": true,
+      "status": [],
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
-      "destructive": false,
+      "destructive": true,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["deterministic ai context with explicit currentState"],
-      "notFor": ["canonical remote ui persistence rules"],
+      "canonicalFor": [
+        "deterministic ai context with explicit currentState"
+      ],
+      "notFor": [
+        "canonical remote ui persistence rules",
+        "direct Render execution without an allowed Origin header"
+      ],
       "sourceOfTruth": [
         "../praxis-config-starter/README.md",
         "../praxis-config-starter/docs/ai-context-runtime-state-decision.md",
         "../praxis-ui-landing-page/public/llms-full.txt"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "config-record",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "ai-registry-template-get-table",
       "httpFile": "http/config/ai_registry_template_get_table.http",
-      "status": ["runtime-confirmed", "recommended"],
-      "referenceOnly": true,
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["reading canonical ai template by componentId"],
-      "notFor": ["per-user config lookup"],
+      "canonicalFor": [
+        "reading canonical ai template by componentId"
+      ],
+      "notFor": [
+        "per-user config lookup"
+      ],
       "sourceOfTruth": [
         "../praxis-config-starter/README.md",
         "../praxis-ui-landing-page/public/llms-full.txt"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "config-record",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "ai-registry-template-put-table",
@@ -1131,37 +1986,61 @@
       "payloadFiles": [
         "payloads/config/ai_registry_template_put_table.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
-      "referenceOnly": true,
+      "status": [],
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
-      "destructive": false,
+      "destructive": true,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["upserting canonical ai template by componentId"],
-      "notFor": ["ui_user_config persistence"],
+      "canonicalFor": [
+        "upserting canonical ai template by componentId"
+      ],
+      "notFor": [
+        "ui_user_config persistence",
+        "direct Render execution without an allowed Origin header"
+      ],
       "sourceOfTruth": [
         "../praxis-config-starter/README.md",
         "../praxis-config-starter/docs/ai-context-runtime-state-decision.md",
         "../praxis-ui-landing-page/public/llms-full.txt"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "config-record",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "ai-registry-template-delete-table",
       "httpFile": "http/config/ai_registry_template_delete_table.http",
-      "status": ["runtime-confirmed", "recommended"],
-      "referenceOnly": true,
+      "status": [],
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
       "destructive": true,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["deleting canonical ai template by componentId"],
-      "notFor": ["safe read-only demos"],
+      "canonicalFor": [
+        "deleting canonical ai template by componentId"
+      ],
+      "notFor": [
+        "safe read-only demos",
+        "direct Render execution without an allowed Origin header"
+      ],
       "sourceOfTruth": [
         "../praxis-config-starter/README.md",
         "../praxis-ui-landing-page/public/llms-full.txt"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "mutation-result",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "ai-suggestions-table",
@@ -1169,19 +2048,33 @@
       "payloadFiles": [
         "payloads/config/ai_suggestions_table.json"
       ],
-      "status": ["runtime-confirmed", "recommended"],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["deterministic capability-aware ai suggestions"],
-      "notFor": ["schema retrieval or api metadata discovery"],
+      "canonicalFor": [
+        "deterministic capability-aware ai suggestions"
+      ],
+      "notFor": [
+        "schema retrieval or api metadata discovery"
+      ],
       "sourceOfTruth": [
         "../praxis-config-starter/docs/ai-suggestions-endpoint.md",
         "../praxis-config-starter/README.md"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<suggestion>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     },
     {
       "id": "ai-clarification-filters-3step",
@@ -1189,20 +2082,36 @@
       "payloadFiles": [
         "payloads/ai/workflow_step1_ambiguous.json"
       ],
-      "status": ["illustrative-only", "legacy"],
+      "status": [
+        "illustrative-only",
+        "legacy"
+      ],
       "llmOperational": false,
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
       "requiresTenantHeaders": true,
-      "canonicalFor": ["showing multi-turn clarification flow", "showing naming ambiguity"],
-      "notFor": ["canonical /api/praxis/config/ui persistence", "selector canonicality"],
+      "canonicalFor": [
+        "showing multi-turn clarification flow",
+        "showing naming ambiguity"
+      ],
+      "notFor": [
+        "canonical /api/praxis/config/ui persistence",
+        "selector canonicality"
+      ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/https/clarification_case_a_three_step_filters.http",
         "../praxis-ui-landing-page/public/llms-full.txt"
       ],
-      "lastVerified": "2026-03-15"
+      "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "ai-clarification-response",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": false,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     }
   ]
 }

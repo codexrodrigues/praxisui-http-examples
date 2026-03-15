@@ -1,8 +1,20 @@
-### status: runtime-confirmed,recommended
+### status: none
 ### public: false
 ### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
 ### destructive: false
 ### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: false
+### referenceOnly: true
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: true
+### selectionGuidance: avoid-by-default-reference
+### note: Known published failure: this committed request currently returns 500 on the published backend.
+### note: Do not choose this example by default for LLM operational flows.
 
 @baseUrl = https://praxis-api-quickstart.onrender.com
 @tenantId = demo
