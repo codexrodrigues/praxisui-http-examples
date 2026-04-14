@@ -1,8 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const manifestPath = path.join(root, 'examples.manifest.json');
 const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
 
@@ -20,6 +21,8 @@ const allowedResponseShapeHints = new Set([
   'page<option>',
   'array<option>',
   'restApiResponse<page<row>>',
+  'stats-group-by',
+  'stats-timeseries',
   'detail-schema',
   'config-record',
   'row',

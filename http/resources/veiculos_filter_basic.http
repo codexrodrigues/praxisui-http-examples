@@ -24,11 +24,11 @@
 @userId = example-user
 @envId = public
 
-POST {{baseUrl}}/api/operations/vw-resumo-missoes/filter?page=0&size=10
+POST {{baseUrl}}/api/assets/veiculos/filter?page=0&size=10
 Content-Type: application/json
 Accept: application/json
 X-Tenant-ID: {{tenantId}}
 X-User-ID: {{userId}}
 X-Env: {{envId}}
 
-< ../../payloads/views/vw_resumo_missoes_filter_basic.json
+< ../../payloads/resources/veiculos_filter_basic.json

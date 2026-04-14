@@ -1,0 +1,10 @@
+{
+  "filter": {},
+  "field": "ocorridoEm",
+  "granularity": "DAY",
+  "metric": {
+    "operation": "COUNT",
+    "alias": "events"
+  },
+  "fillGaps": true
+}

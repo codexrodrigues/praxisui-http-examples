@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "reviewedAt": "2026-03-15",
+  "reviewedAt": "2026-04-02",
   "defaultBaseUrl": "https://praxis-api-quickstart.onrender.com",
   "goal": "Answer what a cold LLM can use now without opening the full manifest.",
   "startHere": [
@@ -38,16 +38,20 @@
       },
       "exampleIds": [
         "cargos-options-by-ids",
-        "expansion-detail-perfil-heroi-advanced",
-        "expansion-detail-resource-resolver-funcionario",
         "funcionarios-filter-basic",
         "funcionarios-options-filter",
+        "veiculos-filter-basic",
+        "incidentes-filter-basic",
         "vw-perfil-heroi-filter-basic",
         "vw-perfil-heroi-by-ids",
         "vw-perfil-heroi-options-filter",
         "vw-ranking-reputacao-filter-basic",
         "vw-ranking-reputacao-options-filter",
-        "vw-resumo-missoes-filter-basic"
+        "vw-resumo-missoes-filter-basic",
+        "vw-resumo-missoes-stats-status",
+        "missao-participantes-stats-papel",
+        "missao-eventos-stats-ocorrido-em-day",
+        "vw-indicadores-incidentes-filter-basic"
       ]
     }
   },

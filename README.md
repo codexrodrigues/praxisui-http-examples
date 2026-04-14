@@ -24,6 +24,9 @@ Operational LLM-facing summary:
 - [`LLM_COMMON_QUESTIONS.md`](./LLM_COMMON_QUESTIONS.md): short guide for routing common questions to the right evidence
 - [`LLM_SURFACE.md`](./LLM_SURFACE.md): human-readable summary of the examples marked `llmOperational: true`
 
+Local showcase runbooks:
+- [`HELPDESK_SHOWCASE_RUNBOOK.md`](./HELPDESK_SHOWCASE_RUNBOOK.md): local pilot recipe for the `helpdesk.chamados` semantic showcase across `praxis-helpdesk-service` and `praxis-helpdesk-ui`
+
 Core labels:
 - `runtime-confirmed`
 - `recommended`
@@ -49,8 +52,9 @@ Operational flags:
 ## Layout
 
 - [`http/`](./http): executable request examples
+- [`http/resources/`](./http/resources): CRUD resources with filter/options examples across `human-resources`, `operations`, and `assets`
 - [`http/config/`](./http/config): remote UI config, AI context, AI registry, and AI suggestions examples
-- [`http/views/`](./http/views): read-oriented view controllers such as `VwPerfilHeroi`, `VwResumoMissoes`, and `VwRankingReputacao`
+- [`http/views/`](./http/views): read-oriented view controllers such as `VwPerfilHeroi`, `VwResumoMissoes`, `VwRankingReputacao`, and `VwIndicadoresIncidentes`
 - [`http/expansion-detail/`](./http/expansion-detail): contextual detail schemas and resource resolver examples
 - [`payloads/`](./payloads): request body fixtures referenced by examples
 - [`payloads/config/`](./payloads/config): payloads for remote config, AI context, registry templates, and suggestions
@@ -62,6 +66,7 @@ Operational flags:
 - [`llm_bootstrap.json`](./llm_bootstrap.json): machine-readable bootstrap companion
 - [`LLM_COMMON_QUESTIONS.md`](./LLM_COMMON_QUESTIONS.md): short router for recurring LLM questions
 - [`LLM_SURFACE.md`](./LLM_SURFACE.md): curated summary of the operational LLM surface
+- [`HELPDESK_SHOWCASE_RUNBOOK.md`](./HELPDESK_SHOWCASE_RUNBOOK.md): derived local recipe for the helpdesk showcase outside the public Render corpus
 
 ## Catalog Model
 
@@ -155,7 +160,7 @@ Notes:
 - Some protected config examples now include `Origin: http://localhost:4301` directly when that makes the committed request executable on Render without mutating remote state. For protected writes, the examples only document the required `Origin` so they do not become more immediately actionable by accident.
 - `destructive: true` should be read conservatively in this catalog: it covers deletes and also protected writes that mutate remote state on the published backend.
 - `lastVerified` records the last audit date for the example entry and its current claim set. Trust the `status` labels, not the date alone, when judging runtime confidence.
-- Safe-first LLM examples such as `funcionarios-filter-basic`, `funcionarios-options-filter`, and `vw-resumo-missoes-filter-basic` are auth-light, not session-authenticated. On 2026-03-15, the published backend still accepted the confirmed examples in this repo with just `Accept: application/json` plus `Content-Type: application/json` on `POST` bodies, while the default recommended stable scoped trio remains `X-Tenant-ID: demo`, `X-Env: public`, and `X-User-ID: example-user`.
+- Safe-first LLM examples such as `funcionarios-filter-basic`, `veiculos-filter-basic`, `incidentes-filter-basic`, `vw-resumo-missoes-filter-basic`, and `vw-indicadores-incidentes-filter-basic` are auth-light, not session-authenticated. On 2026-04-02, the newly added vehicle, incident, and incident-indicator examples were reconfirmed on the published backend with `Accept: application/json` plus `Content-Type: application/json` on `POST` bodies, while the default recommended stable scoped trio remains `X-Tenant-ID: demo`, `X-Env: public`, and `X-User-ID: example-user`.
 - Confirmed auth-light operational examples also include `cargos-options-by-ids` and `vw-perfil-heroi-by-ids`; these are not session-authenticated and should be read as header-scoped published-backend examples.
 - Some authenticated examples are intentionally excluded when the published environment is unstable for them. At this stage, `vw-resumo-missoes/options/by-ids` returned `500` and is not part of the auth smoke whitelist.
 - `config/ui`, `ai-context`, and other protected config surfaces are intentionally excluded from `smoke:auth` until a stable execution profile is confirmed for the published environment as committed, including any required allowed-origin behavior.

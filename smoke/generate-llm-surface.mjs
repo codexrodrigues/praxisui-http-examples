@@ -1,7 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'examples.manifest.json'), 'utf8'));
 const outputPath = path.join(root, 'LLM_SURFACE.md');
 const reviewedAt = new Date().toISOString().slice(0, 10);
@@ -53,12 +54,25 @@ const playbookSteps = [
   {
     title: 'Step 7. Move To Views Filter',
     description: 'Use filter endpoints for table-like operational reads after schema and option grounding are in place.',
-    ids: ['funcionarios-filter-basic', 'vw-perfil-heroi-filter-basic', 'vw-ranking-reputacao-filter-basic', 'vw-resumo-missoes-filter-basic'],
+    ids: [
+      'funcionarios-filter-basic',
+      'veiculos-filter-basic',
+      'incidentes-filter-basic',
+      'vw-perfil-heroi-filter-basic',
+      'vw-ranking-reputacao-filter-basic',
+      'vw-resumo-missoes-filter-basic',
+      'vw-indicadores-incidentes-filter-basic',
+    ],
   },
   {
     title: 'Step 8. Read Expansion Detail',
     description: 'Use expansion-detail only after you already know which row or resource context you need to inspect.',
     ids: ['expansion-detail-perfil-heroi-advanced', 'expansion-detail-resource-resolver-funcionario'],
+  },
+  {
+    title: 'Step 9. Add Analytics Surfaces',
+    description: 'Use stats examples when a runtime page or chart needs backend-owned aggregate projections.',
+    ids: ['vw-resumo-missoes-stats-status'],
   },
 ];
 

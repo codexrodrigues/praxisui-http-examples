@@ -1,7 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'examples.manifest.json'), 'utf8'));
 const bootstrap = JSON.parse(fs.readFileSync(path.join(root, 'llm_bootstrap.json'), 'utf8'));
 const baseUrl = process.env.BASE_URL || manifest.defaultBaseUrl;

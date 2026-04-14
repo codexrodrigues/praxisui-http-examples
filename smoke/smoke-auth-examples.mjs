@@ -1,20 +1,22 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { parseHttpExample } from './shared-http-example-parser.mjs';
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'examples.manifest.json'), 'utf8'));
 const baseUrl = process.env.BASE_URL || manifest.defaultBaseUrl;
 
 const defaultIds = [
   'cargos-options-by-ids',
-  'expansion-detail-perfil-heroi-advanced',
-  'expansion-detail-resource-resolver-funcionario',
   'funcionarios-filter-basic',
   'funcionarios-options-filter',
+  'veiculos-filter-basic',
+  'incidentes-filter-basic',
   'vw-perfil-heroi-by-ids',
   'vw-perfil-heroi-filter-basic',
   'vw-perfil-heroi-options-filter',
+  'vw-indicadores-incidentes-filter-basic',
   'vw-ranking-reputacao-filter-basic',
   'vw-ranking-reputacao-options-filter',
   'vw-resumo-missoes-filter-basic',

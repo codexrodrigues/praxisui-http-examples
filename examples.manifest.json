@@ -257,7 +257,7 @@
         "runtime-confirmed",
         "recommended"
       ],
-      "llmOperational": true,
+      "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
@@ -278,8 +278,8 @@
       "responseShapeHint": "detail-schema",
       "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": true,
-      "knownPublishedFailure": false
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": true
     },
     {
       "id": "expansion-detail-resource-resolver-funcionario",
@@ -288,7 +288,7 @@
         "runtime-confirmed",
         "recommended"
       ],
-      "llmOperational": true,
+      "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
@@ -308,8 +308,8 @@
       "responseShapeHint": "detail-schema",
       "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": true,
-      "knownPublishedFailure": false
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": true
     },
     {
       "id": "expansion-detail-resource-resolver-invalid-row",
@@ -1313,13 +1313,48 @@
         "mutation flows"
       ],
       "sourceOfTruth": [
-        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwResumoMissoeController.java",
-        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/filter/VwResumoMissoeFilterDTO.java"
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/controller/VwResumoMissoeController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/dto/filter/VwResumoMissoeFilterDTO.java"
       ],
-      "lastVerified": "2026-03-15",
+      "lastVerified": "2026-04-02",
       "sessionAuthRequired": false,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "vw-resumo-missoes-stats-status",
+      "httpFile": "http/views/vw_resumo_missoes_stats_status.http",
+      "payloadFiles": [
+        "payloads/views/vw_resumo_missoes_stats_status.json"
+      ],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "analytics projection for mission status charts"
+      ],
+      "notFor": [
+        "row-level mission retrieval",
+        "mutation flows"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/README.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/service/VwResumoMissoeService.java"
+      ],
+      "lastVerified": "2026-04-14",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "stats-group-by",
       "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
       "publishedBackendConfirmed": true,
@@ -2112,6 +2147,180 @@
       "runtimeRecordConfirmed": false,
       "selectorConfirmed": false,
       "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "veiculos-filter-basic",
+      "httpFile": "http/resources/veiculos_filter_basic.http",
+      "payloadFiles": [
+        "payloads/resources/veiculos_filter_basic.json"
+      ],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "operational vehicle filtering",
+        "assets domain discovery"
+      ],
+      "notFor": [
+        "mutation flows"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operationalassets/controller/VeiculoController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operationalassets/dto/filter/VeiculoFilterDTO.java"
+      ],
+      "lastVerified": "2026-04-02",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "incidentes-filter-basic",
+      "httpFile": "http/resources/incidentes_filter_basic.http",
+      "payloadFiles": [
+        "payloads/resources/incidentes_filter_basic.json"
+      ],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "incident investigation filtering",
+        "operations domain discovery"
+      ],
+      "notFor": [
+        "mutation flows"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/controller/IncidenteController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/dto/filter/IncidenteFilterDTO.java"
+      ],
+      "lastVerified": "2026-04-02",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "vw-indicadores-incidentes-filter-basic",
+      "httpFile": "http/views/vw_indicadores_incidentes_filter_basic.http",
+      "payloadFiles": [
+        "payloads/views/vw_indicadores_incidentes_filter_basic.json"
+      ],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "risk incident analytics filtering"
+      ],
+      "notFor": [
+        "mutation flows"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/riskintelligence/controller/VwIndicadoresIncidenteController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/riskintelligence/dto/filter/VwIndicadoresIncidenteFilterDTO.java"
+      ],
+      "lastVerified": "2026-04-02",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "missao-participantes-stats-papel",
+      "httpFile": "http/operations/missao_participantes_stats_papel.http",
+      "payloadFiles": [
+        "payloads/operations/missao_participantes_stats_papel.json"
+      ],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "protectedContract": false,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "analytics projection for mission team role charts"
+      ],
+      "notFor": [
+        "mutation flows"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/README.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/service/MissaoParticipanteService.java"
+      ],
+      "lastVerified": "2026-04-14",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "stats-group-by",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "missao-eventos-stats-ocorrido-em-day",
+      "httpFile": "http/operations/missao_eventos_stats_ocorrido_em_day.http",
+      "payloadFiles": [
+        "payloads/operations/missao_eventos_stats_ocorrido_em_day.json"
+      ],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "protectedContract": false,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "analytics projection for mission event timeline charts"
+      ],
+      "notFor": [
+        "mutation flows"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/README.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/service/MissaoEventoService.java"
+      ],
+      "lastVerified": "2026-04-14",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "stats-timeseries",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
       "knownPublishedFailure": false
     }
   ]

@@ -2,7 +2,7 @@
 
 Operational surface for LLM-driven discovery against the published Praxis backend.
 
-Last reviewed: `2026-03-15`
+Last reviewed: `2026-04-14`
 
 This file is generated from [`examples.manifest.json`](./examples.manifest.json).
 Current validation commands:
@@ -100,9 +100,12 @@ Use filter endpoints for table-like operational reads after schema and option gr
 | Id | File | Access (minimum) | Recommended stable | Purpose |
 |---|---|---|---|---|
 | `funcionarios-filter-basic` | `http/resources/funcionarios_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | typed server-side filtering; table data loading |
+| `veiculos-filter-basic` | `http/resources/veiculos_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | operational vehicle filtering; assets domain discovery |
+| `incidentes-filter-basic` | `http/resources/incidentes_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | incident investigation filtering; operations domain discovery |
 | `vw-perfil-heroi-filter-basic` | `http/views/vw_perfil_heroi_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | aggregated hero profile filtering |
 | `vw-ranking-reputacao-filter-basic` | `http/views/vw_ranking_reputacao_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | aggregated reputation ranking filtering |
 | `vw-resumo-missoes-filter-basic` | `http/views/vw_resumo_missoes_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | operational mission summary filtering |
+| `vw-indicadores-incidentes-filter-basic` | `http/views/vw_indicadores_incidentes_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | risk incident analytics filtering |
 
 ### Step 8. Read Expansion Detail
 
@@ -110,8 +113,15 @@ Use expansion-detail only after you already know which row or resource context y
 
 | Id | File | Access (minimum) | Recommended stable | Purpose |
 |---|---|---|---|---|
-| `expansion-detail-perfil-heroi-advanced` | `http/expansion-detail/perfil_heroi_schema_advanced.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | advanced contextual detail schema; tabs-based expansion detail |
-| `expansion-detail-resource-resolver-funcionario` | `http/expansion-detail/resource_resolver_funcionario.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | resourceId-based expansion resolution |
+
+
+### Step 9. Add Analytics Surfaces
+
+Use stats examples when a runtime page or chart needs backend-owned aggregate projections.
+
+| Id | File | Access (minimum) | Recommended stable | Purpose |
+|---|---|---|---|---|
+| `vw-resumo-missoes-stats-status` | `http/views/vw_resumo_missoes_stats_status.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | analytics projection for mission status charts |
 
 ## Full LLM Operational Set
 
@@ -130,8 +140,6 @@ Use expansion-detail only after you already know which row or resource context y
 | Id | File | Access (minimum) | Recommended stable | Purpose |
 |---|---|---|---|---|
 | `cargos-options-by-ids` | `http/resources/cargos_options_by_ids.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | options rehydration by ids |
-| `expansion-detail-perfil-heroi-advanced` | `http/expansion-detail/perfil_heroi_schema_advanced.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | advanced contextual detail schema; tabs-based expansion detail |
-| `expansion-detail-resource-resolver-funcionario` | `http/expansion-detail/resource_resolver_funcionario.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | resourceId-based expansion resolution |
 | `funcionarios-filter-basic` | `http/resources/funcionarios_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | typed server-side filtering; table data loading |
 | `funcionarios-options-filter` | `http/resources/funcionarios_options_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | remote options lookup; form select hydration |
 | `vw-perfil-heroi-filter-basic` | `http/views/vw_perfil_heroi_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | aggregated hero profile filtering |
@@ -140,6 +148,12 @@ Use expansion-detail only after you already know which row or resource context y
 | `vw-ranking-reputacao-filter-basic` | `http/views/vw_ranking_reputacao_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | aggregated reputation ranking filtering |
 | `vw-ranking-reputacao-options-filter` | `http/views/vw_ranking_reputacao_options_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | lookup options from ranking views |
 | `vw-resumo-missoes-filter-basic` | `http/views/vw_resumo_missoes_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | operational mission summary filtering |
+| `vw-resumo-missoes-stats-status` | `http/views/vw_resumo_missoes_stats_status.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | analytics projection for mission status charts |
+| `veiculos-filter-basic` | `http/resources/veiculos_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | operational vehicle filtering; assets domain discovery |
+| `incidentes-filter-basic` | `http/resources/incidentes_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | incident investigation filtering; operations domain discovery |
+| `vw-indicadores-incidentes-filter-basic` | `http/views/vw_indicadores_incidentes_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | risk incident analytics filtering |
+| `missao-participantes-stats-papel` | `http/operations/missao_participantes_stats_papel.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | analytics projection for mission team role charts |
+| `missao-eventos-stats-ocorrido-em-day` | `http/operations/missao_eventos_stats_ocorrido_em_day.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | analytics projection for mission event timeline charts |
 
 ## Not In This Surface
 

@@ -1,0 +1,10 @@
+{
+  "filter": {},
+  "field": "status",
+  "metric": {
+    "operation": "COUNT",
+    "alias": "missions"
+  },
+  "limit": 10,
+  "orderBy": "KEY_ASC"
+}

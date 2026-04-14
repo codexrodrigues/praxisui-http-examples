@@ -2,7 +2,7 @@
 
 Canonical safe-first entry point for a cold LLM using the published Praxis backend.
 
-Last reviewed: `2026-03-15`
+Last reviewed: `2026-04-02`
 
 Use this file to answer: "what can I use right now?" without opening the full manifest.
 
@@ -35,16 +35,20 @@ Use these when public metadata is not enough and you need operational reads on t
 These do not require login cookies, bearer tokens, or a server-side session bootstrap.
 
 - `cargos-options-by-ids` -> `http/resources/cargos_options_by_ids.http`
-- `expansion-detail-perfil-heroi-advanced` -> `http/expansion-detail/perfil_heroi_schema_advanced.http`
-- `expansion-detail-resource-resolver-funcionario` -> `http/expansion-detail/resource_resolver_funcionario.http`
 - `funcionarios-filter-basic` -> `http/resources/funcionarios_filter_basic.http`
 - `funcionarios-options-filter` -> `http/resources/funcionarios_options_filter.http`
+- `veiculos-filter-basic` -> `http/resources/veiculos_filter_basic.http`
+- `incidentes-filter-basic` -> `http/resources/incidentes_filter_basic.http`
 - `vw-perfil-heroi-filter-basic` -> `http/views/vw_perfil_heroi_filter_basic.http`
 - `vw-perfil-heroi-by-ids` -> `http/views/vw_perfil_heroi_by_ids.http`
 - `vw-perfil-heroi-options-filter` -> `http/views/vw_perfil_heroi_options_filter.http`
 - `vw-ranking-reputacao-filter-basic` -> `http/views/vw_ranking_reputacao_filter_basic.http`
 - `vw-ranking-reputacao-options-filter` -> `http/views/vw_ranking_reputacao_options_filter.http`
 - `vw-resumo-missoes-filter-basic` -> `http/views/vw_resumo_missoes_filter_basic.http`
+- `vw-resumo-missoes-stats-status` -> `http/views/vw_resumo_missoes_stats_status.http`
+- `missao-participantes-stats-papel` -> `http/operations/missao_participantes_stats_papel.http`
+- `missao-eventos-stats-ocorrido-em-day` -> `http/operations/missao_eventos_stats_ocorrido_em_day.http`
+- `vw-indicadores-incidentes-filter-basic` -> `http/views/vw_indicadores_incidentes_filter_basic.http`
 
 Accepted now on the published backend:
 - `Accept: application/json`

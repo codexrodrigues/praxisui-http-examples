@@ -1,0 +1,10 @@
+{
+  "filter": {},
+  "field": "papel",
+  "metric": {
+    "operation": "COUNT",
+    "alias": "members"
+  },
+  "limit": 10,
+  "orderBy": "KEY_ASC"
+}
