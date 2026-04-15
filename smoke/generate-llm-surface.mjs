@@ -115,7 +115,7 @@ function row(example) {
 
 function detectMethod(httpFile) {
   const raw = fs.readFileSync(path.join(root, httpFile), 'utf8');
-  const requestLine = raw.split(/\r?\n/).find((line) => /^(GET|POST|PUT|DELETE)\s+/.test(line.trim()));
+  const requestLine = raw.split(/\r?\n/).find((line) => /^(GET|POST|PUT|PATCH|DELETE)\s+/.test(line.trim()));
   return requestLine?.trim().split(/\s+/, 1)[0] ?? 'GET';
 }
 

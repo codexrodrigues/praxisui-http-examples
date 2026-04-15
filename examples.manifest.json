@@ -2455,6 +2455,117 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "filtered-schema-request-missao-team-plan",
+      "httpFile": "http/metadata/filtered_schema_request_missao_team_plan.http",
+      "status": [
+        "runtime-confirmed",
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "public": false,
+      "authRequired": false,
+      "destructive": false,
+      "canonicalFor": [
+        "request-side filtered schema for mission team editable collection",
+        "x-ui.array contract discovery",
+        "partial form schema for the team-plan surface"
+      ],
+      "notFor": [
+        "operational LLM execution until Render exposes team-plan",
+        "mutation payload submission"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/README.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/controller/MissaoController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/dto/PlanejarEquipeMissaoDTO.java"
+      ],
+      "lastVerified": "2026-04-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "filtered-schema",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": true
+    },
+    {
+      "id": "missoes-team-plan-patch",
+      "httpFile": "http/operations/missoes_team_plan_patch.http",
+      "payloadFiles": [
+        "payloads/operations/missoes_team_plan_patch.json"
+      ],
+      "status": [
+        "runtime-confirmed",
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": true,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "valid editable collection submission payload",
+        "team-plan partial form mutation contract"
+      ],
+      "notFor": [
+        "safe-first LLM execution",
+        "schema discovery"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/controller/MissaoController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/dto/PlanejarEquipeMissaoDTO.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/service/MissaoService.java"
+      ],
+      "lastVerified": "2026-04-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "mutation-result",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": true
+    },
+    {
+      "id": "missoes-team-plan-patch-invalid-principal",
+      "httpFile": "http/operations/missoes_team_plan_patch_invalid_principal.http",
+      "payloadFiles": [
+        "payloads/operations/missoes_team_plan_patch_invalid_principal.json"
+      ],
+      "status": [
+        "runtime-confirmed",
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "negative editable collection validation payload",
+        "array.collectionValidation.exactlyOne behavior"
+      ],
+      "notFor": [
+        "safe-first LLM execution",
+        "successful mutation examples"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/controller/MissaoController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/dto/PlanejarEquipeMissaoDTO.java",
+        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/MissaoPilotIntegrationTest.java"
+      ],
+      "lastVerified": "2026-04-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "error-response",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": true
+    },
+    {
       "id": "missao-eventos-stats-ocorrido-em-day",
       "httpFile": "http/operations/missao_eventos_stats_ocorrido_em_day.http",
       "payloadFiles": [

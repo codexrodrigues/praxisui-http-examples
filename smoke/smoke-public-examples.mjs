@@ -17,7 +17,7 @@ const publicExamples = (manifest.examples ?? []).filter(
 for (const example of publicExamples) {
   const httpPath = path.join(root, example.httpFile);
   const raw = fs.readFileSync(httpPath, 'utf8');
-  const match = raw.match(/^(GET|POST|PUT|DELETE)\s+\{\{baseUrl\}\}([^\s]+)$/m);
+  const match = raw.match(/^(GET|POST|PUT|PATCH|DELETE)\s+\{\{baseUrl\}\}([^\s]+)$/m);
   if (!match) {
     console.warn(`Skipping ${example.id}: no simple request line found.`);
     continue;

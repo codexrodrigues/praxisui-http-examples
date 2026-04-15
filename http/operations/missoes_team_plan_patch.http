@@ -1,0 +1,33 @@
+### status: runtime-confirmed,illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: true
+### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: true
+### knownPublishedFailure: true
+### accessMode: auth-light
+### selectionGuidance: protected-mutation-contract
+### note: Valid payload for the mission team-plan Editable Collection contract. Do not run against production-like data without an explicit test fixture.
+### note: Current public Render backend does not expose this route yet; keep protected until published surfaces confirm team-plan.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@userId = example-user
+@envId = public
+@missionId = 1
+
+PATCH {{baseUrl}}/api/operations/missoes/{{missionId}}/team-plan
+Accept: application/json
+Content-Type: application/json
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}
+X-Env: {{envId}}
+
+< ../../payloads/operations/missoes_team_plan_patch.json

@@ -21,7 +21,7 @@ export function parseHttpExample(root, example, baseUrl) {
   }
 
   const requestLine = lines[index]?.trim();
-  const requestMatch = requestLine?.match(/^(GET|POST|PUT|DELETE)\s+(.+)$/);
+  const requestMatch = requestLine?.match(/^(GET|POST|PUT|PATCH|DELETE)\s+(.+)$/);
   if (!requestMatch) {
     throw new Error(`No request line found in ${example.httpFile}`);
   }
