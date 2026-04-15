@@ -2,7 +2,7 @@
 
 Operational surface for LLM-driven discovery against the published Praxis backend.
 
-Last reviewed: `2026-04-14`
+Last reviewed: `2026-04-15`
 
 This file is generated from [`examples.manifest.json`](./examples.manifest.json).
 Current validation commands:
@@ -81,6 +81,7 @@ When you need label/value choices from a dataset, begin with an options filter e
 | Id | File | Access (minimum) | Recommended stable | Purpose |
 |---|---|---|---|---|
 | `funcionarios-options-filter` | `http/resources/funcionarios_options_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | remote options lookup; form select hydration |
+| `departamentos-options-filter` | `http/resources/departamentos_options_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | department remote options lookup; form select hydration; inline filter async select hydration |
 | `vw-perfil-heroi-options-filter` | `http/views/vw_perfil_heroi_options_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | lookup options from aggregated hero profiles |
 | `vw-ranking-reputacao-options-filter` | `http/views/vw_ranking_reputacao_options_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | lookup options from ranking views |
 
@@ -123,6 +124,17 @@ Use stats examples when a runtime page or chart needs backend-owned aggregate pr
 |---|---|---|---|---|
 | `vw-resumo-missoes-stats-status` | `http/views/vw_resumo_missoes_stats_status.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | analytics projection for mission status charts |
 
+### Step 10. Inspect Surfaces, Actions And Capabilities
+
+Use surfaces and actions discovery before executing or rendering workflow affordances, then check item capabilities for the selected row.
+
+| Id | File | Access (minimum) | Recommended stable | Purpose |
+|---|---|---|---|---|
+| `schemas-surfaces-operations-missoes` | `http/metadata/schemas_surfaces_operations_missoes.http` | Public | none | runtime surface discovery for mission pages; modal surface previews |
+| `schemas-surfaces-human-resources-funcionarios` | `http/metadata/schemas_surfaces_human_resources_funcionarios.http` | Public | none | runtime surface discovery for funcionarios pages; modal surface previews |
+| `schemas-actions-operations-missoes` | `http/metadata/schemas_actions_operations_missoes.http` | Public | none | runtime action discovery for mission pages; workflow affordance discovery before capability checks |
+| `operations-missoes-item-capabilities` | `http/operations/missoes_item_capabilities.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | selected mission capability snapshot; runtime action availability checks |
+
 ## Full LLM Operational Set
 
 ### Public Core
@@ -132,6 +144,9 @@ Use stats examples when a runtime page or chart needs backend-owned aggregate pr
 | `health` | `http/metadata/health.http` | Public | none | service availability check |
 | `openapi-docs` | `http/metadata/openapi_docs.http` | Public | none | public endpoint discovery; request and response shapes |
 | `schemas-catalog` | `http/metadata/schemas_catalog.http` | Public | none | lightweight metadata discovery |
+| `schemas-surfaces-operations-missoes` | `http/metadata/schemas_surfaces_operations_missoes.http` | Public | none | runtime surface discovery for mission pages; modal surface previews |
+| `schemas-surfaces-human-resources-funcionarios` | `http/metadata/schemas_surfaces_human_resources_funcionarios.http` | Public | none | runtime surface discovery for funcionarios pages; modal surface previews |
+| `schemas-actions-operations-missoes` | `http/metadata/schemas_actions_operations_missoes.http` | Public | none | runtime action discovery for mission pages; workflow affordance discovery before capability checks |
 | `filtered-schema-request-funcionarios` | `http/metadata/filtered_schema_request_funcionarios.http` | Public | none | request-side filtered schema |
 | `filtered-schema-response-funcionarios` | `http/metadata/filtered_schema_response_funcionarios.http` | Public | none | response-side filtered schema |
 
@@ -139,6 +154,7 @@ Use stats examples when a runtime page or chart needs backend-owned aggregate pr
 
 | Id | File | Access (minimum) | Recommended stable | Purpose |
 |---|---|---|---|---|
+| `departamentos-options-filter` | `http/resources/departamentos_options_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | department remote options lookup; form select hydration; inline filter async select hydration |
 | `cargos-options-by-ids` | `http/resources/cargos_options_by_ids.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | options rehydration by ids |
 | `funcionarios-filter-basic` | `http/resources/funcionarios_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | typed server-side filtering; table data loading |
 | `funcionarios-options-filter` | `http/resources/funcionarios_options_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | remote options lookup; form select hydration |
@@ -153,6 +169,7 @@ Use stats examples when a runtime page or chart needs backend-owned aggregate pr
 | `incidentes-filter-basic` | `http/resources/incidentes_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | incident investigation filtering; operations domain discovery |
 | `vw-indicadores-incidentes-filter-basic` | `http/views/vw_indicadores_incidentes_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | risk incident analytics filtering |
 | `missao-participantes-stats-papel` | `http/operations/missao_participantes_stats_papel.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | analytics projection for mission team role charts |
+| `operations-missoes-item-capabilities` | `http/operations/missoes_item_capabilities.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | selected mission capability snapshot; runtime action availability checks |
 | `missao-eventos-stats-ocorrido-em-day` | `http/operations/missao_eventos_stats_ocorrido_em_day.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | analytics projection for mission event timeline charts |
 
 ## Not In This Surface

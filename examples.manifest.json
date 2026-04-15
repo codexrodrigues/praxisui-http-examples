@@ -98,6 +98,102 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "schemas-surfaces-operations-missoes",
+      "httpFile": "http/metadata/schemas_surfaces_operations_missoes.http",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": true,
+      "authRequired": false,
+      "destructive": false,
+      "canonicalFor": [
+        "runtime surface discovery for mission pages",
+        "modal surface previews"
+      ],
+      "notFor": [
+        "executing workflow actions",
+        "row data loading"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/README.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/controller/MissaoController.java"
+      ],
+      "lastVerified": "2026-04-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "surfaces-catalog",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "schemas-surfaces-human-resources-funcionarios",
+      "httpFile": "http/metadata/schemas_surfaces_human_resources_funcionarios.http",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": true,
+      "authRequired": false,
+      "destructive": false,
+      "canonicalFor": [
+        "runtime surface discovery for funcionarios pages",
+        "modal surface previews"
+      ],
+      "notFor": [
+        "executing workflow actions",
+        "row data loading"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/README.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FuncionarioController.java"
+      ],
+      "lastVerified": "2026-04-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "surfaces-catalog",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "schemas-actions-operations-missoes",
+      "httpFile": "http/metadata/schemas_actions_operations_missoes.http",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": true,
+      "authRequired": false,
+      "destructive": false,
+      "canonicalFor": [
+        "runtime action discovery for mission pages",
+        "workflow affordance discovery before capability checks"
+      ],
+      "notFor": [
+        "executing workflow actions",
+        "authorization decisions"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/README.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/controller/MissaoController.java"
+      ],
+      "lastVerified": "2026-04-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "actions-catalog",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
       "id": "filtered-schema-request-funcionarios",
       "httpFile": "http/metadata/filtered_schema_request_funcionarios.http",
       "status": [
@@ -182,6 +278,42 @@
         "../praxis-api-quickstart/README.md"
       ],
       "lastVerified": "2026-03-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "page<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "departamentos-options-filter",
+      "httpFile": "http/resources/departamentos_options_filter.http",
+      "payloadFiles": [
+        "payloads/resources/options_filter_body.json"
+      ],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "department remote options lookup",
+        "form select hydration",
+        "inline filter async select hydration"
+      ],
+      "notFor": [
+        "full department listing",
+        "mutation flows"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/DepartamentoController.java"
+      ],
+      "lastVerified": "2026-04-15",
       "sessionAuthRequired": false,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "page<option>",
@@ -2283,6 +2415,40 @@
       "sessionAuthRequired": false,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "stats-group-by",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "operations-missoes-item-capabilities",
+      "httpFile": "http/operations/missoes_item_capabilities.http",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "selected mission capability snapshot",
+        "runtime action availability checks"
+      ],
+      "notFor": [
+        "resource-level schema discovery",
+        "executing workflow mutations"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/README.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/controller/MissaoController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/service/MissaoService.java"
+      ],
+      "lastVerified": "2026-04-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "capabilities-snapshot",
       "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
       "publishedBackendConfirmed": true,

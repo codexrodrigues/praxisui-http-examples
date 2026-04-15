@@ -44,7 +44,12 @@ const playbookSteps = [
   {
     title: 'Step 5. Start With Options Filter',
     description: 'When you need label/value choices from a dataset, begin with an options filter example before wider row retrieval.',
-    ids: ['funcionarios-options-filter', 'vw-perfil-heroi-options-filter', 'vw-ranking-reputacao-options-filter'],
+    ids: [
+      'funcionarios-options-filter',
+      'departamentos-options-filter',
+      'vw-perfil-heroi-options-filter',
+      'vw-ranking-reputacao-options-filter',
+    ],
   },
   {
     title: 'Step 6. Rehydrate With Options By Ids',
@@ -73,6 +78,16 @@ const playbookSteps = [
     title: 'Step 9. Add Analytics Surfaces',
     description: 'Use stats examples when a runtime page or chart needs backend-owned aggregate projections.',
     ids: ['vw-resumo-missoes-stats-status'],
+  },
+  {
+    title: 'Step 10. Inspect Surfaces, Actions And Capabilities',
+    description: 'Use surfaces and actions discovery before executing or rendering workflow affordances, then check item capabilities for the selected row.',
+    ids: [
+      'schemas-surfaces-operations-missoes',
+      'schemas-surfaces-human-resources-funcionarios',
+      'schemas-actions-operations-missoes',
+      'operations-missoes-item-capabilities',
+    ],
   },
 ];
 
