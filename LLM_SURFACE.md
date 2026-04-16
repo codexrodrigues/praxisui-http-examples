@@ -2,7 +2,7 @@
 
 Operational surface for LLM-driven discovery against the published Praxis backend.
 
-Last reviewed: `2026-04-15`
+Last reviewed: `2026-04-16`
 
 This file is generated from [`examples.manifest.json`](./examples.manifest.json).
 Current validation commands:
@@ -149,6 +149,7 @@ Use surfaces and actions discovery before executing or rendering workflow afford
 | `schemas-actions-operations-missoes` | `http/metadata/schemas_actions_operations_missoes.http` | Public | none | runtime action discovery for mission pages; workflow affordance discovery before capability checks |
 | `filtered-schema-request-funcionarios` | `http/metadata/filtered_schema_request_funcionarios.http` | Public | none | request-side filtered schema |
 | `filtered-schema-response-funcionarios` | `http/metadata/filtered_schema_response_funcionarios.http` | Public | none | response-side filtered schema |
+| `filtered-schema-request-procurement-purchase-orders-entity-lookup` | `http/metadata/filtered_schema_request_procurement_purchase_orders_entity_lookup.http` | Public | none | request-side filtered schema for procurement purchase orders; entityLookup controlType discovery; RESOURCE_ENTITY optionSource metadata |
 
 ### Auth-Light Operational Examples
 
@@ -170,6 +171,9 @@ Use surfaces and actions discovery before executing or rendering workflow afford
 | `vw-indicadores-incidentes-filter-basic` | `http/views/vw_indicadores_incidentes_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | risk incident analytics filtering |
 | `missao-participantes-stats-papel` | `http/operations/missao_participantes_stats_papel.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | analytics projection for mission team role charts |
 | `operations-missoes-item-capabilities` | `http/operations/missoes_item_capabilities.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | selected mission capability snapshot; runtime action availability checks |
+| `procurement-suppliers-entity-lookup-filter` | `http/resources/procurement_suppliers_entity_lookup_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | RESOURCE_ENTITY option-source filtering; supplier entity lookup with company dependency; governed OptionDTO.extra fields |
+| `procurement-suppliers-entity-lookup-by-ids` | `http/resources/procurement_suppliers_entity_lookup_by_ids.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | entity lookup rehydration by ids; retained invalid value display; selectable=false disabledReason semantics |
+| `procurement-contracts-entity-lookup-filter-cascade` | `http/resources/procurement_contracts_entity_lookup_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | cascading Entity Lookup with multiple dependencies; contract lookup selection policy; dependencyFilterMap for companyId and supplierId |
 | `missao-eventos-stats-ocorrido-em-day` | `http/operations/missao_eventos_stats_ocorrido_em_day.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | analytics projection for mission event timeline charts |
 
 ## Not In This Surface

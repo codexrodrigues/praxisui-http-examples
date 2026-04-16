@@ -1,0 +1,22 @@
+### status: runtime-confirmed,recommended
+### public: true
+### authRequired: false
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: false
+### destructive: false
+### requiresTenantHeaders: false
+### llmOperational: true
+### protectedContract: false
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: true
+### knownPublishedFailure: false
+### selectionGuidance: contract-reference
+### note: Demonstrates x-ui.controlType=entityLookup with RESOURCE_ENTITY optionSource metadata.
+### note: Published Render backend confirms procurement purchase-order entity lookup metadata.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+
+GET {{baseUrl}}/schemas/filtered?path=/api/procurement/purchase-orders&operation=post&schemaType=request
+Accept: application/json

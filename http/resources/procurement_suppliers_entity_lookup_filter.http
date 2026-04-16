@@ -1,0 +1,32 @@
+### status: runtime-confirmed,recommended
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: true
+### protectedContract: false
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: true
+### knownPublishedFailure: false
+### responseShapeHint: page<option>
+### selectionGuidance: contract-reference
+### note: Demonstrates RESOURCE_ENTITY search with dependencyFilterMap companyId -> companyId.
+### note: Returned OptionDTO.extra includes code, description, status, selectable, detailHref and entityKey.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@userId = example-user
+@envId = public
+
+POST {{baseUrl}}/api/procurement/suppliers/option-sources/supplier/options/filter?search=ACME&page=0&size=10
+Content-Type: application/json
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}
+X-Env: {{envId}}
+
+< ../../payloads/resources/procurement_supplier_entity_lookup_filter.json

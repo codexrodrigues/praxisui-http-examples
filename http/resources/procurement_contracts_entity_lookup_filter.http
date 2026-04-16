@@ -1,0 +1,32 @@
+### status: runtime-confirmed,recommended
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: true
+### protectedContract: false
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: true
+### knownPublishedFailure: false
+### responseShapeHint: page<option>
+### selectionGuidance: contract-reference
+### note: Demonstrates cascading Entity Lookup with companyId and supplierId dependencies.
+### note: ACTIVE/SIGNED contracts return selectable=true; EXPIRED/CANCELLED remain visible with selectable=false.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@userId = example-user
+@envId = public
+
+POST {{baseUrl}}/api/procurement/contracts/option-sources/contract/options/filter?search=CTR&page=0&size=10
+Content-Type: application/json
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}
+X-Env: {{envId}}
+
+< ../../payloads/resources/procurement_contract_entity_lookup_filter.json

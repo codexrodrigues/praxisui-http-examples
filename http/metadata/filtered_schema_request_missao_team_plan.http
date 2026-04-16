@@ -1,0 +1,23 @@
+### status: runtime-confirmed,illustrative-only
+### public: false
+### authRequired: false
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: false
+### destructive: false
+### requiresTenantHeaders: false
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: true
+### knownPublishedFailure: false
+### selectionGuidance: protected-contract-confirmed
+### note: Published Render backend confirms this partial-form action schema.
+### note: Keep as protected contract because mutation execution remains separate from schema discovery.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@actionPath = /api/operations/missoes/%7Bid%7D/team-plan
+
+GET {{baseUrl}}/schemas/filtered?path={{actionPath}}&operation=patch&schemaType=request
+Accept: application/json

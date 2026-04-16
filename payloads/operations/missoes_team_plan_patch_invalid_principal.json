@@ -1,0 +1,18 @@
+{
+  "participantes": [
+    {
+      "funcionarioId": 2,
+      "funcionarioNome": "Ayla Hayes",
+      "papel": "LIDER",
+      "ordem": 1,
+      "principal": true
+    },
+    {
+      "funcionarioId": 5,
+      "funcionarioNome": "Tomas Hayes",
+      "papel": "TECNICO",
+      "ordem": 2,
+      "principal": true
+    }
+  ]
+}

@@ -1692,6 +1692,43 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "vw-analytics-folha-payroll-profile-options-filter-cascade",
+      "httpFile": "http/views/vw_analytics_folha_pagamento_payroll_profile_options_filter.http",
+      "payloadFiles": [
+        "payloads/views/vw_analytics_folha_pagamento_payroll_profile_options_filter.json"
+      ],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "canonical optionSource.dependsOn cascade with dependencyFilterMap",
+        "Angular runtime payload after mapping UI field universo to backend filter universoContexto"
+      ],
+      "notFor": [
+        "manual dependencyFields-only cascade",
+        "full payroll analytics projection"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/VwAnalyticsFolhaPagamentoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/filter/VwAnalyticsFolhaPagamentoFilterDTO.java",
+        "../praxis-metadata-starter/docs/spec/x-ui-option-source-rfc.md"
+      ],
+      "lastVerified": "2026-04-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "page<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
       "id": "vw-resumo-missoes-options-by-ids",
       "httpFile": "http/views/vw_resumo_missoes_options_by_ids.http",
       "status": [],
@@ -2453,6 +2490,261 @@
       "selectorConfirmed": true,
       "publishedBackendConfirmed": true,
       "knownPublishedFailure": false
+    },
+    {
+      "id": "filtered-schema-request-procurement-purchase-orders-entity-lookup",
+      "httpFile": "http/metadata/filtered_schema_request_procurement_purchase_orders_entity_lookup.http",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "protectedContract": false,
+      "public": true,
+      "authRequired": false,
+      "destructive": false,
+      "canonicalFor": [
+        "request-side filtered schema for procurement purchase orders",
+        "entityLookup controlType discovery",
+        "RESOURCE_ENTITY optionSource metadata"
+      ],
+      "notFor": [
+        "plain async-select option contract"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/OptionSourceDescriptor.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/procurement/dto/ProcurementPurchaseOrderDTO.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/procurement/service/ProcurementSupplierService.java"
+      ],
+      "lastVerified": "2026-04-16",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "filtered-schema",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "procurement-suppliers-entity-lookup-filter",
+      "httpFile": "http/resources/procurement_suppliers_entity_lookup_filter.http",
+      "payloadFiles": [
+        "payloads/resources/procurement_supplier_entity_lookup_filter.json"
+      ],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "protectedContract": false,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "RESOURCE_ENTITY option-source filtering",
+        "supplier entity lookup with company dependency",
+        "governed OptionDTO.extra fields"
+      ],
+      "notFor": [
+        "non-entity async options"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/procurement/service/ProcurementSupplierService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/procurement/dto/filter/ProcurementSupplierFilterDTO.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/service/jpa/JpaOptionSourceQueryExecutor.java"
+      ],
+      "lastVerified": "2026-04-16",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "page<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "procurement-suppliers-entity-lookup-by-ids",
+      "httpFile": "http/resources/procurement_suppliers_entity_lookup_by_ids.http",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "protectedContract": false,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "entity lookup rehydration by ids",
+        "retained invalid value display",
+        "selectable=false disabledReason semantics"
+      ],
+      "notFor": [
+        "new selectable supplier discovery"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/procurement/service/ProcurementSupplierService.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/LookupSelectionPolicy.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/service/jpa/JpaOptionSourceQueryExecutor.java"
+      ],
+      "lastVerified": "2026-04-16",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "procurement-contracts-entity-lookup-filter-cascade",
+      "httpFile": "http/resources/procurement_contracts_entity_lookup_filter.http",
+      "payloadFiles": [
+        "payloads/resources/procurement_contract_entity_lookup_filter.json"
+      ],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "protectedContract": false,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "cascading Entity Lookup with multiple dependencies",
+        "contract lookup selection policy",
+        "dependencyFilterMap for companyId and supplierId"
+      ],
+      "notFor": [
+        "contract mutation"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/procurement/service/ProcurementContractService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/procurement/dto/filter/ProcurementContractFilterDTO.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/EntityLookupDescriptor.java"
+      ],
+      "lastVerified": "2026-04-16",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "page<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "filtered-schema-request-missao-team-plan",
+      "httpFile": "http/metadata/filtered_schema_request_missao_team_plan.http",
+      "status": [
+        "runtime-confirmed",
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "public": false,
+      "authRequired": false,
+      "destructive": false,
+      "canonicalFor": [
+        "request-side filtered schema for mission team editable collection",
+        "x-ui.array contract discovery",
+        "partial form schema for the team-plan surface"
+      ],
+      "notFor": [
+        "mutation payload submission"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/README.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/controller/MissaoController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/dto/PlanejarEquipeMissaoDTO.java"
+      ],
+      "lastVerified": "2026-04-16",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "filtered-schema",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "missoes-team-plan-patch",
+      "httpFile": "http/operations/missoes_team_plan_patch.http",
+      "payloadFiles": [
+        "payloads/operations/missoes_team_plan_patch.json"
+      ],
+      "status": [
+        "runtime-confirmed",
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": true,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "valid editable collection submission payload",
+        "team-plan partial form mutation contract"
+      ],
+      "notFor": [
+        "safe-first LLM execution",
+        "schema discovery"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/controller/MissaoController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/dto/PlanejarEquipeMissaoDTO.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/service/MissaoService.java"
+      ],
+      "lastVerified": "2026-04-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "mutation-result",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": true
+    },
+    {
+      "id": "missoes-team-plan-patch-invalid-principal",
+      "httpFile": "http/operations/missoes_team_plan_patch_invalid_principal.http",
+      "payloadFiles": [
+        "payloads/operations/missoes_team_plan_patch_invalid_principal.json"
+      ],
+      "status": [
+        "runtime-confirmed",
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "negative editable collection validation payload",
+        "array.collectionValidation.exactlyOne behavior"
+      ],
+      "notFor": [
+        "safe-first LLM execution",
+        "successful mutation examples"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/controller/MissaoController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/dto/PlanejarEquipeMissaoDTO.java",
+        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/MissaoPilotIntegrationTest.java"
+      ],
+      "lastVerified": "2026-04-15",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "error-response",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": true
     },
     {
       "id": "missao-eventos-stats-ocorrido-em-day",

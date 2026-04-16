@@ -26,6 +26,7 @@ Operational LLM-facing summary:
 
 Local showcase runbooks:
 - [`HELPDESK_SHOWCASE_RUNBOOK.md`](./HELPDESK_SHOWCASE_RUNBOOK.md): local pilot recipe for the `helpdesk.chamados` semantic showcase across `praxis-helpdesk-service` and `praxis-helpdesk-ui`
+- [`ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md`](./ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md): promotion checklist for the procurement Entity Lookup pilot after the Render backend publishes the quickstart procurement endpoints
 
 Core labels:
 - `runtime-confirmed`
@@ -140,6 +141,7 @@ Notes:
 - Auth smoke uses a curated whitelist of non-destructive examples that currently return success on the Render backend.
 - The current whitelist covers a subset of `resources`, `views`, `options`, and `expansion-detail` examples verified against Render.
 - `smoke:llm-surface` combines the public corpus with the auth-light examples that are operationally useful to LLM-driven discovery against the published backend.
+- Procurement Entity Lookup examples are now confirmed on the published Render backend and belong to the operational LLM surface. Use [`ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md`](./ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md) before changing their `knownPublishedFailure`, `publishedBackendConfirmed`, or `llmOperational` flags again.
 - CI currently runs `npm run verify:manifest`, `npm run smoke:llm-surface`, and `npm run smoke:corpus-promises`. `smoke:public` and `smoke:auth` remain available as local verification commands, but they are not part of the current GitHub Actions workflow.
 - `smoke:bootstrap-minimums` validates the accepted-now minima declared in `llm_bootstrap.json` against the published backend so bootstrap guidance stays grounded in runtime behavior.
 - `llmOperational: true` in [`examples.manifest.json`](./examples.manifest.json) marks the examples that belong to the LLM-facing operational surface on the published backend.
