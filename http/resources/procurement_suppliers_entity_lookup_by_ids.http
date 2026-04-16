@@ -1,0 +1,29 @@
+### status: runtime-confirmed,recommended
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: true
+### protectedContract: false
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: true
+### knownPublishedFailure: false
+### responseShapeHint: array<option>
+### selectionGuidance: contract-reference
+### note: Demonstrates rehydration of an existing supplier id, including invalid retained values.
+### note: A blocked supplier remains displayable but returns extra.selectable=false and disabledReason.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@userId = example-user
+@envId = public
+
+GET {{baseUrl}}/api/procurement/suppliers/option-sources/supplier/options/by-ids?ids=11
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}
+X-Env: {{envId}}

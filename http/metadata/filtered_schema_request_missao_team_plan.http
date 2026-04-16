@@ -11,10 +11,10 @@
 ### runtimeRecordConfirmed: true
 ### selectorConfirmed: true
 ### publishedBackendConfirmed: true
-### knownPublishedFailure: true
-### selectionGuidance: protected-contract-until-render-catches-up
-### note: The Java quickstart owns this partial-form action schema locally, but the current public Render backend still returns 404 for this filtered schema.
-### note: Promote to llmOperational only after /schemas/surfaces lists team-plan and this schema returns participantes.x-ui.array.
+### knownPublishedFailure: false
+### selectionGuidance: protected-contract-confirmed
+### note: Published Render backend confirms this partial-form action schema.
+### note: Keep as protected contract because mutation execution remains separate from schema discovery.
 
 @baseUrl = https://praxis-api-quickstart.onrender.com
 @actionPath = /api/operations/missoes/%7Bid%7D/team-plan
