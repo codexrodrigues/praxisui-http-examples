@@ -1,0 +1,33 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### accessMode: auth-light
+### selectionGuidance: contract-first
+### note: Collection export is opt-in per resource; check GET /api/human-resources/eventos-folha/capabilities before showing the action.
+### note: This contract was validated locally in quickstart and should not be treated as published-backend confirmed until Render carries the matching quickstart build.
+### note: pageIndex and pageNumber are zero-based when both are sent by Praxis Table/List runtimes.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@userId = example-user
+@envId = public
+
+POST {{baseUrl}}/api/human-resources/eventos-folha/export
+Content-Type: application/json
+Accept: text/csv
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}
+X-Env: {{envId}}
+
+< ../../payloads/resources/eventos_folha_export_current_page.json

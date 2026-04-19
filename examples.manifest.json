@@ -570,6 +570,46 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "eventos-folha-export-current-page",
+      "httpFile": "http/resources/eventos_folha_export_current_page.http",
+      "payloadFiles": [
+        "payloads/resources/eventos_folha_export_current_page.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "collection export request contract",
+        "Table and List export capability gate",
+        "zero-based collection export pagination"
+      ],
+      "notFor": [
+        "published backend smoke until the quickstart export build is deployed",
+        "assuming every resource supports export"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/exporting/CollectionExportRequest.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/exporting/CollectionExportResult.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/service/base/BaseResourceQueryService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/EventosFolhaService.java"
+      ],
+      "lastVerified": "2026-04-19",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "binary-export",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
       "id": "funcionarios-filter-cursor",
       "httpFile": "http/resources/funcionarios_filter_cursor.http",
       "payloadFiles": [

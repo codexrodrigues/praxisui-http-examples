@@ -1,0 +1,68 @@
+{
+  "componentType": "list",
+  "componentId": "eventos-folha-operacional",
+  "resourcePath": "/api/human-resources/eventos-folha",
+  "format": "csv",
+  "scope": "currentPage",
+  "selection": {
+    "mode": "multiple",
+    "keyField": "id",
+    "selectedKeys": [],
+    "allMatchingSelected": false,
+    "excludedKeys": []
+  },
+  "fields": [
+    {
+      "key": "id",
+      "label": "ID",
+      "visible": true,
+      "exportable": true,
+      "type": "number",
+      "valuePath": "id"
+    },
+    {
+      "key": "descricao",
+      "label": "Descricao",
+      "visible": true,
+      "exportable": true,
+      "type": "string",
+      "valuePath": "descricao"
+    },
+    {
+      "key": "tipo",
+      "label": "Tipo",
+      "visible": true,
+      "exportable": true,
+      "type": "string",
+      "valuePath": "tipo"
+    },
+    {
+      "key": "valor",
+      "label": "Valor",
+      "visible": true,
+      "exportable": true,
+      "type": "number",
+      "valuePath": "valor"
+    }
+  ],
+  "filters": {
+    "tipo": "BONUS"
+  },
+  "sort": [
+    "id,asc"
+  ],
+  "pagination": {
+    "pageIndex": 0,
+    "pageNumber": 0,
+    "pageSize": 10
+  },
+  "query": {},
+  "includeHeaders": true,
+  "applyFormatting": true,
+  "maxRows": 100,
+  "fileName": "eventos-folha-current-page.csv",
+  "metadata": {
+    "configuredScope": "currentPage",
+    "capabilityGate": "canonicalOperations.export"
+  }
+}
