@@ -26,6 +26,7 @@ const allowedResponseShapeHints = new Set([
   'surfaces-catalog',
   'actions-catalog',
   'capabilities-snapshot',
+  'binary-export',
   'detail-schema',
   'config-record',
   'row',
