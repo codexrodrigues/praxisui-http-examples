@@ -1,0 +1,29 @@
+### status: runtime-confirmed,recommended
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: true
+### protectedContract: false
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: true
+### knownPublishedFailure: false
+### responseShapeHint: array<row>
+### selectionGuidance: operational-read-governed-decision-materialization
+### note: Reads the applied option_source materialization created by smoke:domain-rules-publication.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = domain-rules-publication-smoke-enterprise-proof-http-examples-script-20260426
+@envId = dev
+@allowedOrigin = http://localhost:4301
+@targetArtifactKey = supplier
+
+GET {{baseUrl}}/api/praxis/config/domain-rules/materializations?targetLayer=option_source&targetArtifactType=resource-option-source&targetArtifactKey={{targetArtifactKey}}&status=applied
+Accept: application/json
+Origin: {{allowedOrigin}}
+X-Tenant-ID: {{tenantId}}
+X-Env: {{envId}}

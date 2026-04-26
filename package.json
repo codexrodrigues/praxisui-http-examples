@@ -10,6 +10,7 @@
     "smoke:auth": "node ./smoke/smoke-auth-examples.mjs",
     "smoke:llm-surface": "node ./smoke/smoke-llm-surface.mjs",
     "smoke:corpus-promises": "node ./smoke/smoke-corpus-promises.mjs",
-    "smoke:bootstrap-minimums": "node ./smoke/smoke-bootstrap-minimums.mjs"
+    "smoke:bootstrap-minimums": "node ./smoke/smoke-bootstrap-minimums.mjs",
+    "smoke:domain-rules-publication": "node ./smoke/smoke-domain-rules-publication.mjs"
   }
 }

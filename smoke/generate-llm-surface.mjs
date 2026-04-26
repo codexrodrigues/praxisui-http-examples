@@ -89,6 +89,14 @@ const playbookSteps = [
       'operations-missoes-item-capabilities',
     ],
   },
+  {
+    title: 'Step 11. Inspect Governed Decision Materialization',
+    description: 'Use these read-only examples when the task is to verify that a published semantic decision is governing a runtime lookup without executing domain-rule writes.',
+    ids: [
+      'domain-rules-supplier-eligibility-materializations-confirmed',
+      'procurement-suppliers-governed-domain-rules-lookup',
+    ],
+  },
 ];
 
 function row(example) {
@@ -196,6 +204,7 @@ The following remain outside the LLM operational surface for now:
 - \`config/ui\` as canonical remote layout storage
 - \`ai-context\`
 - \`ai-registry\`
+- \`domain-rules\` writes
 - \`ai/suggestions\`
 - destructive writes
 - unstable published examples

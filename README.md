@@ -6,6 +6,7 @@ This repository is not the canonical source of truth for platform contracts.
 
 Source-of-truth hierarchy:
 - `praxis-metadata-starter`: canonical metadata vocabulary, x-ui schemas, backend-first contract rules
+- `praxis-config-starter`: canonical config, AI support, and governed semantic decision contracts
 - `praxis-api-quickstart`: public operational backend deployed on Render
 - `praxisui-http-examples`: executable requests, curated payloads, and smoke validation
 
@@ -27,6 +28,7 @@ Operational LLM-facing summary:
 Local showcase runbooks:
 - [`HELPDESK_SHOWCASE_RUNBOOK.md`](./HELPDESK_SHOWCASE_RUNBOOK.md): local pilot recipe for the `helpdesk.chamados` semantic showcase across `praxis-helpdesk-service` and `praxis-helpdesk-ui`
 - [`ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md`](./ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md): promotion checklist for the procurement Entity Lookup pilot after the Render backend publishes the quickstart procurement endpoints
+- [`DOMAIN_RULES_PUBLICATION_RUNBOOK.md`](./DOMAIN_RULES_PUBLICATION_RUNBOOK.md): published-runtime proof for governed semantic decisions and supplier eligibility materialization
 
 Core labels:
 - `runtime-confirmed`
@@ -54,11 +56,11 @@ Operational flags:
 
 - [`http/`](./http): executable request examples
 - [`http/resources/`](./http/resources): CRUD resources with filter/options examples across `human-resources`, `operations`, and `assets`
-- [`http/config/`](./http/config): remote UI config, AI context, AI registry, and AI suggestions examples
+- [`http/config/`](./http/config): remote UI config, AI context, AI registry, AI suggestions, and governed domain-rule examples
 - [`http/views/`](./http/views): read-oriented view controllers such as `VwPerfilHeroi`, `VwResumoMissoes`, `VwRankingReputacao`, and `VwIndicadoresIncidentes`
 - [`http/expansion-detail/`](./http/expansion-detail): contextual detail schemas and resource resolver examples
 - [`payloads/`](./payloads): request body fixtures referenced by examples
-- [`payloads/config/`](./payloads/config): payloads for remote config, AI context, registry templates, and suggestions
+- [`payloads/config/`](./payloads/config): payloads for remote config, AI context, registry templates, suggestions, and domain-rule decision lifecycle examples
 - [`payloads/views/`](./payloads/views): filter and locate bodies for aggregated view controllers
 - [`env/`](./env): environment templates
 - [`smoke/`](./smoke): validation and smoke scripts
@@ -114,6 +116,12 @@ Run the operational surface most relevant to LLMs:
 npm run smoke:llm-surface
 ```
 
+Run the governed semantic decision publication proof:
+
+```bash
+npm run smoke:domain-rules-publication
+```
+
 ## Endpoint Prerequisites Matrix
 
 Use this matrix before copying headers from any individual example.
@@ -123,14 +131,17 @@ It is the canonical per-class prerequisite view for building valid requests.
 |---|---|---|---|---|
 | Public metadata | `health`, `openapi-docs`, `schemas-catalog`, filtered schema endpoints | `Accept: application/json` | none | not required |
 | Auth-light resources/views | `resources`, `views`, and operational `expansion-detail` reads on the published backend | `Accept: application/json`; add `Content-Type: application/json` for `POST` bodies | `X-Tenant-ID: demo`, `X-Env: public`, `X-User-ID: example-user` | not required |
+| Governed decision read-only | published `domain-rules` materialization and governed supplier lookup proof | `Accept: application/json`, proof tenant headers; add `Content-Type: application/json` for supplier lookup `POST` | `X-Tenant-ID: domain-rules-publication-smoke-enterprise-proof-http-examples-script-20260426`, `X-Env: dev`, `X-User-ID: example-user` | required for materialization read |
 | Protected `config/ui` | canonical remote UI config contracts | `Accept: application/json`, `X-Tenant-ID: demo`, `Origin: http://localhost:4301` | `X-User-ID: demo-user-1`, `X-Env: local`, `Content-Type: application/json` for `PUT` bodies | required on the published backend |
 | Protected `ai-context` / `ai-registry` | canonical AI config contracts | `Accept: application/json`, `X-Tenant-ID: demo`, `Origin: http://localhost:4301` | `X-Env: local`, `Content-Type: application/json` for `POST` and `PUT` bodies | required on the published backend |
+| Protected `domain-rules` writes | governed semantic decision intake, definition, approval and publication | contract-backed writes, not part of the safe-first published LLM lane | isolated tenant, `X-Env`, `Content-Type: application/json` for mutation/simulation bodies | follow the protected config policy before executing against shared environments |
 
 Notes:
 
 - Public metadata should not include tenant or user headers unless a specific debugging task requires them.
 - Auth-light resources/views are currently accepted by the published backend without tenant-scoping headers on the confirmed LLM surface examples.
 - For auth-light usage, prefer the stable scoped trio `X-Tenant-ID: demo`, `X-Env: public`, and `X-User-ID: example-user` when you want deterministic tenant-aware behavior rather than the loosest accepted request.
+- Governed decision read-only examples use the proof tenant from `smoke:domain-rules-publication`; use them to inspect evidence, not to create new decisions.
 - Protected `config/ui` reads usually need `X-Tenant-ID`, `X-User-ID`, `X-Env`, and an allowed `Origin` for stable behavior, but the committed request may still point to a selector whose concrete record is not confirmed on the published backend.
 - Protected `ai-context` and `ai-registry` reads require an allowed `Origin`; the confirmed published examples currently accept `X-Tenant-ID` as the factual minimum in this repo.
 - If the method is `POST` or `PUT` and the example sends a JSON body, add `Content-Type: application/json` even when the class row lists it under the accepted or recommended lane guidance.
@@ -165,7 +176,8 @@ Notes:
 - Safe-first LLM examples such as `funcionarios-filter-basic`, `veiculos-filter-basic`, `incidentes-filter-basic`, `vw-resumo-missoes-filter-basic`, and `vw-indicadores-incidentes-filter-basic` are auth-light, not session-authenticated. On 2026-04-02, the newly added vehicle, incident, and incident-indicator examples were reconfirmed on the published backend with `Accept: application/json` plus `Content-Type: application/json` on `POST` bodies, while the default recommended stable scoped trio remains `X-Tenant-ID: demo`, `X-Env: public`, and `X-User-ID: example-user`.
 - Confirmed auth-light operational examples also include `cargos-options-by-ids` and `vw-perfil-heroi-by-ids`; these are not session-authenticated and should be read as header-scoped published-backend examples.
 - Some authenticated examples are intentionally excluded when the published environment is unstable for them. At this stage, `vw-resumo-missoes/options/by-ids` returned `500` and is not part of the auth smoke whitelist.
-- `config/ui`, `ai-context`, and other protected config surfaces are intentionally excluded from `smoke:auth` until a stable execution profile is confirmed for the published environment as committed, including any required allowed-origin behavior.
+- `config/ui`, `ai-context`, `domain-rules` writes, and other protected config surfaces are intentionally excluded from `smoke:auth` until a stable execution profile is confirmed for the published environment as committed, including any required allowed-origin behavior.
+- `domain-rules` write examples model the enterprise proof path for governed semantic decisions authored by AI: intake, simulation, approval, publication, and materialization readback. The read-only examples for confirmed materialization and governed supplier lookup belong to the operational LLM surface.
 - `ui_get_table.http` remains a protected contract example for selector shape and lookup semantics, but the specific `componentId` currently checked in this repo is not confirmed on the published backend and should not be treated as runtime-confirmed.
 - For `config/ui`, prefer confirmed protected validation examples such as missing-tenant, invalid-origin, and legacy-component-type before using selector-only examples like `ui_get_table.http`.
 - Read runtime-usability fields together: `selectorConfirmed: true` with `publishedBackendConfirmed: false` means the contract or selector is still useful, but the concrete committed record should not be treated as confirmed on the published backend.

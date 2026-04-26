@@ -51,6 +51,17 @@ for (const id of bootstrap.safeFirst?.authLightOperational?.exampleIds ?? []) {
   }
 }
 
+const governedDecisionMinimumHeaders = bootstrap.safeFirst?.governedDecisionReadOnly?.minimumHeaders ?? {};
+for (const id of bootstrap.safeFirst?.governedDecisionReadOnly?.exampleIds ?? []) {
+  const example = (manifest.examples ?? []).find((entry) => entry.id === id);
+  if (!example?.httpFile) continue;
+  const request = minimalRequestForExample(example, governedDecisionMinimumHeaders);
+  const response = await check(`${id} [governed decision read-only minimum]`, request);
+  if (!response.ok) {
+    errors.push(`Governed decision read-only bootstrap minimum failed for ${id} with status ${response.status}.`);
+  }
+}
+
 for (const group of bootstrap.protectedContract?.groups ?? []) {
   for (const id of group.exampleIds ?? []) {
     const example = (manifest.examples ?? []).find((entry) => entry.id === id);

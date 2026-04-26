@@ -1,0 +1,74 @@
+# Domain Rules Publication Runbook
+
+Operational evidence for the governed semantic decision lifecycle behind the Praxis enterprise proof.
+
+This repository is not the canonical source of truth for `/api/praxis/config/domain-rules/**`; the canonical contract remains in `praxis-config-starter`. This runbook records the public quickstart proof path and the matching protected HTTP examples kept in this corpus.
+
+## Protected Example Bundle
+
+The supplier eligibility bundle is cataloged as `protectedContract`, not `llmOperational`:
+
+- `domain-rules-supplier-eligibility-intake`
+- `domain-rules-supplier-eligibility-simulation`
+- `domain-rules-supplier-eligibility-definition`
+- `domain-rules-supplier-eligibility-approve`
+- `domain-rules-supplier-eligibility-publication`
+- `domain-rules-supplier-eligibility-materializations`
+
+Keep write examples outside the safe-first LLM lane. The read-only evidence lane is available through:
+
+- `domain-rules-supplier-eligibility-materializations-confirmed`
+- `procurement-suppliers-governed-domain-rules-lookup`
+
+`domain-rules-supplier-eligibility-materializations-confirmed` is still a protected config read and therefore includes an allowed `Origin` header. The supplier lookup proof is the auth-light runtime read that shows the materialized decision affecting operational options.
+
+## Published Runtime Proof
+
+Last confirmed: `2026-04-26`
+
+Command:
+
+```bash
+npm run smoke:domain-rules-publication
+```
+
+Observed result:
+
+- simulation returned structured explainability for the governed rule lifecycle;
+- definition and form materialization lifecycle completed for the LGPD guidance baseline;
+- publication created an active `selection_eligibility` rule for `procurement.suppliers`;
+- publication derived an applied `option_source` materialization with:
+  - `targetArtifactType=resource-option-source`
+  - `targetArtifactKey=supplier`
+  - `materializedPayload.kind=lookup_selection_policy`
+- supplier lookup runtime reflected the published policy and returned `selectable=false` for a supplier status covered by the decision.
+
+## Promotion Rule
+
+Do not promote the protected examples to `llmOperational` just because the smoke passed once. Promotion requires:
+
+- committed example ids and payloads that can be run repeatedly, or a documented fixture generator such as `smoke:domain-rules-publication`;
+- an isolated execution profile;
+- `npm run verify:manifest`;
+- `npm run smoke:domain-rules-publication` against the published backend.
+
+## Deterministic Smoke
+
+The corpus includes a deterministic smoke that uses a unique `ruleKey` and isolated tenant per run:
+
+```bash
+npm run smoke:domain-rules-publication
+```
+
+Useful overrides:
+
+```bash
+BASE_URL=https://praxis-api-quickstart.onrender.com \
+SMOKE_RUN_ID=enterprise-proof-http-examples-20260426 \
+TENANT_ID=domain-rules-publication-smoke-enterprise-proof-http-examples-20260426 \
+ENVIRONMENT=dev \
+BLOCKED_STATUSES_JSON='["ACTIVE"]' \
+npm run smoke:domain-rules-publication
+```
+
+The default `BLOCKED_STATUSES_JSON=["ACTIVE"]` is intentional for the public runtime probe: the quickstart seed data currently contains an `ACTIVE` supplier, so blocking that status proves the published materialization is actually governing the lookup response.

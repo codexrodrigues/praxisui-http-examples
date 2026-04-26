@@ -13,6 +13,7 @@ const llmOperationalExamples = (manifest.examples ?? []).filter((example) => exa
 const operationalBootstrapIds = new Set([
   ...(bootstrap.safeFirst?.publicMetadata?.exampleIds ?? []),
   ...(bootstrap.safeFirst?.authLightOperational?.exampleIds ?? []),
+  ...(bootstrap.safeFirst?.governedDecisionReadOnly?.exampleIds ?? []),
 ]);
 
 for (const example of llmOperationalExamples) {

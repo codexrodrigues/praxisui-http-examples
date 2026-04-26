@@ -1,0 +1,48 @@
+{
+  "ruleKey": "procurement.suppliers.rule.selection-eligibility",
+  "ruleType": "selection_eligibility",
+  "contextKey": "procurement",
+  "resourceKey": "procurement.suppliers",
+  "serviceKey": "praxis-api-quickstart",
+  "definition": {
+    "decisionKind": "supplier_selection_eligibility",
+    "canonicalStatement": "Suppliers with blocked statuses must not be selectable in purchase order supplier lookups.",
+    "selectionPolicy": {
+      "blockedWhen": [
+        "status in [INACTIVE, BLOCKED]"
+      ],
+      "disabledReasonWhen": {
+        "status == INACTIVE": "Supplier is inactive.",
+        "status == BLOCKED": "Supplier is blocked."
+      }
+    },
+    "runtimeSurfacesAreDerived": true
+  },
+  "parameters": {
+    "targetLayers": [
+      "option_source",
+      "backend_validation"
+    ],
+    "targetArtifacts": [
+      {
+        "targetArtifactType": "resource-option-source",
+        "targetArtifactKey": "supplier"
+      },
+      {
+        "targetArtifactType": "backend-validator",
+        "targetArtifactKey": "procurement.purchase-orders.supplier-eligibility"
+      }
+    ]
+  },
+  "condition": {
+    "appliesTo": {
+      "resourceKey": "procurement.suppliers",
+      "fieldKey": "supplierId"
+    }
+  },
+  "governance": {
+    "semanticOwner": "procurement",
+    "steward": "procurement-operations",
+    "requiredApprovals": []
+  }
+}

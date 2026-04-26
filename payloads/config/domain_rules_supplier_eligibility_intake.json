@@ -1,0 +1,47 @@
+{
+  "prompt": "Suppliers with blocked statuses must not be selectable in purchase order flows.",
+  "assistantMessage": "This is a shared procurement eligibility decision. Route it through governed domain rules before projecting option-source or backend-validation materializations.",
+  "ruleKey": "procurement.suppliers.rule.selection-eligibility",
+  "ruleType": "selection_eligibility",
+  "contextKey": "procurement",
+  "resourceKey": "procurement.suppliers",
+  "serviceKey": "praxis-api-quickstart",
+  "definition": {
+    "decisionKind": "supplier_selection_eligibility",
+    "canonicalStatement": "Suppliers with blocked statuses must not be selectable in purchase order supplier lookups.",
+    "selectionPolicy": {
+      "blockedWhen": [
+        "status in [INACTIVE, BLOCKED]"
+      ],
+      "disabledReasonWhen": {
+        "status == INACTIVE": "Supplier is inactive.",
+        "status == BLOCKED": "Supplier is blocked."
+      }
+    },
+    "runtimeSurfacesAreDerived": true
+  },
+  "parameters": {
+    "optionSourceKey": "supplier",
+    "targetForms": [
+      "procurement.purchase-orders.create",
+      "procurement.purchase-orders.edit"
+    ]
+  },
+  "condition": {
+    "appliesTo": {
+      "resourceKey": "procurement.suppliers",
+      "operationKeys": [
+        "procurement.purchase-orders.create",
+        "procurement.purchase-orders.update"
+      ]
+    }
+  },
+  "governance": {
+    "semanticOwner": "procurement",
+    "steward": "procurement-operations",
+    "requiredApprovals": [],
+    "auditReason": "Enterprise proof for governed semantic decisions authored by AI."
+  },
+  "createdByType": "llm",
+  "createdBy": "praxis-enterprise-proof-agent"
+}

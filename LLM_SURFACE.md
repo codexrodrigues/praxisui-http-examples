@@ -2,7 +2,7 @@
 
 Operational surface for LLM-driven discovery against the published Praxis backend.
 
-Last reviewed: `2026-04-16`
+Last reviewed: `2026-04-26`
 
 This file is generated from [`examples.manifest.json`](./examples.manifest.json).
 Current validation commands:
@@ -135,6 +135,15 @@ Use surfaces and actions discovery before executing or rendering workflow afford
 | `schemas-actions-operations-missoes` | `http/metadata/schemas_actions_operations_missoes.http` | Public | none | runtime action discovery for mission pages; workflow affordance discovery before capability checks |
 | `operations-missoes-item-capabilities` | `http/operations/missoes_item_capabilities.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | selected mission capability snapshot; runtime action availability checks |
 
+### Step 11. Inspect Governed Decision Materialization
+
+Use these read-only examples when the task is to verify that a published semantic decision is governing a runtime lookup without executing domain-rule writes.
+
+| Id | File | Access (minimum) | Recommended stable | Purpose |
+|---|---|---|---|---|
+| `domain-rules-supplier-eligibility-materializations-confirmed` | `http/config/domain_rules_supplier_eligibility_materializations_confirmed.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | read-only inspection of a published governed semantic decision materialization; confirming option_source materializations are derived artifacts |
+| `procurement-suppliers-governed-domain-rules-lookup` | `http/resources/procurement_suppliers_governed_domain_rules_lookup.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | runtime proof that a published domain-rule option_source materialization governs supplier lookup; read-only enterprise proof for supplier eligibility decisions |
+
 ## Full LLM Operational Set
 
 ### Public Core
@@ -166,6 +175,8 @@ Use surfaces and actions discovery before executing or rendering workflow afford
 | `vw-ranking-reputacao-options-filter` | `http/views/vw_ranking_reputacao_options_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | lookup options from ranking views |
 | `vw-resumo-missoes-filter-basic` | `http/views/vw_resumo_missoes_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | operational mission summary filtering |
 | `vw-resumo-missoes-stats-status` | `http/views/vw_resumo_missoes_stats_status.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | analytics projection for mission status charts |
+| `domain-rules-supplier-eligibility-materializations-confirmed` | `http/config/domain_rules_supplier_eligibility_materializations_confirmed.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | read-only inspection of a published governed semantic decision materialization; confirming option_source materializations are derived artifacts |
+| `procurement-suppliers-governed-domain-rules-lookup` | `http/resources/procurement_suppliers_governed_domain_rules_lookup.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | runtime proof that a published domain-rule option_source materialization governs supplier lookup; read-only enterprise proof for supplier eligibility decisions |
 | `veiculos-filter-basic` | `http/resources/veiculos_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | operational vehicle filtering; assets domain discovery |
 | `incidentes-filter-basic` | `http/resources/incidentes_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | incident investigation filtering; operations domain discovery |
 | `vw-indicadores-incidentes-filter-basic` | `http/views/vw_indicadores_incidentes_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | risk incident analytics filtering |
@@ -183,6 +194,7 @@ The following remain outside the LLM operational surface for now:
 - `config/ui` as canonical remote layout storage
 - `ai-context`
 - `ai-registry`
+- `domain-rules` writes
 - `ai/suggestions`
 - destructive writes
 - unstable published examples

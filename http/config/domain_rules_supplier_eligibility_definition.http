@@ -1,0 +1,27 @@
+### status: none
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: true
+### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### selectionGuidance: protected-contract-semantic-decision-definition
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@envId = public
+
+POST {{baseUrl}}/api/praxis/config/domain-rules/definitions
+Content-Type: application/json
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+X-Env: {{envId}}
+
+< ../../payloads/config/domain_rules_supplier_eligibility_definition.json

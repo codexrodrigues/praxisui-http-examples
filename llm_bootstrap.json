@@ -1,11 +1,12 @@
 {
   "version": 1,
-  "reviewedAt": "2026-04-02",
+  "reviewedAt": "2026-04-26",
   "defaultBaseUrl": "https://praxis-api-quickstart.onrender.com",
   "goal": "Answer what a cold LLM can use now without opening the full manifest.",
   "startHere": [
     "Start with public metadata endpoints.",
     "If business data is needed, move to the auth-light lane and prefer tenant-scoped headers for stable behavior.",
+    "If the task is to inspect governed semantic decision proof, use the read-only governed decision lane.",
     "Use protected config endpoints for contract understanding only.",
     "Avoid destructive, unstable, or reference-only examples by default."
   ],
@@ -52,6 +53,25 @@
         "missao-participantes-stats-papel",
         "missao-eventos-stats-ocorrido-em-day",
         "vw-indicadores-incidentes-filter-basic"
+      ]
+    },
+    "governedDecisionReadOnly": {
+      "description": "Read-only proof that a published governed semantic decision materialization is affecting runtime supplier lookup.",
+      "minimumHeaders": {
+        "Accept": "application/json",
+        "Origin": "http://localhost:4301",
+        "X-Tenant-ID": "domain-rules-publication-smoke-enterprise-proof-http-examples-script-20260426",
+        "X-Env": "dev",
+        "X-User-ID": "example-user"
+      },
+      "minimumHeadersNotes": [
+        "Origin is required by the protected config materialization read.",
+        "The supplier lookup read does not need Origin, but it accepts the same header set.",
+        "Add Content-Type: application/json for POST bodies."
+      ],
+      "exampleIds": [
+        "domain-rules-supplier-eligibility-materializations-confirmed",
+        "procurement-suppliers-governed-domain-rules-lookup"
       ]
     }
   },

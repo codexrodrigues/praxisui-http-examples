@@ -2,7 +2,7 @@
 
 Canonical safe-first entry point for a cold LLM using the published Praxis backend.
 
-Last reviewed: `2026-04-02`
+Last reviewed: `2026-04-26`
 
 Use this file to answer: "what can I use right now?" without opening the full manifest.
 
@@ -11,8 +11,9 @@ Use this file to answer: "what can I use right now?" without opening the full ma
 1. Start with public metadata. No tenant headers, no login, no mutation.
 2. If you need real business data, move to the auth-light lane.
    The loosest accepted request on the published backend is lighter than the stable scoped form; add `X-Tenant-ID`, `X-Env`, and `X-User-ID` when you want deterministic tenant-aware behavior.
-3. Use protected config endpoints only when you need canonical contract understanding for `config/ui`, `ai-context`, or `ai-registry`.
-4. Avoid destructive, unstable, cursor-heavy, or troubleshooting examples by default.
+3. If you need governed semantic decision proof, use the read-only governed decision lane.
+4. Use protected config endpoints only when you need canonical contract understanding for `config/ui`, `ai-context`, or `ai-registry`.
+5. Avoid destructive, unstable, cursor-heavy, or troubleshooting examples by default.
 
 ## Safe-First Endpoints
 
@@ -58,6 +59,26 @@ Default recommended stable scoped headers:
 - `X-Tenant-ID: demo`
 - `X-Env: public`
 - `X-User-ID: example-user`
+
+### Governed decision read-only lane
+
+Use these when the task is to inspect published semantic-decision proof without executing domain-rule writes:
+
+- `domain-rules-supplier-eligibility-materializations-confirmed` -> `http/config/domain_rules_supplier_eligibility_materializations_confirmed.http`
+- `procurement-suppliers-governed-domain-rules-lookup` -> `http/resources/procurement_suppliers_governed_domain_rules_lookup.http`
+
+Accepted now on the published backend:
+- `Accept: application/json`
+- `Origin: http://localhost:4301`
+- `X-Tenant-ID: domain-rules-publication-smoke-enterprise-proof-http-examples-script-20260426`
+- `X-Env: dev`
+- `X-User-ID: example-user`
+- `Content-Type: application/json` for the supplier lookup `POST`
+
+Notes:
+- `Origin` is required by the protected config materialization read.
+- Supplier lookup is an auth-light runtime read, but it uses the same tenant as the confirmed materialization so the governed policy is visible.
+- Do not use this lane to create, approve, or publish new domain rules.
 
 ## Protected Contract Endpoints
 
@@ -134,6 +155,7 @@ It is the shortest reliable path for building valid requests by class.
 |---|---|---|---|
 | Public metadata | `Accept: application/json` | none | not required |
 | Auth-light resources/views | `Accept: application/json`; add `Content-Type: application/json` for `POST` bodies | `X-Tenant-ID: demo`, `X-Env: public`, `X-User-ID: example-user` | not required |
+| Governed decision read-only | `Accept: application/json`, `X-Tenant-ID: domain-rules-publication-smoke-enterprise-proof-http-examples-script-20260426`, `X-Env: dev`; add `Origin: http://localhost:4301` for materialization reads and `Content-Type: application/json` for `POST` bodies | add `X-User-ID: example-user` | required for protected config materialization read |
 | Protected `config/ui` | `Accept: application/json`, `X-Tenant-ID: demo`, `Origin: http://localhost:4301` | `X-User-ID: demo-user-1`, `X-Env: local`, `Content-Type: application/json` for `PUT` bodies | required on the published backend |
 | Protected `ai-context` and `ai-registry` | `Accept: application/json`, `X-Tenant-ID: demo`, `Origin: http://localhost:4301` | `X-Env: local`, `Content-Type: application/json` for `POST` and `PUT` bodies | required on the published backend |
 
@@ -152,6 +174,7 @@ Rules of thumb:
 |---|---|---|
 | Public metadata | Discovery, schemas, health | accepted: `Accept: application/json`; stable: same |
 | Auth-light resources/views/expansion-detail | Safe-first operational reads | accepted: `Accept: application/json` plus `Content-Type: application/json` on `POST`; stable scoped: `X-Tenant-ID: demo`, `X-Env: public`, `X-User-ID: example-user` |
+| Governed decision read-only | Published semantic-decision proof without writes | accepted and stable: `X-Tenant-ID: domain-rules-publication-smoke-enterprise-proof-http-examples-script-20260426`, `X-Env: dev`; add `Origin: http://localhost:4301` for config reads and `Content-Type: application/json` on `POST` |
 | Protected `config/ui` | Canonical UI contract understanding | accepted: `Accept: application/json`, `Origin: http://localhost:4301`, `X-Tenant-ID: demo`; stable: add `X-User-ID: demo-user-1`, `X-Env: local` |
 | Protected `ai-context` and `ai-registry` | Canonical AI contract understanding | accepted: `Accept: application/json`, `Origin: http://localhost:4301`, `X-Tenant-ID: demo`; stable: add `X-Env: local` when environment selection matters |
 
@@ -162,5 +185,6 @@ If asked "what can I use now?", answer in this order:
 1. Public metadata first.
 2. Then auth-light operational reads with the loosest accepted request shape for the published backend.
    Add `X-Tenant-ID`, `X-Env`, and `X-User-ID` when you want the default recommended stable scoped header set.
-3. Treat `config/ui`, `ai-context`, and `ai-registry` as protected contract endpoints.
-4. Avoid destructive or `referenceOnly` examples unless explicitly requested.
+3. Use the governed decision read-only lane when the question is about semantic-decision publication proof.
+4. Treat `config/ui`, `ai-context`, `ai-registry`, and domain-rule writes as protected contract endpoints.
+5. Avoid destructive or `referenceOnly` examples unless explicitly requested.

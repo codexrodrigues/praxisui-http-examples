@@ -1,0 +1,38 @@
+{
+  "ruleKey": "procurement.suppliers.rule.selection-eligibility",
+  "version": 1,
+  "ruleType": "selection_eligibility",
+  "status": "approved",
+  "contextKey": "procurement",
+  "resourceKey": "procurement.suppliers",
+  "serviceKey": "praxis-api-quickstart",
+  "semanticOwner": "procurement-owner",
+  "steward": "procurement-owner",
+  "definition": {
+    "summary": "Governed supplier selection eligibility for inactive or blocked suppliers.",
+    "recommendedAuthoringFlow": "shared_rule_authoring",
+    "runtimeSurfacesAreDerived": true
+  },
+  "parameters": {
+    "optionSourceKey": "supplier",
+    "validationMessageTemplate": "Supplier is not available for purchase flows."
+  },
+  "condition": {
+    "in": [
+      {
+        "var": "status"
+      },
+      [
+        "INACTIVE",
+        "BLOCKED"
+      ]
+    ]
+  },
+  "governance": {
+    "requiredApprovals": [],
+    "auditReason": "Enterprise proof for governed semantic decisions authored by AI."
+  },
+  "createdByType": "llm",
+  "createdBy": "praxis-enterprise-proof-agent",
+  "approvedBy": "procurement-owner"
+}

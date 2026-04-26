@@ -1,0 +1,28 @@
+### status: none
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: true
+### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### selectionGuidance: protected-contract-governance-transition
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@envId = public
+@definitionId = 11111111-1111-1111-1111-111111111111
+
+PATCH {{baseUrl}}/api/praxis/config/domain-rules/definitions/{{definitionId}}/status
+Content-Type: application/json
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+X-Env: {{envId}}
+
+< ../../payloads/config/domain_rules_supplier_eligibility_approve.json

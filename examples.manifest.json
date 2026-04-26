@@ -2282,6 +2282,289 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "domain-rules-supplier-eligibility-intake",
+      "httpFile": "http/config/domain_rules_supplier_eligibility_intake.http",
+      "payloadFiles": [
+        "payloads/config/domain_rules_supplier_eligibility_intake.json"
+      ],
+      "status": [],
+      "protectedContract": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": true,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "governed semantic decision intake",
+        "supplier eligibility decision authoring"
+      ],
+      "notFor": [
+        "component-local patching",
+        "safe-first LLM execution",
+        "runtime option filtering"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/README.md",
+        "../praxis-config-starter/docs/ai/contracts/praxis-ai-api-contract-v1.1.openapi.yaml",
+        "../praxis-config-starter/docs/ai/semantic-decision-governance-public-proof-plan.md"
+      ],
+      "lastVerified": "2026-04-26",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "mutation-result",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "domain-rules-supplier-eligibility-simulation",
+      "httpFile": "http/config/domain_rules_supplier_eligibility_simulation.http",
+      "payloadFiles": [
+        "payloads/config/domain_rules_supplier_eligibility_simulation.json"
+      ],
+      "status": [],
+      "protectedContract": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "backend-owned semantic decision diagnostics",
+        "predicted option-source and backend-validation materializations"
+      ],
+      "notFor": [
+        "component-local preview",
+        "direct publication",
+        "safe-first LLM execution"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/README.md",
+        "../praxis-config-starter/docs/ai/contracts/praxis-ai-api-contract-v1.1.openapi.yaml",
+        "../praxis-config-starter/docs/ai/release-readiness-2026-04-25-domain-rules.md"
+      ],
+      "lastVerified": "2026-04-26",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "mutation-result",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "domain-rules-supplier-eligibility-definition",
+      "httpFile": "http/config/domain_rules_supplier_eligibility_definition.http",
+      "payloadFiles": [
+        "payloads/config/domain_rules_supplier_eligibility_definition.json"
+      ],
+      "status": [],
+      "protectedContract": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": true,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "creating a publication-ready governed semantic decision definition",
+        "stable supplier eligibility definition before publication"
+      ],
+      "notFor": [
+        "safe-first LLM execution",
+        "runtime option filtering",
+        "bypassing simulation when governance requires simulation evidence"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/README.md",
+        "../praxis-config-starter/docs/ai/contracts/praxis-ai-api-contract-v1.1.openapi.yaml",
+        "../praxis-api-quickstart/scripts/verify-domain-rules-runtime.sh"
+      ],
+      "lastVerified": "2026-04-26",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "mutation-result",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "domain-rules-supplier-eligibility-approve",
+      "httpFile": "http/config/domain_rules_supplier_eligibility_approve.http",
+      "payloadFiles": [
+        "payloads/config/domain_rules_supplier_eligibility_approve.json"
+      ],
+      "status": [],
+      "protectedContract": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": true,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "governed definition approval transition",
+        "human approval evidence for semantic decisions"
+      ],
+      "notFor": [
+        "creating a definition",
+        "safe-first LLM execution",
+        "runtime materialization reads"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/README.md",
+        "../praxis-config-starter/docs/ai/contracts/praxis-ai-api-contract-v1.1.openapi.yaml",
+        "../praxis-config-starter/src/test/java/org/praxisplatform/config/controller/DomainRuleControllerTest.java"
+      ],
+      "lastVerified": "2026-04-26",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "mutation-result",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "domain-rules-supplier-eligibility-publication",
+      "httpFile": "http/config/domain_rules_supplier_eligibility_publication.http",
+      "payloadFiles": [
+        "payloads/config/domain_rules_supplier_eligibility_publication.json"
+      ],
+      "status": [],
+      "protectedContract": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": true,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "semantic decision publication",
+        "deriving eligible runtime and backend materializations"
+      ],
+      "notFor": [
+        "component-local writes",
+        "safe-first LLM execution",
+        "read-only demonstrations"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/README.md",
+        "../praxis-config-starter/docs/ai/contracts/praxis-ai-api-contract-v1.1.openapi.yaml",
+        "../praxis-config-starter/docs/ai/release-readiness-2026-04-25-domain-rules.md"
+      ],
+      "lastVerified": "2026-04-26",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "mutation-result",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "domain-rules-supplier-eligibility-materializations",
+      "httpFile": "http/config/domain_rules_supplier_eligibility_materializations.http",
+      "status": [],
+      "protectedContract": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "materialization readback for a governed supplier eligibility decision",
+        "proving runtime option-source projections remain derived artifacts"
+      ],
+      "notFor": [
+        "rule definition creation",
+        "schema discovery",
+        "safe-first LLM execution until published proof is confirmed"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/README.md",
+        "../praxis-config-starter/docs/ai/contracts/praxis-ai-api-contract-v1.1.openapi.yaml",
+        "../praxis-config-starter/docs/ai/semantic-decision-governance-public-proof-plan.md"
+      ],
+      "lastVerified": "2026-04-26",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<row>",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "domain-rules-supplier-eligibility-materializations-confirmed",
+      "httpFile": "http/config/domain_rules_supplier_eligibility_materializations_confirmed.http",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "protectedContract": false,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "read-only inspection of a published governed semantic decision materialization",
+        "confirming option_source materializations are derived artifacts"
+      ],
+      "notFor": [
+        "creating a rule definition",
+        "publishing new domain-rule writes",
+        "safe-first execution without tenant-scoped headers",
+        "direct config reads without an allowed Origin header"
+      ],
+      "sourceOfTruth": [
+        "../praxisui-http-examples/DOMAIN_RULES_PUBLICATION_RUNBOOK.md",
+        "../praxis-config-starter/README.md",
+        "../praxis-config-starter/docs/ai/contracts/praxis-ai-api-contract-v1.1.openapi.yaml"
+      ],
+      "lastVerified": "2026-04-26",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<row>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "procurement-suppliers-governed-domain-rules-lookup",
+      "httpFile": "http/resources/procurement_suppliers_governed_domain_rules_lookup.http",
+      "payloadFiles": [
+        "payloads/resources/procurement_suppliers_governed_domain_rules_lookup.json"
+      ],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "protectedContract": false,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "runtime proof that a published domain-rule option_source materialization governs supplier lookup",
+        "read-only enterprise proof for supplier eligibility decisions"
+      ],
+      "notFor": [
+        "generic supplier lookup without domain-rule context",
+        "creating or publishing domain rules",
+        "business-rule source of truth"
+      ],
+      "sourceOfTruth": [
+        "../praxisui-http-examples/DOMAIN_RULES_PUBLICATION_RUNBOOK.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/DomainRuleOptionSourcePolicyResolver.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/procurement/service/ProcurementSupplierService.java"
+      ],
+      "lastVerified": "2026-04-26",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "page<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
       "id": "ai-clarification-filters-3step",
       "httpFile": "http/ai/clarification_case_a_three_step_filters.http",
       "payloadFiles": [

@@ -1,0 +1,11 @@
+{
+  "ruleDefinitionId": "11111111-1111-1111-1111-111111111111",
+  "materializationIds": [],
+  "applyEligibleMaterializations": true,
+  "publishedByType": "human",
+  "publishedBy": "procurement-owner",
+  "publicationNotes": {
+    "releaseKey": "enterprise-proof-2026-04",
+    "proofNarrative": "Publish one governed supplier eligibility decision and let runtime/backend projections remain derived."
+  }
+}

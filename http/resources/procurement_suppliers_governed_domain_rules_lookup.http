@@ -1,0 +1,31 @@
+### status: runtime-confirmed,recommended
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: true
+### protectedContract: false
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: true
+### knownPublishedFailure: false
+### responseShapeHint: page<option>
+### selectionGuidance: operational-read-governed-option-source
+### note: Uses the tenant from smoke:domain-rules-publication where ACTIVE suppliers are intentionally blocked by the published decision.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = domain-rules-publication-smoke-enterprise-proof-http-examples-script-20260426
+@userId = example-user
+@envId = dev
+
+POST {{baseUrl}}/api/procurement/suppliers/option-sources/supplier/options/filter?page=0&size=25
+Content-Type: application/json
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}
+X-Env: {{envId}}
+
+< ../../payloads/resources/procurement_suppliers_governed_domain_rules_lookup.json

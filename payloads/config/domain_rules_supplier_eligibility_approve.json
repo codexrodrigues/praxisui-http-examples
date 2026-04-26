@@ -1,0 +1,12 @@
+{
+  "status": "approved",
+  "decidedByType": "human",
+  "decidedBy": "procurement-owner",
+  "validationResult": {
+    "approvalReason": "Rule is ready to publish after simulation confirms option-source and backend-validation materializations.",
+    "reviewedArtifacts": [
+      "supplier",
+      "procurement.purchase-orders.supplier-eligibility"
+    ]
+  }
+}
