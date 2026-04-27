@@ -2489,6 +2489,39 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "domain-rules-supplier-eligibility-timeline",
+      "httpFile": "http/config/domain_rules_supplier_eligibility_timeline.http",
+      "status": [],
+      "llmOperational": false,
+      "protectedContract": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "safe governed timeline read for a semantic decision definition",
+        "observability of definition and materialization lifecycle events"
+      ],
+      "notFor": [
+        "creating a rule definition",
+        "publishing new domain-rule writes",
+        "safe-first execution before the published backend confirms the timeline endpoint"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/docs/ai/contracts/praxis-ai-api-contract-v1.1.openapi.yaml",
+        "../praxis-config-starter/docs/ai/semantic-decision-governance-public-proof-plan.md",
+        "../praxisui-http-examples/DOMAIN_RULES_PUBLICATION_RUNBOOK.md"
+      ],
+      "lastVerified": "2026-04-27",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "config-record",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": true
+    },
+    {
       "id": "domain-rules-supplier-eligibility-materializations-confirmed",
       "httpFile": "http/config/domain_rules_supplier_eligibility_materializations_confirmed.http",
       "status": [

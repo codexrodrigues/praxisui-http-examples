@@ -14,6 +14,7 @@ The supplier eligibility bundle is cataloged as `protectedContract`, not `llmOpe
 - `domain-rules-supplier-eligibility-approve`
 - `domain-rules-supplier-eligibility-publication`
 - `domain-rules-supplier-eligibility-materializations`
+- `domain-rules-supplier-eligibility-timeline`
 
 Keep write examples outside the safe-first LLM lane. The read-only evidence lane is available through:
 
@@ -21,6 +22,8 @@ Keep write examples outside the safe-first LLM lane. The read-only evidence lane
 - `procurement-suppliers-governed-domain-rules-lookup`
 
 `domain-rules-supplier-eligibility-materializations-confirmed` is still a protected config read and therefore includes an allowed `Origin` header. The supplier lookup proof is the auth-light runtime read that shows the materialized decision affecting operational options.
+
+`domain-rules-supplier-eligibility-timeline` is intentionally cataloged as protected contract evidence until the published quickstart includes `GET /api/praxis/config/domain-rules/definitions/{definitionId}/timeline`. A local starter/quickstart cut has proven the endpoint, but the current published backend can still return `404`; do not promote it to `llmOperational` until the published proof is confirmed.
 
 ## Published Runtime Proof
 
