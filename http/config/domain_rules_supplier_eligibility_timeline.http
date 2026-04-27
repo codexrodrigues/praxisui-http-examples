@@ -1,0 +1,29 @@
+### status: none
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: true
+### responseShapeHint: config-record
+### selectionGuidance: protected-contract-governed-timeline-read
+### note: Contract example for the governed timeline endpoint. Current published backend may return 404 until the timeline starter/quickstart cut is deployed.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = domain-rules-publication-smoke-enterprise-proof-http-examples-script-20260426
+@envId = dev
+@allowedOrigin = http://localhost:4301
+@definitionId = 7633f383-ac81-4e63-919d-c80708ed4ec1
+
+GET {{baseUrl}}/api/praxis/config/domain-rules/definitions/{{definitionId}}/timeline
+Accept: application/json
+Origin: {{allowedOrigin}}
+X-Tenant-ID: {{tenantId}}
+X-Env: {{envId}}
