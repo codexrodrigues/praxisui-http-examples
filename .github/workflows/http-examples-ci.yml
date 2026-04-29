@@ -36,9 +36,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    defaults:
-      run:
-        working-directory: praxisui-http-examples
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -56,9 +53,6 @@ jobs:
     needs: catalog-integrity
     permissions:
       contents: read
-    defaults:
-      run:
-        working-directory: praxisui-http-examples
     steps:
       - name: Checkout
         uses: actions/checkout@v5

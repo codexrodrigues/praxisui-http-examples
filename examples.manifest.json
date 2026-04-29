@@ -2505,21 +2505,21 @@
       "notFor": [
         "creating a rule definition",
         "publishing new domain-rule writes",
-        "safe-first execution before the published backend confirms the timeline endpoint"
+        "safe-first write execution"
       ],
       "sourceOfTruth": [
         "../praxis-config-starter/docs/ai/contracts/praxis-ai-api-contract-v1.1.openapi.yaml",
         "../praxis-config-starter/docs/ai/semantic-decision-governance-public-proof-plan.md",
         "../praxisui-http-examples/DOMAIN_RULES_PUBLICATION_RUNBOOK.md"
       ],
-      "lastVerified": "2026-04-27",
+      "lastVerified": "2026-04-29",
       "sessionAuthRequired": false,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "config-record",
-      "runtimeRecordConfirmed": false,
+      "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": false,
-      "knownPublishedFailure": true
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "domain-rules-supplier-eligibility-materializations-confirmed",
