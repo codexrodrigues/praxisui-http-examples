@@ -89,3 +89,4 @@ if (errors.length) {
 }
 
 console.log(`Corpus promises OK: ${llmOperationalExamples.length} llmOperational examples, ${operationalBootstrapIds.size} operational bootstrap ids.`);
+process.exit(0);
