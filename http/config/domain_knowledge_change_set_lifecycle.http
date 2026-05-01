@@ -1,0 +1,114 @@
+### status: none
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: true
+### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: false
+### referenceOnly: true
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### responseShapeHint: config-record
+### selectionGuidance: protected-contract-domain-knowledge-change-set-lifecycle
+### note: Reference-only protected lifecycle example. Do not run against shared environments without an intentional tenant-scoped fixture.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = desenv
+@envId = local
+@allowedOrigin = https://praxisui-dev.web.app
+@changeSetId = replace-with-created-change-set-id
+@revertChangeSetId = replace-with-created-revert-change-set-id
+
+### Create governed add_evidence change set
+POST {{baseUrl}}/api/praxis/config/domain-knowledge/change-sets
+Content-Type: application/json
+Accept: application/json
+Origin: {{allowedOrigin}}
+X-Tenant-ID: {{tenantId}}
+X-Env: {{envId}}
+
+< ../../payloads/config/domain_knowledge_change_set_add_evidence.json
+
+### Validate add_evidence change set
+POST {{baseUrl}}/api/praxis/config/domain-knowledge/change-sets/{{changeSetId}}/validate
+Accept: application/json
+Origin: {{allowedOrigin}}
+X-Tenant-ID: {{tenantId}}
+X-Env: {{envId}}
+
+### Approve add_evidence change set
+PATCH {{baseUrl}}/api/praxis/config/domain-knowledge/change-sets/{{changeSetId}}/status
+Content-Type: application/json
+Accept: application/json
+Origin: {{allowedOrigin}}
+X-Tenant-ID: {{tenantId}}
+X-Env: {{envId}}
+
+{
+  "status": "approved",
+  "reviewerId": "praxis-http-examples-reviewer",
+  "reason": "Protected contract example approved for lifecycle demonstration."
+}
+
+### Apply add_evidence change set
+POST {{baseUrl}}/api/praxis/config/domain-knowledge/change-sets/{{changeSetId}}/apply
+Accept: application/json
+Origin: {{allowedOrigin}}
+X-Tenant-ID: {{tenantId}}
+X-Env: {{envId}}
+
+### Read back add_evidence change set
+GET {{baseUrl}}/api/praxis/config/domain-knowledge/change-sets/{{changeSetId}}
+Accept: application/json
+Origin: {{allowedOrigin}}
+X-Tenant-ID: {{tenantId}}
+X-Env: {{envId}}
+
+### Create governed revert_evidence change set
+POST {{baseUrl}}/api/praxis/config/domain-knowledge/change-sets
+Content-Type: application/json
+Accept: application/json
+Origin: {{allowedOrigin}}
+X-Tenant-ID: {{tenantId}}
+X-Env: {{envId}}
+
+< ../../payloads/config/domain_knowledge_change_set_revert_evidence.json
+
+### Validate revert_evidence change set
+POST {{baseUrl}}/api/praxis/config/domain-knowledge/change-sets/{{revertChangeSetId}}/validate
+Accept: application/json
+Origin: {{allowedOrigin}}
+X-Tenant-ID: {{tenantId}}
+X-Env: {{envId}}
+
+### Approve revert_evidence change set
+PATCH {{baseUrl}}/api/praxis/config/domain-knowledge/change-sets/{{revertChangeSetId}}/status
+Content-Type: application/json
+Accept: application/json
+Origin: {{allowedOrigin}}
+X-Tenant-ID: {{tenantId}}
+X-Env: {{envId}}
+
+{
+  "status": "approved",
+  "reviewerId": "praxis-http-examples-reviewer",
+  "reason": "Protected contract example approved for evidence lifecycle revert."
+}
+
+### Apply revert_evidence change set
+POST {{baseUrl}}/api/praxis/config/domain-knowledge/change-sets/{{revertChangeSetId}}/apply
+Accept: application/json
+Origin: {{allowedOrigin}}
+X-Tenant-ID: {{tenantId}}
+X-Env: {{envId}}
+
+### Inspect safe revert timeline
+GET {{baseUrl}}/api/praxis/config/domain-knowledge/change-sets/{{revertChangeSetId}}/timeline
+Accept: application/json
+Origin: {{allowedOrigin}}
+X-Tenant-ID: {{tenantId}}
+X-Env: {{envId}}

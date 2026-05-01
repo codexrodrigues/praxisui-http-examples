@@ -1,0 +1,37 @@
+{
+  "changeSetKey": "project-knowledge:human-resources.funcionarios:identity-card:http-example:v1",
+  "status": "proposed",
+  "authorType": "llm",
+  "authorId": "praxis-http-examples",
+  "intent": "Record reviewed Project Knowledge guidance as governed Domain Knowledge evidence.",
+  "reason": "Protected contract example for the governed add_evidence lifecycle.",
+  "patch": [
+    {
+      "operationId": "op-add-funcionarios-identity-card-guidance",
+      "operationType": "add_evidence",
+      "target": {
+        "tenantId": "desenv",
+        "environment": "local",
+        "subjectType": "concept",
+        "conceptKey": "page-builder.e2e.project-knowledge.identity-card"
+      },
+      "reason": "Connect reviewed Project Knowledge guidance to the canonical concept.",
+      "evidenceRefs": [
+        "praxis-http-examples:domain-knowledge-change-set:add-evidence"
+      ],
+      "confidence": 0.93,
+      "payload": {
+        "evidenceKey": "praxis-http-examples:project-knowledge:identity-card:v1",
+        "evidenceType": "llm_proposal",
+        "visibility": "summarize_only",
+        "aiVisibility": "allow",
+        "sourceKind": "project_preference",
+        "summary": "Prefer compact employee identity cards in Page Builder examples.",
+        "source": {
+          "kind": "http-example",
+          "reference": "domain_knowledge_change_set_lifecycle.http"
+        }
+      }
+    }
+  ]
+}

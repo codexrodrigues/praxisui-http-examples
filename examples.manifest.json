@@ -2522,6 +2522,47 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "domain-knowledge-change-set-lifecycle",
+      "httpFile": "http/config/domain_knowledge_change_set_lifecycle.http",
+      "payloadFiles": [
+        "payloads/config/domain_knowledge_change_set_add_evidence.json",
+        "payloads/config/domain_knowledge_change_set_revert_evidence.json"
+      ],
+      "status": [],
+      "llmOperational": false,
+      "protectedContract": false,
+      "public": false,
+      "authRequired": true,
+      "destructive": true,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "protected governed lifecycle for Domain Knowledge change sets",
+        "create, validate, approve, apply, readback and safe timeline proof",
+        "governed add_evidence and revert_evidence operation examples"
+      ],
+      "notFor": [
+        "safe-first LLM operational execution",
+        "unauthenticated examples",
+        "running against shared environments without an intentional fixture",
+        "destructive delete or replace operation types"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/docs/ai/contracts/praxis-ai-api-contract-v1.1.openapi.yaml",
+        "../praxis-config-starter/docs/ai/release-readiness-2026-05-01-domain-knowledge-revert.md",
+        "../praxis-api-quickstart/docs/LLM-DOMAIN-AUTHORING-GUIDE.md",
+        "../praxisui-http-examples/DOMAIN_KNOWLEDGE_TIMELINE_RUNBOOK.md"
+      ],
+      "lastVerified": "2026-05-01",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "config-record",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "referenceOnly": true
+    },
+    {
       "id": "domain-knowledge-change-set-timeline",
       "httpFile": "http/config/domain_knowledge_change_set_timeline.http",
       "status": [],

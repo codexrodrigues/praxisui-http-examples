@@ -16,6 +16,25 @@ GET /api/praxis/config/domain-knowledge/change-sets/{changeSetId}/timeline
 
 Keep this endpoint outside the safe-first LLM lane because it is a tenant-scoped protected config read. LLM agents may use the manifest entry as contract evidence, but should not treat it as an unauthenticated operational action.
 
+`domain-knowledge-change-set-lifecycle` is cataloged as `referenceOnly` and not
+`llmOperational`.
+
+It documents the protected lifecycle now covered by the public contract:
+
+```http
+POST  /api/praxis/config/domain-knowledge/change-sets
+POST  /api/praxis/config/domain-knowledge/change-sets/{changeSetId}/validate
+PATCH /api/praxis/config/domain-knowledge/change-sets/{changeSetId}/status
+POST  /api/praxis/config/domain-knowledge/change-sets/{changeSetId}/apply
+GET   /api/praxis/config/domain-knowledge/change-sets/{changeSetId}
+GET   /api/praxis/config/domain-knowledge/change-sets/{changeSetId}/timeline
+```
+
+The example covers both `add_evidence` and `revert_evidence`. It is
+reference-only because it mutates tenant-scoped config state and requires an
+intentional fixture. Use the quickstart managed smoke for executable proof
+instead of running the corpus request directly against a shared environment.
+
 ## rc.37 Timeline Promotion
 
 The coordinated starter release published the Domain Knowledge change-set timeline as `praxis-config-starter:0.1.0-rc.37`.
@@ -47,6 +66,21 @@ scripts/verify-domain-knowledge-change-set-runtime.sh
 ```
 
 The proof confirmed creation, validation, approval, application, readback and safe timeline inspection for `human-resources.funcionarios.field.cpf`.
+
+## Local Revert Baseline
+
+On 2026-05-01, the source-level beta checkpoint also proved
+`revert_evidence` locally:
+
+- quickstart HTTP proof created `add_evidence`, confirmed Project Knowledge
+  retrieval, applied `revert_evidence` and confirmed retrieval absence;
+- Page Builder browser proof confirmed the same lifecycle through
+  `projectKnowledgeAudit`;
+- `praxis-config-starter/docs/ai/contracts/praxis-ai-api-contract-v1.1.openapi.yaml`
+  now lists the full protected change-set lifecycle.
+
+This did not publish a new Maven/npm artifact and did not promote the write
+endpoints to `llmOperational`.
 
 ## Safety Rule
 
