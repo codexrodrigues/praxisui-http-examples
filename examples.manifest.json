@@ -2522,6 +2522,40 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "domain-knowledge-change-set-timeline",
+      "httpFile": "http/config/domain_knowledge_change_set_timeline.http",
+      "status": [],
+      "llmOperational": false,
+      "protectedContract": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "safe governed timeline read for a Domain Knowledge change set",
+        "observability of creation, validation, approval and application lifecycle events"
+      ],
+      "notFor": [
+        "creating Domain Knowledge change sets",
+        "applying knowledge writes",
+        "safe-first write execution"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/docs/ai/contracts/praxis-ai-api-contract-v1.1.openapi.yaml",
+        "../praxis-config-starter/docs/ai/release-decision-2026-05-01-domain-knowledge-change-set-timeline.md",
+        "../praxis-api-quickstart/docs/DOMAIN-KNOWLEDGE-CHANGE-SET-TIMELINE-RC37-ROLLOUT.md",
+        "../praxisui-http-examples/DOMAIN_KNOWLEDGE_TIMELINE_RUNBOOK.md"
+      ],
+      "lastVerified": "2026-05-01",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "config-record",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
       "id": "domain-rules-supplier-eligibility-materializations-confirmed",
       "httpFile": "http/config/domain_rules_supplier_eligibility_materializations_confirmed.http",
       "status": [

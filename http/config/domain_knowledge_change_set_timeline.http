@@ -1,0 +1,29 @@
+### status: none
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: true
+### knownPublishedFailure: false
+### responseShapeHint: config-record
+### selectionGuidance: protected-contract-domain-knowledge-change-set-timeline-read
+### note: Contract example for the safe Domain Knowledge change-set timeline endpoint. Published backend confirmed on 2026-05-01 after praxis-config-starter:0.1.0-rc.37.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = desenv
+@envId = local
+@allowedOrigin = https://praxisui-dev.web.app
+@changeSetId = 01300db8-119c-4925-9d5f-1049c31cf4cc
+
+GET {{baseUrl}}/api/praxis/config/domain-knowledge/change-sets/{{changeSetId}}/timeline
+Accept: application/json
+Origin: {{allowedOrigin}}
+X-Tenant-ID: {{tenantId}}
+X-Env: {{envId}}

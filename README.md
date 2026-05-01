@@ -29,6 +29,7 @@ Local showcase runbooks:
 - [`HELPDESK_SHOWCASE_RUNBOOK.md`](./HELPDESK_SHOWCASE_RUNBOOK.md): local pilot recipe for the `helpdesk.chamados` semantic showcase across `praxis-helpdesk-service` and `praxis-helpdesk-ui`
 - [`ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md`](./ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md): promotion checklist for the procurement Entity Lookup pilot after the Render backend publishes the quickstart procurement endpoints
 - [`DOMAIN_RULES_PUBLICATION_RUNBOOK.md`](./DOMAIN_RULES_PUBLICATION_RUNBOOK.md): published-runtime proof for governed semantic decisions and supplier eligibility materialization
+- [`DOMAIN_KNOWLEDGE_TIMELINE_RUNBOOK.md`](./DOMAIN_KNOWLEDGE_TIMELINE_RUNBOOK.md): protected timeline proof for AI-authored Domain Knowledge change sets
 
 Core labels:
 - `runtime-confirmed`
