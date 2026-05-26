@@ -1493,6 +1493,42 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "vw-resumo-missoes-stats-prioridade",
+      "httpFile": "http/views/vw_resumo_missoes_stats_prioridade.http",
+      "payloadFiles": [
+        "payloads/views/vw_resumo_missoes_stats_prioridade.json"
+      ],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "runtime value-discovery evidence for mission priority categorical semantics"
+      ],
+      "notFor": [
+        "canonical semantic decision authoring",
+        "row-level mission retrieval",
+        "mutation flows"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/dto/VwResumoMissoeDTO.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/service/VwResumoMissoeService.java"
+      ],
+      "lastVerified": "2026-05-25",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "stats-group-by",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
       "id": "vw-resumo-missoes-filter-date-between",
       "httpFile": "http/views/vw_resumo_missoes_filter_date_between.http",
       "payloadFiles": [
@@ -2704,9 +2740,9 @@
       "sessionAuthRequired": false,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "ai-clarification-response",
-      "runtimeRecordConfirmed": false,
-      "selectorConfirmed": false,
-      "publishedBackendConfirmed": false,
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
       "knownPublishedFailure": false
     },
     {

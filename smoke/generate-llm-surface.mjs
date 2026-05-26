@@ -77,7 +77,7 @@ const playbookSteps = [
   {
     title: 'Step 9. Add Analytics Surfaces',
     description: 'Use stats examples when a runtime page or chart needs backend-owned aggregate projections.',
-    ids: ['vw-resumo-missoes-stats-status'],
+    ids: ['vw-resumo-missoes-stats-status', 'vw-resumo-missoes-stats-prioridade'],
   },
   {
     title: 'Step 10. Inspect Surfaces, Actions And Capabilities',

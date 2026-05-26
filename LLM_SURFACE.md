@@ -2,7 +2,7 @@
 
 Operational surface for LLM-driven discovery against the published Praxis backend.
 
-Last reviewed: `2026-05-19`
+Last reviewed: `2026-05-26`
 
 This file is generated from [`examples.manifest.json`](./examples.manifest.json).
 Current validation commands:
@@ -123,6 +123,7 @@ Use stats examples when a runtime page or chart needs backend-owned aggregate pr
 | Id | File | Access (minimum) | Recommended stable | Purpose |
 |---|---|---|---|---|
 | `vw-resumo-missoes-stats-status` | `http/views/vw_resumo_missoes_stats_status.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | analytics projection for mission status charts |
+| `vw-resumo-missoes-stats-prioridade` | `http/views/vw_resumo_missoes_stats_prioridade.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | runtime value-discovery evidence for mission priority categorical semantics |
 
 ### Step 10. Inspect Surfaces, Actions And Capabilities
 
@@ -175,6 +176,7 @@ Use these read-only examples when the task is to verify that a published semanti
 | `vw-ranking-reputacao-options-filter` | `http/views/vw_ranking_reputacao_options_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | lookup options from ranking views |
 | `vw-resumo-missoes-filter-basic` | `http/views/vw_resumo_missoes_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | operational mission summary filtering |
 | `vw-resumo-missoes-stats-status` | `http/views/vw_resumo_missoes_stats_status.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | analytics projection for mission status charts |
+| `vw-resumo-missoes-stats-prioridade` | `http/views/vw_resumo_missoes_stats_prioridade.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | runtime value-discovery evidence for mission priority categorical semantics |
 | `domain-rules-supplier-eligibility-materializations-confirmed` | `http/config/domain_rules_supplier_eligibility_materializations_confirmed.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | read-only inspection of a published governed semantic decision materialization; confirming option_source materializations are derived artifacts |
 | `procurement-suppliers-governed-domain-rules-lookup` | `http/resources/procurement_suppliers_governed_domain_rules_lookup.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | runtime proof that a published domain-rule option_source materialization governs supplier lookup; read-only enterprise proof for supplier eligibility decisions |
 | `veiculos-filter-basic` | `http/resources/veiculos_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | operational vehicle filtering; assets domain discovery |
