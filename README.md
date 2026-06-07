@@ -24,6 +24,7 @@ Operational LLM-facing summary:
 - [`llm_bootstrap.json`](./llm_bootstrap.json): machine-readable bootstrap with safe-first lanes and minimum headers
 - [`LLM_COMMON_QUESTIONS.md`](./LLM_COMMON_QUESTIONS.md): short guide for routing common questions to the right evidence
 - [`LLM_SURFACE.md`](./LLM_SURFACE.md): human-readable summary of the examples marked `llmOperational: true`
+- [`OPENAPI_COVERAGE.md`](./OPENAPI_COVERAGE.md): generated audit of published OpenAPI bases covered by the HTTP corpus
 
 Local showcase runbooks:
 - [`HELPDESK_SHOWCASE_RUNBOOK.md`](./HELPDESK_SHOWCASE_RUNBOOK.md): local pilot recipe for the `helpdesk.chamados` semantic showcase across `praxis-helpdesk-service` and `praxis-helpdesk-ui`
@@ -97,6 +98,12 @@ Validate the catalog:
 
 ```bash
 npm run verify:manifest
+```
+
+Regenerate the published OpenAPI coverage report:
+
+```bash
+npm run generate:openapi-coverage
 ```
 
 Run public smoke examples:

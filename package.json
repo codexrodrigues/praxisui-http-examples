@@ -5,6 +5,7 @@
   "description": "Executable HTTP examples for the public Praxis platform surfaces",
   "scripts": {
     "generate:llm-surface": "node ./smoke/generate-llm-surface.mjs",
+    "generate:openapi-coverage": "node ./smoke/generate-openapi-coverage.mjs",
     "verify:manifest": "node ./smoke/verify-manifest.mjs",
     "smoke:public": "node ./smoke/smoke-public-examples.mjs",
     "smoke:auth": "node ./smoke/smoke-auth-examples.mjs",

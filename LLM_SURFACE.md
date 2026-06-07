@@ -124,8 +124,20 @@ Use stats examples when a runtime page or chart needs backend-owned aggregate pr
 |---|---|---|---|---|
 | `vw-resumo-missoes-stats-status` | `http/views/vw_resumo_missoes_stats_status.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | analytics projection for mission status charts |
 | `vw-resumo-missoes-stats-prioridade` | `http/views/vw_resumo_missoes_stats_prioridade.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | runtime value-discovery evidence for mission priority categorical semantics |
+| `vw-analytics-folha-pagamento-stats-payroll-profile` | `http/views/vw_analytics_folha_pagamento_stats_payroll_profile.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | payroll analytics dashboard stats; payroll profile chart composition |
 
-### Step 10. Inspect Surfaces, Actions And Capabilities
+### Step 10. Inspect Dashboard Alert Rows
+
+Use these filters when a dashboard needs concrete operational outliers for assets, compliance, risk, and custody.
+
+| Id | File | Access (minimum) | Recommended stable | Purpose |
+|---|---|---|---|---|
+| `equipamentos-filter-status-manutencao` | `http/resources/equipamentos_filter_status_manutencao.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | equipment inventory maintenance alerts; asset dashboard status filters |
+| `equipamento-alocacoes-filter-status-danificado` | `http/resources/equipamento_alocacoes_filter_status_danificado.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | equipment custody exception filters; damaged allocation dashboard rows |
+| `licencas-operacao-filter-expiring` | `http/operations/licencas_operacao_filter_expiring.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | operational license compliance filters; expired and near-expiry license dashboards |
+| `ameacas-filter-confronto` | `http/resources/ameacas_filter_confronto.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | risk intelligence threat filters; active confrontation dashboard rows |
+
+### Step 11. Inspect Surfaces, Actions And Capabilities
 
 Use surfaces and actions discovery before executing or rendering workflow affordances, then check item capabilities for the selected row.
 
@@ -136,7 +148,7 @@ Use surfaces and actions discovery before executing or rendering workflow afford
 | `schemas-actions-operations-missoes` | `http/metadata/schemas_actions_operations_missoes.http` | Public | none | runtime action discovery for mission pages; workflow affordance discovery before capability checks |
 | `operations-missoes-item-capabilities` | `http/operations/missoes_item_capabilities.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | selected mission capability snapshot; runtime action availability checks |
 
-### Step 11. Inspect Governed Decision Materialization
+### Step 12. Inspect Governed Decision Materialization
 
 Use these read-only examples when the task is to verify that a published semantic decision is governing a runtime lookup without executing domain-rule writes.
 
@@ -188,6 +200,11 @@ Use these read-only examples when the task is to verify that a published semanti
 | `procurement-suppliers-entity-lookup-by-ids` | `http/resources/procurement_suppliers_entity_lookup_by_ids.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | entity lookup rehydration by ids; retained invalid value display; selectable=false disabledReason semantics |
 | `procurement-contracts-entity-lookup-filter-cascade` | `http/resources/procurement_contracts_entity_lookup_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | cascading Entity Lookup with multiple dependencies; contract lookup selection policy; dependencyFilterMap for companyId and supplierId |
 | `missao-eventos-stats-ocorrido-em-day` | `http/operations/missao_eventos_stats_ocorrido_em_day.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | analytics projection for mission event timeline charts |
+| `equipamentos-filter-status-manutencao` | `http/resources/equipamentos_filter_status_manutencao.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | equipment inventory maintenance alerts; asset dashboard status filters |
+| `equipamento-alocacoes-filter-status-danificado` | `http/resources/equipamento_alocacoes_filter_status_danificado.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | equipment custody exception filters; damaged allocation dashboard rows |
+| `licencas-operacao-filter-expiring` | `http/operations/licencas_operacao_filter_expiring.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | operational license compliance filters; expired and near-expiry license dashboards |
+| `ameacas-filter-confronto` | `http/resources/ameacas_filter_confronto.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | risk intelligence threat filters; active confrontation dashboard rows |
+| `vw-analytics-folha-pagamento-stats-payroll-profile` | `http/views/vw_analytics_folha_pagamento_stats_payroll_profile.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | payroll analytics dashboard stats; payroll profile chart composition |
 
 ## Not In This Surface
 

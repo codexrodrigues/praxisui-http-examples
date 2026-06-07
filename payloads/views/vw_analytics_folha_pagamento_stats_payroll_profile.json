@@ -1,0 +1,15 @@
+{
+  "filter": {
+    "anoBetween": [
+      2026,
+      2026
+    ]
+  },
+  "field": "payrollProfile",
+  "metric": {
+    "operation": "COUNT",
+    "alias": "payrollRows"
+  },
+  "limit": 10,
+  "orderBy": "VALUE_DESC"
+}

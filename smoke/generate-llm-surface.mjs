@@ -77,10 +77,24 @@ const playbookSteps = [
   {
     title: 'Step 9. Add Analytics Surfaces',
     description: 'Use stats examples when a runtime page or chart needs backend-owned aggregate projections.',
-    ids: ['vw-resumo-missoes-stats-status', 'vw-resumo-missoes-stats-prioridade'],
+    ids: [
+      'vw-resumo-missoes-stats-status',
+      'vw-resumo-missoes-stats-prioridade',
+      'vw-analytics-folha-pagamento-stats-payroll-profile',
+    ],
   },
   {
-    title: 'Step 10. Inspect Surfaces, Actions And Capabilities',
+    title: 'Step 10. Inspect Dashboard Alert Rows',
+    description: 'Use these filters when a dashboard needs concrete operational outliers for assets, compliance, risk, and custody.',
+    ids: [
+      'equipamentos-filter-status-manutencao',
+      'equipamento-alocacoes-filter-status-danificado',
+      'licencas-operacao-filter-expiring',
+      'ameacas-filter-confronto',
+    ],
+  },
+  {
+    title: 'Step 11. Inspect Surfaces, Actions And Capabilities',
     description: 'Use surfaces and actions discovery before executing or rendering workflow affordances, then check item capabilities for the selected row.',
     ids: [
       'schemas-surfaces-operations-missoes',
@@ -90,7 +104,7 @@ const playbookSteps = [
     ],
   },
   {
-    title: 'Step 11. Inspect Governed Decision Materialization',
+    title: 'Step 12. Inspect Governed Decision Materialization',
     description: 'Use these read-only examples when the task is to verify that a published semantic decision is governing a runtime lookup without executing domain-rule writes.',
     ids: [
       'domain-rules-supplier-eligibility-materializations-confirmed',

@@ -3207,6 +3207,186 @@
       "selectorConfirmed": true,
       "publishedBackendConfirmed": true,
       "knownPublishedFailure": false
+    },
+    {
+      "id": "equipamentos-filter-status-manutencao",
+      "httpFile": "http/resources/equipamentos_filter_status_manutencao.http",
+      "payloadFiles": [
+        "payloads/resources/equipamentos_filter_status_manutencao.json"
+      ],
+      "canonicalFor": [
+        "equipment inventory maintenance alerts",
+        "asset dashboard status filters"
+      ],
+      "notFor": [
+        "mutating equipment custody"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operationalassets/controller/EquipamentoController.java"
+      ],
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "lastVerified": "2026-05-26",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "requiresTenantHeaders": true,
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false,
+      "accessMode": "auth-light",
+      "selectionGuidance": "safe-first-auth-light"
+    },
+    {
+      "id": "equipamento-alocacoes-filter-status-danificado",
+      "httpFile": "http/resources/equipamento_alocacoes_filter_status_danificado.http",
+      "payloadFiles": [
+        "payloads/resources/equipamento_alocacoes_filter_status_danificado.json"
+      ],
+      "canonicalFor": [
+        "equipment custody exception filters",
+        "damaged allocation dashboard rows"
+      ],
+      "notFor": [
+        "creating equipment allocations"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operationalassets/controller/EquipamentoAlocacaoController.java"
+      ],
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "lastVerified": "2026-05-26",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "requiresTenantHeaders": true,
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false,
+      "accessMode": "auth-light",
+      "selectionGuidance": "safe-first-auth-light"
+    },
+    {
+      "id": "licencas-operacao-filter-expiring",
+      "httpFile": "http/operations/licencas_operacao_filter_expiring.http",
+      "payloadFiles": [
+        "payloads/operations/licencas_operacao_filter_expiring.json"
+      ],
+      "canonicalFor": [
+        "operational license compliance filters",
+        "expired and near-expiry license dashboards"
+      ],
+      "notFor": [
+        "renewing licenses"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/controller/LicencasOperacaoController.java"
+      ],
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "lastVerified": "2026-05-26",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "requiresTenantHeaders": true,
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false,
+      "accessMode": "auth-light",
+      "selectionGuidance": "safe-first-auth-light"
+    },
+    {
+      "id": "ameacas-filter-confronto",
+      "httpFile": "http/resources/ameacas_filter_confronto.http",
+      "payloadFiles": [
+        "payloads/resources/ameacas_filter_confronto.json"
+      ],
+      "canonicalFor": [
+        "risk intelligence threat filters",
+        "active confrontation dashboard rows"
+      ],
+      "notFor": [
+        "editing threat state"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/riskintelligence/controller/AmeacaController.java"
+      ],
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "lastVerified": "2026-05-26",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "requiresTenantHeaders": true,
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false,
+      "accessMode": "auth-light",
+      "selectionGuidance": "safe-first-auth-light"
+    },
+    {
+      "id": "vw-analytics-folha-pagamento-stats-payroll-profile",
+      "httpFile": "http/views/vw_analytics_folha_pagamento_stats_payroll_profile.http",
+      "payloadFiles": [
+        "payloads/views/vw_analytics_folha_pagamento_stats_payroll_profile.json"
+      ],
+      "canonicalFor": [
+        "payroll analytics dashboard stats",
+        "payroll profile chart composition"
+      ],
+      "notFor": [
+        "editing payroll records"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwAnalyticsFolhaPagamentoController.java"
+      ],
+      "responseShapeHint": "stats-group-by",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "lastVerified": "2026-05-26",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "requiresTenantHeaders": true,
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false,
+      "accessMode": "auth-light",
+      "selectionGuidance": "safe-first-auth-light"
     }
   ]
 }
