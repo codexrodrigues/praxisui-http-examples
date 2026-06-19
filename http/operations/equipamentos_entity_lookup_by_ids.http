@@ -1,0 +1,29 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: true
+### protectedContract: false
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: true
+### knownPublishedFailure: false
+### responseShapeHint: array<option>
+### selectionGuidance: contract-reference
+### note: Demonstrates rehydration of existing equipment ids, including unavailable equipment.
+### note: Equipment in maintenance, broken or lost remains displayable but returns extra.selectable=false and disabledReason.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@userId = example-user
+@envId = public
+
+GET {{baseUrl}}/api/assets/equipamentos/option-sources/equipment/options/by-ids?ids=1&ids=2
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}
+X-Env: {{envId}}

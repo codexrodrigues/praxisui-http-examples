@@ -169,6 +169,7 @@ Notes:
 - `selectorConfirmed: true` means the selector, path, or lookup shape used by the example remains canonically useful even if the concrete record is not confirmed on the published backend.
 - `publishedBackendConfirmed: true` means the example as committed is confirmed against `https://praxis-api-quickstart.onrender.com`, not only from code-backed contract evidence.
 - `knownPublishedFailure: true` means the committed request is known to fail on the published backend, either because it is a deliberate negative-path example or because the published environment is currently unstable for it.
+- Governed lookup examples whose ids contain `entity-lookup` or `light-lookup` must keep their `.http` frontmatter status aligned with [`examples.manifest.json`](./examples.manifest.json). If they are not confirmed on the published backend, they must use `illustrative-only` status even when the local branch proves the contract.
 - `sessionAuthRequired: true` means the example depends on a real authenticated session or equivalent server-side login context.
 - `tenantScopedHeadersRequired: true` means the example has a stable tenant-scoped request form using lightweight headers such as `X-Tenant-ID`, `X-User-ID`, and `X-Env`; this is not the same as login, and it does not imply those headers are the loosest published-backend minimum.
 - `authRequired` remains in the manifest as a deprecated compatibility alias and must be read as `sessionAuthRequired || tenantScopedHeadersRequired`.

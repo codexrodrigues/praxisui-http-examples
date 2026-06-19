@@ -353,6 +353,213 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "cargos-light-lookup-filter",
+      "httpFile": "http/resources/cargos_light_lookup_filter.http",
+      "payloadFiles": [
+        "payloads/resources/options_filter_body.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "LIGHT_LOOKUP option-source filtering",
+        "job role select hydration",
+        "lightweight HR catalog lookup"
+      ],
+      "notFor": [
+        "RESOURCE_ENTITY lookup metadata",
+        "governed selection policy"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/constants/ApiPaths.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/OptionSourceConfig.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/service/jpa/JpaOptionSourceQueryExecutor.java"
+      ],
+      "lastVerified": "2026-06-19",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "page<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "cargos-light-lookup-by-ids",
+      "httpFile": "http/resources/cargos_light_lookup_by_ids.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "LIGHT_LOOKUP by-ids rehydration",
+        "job role selected-value labels"
+      ],
+      "notFor": [
+        "RESOURCE_ENTITY retained-value policy"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/constants/ApiPaths.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/OptionSourceConfig.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/service/jpa/JpaOptionSourceQueryExecutor.java"
+      ],
+      "lastVerified": "2026-06-19",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "departamentos-light-lookup-filter",
+      "httpFile": "http/resources/departamentos_light_lookup_filter.http",
+      "payloadFiles": [
+        "payloads/resources/options_filter_body.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "LIGHT_LOOKUP option-source filtering",
+        "department select hydration",
+        "lightweight HR catalog lookup"
+      ],
+      "notFor": [
+        "RESOURCE_ENTITY lookup metadata",
+        "governed selection policy"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/constants/ApiPaths.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/OptionSourceConfig.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/service/jpa/JpaOptionSourceQueryExecutor.java"
+      ],
+      "lastVerified": "2026-06-19",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "page<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "departamentos-light-lookup-by-ids",
+      "httpFile": "http/resources/departamentos_light_lookup_by_ids.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "LIGHT_LOOKUP by-ids rehydration",
+        "department selected-value labels"
+      ],
+      "notFor": [
+        "RESOURCE_ENTITY retained-value policy"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/constants/ApiPaths.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/OptionSourceConfig.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/service/jpa/JpaOptionSourceQueryExecutor.java"
+      ],
+      "lastVerified": "2026-06-19",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "habilidades-light-lookup-filter",
+      "httpFile": "http/resources/habilidades_light_lookup_filter.http",
+      "payloadFiles": [
+        "payloads/resources/options_filter_body.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "LIGHT_LOOKUP option-source filtering",
+        "skill select hydration",
+        "lightweight HR catalog lookup"
+      ],
+      "notFor": [
+        "RESOURCE_ENTITY lookup metadata",
+        "governed selection policy"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/constants/ApiPaths.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/OptionSourceConfig.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/service/jpa/JpaOptionSourceQueryExecutor.java"
+      ],
+      "lastVerified": "2026-06-19",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "page<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "habilidades-light-lookup-by-ids",
+      "httpFile": "http/resources/habilidades_light_lookup_by_ids.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "LIGHT_LOOKUP by-ids rehydration",
+        "skill selected-value labels"
+      ],
+      "notFor": [
+        "RESOURCE_ENTITY retained-value policy"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/constants/ApiPaths.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/OptionSourceConfig.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/service/jpa/JpaOptionSourceQueryExecutor.java"
+      ],
+      "lastVerified": "2026-06-19",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
       "id": "expansion-detail-funcionario-basic",
       "httpFile": "http/expansion-detail/funcionario_schema_basic.http",
       "status": [
@@ -3024,6 +3231,225 @@
       "selectorConfirmed": true,
       "publishedBackendConfirmed": true,
       "knownPublishedFailure": false
+    },
+    {
+      "id": "operations-missoes-entity-lookup-filter",
+      "httpFile": "http/operations/missoes_entity_lookup_filter.http",
+      "payloadFiles": [
+        "payloads/operations/missao_entity_lookup_filter.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "protectedContract": false,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "RESOURCE_ENTITY option-source filtering",
+        "mission entity lookup for operational consumers",
+        "governed mission OptionDTO.extra fields"
+      ],
+      "notFor": [
+        "generic mission summary options",
+        "mission workflow action execution"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/service/MissaoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/dto/filter/MissaoParticipanteFilterDTO.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/service/jpa/JpaOptionSourceQueryExecutor.java"
+      ],
+      "lastVerified": "2026-06-19",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "page<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "referenceOnly": true
+    },
+    {
+      "id": "operations-missoes-entity-lookup-by-ids",
+      "httpFile": "http/operations/missoes_entity_lookup_by_ids.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "protectedContract": false,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "mission entity lookup rehydration by ids",
+        "closed mission retained value display",
+        "selectable=false disabledReason semantics"
+      ],
+      "notFor": [
+        "new selectable mission discovery",
+        "mission workflow state transition"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/service/MissaoService.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/LookupSelectionPolicy.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/service/jpa/JpaOptionSourceQueryExecutor.java"
+      ],
+      "lastVerified": "2026-06-19",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "referenceOnly": true
+    },
+    {
+      "id": "assets-veiculos-entity-lookup-filter",
+      "httpFile": "http/operations/veiculos_entity_lookup_filter.http",
+      "payloadFiles": [
+        "payloads/operations/veiculo_entity_lookup_filter.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "protectedContract": false,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "RESOURCE_ENTITY option-source filtering",
+        "vehicle entity lookup for sortie consumers",
+        "governed vehicle OptionDTO.extra fields"
+      ],
+      "notFor": [
+        "generic asset options",
+        "vehicle maintenance workflow execution"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operationalassets/service/VeiculoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operationalassets/dto/filter/VeiculoMissaoUsoFilterDTO.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/service/jpa/JpaOptionSourceQueryExecutor.java"
+      ],
+      "lastVerified": "2026-06-19",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "page<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "referenceOnly": true
+    },
+    {
+      "id": "assets-veiculos-entity-lookup-by-ids",
+      "httpFile": "http/operations/veiculos_entity_lookup_by_ids.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "protectedContract": false,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "vehicle entity lookup rehydration by ids",
+        "unavailable vehicle retained value display",
+        "selectable=false disabledReason semantics"
+      ],
+      "notFor": [
+        "new selectable vehicle discovery",
+        "vehicle maintenance workflow execution"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operationalassets/service/VeiculoService.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/LookupSelectionPolicy.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/service/jpa/JpaOptionSourceQueryExecutor.java"
+      ],
+      "lastVerified": "2026-06-19",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "referenceOnly": true
+    },
+    {
+      "id": "assets-equipamentos-entity-lookup-filter",
+      "httpFile": "http/operations/equipamentos_entity_lookup_filter.http",
+      "payloadFiles": [
+        "payloads/operations/equipamento_entity_lookup_filter.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "protectedContract": false,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "RESOURCE_ENTITY option-source filtering",
+        "equipment entity lookup for custody allocation consumers",
+        "governed equipment OptionDTO.extra fields"
+      ],
+      "notFor": [
+        "generic asset options",
+        "equipment maintenance workflow execution"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operationalassets/service/EquipamentoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operationalassets/dto/filter/EquipamentoAlocacaoFilterDTO.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/service/jpa/JpaOptionSourceQueryExecutor.java"
+      ],
+      "lastVerified": "2026-06-19",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "page<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "referenceOnly": true
+    },
+    {
+      "id": "assets-equipamentos-entity-lookup-by-ids",
+      "httpFile": "http/operations/equipamentos_entity_lookup_by_ids.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "protectedContract": false,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "equipment entity lookup rehydration by ids",
+        "unavailable equipment retained value display",
+        "selectable=false disabledReason semantics"
+      ],
+      "notFor": [
+        "new selectable equipment discovery",
+        "equipment maintenance workflow execution"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operationalassets/service/EquipamentoService.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/LookupSelectionPolicy.java",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/service/jpa/JpaOptionSourceQueryExecutor.java"
+      ],
+      "lastVerified": "2026-06-19",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "referenceOnly": true
     },
     {
       "id": "procurement-contracts-entity-lookup-filter-cascade",

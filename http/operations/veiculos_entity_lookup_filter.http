@@ -1,0 +1,32 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: true
+### protectedContract: false
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: true
+### knownPublishedFailure: false
+### responseShapeHint: page<option>
+### selectionGuidance: contract-reference
+### note: Demonstrates RESOURCE_ENTITY search for operational vehicles.
+### note: Returned OptionDTO.extra includes description, status, selectable, detailHref and entityKey.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@userId = example-user
+@envId = public
+
+POST {{baseUrl}}/api/assets/veiculos/option-sources/vehicle/options/filter?search=Jet&page=0&size=10
+Content-Type: application/json
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}
+X-Env: {{envId}}
+
+< ../../payloads/operations/veiculo_entity_lookup_filter.json

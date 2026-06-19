@@ -41,6 +41,23 @@ const seenIds = new Set();
 const seenHttpFiles = new Set();
 const referencedFiles = new Set();
 
+function isGovernedLookupExample(example) {
+  return /(?:^|-)entity-lookup(?:-|$)|(?:^|-)light-lookup(?:-|$)/.test(example.id ?? '');
+}
+
+function readHttpStatuses(httpPath) {
+  const raw = fs.readFileSync(httpPath, 'utf8');
+  const statusLine = raw
+    .split(/\r?\n/)
+    .find((line) => line.trim().startsWith('### status:'));
+  if (!statusLine) return [];
+  return statusLine
+    .replace(/^\s*### status:\s*/, '')
+    .split(',')
+    .map((status) => status.trim())
+    .filter(Boolean);
+}
+
 function collectFiles(dir, bucket) {
   const dirPath = path.join(root, dir);
   if (!fs.existsSync(dirPath)) return;
@@ -83,12 +100,33 @@ for (const example of manifest.examples ?? []) {
   const httpPath = path.join(root, example.httpFile ?? '');
   if (!fs.existsSync(httpPath)) {
     errors.push(`Missing http file for ${example.id}: ${example.httpFile}`);
+  } else if (isGovernedLookupExample(example)) {
+    const fileStatuses = readHttpStatuses(httpPath);
+    const manifestStatuses = example.status ?? [];
+    const mismatch =
+      fileStatuses.length !== manifestStatuses.length ||
+      fileStatuses.some((status, index) => status !== manifestStatuses[index]);
+    if (mismatch) {
+      errors.push(
+        `Governed lookup example ${example.id} must keep HTTP frontmatter status aligned with examples.manifest.json.`,
+      );
+    }
   }
 
   for (const status of example.status ?? []) {
     if (!allowedStatuses.has(status)) {
       errors.push(`Invalid status "${status}" in ${example.id}`);
     }
+  }
+
+  if (
+    isGovernedLookupExample(example) &&
+    example.publishedBackendConfirmed === false &&
+    (example.status ?? []).some((status) => status === 'runtime-confirmed' || status === 'recommended')
+  ) {
+    errors.push(
+      `Governed lookup example ${example.id} is not confirmed on the published backend and must use illustrative-only status.`,
+    );
   }
 
   if (typeof example.sessionAuthRequired !== 'boolean') {
