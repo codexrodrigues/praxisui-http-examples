@@ -3,10 +3,10 @@
 Generated from the published backend OpenAPI document.
 
 - Base URL: `https://praxis-api-quickstart.onrender.com`
-- Generated at: `2026-05-26`
-- OpenAPI endpoints: `1097`
-- Resource/controller bases: `78`
-- Bases with at least one catalog example: `34`
+- Generated at: `2026-06-19`
+- OpenAPI endpoints: `1106`
+- Resource/controller bases: `79`
+- Bases with at least one catalog example: `35`
 - Bases without catalog examples: `44`
 
 This report is an audit aid. The HTTP example corpus is intentionally curated:
@@ -18,19 +18,19 @@ hundreds of repetitive CRUD examples that add little operational value.
 | Published base | Endpoint count | Covered | Example ids |
 |---|---:|---|---|
 | `/api/assets/equipamento-alocacoes` | 24 | yes | `equipamento-alocacoes-filter-status-danificado` |
-| `/api/assets/equipamentos` | 24 | yes | `equipamentos-filter-status-manutencao` |
+| `/api/assets/equipamentos` | 24 | yes | `assets-equipamentos-entity-lookup-filter`, `assets-equipamentos-entity-lookup-by-ids`, `equipamentos-filter-status-manutencao` |
 | `/api/assets/veiculo-missao-usos` | 24 | no | _none_ |
-| `/api/assets/veiculos` | 24 | yes | `veiculos-filter-basic` |
-| `/api/human-resources/cargos` | 24 | yes | `cargos-options-filter`, `cargos-options-by-ids` |
-| `/api/human-resources/departamentos` | 24 | yes | `departamentos-options-filter` |
+| `/api/assets/veiculos` | 24 | yes | `veiculos-filter-basic`, `assets-veiculos-entity-lookup-filter`, `assets-veiculos-entity-lookup-by-ids` |
+| `/api/human-resources/cargos` | 24 | yes | `cargos-options-filter`, `cargos-options-by-ids`, `cargos-light-lookup-filter`, `cargos-light-lookup-by-ids` |
+| `/api/human-resources/departamentos` | 24 | yes | `departamentos-options-filter`, `departamentos-light-lookup-filter`, `departamentos-light-lookup-by-ids` |
 | `/api/human-resources/dependentes` | 24 | no | _none_ |
 | `/api/human-resources/enderecos` | 24 | no | _none_ |
 | `/api/human-resources/eventos-folha` | 25 | no | _none_ |
 | `/api/human-resources/ferias-afastamentos` | 24 | no | _none_ |
 | `/api/human-resources/folhas-pagamento` | 27 | no | _none_ |
 | `/api/human-resources/funcionario-habilidades` | 24 | no | _none_ |
-| `/api/human-resources/funcionarios` | 27 | yes | `funcionarios-get-by-id`, `funcionarios-filter-basic`, `funcionarios-filter-cursor`, `funcionarios-locate`, `funcionarios-options-filter`, `funcionarios-options-by-ids`, `funcionarios-create`, `funcionarios-update`, `funcionarios-delete`, `funcionarios-delete-batch`, `funcionarios-options-for-ranking` |
-| `/api/human-resources/habilidades` | 24 | no | _none_ |
+| `/api/human-resources/funcionarios` | 28 | yes | `funcionarios-get-by-id`, `funcionarios-filter-basic`, `funcionarios-filter-cursor`, `funcionarios-locate`, `funcionarios-options-filter`, `funcionarios-options-by-ids`, `funcionarios-create`, `funcionarios-update`, `funcionarios-delete`, `funcionarios-delete-batch`, `funcionarios-options-for-ranking` |
+| `/api/human-resources/habilidades` | 24 | yes | `habilidades-light-lookup-filter`, `habilidades-light-lookup-by-ids` |
 | `/api/human-resources/historicos-cargos` | 24 | no | _none_ |
 | `/api/human-resources/historicos-salariais` | 24 | no | _none_ |
 | `/api/human-resources/identidades-secretas` | 24 | no | _none_ |
@@ -49,14 +49,14 @@ hundreds of repetitive CRUD examples that add little operational value.
 | `/api/operations/licencas-operacao` | 25 | yes | `licencas-operacao-filter-expiring` |
 | `/api/operations/missao-eventos` | 24 | yes | `missao-eventos-stats-ocorrido-em-day` |
 | `/api/operations/missao-participantes` | 24 | yes | `missao-participantes-stats-papel` |
-| `/api/operations/missoes` | 34 | yes | `operations-missoes-item-capabilities`, `missoes-team-plan-patch`, `missoes-team-plan-patch-invalid-principal` |
+| `/api/operations/missoes` | 34 | yes | `operations-missoes-item-capabilities`, `operations-missoes-entity-lookup-filter`, `operations-missoes-entity-lookup-by-ids`, `missoes-team-plan-patch`, `missoes-team-plan-patch-invalid-principal` |
 | `/api/operations/sinais-socorro` | 24 | no | _none_ |
 | `/api/operations/vw-resumo-missoes` | 20 | yes | `vw-resumo-missoes-filter-basic`, `vw-resumo-missoes-stats-status`, `vw-resumo-missoes-stats-prioridade` |
 | `/api/praxis/config/ai-context/{componentId}` | 2 | yes | `ai-context-get-table`, `ai-context-post-table` |
 | `/api/praxis/config/ai-registry/component-definitions` | 2 | no | _none_ |
 | `/api/praxis/config/ai-registry/health` | 1 | no | _none_ |
 | `/api/praxis/config/ai-registry/templates` | 5 | yes | `ai-registry-template-get-table`, `ai-registry-template-put-table`, `ai-registry-template-delete-table` |
-| `/api/praxis/config/ai/authoring` | 12 | no | _none_ |
+| `/api/praxis/config/ai/authoring` | 19 | no | _none_ |
 | `/api/praxis/config/ai/keys` | 2 | no | _none_ |
 | `/api/praxis/config/ai/patch` | 5 | yes | `ai-clarification-filters-3step` |
 | `/api/praxis/config/ai/providers` | 3 | no | _none_ |
@@ -65,6 +65,7 @@ hundreds of repetitive CRUD examples that add little operational value.
 | `/api/praxis/config/ai/triage` | 4 | no | _none_ |
 | `/api/praxis/config/api-catalog/ingest` | 1 | no | _none_ |
 | `/api/praxis/config/api-catalog/search` | 1 | no | _none_ |
+| `/api/praxis/config/domain-360` | 1 | no | _none_ |
 | `/api/praxis/config/domain-catalog/context` | 1 | no | _none_ |
 | `/api/praxis/config/domain-catalog/ingest` | 1 | no | _none_ |
 | `/api/praxis/config/domain-catalog/items` | 2 | no | _none_ |
@@ -105,7 +106,6 @@ hundreds of repetitive CRUD examples that add little operational value.
 - `/api/human-resources/ferias-afastamentos` (24 endpoints): `GET /api/human-resources/ferias-afastamentos/{id}`, `PUT /api/human-resources/ferias-afastamentos/{id}`, `DELETE /api/human-resources/ferias-afastamentos/{id}`, `POST /api/human-resources/ferias-afastamentos`, `POST /api/human-resources/ferias-afastamentos/stats/timeseries`
 - `/api/human-resources/folhas-pagamento` (27 endpoints): `GET /api/human-resources/folhas-pagamento/{id}`, `PUT /api/human-resources/folhas-pagamento/{id}`, `DELETE /api/human-resources/folhas-pagamento/{id}`, `POST /api/human-resources/folhas-pagamento`, `POST /api/human-resources/folhas-pagamento/{id}/actions/mark-paid`
 - `/api/human-resources/funcionario-habilidades` (24 endpoints): `GET /api/human-resources/funcionario-habilidades/{id}`, `PUT /api/human-resources/funcionario-habilidades/{id}`, `DELETE /api/human-resources/funcionario-habilidades/{id}`, `POST /api/human-resources/funcionario-habilidades`, `POST /api/human-resources/funcionario-habilidades/stats/timeseries`
-- `/api/human-resources/habilidades` (24 endpoints): `GET /api/human-resources/habilidades/{id}`, `PUT /api/human-resources/habilidades/{id}`, `DELETE /api/human-resources/habilidades/{id}`, `POST /api/human-resources/habilidades`, `POST /api/human-resources/habilidades/stats/timeseries`
 - `/api/human-resources/historicos-cargos` (24 endpoints): `GET /api/human-resources/historicos-cargos/{id}`, `PUT /api/human-resources/historicos-cargos/{id}`, `DELETE /api/human-resources/historicos-cargos/{id}`, `POST /api/human-resources/historicos-cargos`, `POST /api/human-resources/historicos-cargos/stats/timeseries`
 - `/api/human-resources/historicos-salariais` (24 endpoints): `GET /api/human-resources/historicos-salariais/{id}`, `PUT /api/human-resources/historicos-salariais/{id}`, `DELETE /api/human-resources/historicos-salariais/{id}`, `POST /api/human-resources/historicos-salariais`, `POST /api/human-resources/historicos-salariais/stats/timeseries`
 - `/api/human-resources/identidades-secretas` (24 endpoints): `GET /api/human-resources/identidades-secretas/{id}`, `PUT /api/human-resources/identidades-secretas/{id}`, `DELETE /api/human-resources/identidades-secretas/{id}`, `POST /api/human-resources/identidades-secretas`, `POST /api/human-resources/identidades-secretas/stats/timeseries`
@@ -120,13 +120,14 @@ hundreds of repetitive CRUD examples that add little operational value.
 - `/api/operations/sinais-socorro` (24 endpoints): `GET /api/operations/sinais-socorro/{id}`, `PUT /api/operations/sinais-socorro/{id}`, `DELETE /api/operations/sinais-socorro/{id}`, `POST /api/operations/sinais-socorro`, `POST /api/operations/sinais-socorro/stats/timeseries`
 - `/api/praxis/config/ai-registry/component-definitions` (2 endpoints): `POST /api/praxis/config/ai-registry/component-definitions`, `GET /api/praxis/config/ai-registry/component-definitions/search`
 - `/api/praxis/config/ai-registry/health` (1 endpoints): `GET /api/praxis/config/ai-registry/health`
-- `/api/praxis/config/ai/authoring` (12 endpoints): `POST /api/praxis/config/ai/authoring/turn/stream/{streamId}/cancel`, `POST /api/praxis/config/ai/authoring/turn/stream/start`, `POST /api/praxis/config/ai/authoring/resource-candidates`, `POST /api/praxis/config/ai/authoring/page-preview`, `POST /api/praxis/config/ai/authoring/page-apply`
+- `/api/praxis/config/ai/authoring` (19 endpoints): `POST /api/praxis/config/ai/authoring/turn/stream/{streamId}/cancel`, `POST /api/praxis/config/ai/authoring/turn/stream/start`, `POST /api/praxis/config/ai/authoring/resource-candidates`, `POST /api/praxis/config/ai/authoring/page-preview`, `POST /api/praxis/config/ai/authoring/page-apply`
 - `/api/praxis/config/ai/keys` (2 endpoints): `POST /api/praxis/config/ai/keys/rotate`, `POST /api/praxis/config/ai/keys/clear`
 - `/api/praxis/config/ai/providers` (3 endpoints): `POST /api/praxis/config/ai/providers/test`, `POST /api/praxis/config/ai/providers/models`, `GET /api/praxis/config/ai/providers/catalog`
 - `/api/praxis/config/ai/status` (1 endpoints): `GET /api/praxis/config/ai/status`
 - `/api/praxis/config/ai/triage` (4 endpoints): `POST /api/praxis/config/ai/triage/observations/{observationId}/feedback`, `GET /api/praxis/config/ai/triage/summary`, `GET /api/praxis/config/ai/triage/observations`, `GET /api/praxis/config/ai/triage/observations/{observationId}`
 - `/api/praxis/config/api-catalog/ingest` (1 endpoints): `POST /api/praxis/config/api-catalog/ingest`
 - `/api/praxis/config/api-catalog/search` (1 endpoints): `GET /api/praxis/config/api-catalog/search`
+- `/api/praxis/config/domain-360` (1 endpoints): `GET /api/praxis/config/domain-360`
 - `/api/praxis/config/domain-catalog/context` (1 endpoints): `GET /api/praxis/config/domain-catalog/context`
 - `/api/praxis/config/domain-catalog/ingest` (1 endpoints): `POST /api/praxis/config/domain-catalog/ingest`
 - `/api/praxis/config/domain-catalog/items` (2 endpoints): `GET /api/praxis/config/domain-catalog/items`, `GET /api/praxis/config/domain-catalog/items/latest`
