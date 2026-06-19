@@ -1,0 +1,29 @@
+### status:
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### selectionGuidance: protected-contract-read
+### note: Operational readiness check for derived Domain Catalog RAG materialization. Requires a published config-starter build with ingested catalog releases and vector-store status support.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@envId = local
+@allowedOrigin = http://localhost:4301
+@serviceKey = praxis-service
+@resourceKey = human-resources.funcionarios
+
+GET {{baseUrl}}/api/praxis/config/domain-catalog/rag/status?serviceKey={{serviceKey}}&resourceKey={{resourceKey}}
+Accept: application/json
+Origin: {{allowedOrigin}}
+X-Tenant-ID: {{tenantId}}
+X-Env: {{envId}}

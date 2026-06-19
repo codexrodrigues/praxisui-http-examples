@@ -34,6 +34,7 @@ const allowedResponseShapeHints = new Set([
   'error-response',
   'array<suggestion>',
   'ai-clarification-response',
+  'domain-catalog-rag-status',
 ]);
 
 const errors = [];

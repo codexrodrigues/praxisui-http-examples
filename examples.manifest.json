@@ -2398,6 +2398,37 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "domain-catalog-rag-status-funcionarios",
+      "httpFile": "http/config/domain_catalog_rag_status_funcionarios.http",
+      "status": [],
+      "protectedContract": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "verifying derived Domain Catalog RAG vector-store readiness",
+        "checking reconciliation between persisted catalog items and indexed domain_catalog documents"
+      ],
+      "notFor": [
+        "canonical domain vocabulary retrieval",
+        "safe-first LLM execution before the published backend has an ingested catalog and vector store"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/docs/domain-catalog-runtime-flow.md",
+        "../praxis-config-starter/docs/domain-catalog/domain-catalog-contract-v0.2.md",
+        "../praxis-config-starter/docs/ai/semantic-decision-governance-public-proof-plan.md"
+      ],
+      "lastVerified": "2026-06-19",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "domain-catalog-rag-status",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
       "id": "ai-registry-template-get-table",
       "httpFile": "http/config/ai_registry_template_get_table.http",
       "status": [
