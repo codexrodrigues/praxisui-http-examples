@@ -1,0 +1,27 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: false
+### referenceOnly: true
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### selectionGuidance: avoid-by-default-reference
+### note: LIGHT_LOOKUP by-ids rehydration preserves id order and returns lightweight labels.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@userId = example-user
+@envId = public
+
+GET {{baseUrl}}/api/human-resources/habilidades/option-sources/skill/options/by-ids?ids=1&ids=2&ids=3
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}
+X-Env: {{envId}}
