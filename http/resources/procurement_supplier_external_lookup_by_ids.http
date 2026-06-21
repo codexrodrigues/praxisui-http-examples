@@ -1,0 +1,29 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: false
+### referenceOnly: true
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### responseShapeHint: array<option>
+### selectionGuidance: avoid-by-default-reference
+### note: Demonstrates string ID rehydration order for a neutral non-JPA LIGHT_LOOKUP provider.
+### note: The committed published backend may not include this provider yet; use as contract reference until promoted.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@userId = example-user
+@envId = public
+
+GET {{baseUrl}}/api/procurement/suppliers/option-sources/externalLookup/options/by-ids?ids=EXT-CAT-C&ids=EXT-CAT-A
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}
+X-Env: {{envId}}

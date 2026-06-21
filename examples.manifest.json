@@ -3344,6 +3344,86 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "procurement-supplier-external-lookup-filter",
+      "httpFile": "http/resources/procurement_supplier_external_lookup_filter.http",
+      "payloadFiles": [
+        "payloads/resources/procurement_supplier_external_lookup_filter.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "neutral host-specific non-JPA LIGHT_LOOKUP option-source filtering",
+        "OptionSourceProvider SPI contract reference",
+        "externalLookup provider example without resource-table dependency",
+        "dependsOn filter payload applied by the host provider"
+      ],
+      "notFor": [
+        "RESOURCE_ENTITY lookup metadata",
+        "published backend runtime confirmation",
+        "JPA option-source execution"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/procurement/options/ExternalCatalogOptionSourceProvider.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/procurement/service/ProcurementSupplierService.java",
+        "../praxis-metadata-starter/docs/guides/OPTION-SOURCE-PROVIDER-SPI.md",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/service/OptionSourceProvider.java"
+      ],
+      "lastVerified": "2026-06-21",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "page<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "procurement-supplier-external-lookup-by-ids",
+      "httpFile": "http/resources/procurement_supplier_external_lookup_by_ids.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "neutral host-specific non-JPA LIGHT_LOOKUP by-ids rehydration",
+        "OptionSourceProvider SPI by-ids contract reference",
+        "externalLookup string id order preservation"
+      ],
+      "notFor": [
+        "RESOURCE_ENTITY retained-value policy",
+        "published backend runtime confirmation",
+        "JPA option-source execution"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/procurement/options/ExternalCatalogOptionSourceProvider.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/procurement/service/ProcurementSupplierService.java",
+        "../praxis-metadata-starter/docs/guides/OPTION-SOURCE-PROVIDER-SPI.md",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/options/service/OptionSourceProvider.java"
+      ],
+      "lastVerified": "2026-06-21",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<option>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
       "id": "operations-missoes-entity-lookup-filter",
       "httpFile": "http/operations/missoes_entity_lookup_filter.http",
       "payloadFiles": [
