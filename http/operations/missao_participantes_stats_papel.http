@@ -15,7 +15,7 @@
 ### accessMode: auth-light
 ### selectionGuidance: safe-first-auth-light
 ### note: Operational stats example for mission team role charts.
-### note: Current quickstart baseline consumes praxis-metadata-starter 8.0.0-rc.17; re-run published smoke after deployment.
+### note: Current quickstart baseline consumes praxis-metadata-starter 8.0.0-rc.22 from Maven Central; re-run published smoke after deployment.
 
 @baseUrl = https://praxis-api-quickstart.onrender.com
 @tenantId = demo
