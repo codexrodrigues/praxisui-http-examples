@@ -1,0 +1,33 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: false
+### referenceOnly: true
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### responseShapeHint: page<option>
+### selectionGuidance: avoid-by-default-reference
+### note: Demonstrates a host-specific non-JPA LIGHT_LOOKUP provider behind the canonical option-source filter endpoint.
+### note: The request body carries companyId because the published dependsOn contract is applied by the host provider.
+### note: The committed published backend may not include this provider yet; use as contract reference until promoted.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@userId = example-user
+@envId = public
+
+POST {{baseUrl}}/api/procurement/suppliers/option-sources/paymentTerm/options/filter?search=Net&page=0&size=10
+Content-Type: application/json
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}
+X-Env: {{envId}}
+
+< ../../payloads/resources/procurement_supplier_payment_terms_external_filter.json
