@@ -8,13 +8,12 @@
     "decisionKind": "supplier_selection_eligibility",
     "canonicalStatement": "Suppliers with blocked statuses must not be selectable in purchase order supplier lookups.",
     "selectionPolicy": {
-      "blockedWhen": [
-        "status in [INACTIVE, BLOCKED]"
+      "statusPropertyPath": "status",
+      "blockedStatuses": [
+        "INACTIVE",
+        "BLOCKED"
       ],
-      "disabledReasonWhen": {
-        "status == INACTIVE": "Supplier is inactive.",
-        "status == BLOCKED": "Supplier is blocked."
-      }
+      "disabledReasonTemplate": "Supplier is not available for purchase flows."
     },
     "runtimeSurfacesAreDerived": true
   },
