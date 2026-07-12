@@ -5,6 +5,9 @@ on:
     branches: [ main, master ]
     paths:
       - 'examples.manifest.json'
+      - 'llm_bootstrap.json'
+      - 'LLM_BOOTSTRAP.md'
+      - 'LLM_COMMON_QUESTIONS.md'
       - 'LLM_SURFACE.md'
       - 'README.md'
       - 'EXAMPLE_STATUS.md'
@@ -17,6 +20,9 @@ on:
     branches: [ main, master ]
     paths:
       - 'examples.manifest.json'
+      - 'llm_bootstrap.json'
+      - 'LLM_BOOTSTRAP.md'
+      - 'LLM_COMMON_QUESTIONS.md'
       - 'LLM_SURFACE.md'
       - 'README.md'
       - 'EXAMPLE_STATUS.md'
@@ -67,3 +73,6 @@ jobs:
 
       - name: Validate corpus promises for LLM usage
         run: npm run smoke:corpus-promises
+
+      - name: Validate bootstrap minimum headers
+        run: npm run smoke:bootstrap-minimums
