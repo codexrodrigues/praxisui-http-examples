@@ -37,3 +37,5 @@ for (const example of publicExamples) {
     process.exitCode = 1;
   }
 }
+
+process.exit(process.exitCode ?? 0);
