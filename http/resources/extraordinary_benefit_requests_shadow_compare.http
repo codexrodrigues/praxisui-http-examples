@@ -1,0 +1,27 @@
+### status: runtime-confirmed
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: false
+### requiresTenantHeaders: false
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### accessMode: authenticated-session
+### selectionGuidance: protected-non-mutating-rule-shadow-proof
+### note: Use only with a disposable authenticated lab session. The action compares decisions and must not create requests, transitions, executions, or effects.
+
+@baseUrl = http://127.0.0.1:18088
+@sessionCookie = replace-with-session-cookie-value
+
+POST {{baseUrl}}/api/human-resources/extraordinary-benefit-requests/actions/shadow-compare
+Accept: application/json
+Content-Type: application/json
+Cookie: SESSION={{sessionCookie}}
+
+< ../../payloads/resources/extraordinary_benefit_requests_shadow_allow.json

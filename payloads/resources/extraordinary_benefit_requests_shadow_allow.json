@@ -1,0 +1,18 @@
+{
+  "requestReference": "QL07-CORPORATE-LAB-FICTITIOUS-ALLOW",
+  "reasonCode": "FAMILY_HARDSHIP",
+  "eventDate": "2026-07-13",
+  "requestedAmount": 2500.00,
+  "workerStatus": "ACTIVE",
+  "duplicateGrant": false,
+  "programActive": true,
+  "programMaximumAmount": 5000.00,
+  "customerAdditionalEligible": true,
+  "requestedPaymentDate": "2026-07-20",
+  "allowedPaymentDates": [
+    "2026-07-20",
+    "2026-08-05"
+  ],
+  "availableBudgetAmount": 100000.00,
+  "userTimeZone": "America/Sao_Paulo"
+}

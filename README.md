@@ -164,7 +164,7 @@ Notes:
 - CI currently runs `npm run verify:manifest`, `npm run smoke:llm-surface`, and `npm run smoke:corpus-promises`. `smoke:public` and `smoke:auth` remain available as local verification commands, but they are not part of the current GitHub Actions workflow.
 - `smoke:bootstrap-minimums` validates the accepted-now minima declared in `llm_bootstrap.json` against the published backend so bootstrap guidance stays grounded in runtime behavior.
 - `llmOperational: true` in [`examples.manifest.json`](./examples.manifest.json) marks the examples that belong to the LLM-facing operational surface on the published backend.
-- `responseShapeHint` gives a compact, non-executed answer to "what does this endpoint return?" with values such as `array<option>`, `page<option>`, `restApiResponse<page<row>>`, `detail-schema`, and `config-record`.
+- `responseShapeHint` gives a compact, non-executed answer to "what does this endpoint return?" with values such as `array<option>`, `page<option>`, `restApiResponse<page<row>>`, `detail-schema`, `config-record`, and `shadow-observation`.
 - `runtimeRecordConfirmed: true` means the committed example shape or behavior has direct runtime confirmation somewhere in the corpus evidence model.
 - `selectorConfirmed: true` means the selector, path, or lookup shape used by the example remains canonically useful even if the concrete record is not confirmed on the published backend.
 - `publishedBackendConfirmed: true` means the example as committed is confirmed against `https://praxis-api-quickstart.onrender.com`, not only from code-backed contract evidence.
