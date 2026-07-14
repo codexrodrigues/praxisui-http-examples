@@ -4004,6 +4004,44 @@
       "knownPublishedFailure": false,
       "accessMode": "auth-light",
       "selectionGuidance": "safe-first-auth-light"
+    },
+    {
+      "id": "extraordinary-benefit-requests-shadow-compare",
+      "httpFile": "http/resources/extraordinary_benefit_requests_shadow_compare.http",
+      "payloadFiles": [
+        "payloads/resources/extraordinary_benefit_requests_shadow_allow.json"
+      ],
+      "canonicalFor": [
+        "authenticated non-mutating comparison between an independent baseline and the governed Praxis snapshot",
+        "sanitized extraordinary-benefit shadow observation"
+      ],
+      "notFor": [
+        "business authority or automatic promotion",
+        "creating benefit requests, transitions, action executions, or financial effects",
+        "safe-first execution against a shared public environment"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/docs/RULE-LAB-QL-07-PUBLIC-DOWNSTREAM-EVIDENCE.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/rulelab/ExtraordinaryBenefitRequestController.java"
+      ],
+      "responseShapeHint": "shadow-observation",
+      "status": [
+        "runtime-confirmed"
+      ],
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "lastVerified": "2026-07-14",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "requiresTenantHeaders": false,
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "accessMode": "authenticated-session",
+      "selectionGuidance": "local-lab-reference-only-rule-shadow-proof"
     }
   ]
 }
