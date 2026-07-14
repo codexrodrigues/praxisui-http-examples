@@ -6,14 +6,14 @@
 ### destructive: false
 ### requiresTenantHeaders: false
 ### llmOperational: false
-### protectedContract: true
-### referenceOnly: false
+### protectedContract: false
+### referenceOnly: true
 ### runtimeRecordConfirmed: true
 ### selectorConfirmed: true
 ### publishedBackendConfirmed: false
 ### knownPublishedFailure: false
 ### accessMode: authenticated-session
-### selectionGuidance: protected-non-mutating-rule-shadow-proof
+### selectionGuidance: local-lab-reference-only-rule-shadow-proof
 ### note: Use only with a disposable authenticated lab session. The action compares decisions and must not create requests, transitions, executions, or effects.
 
 @baseUrl = http://127.0.0.1:18088

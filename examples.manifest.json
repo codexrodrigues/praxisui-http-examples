@@ -4028,7 +4028,7 @@
       "status": [
         "runtime-confirmed"
       ],
-      "protectedContract": true,
+      "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
@@ -4041,7 +4041,7 @@
       "publishedBackendConfirmed": false,
       "knownPublishedFailure": false,
       "accessMode": "authenticated-session",
-      "selectionGuidance": "protected-non-mutating-rule-shadow-proof"
+      "selectionGuidance": "local-lab-reference-only-rule-shadow-proof"
     }
   ]
 }
