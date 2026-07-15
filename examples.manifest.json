@@ -3826,6 +3826,42 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "funcionarios-stats-comparison-departamento",
+      "httpFile": "http/resources/funcionarios_stats_comparison_departamento.http",
+      "payloadFiles": [
+        "payloads/resources/funcionarios_stats_comparison_departamento.json"
+      ],
+      "status": [
+        "illustrative-only",
+        "recommended"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "governed period-over-period employee comparison by department"
+      ],
+      "notFor": [
+        "published backend smoke before the metadata starter release"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/docs/technical/STATS-COMPARISON-RFC.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/FuncionarioService.java"
+      ],
+      "lastVerified": "2026-07-13",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "stats-comparison",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
       "id": "equipamentos-filter-status-manutencao",
       "httpFile": "http/resources/equipamentos_filter_status_manutencao.http",
       "payloadFiles": [

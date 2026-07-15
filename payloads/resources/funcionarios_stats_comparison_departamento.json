@@ -1,0 +1,18 @@
+{
+  "filter": {},
+  "field": "departamento",
+  "periodField": "dataAdmissao",
+  "metrics": [
+    {
+      "operation": "COUNT",
+      "alias": "employees"
+    }
+  ],
+  "period": {
+    "preset": "LAST_30_DAYS",
+    "timezone": "America/Sao_Paulo",
+    "mode": "PREVIOUS_ALIGNED"
+  },
+  "orderBy": "VALUE_DESC",
+  "limit": 10
+}

@@ -23,6 +23,7 @@ const allowedResponseShapeHints = new Set([
   'restApiResponse<page<row>>',
   'stats-group-by',
   'stats-timeseries',
+  'stats-comparison',
   'surfaces-catalog',
   'actions-catalog',
   'capabilities-snapshot',
