@@ -1149,14 +1149,15 @@
         "payloads/views/vw_perfil_heroi_filter_basic.json"
       ],
       "status": [
-        "runtime-confirmed",
+        "illustrative-only",
         "recommended"
       ],
-      "llmOperational": true,
+      "llmOperational": false,
+      "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
-      "requiresTenantHeaders": true,
+      "requiresTenantHeaders": false,
       "canonicalFor": [
         "aggregated hero profile filtering"
       ],
@@ -1165,16 +1166,19 @@
       ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java",
-        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/filter/VwPerfilHeroiFilterDTO.java"
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/filter/VwPerfilHeroiFilterDTO.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java"
       ],
-      "lastVerified": "2026-03-15",
-      "sessionAuthRequired": false,
-      "tenantScopedHeadersRequired": true,
+      "lastVerified": "2026-07-16",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
       "responseShapeHint": "restApiResponse<page<row>>",
-      "runtimeRecordConfirmed": true,
+      "runtimeRecordConfirmed": false,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": true,
-      "knownPublishedFailure": false
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "accessMode": "authenticated-session",
+      "selectionGuidance": "reference-only-employee-360"
     },
     {
       "id": "vw-perfil-heroi-filter-ranges",
@@ -1183,14 +1187,14 @@
         "payloads/views/vw_perfil_heroi_filter_ranges.json"
       ],
       "status": [
-        "runtime-confirmed",
+        "illustrative-only",
         "recommended"
       ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
-      "requiresTenantHeaders": true,
+      "requiresTenantHeaders": false,
       "canonicalFor": [
         "range-based hero profile filtering"
       ],
@@ -1199,16 +1203,19 @@
       ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java",
-        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/filter/VwPerfilHeroiFilterDTO.java"
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/filter/VwPerfilHeroiFilterDTO.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java"
       ],
-      "lastVerified": "2026-03-15",
-      "sessionAuthRequired": false,
-      "tenantScopedHeadersRequired": true,
+      "lastVerified": "2026-07-16",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
       "responseShapeHint": "restApiResponse<page<row>>",
-      "runtimeRecordConfirmed": true,
+      "runtimeRecordConfirmed": false,
       "selectorConfirmed": true,
       "publishedBackendConfirmed": false,
-      "knownPublishedFailure": false
+      "knownPublishedFailure": false,
+      "accessMode": "authenticated-session",
+      "selectionGuidance": "reference-only-employee-360"
     },
     {
       "id": "vw-perfil-heroi-filter-cursor",
@@ -1217,14 +1224,14 @@
         "payloads/views/vw_perfil_heroi_filter_basic.json"
       ],
       "status": [
-        "runtime-confirmed",
+        "illustrative-only",
         "recommended"
       ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
-      "requiresTenantHeaders": true,
+      "requiresTenantHeaders": false,
       "canonicalFor": [
         "cursor pagination on aggregated hero profiles"
       ],
@@ -1232,16 +1239,19 @@
         "offset pagination examples"
       ],
       "sourceOfTruth": [
-        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java"
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java"
       ],
-      "lastVerified": "2026-03-15",
-      "sessionAuthRequired": false,
-      "tenantScopedHeadersRequired": true,
+      "lastVerified": "2026-07-16",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
       "responseShapeHint": "restApiResponse<page<row>>",
-      "runtimeRecordConfirmed": true,
+      "runtimeRecordConfirmed": false,
       "selectorConfirmed": true,
       "publishedBackendConfirmed": false,
-      "knownPublishedFailure": false
+      "knownPublishedFailure": false,
+      "accessMode": "authenticated-session",
+      "selectionGuidance": "reference-only-employee-360"
     },
     {
       "id": "vw-perfil-heroi-locate",
@@ -1250,14 +1260,14 @@
         "payloads/views/vw_perfil_heroi_locate.json"
       ],
       "status": [
-        "runtime-confirmed",
+        "illustrative-only",
         "recommended"
       ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
-      "requiresTenantHeaders": true,
+      "requiresTenantHeaders": false,
       "canonicalFor": [
         "locating rows inside filtered hero profile lists"
       ],
@@ -1265,29 +1275,32 @@
         "page content retrieval"
       ],
       "sourceOfTruth": [
-        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java"
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java"
       ],
-      "lastVerified": "2026-03-15",
-      "sessionAuthRequired": false,
-      "tenantScopedHeadersRequired": true,
+      "lastVerified": "2026-07-16",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
       "responseShapeHint": "restApiResponse<page<row>>",
-      "runtimeRecordConfirmed": true,
+      "runtimeRecordConfirmed": false,
       "selectorConfirmed": true,
       "publishedBackendConfirmed": false,
-      "knownPublishedFailure": false
+      "knownPublishedFailure": false,
+      "accessMode": "authenticated-session",
+      "selectionGuidance": "reference-only-employee-360"
     },
     {
       "id": "vw-perfil-heroi-all",
       "httpFile": "http/views/vw_perfil_heroi_all.http",
       "status": [
-        "runtime-confirmed",
+        "illustrative-only",
         "recommended"
       ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
-      "requiresTenantHeaders": true,
+      "requiresTenantHeaders": false,
       "canonicalFor": [
         "full aggregated hero profile listing"
       ],
@@ -1295,29 +1308,33 @@
         "scalable large-list navigation"
       ],
       "sourceOfTruth": [
-        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java"
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java"
       ],
-      "lastVerified": "2026-03-15",
-      "sessionAuthRequired": false,
-      "tenantScopedHeadersRequired": true,
+      "lastVerified": "2026-07-16",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
       "responseShapeHint": "array<row>",
-      "runtimeRecordConfirmed": true,
+      "runtimeRecordConfirmed": false,
       "selectorConfirmed": true,
       "publishedBackendConfirmed": false,
-      "knownPublishedFailure": false
+      "knownPublishedFailure": false,
+      "accessMode": "authenticated-session",
+      "selectionGuidance": "reference-only-employee-360"
     },
     {
       "id": "vw-perfil-heroi-by-ids",
       "httpFile": "http/views/vw_perfil_heroi_by_ids.http",
       "status": [
-        "runtime-confirmed",
+        "illustrative-only",
         "recommended"
       ],
-      "llmOperational": true,
+      "llmOperational": false,
+      "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
-      "requiresTenantHeaders": true,
+      "requiresTenantHeaders": false,
       "canonicalFor": [
         "rehydrating aggregated hero profiles by id"
       ],
@@ -1325,16 +1342,19 @@
         "general pagination"
       ],
       "sourceOfTruth": [
-        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java"
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java"
       ],
-      "lastVerified": "2026-03-15",
-      "sessionAuthRequired": false,
-      "tenantScopedHeadersRequired": true,
+      "lastVerified": "2026-07-16",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
       "responseShapeHint": "array<row>",
-      "runtimeRecordConfirmed": true,
+      "runtimeRecordConfirmed": false,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": true,
-      "knownPublishedFailure": false
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "accessMode": "authenticated-session",
+      "selectionGuidance": "reference-only-employee-360"
     },
     {
       "id": "vw-perfil-heroi-options-filter",
@@ -1343,14 +1363,15 @@
         "payloads/views/vw_perfil_heroi_filter_basic.json"
       ],
       "status": [
-        "runtime-confirmed",
+        "illustrative-only",
         "recommended"
       ],
-      "llmOperational": true,
+      "llmOperational": false,
+      "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
-      "requiresTenantHeaders": true,
+      "requiresTenantHeaders": false,
       "canonicalFor": [
         "lookup options from aggregated hero profiles"
       ],
@@ -1358,29 +1379,32 @@
         "full entity projection"
       ],
       "sourceOfTruth": [
-        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java"
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java"
       ],
-      "lastVerified": "2026-03-15",
-      "sessionAuthRequired": false,
-      "tenantScopedHeadersRequired": true,
+      "lastVerified": "2026-07-16",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
       "responseShapeHint": "page<option>",
-      "runtimeRecordConfirmed": true,
+      "runtimeRecordConfirmed": false,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": true,
-      "knownPublishedFailure": false
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "accessMode": "authenticated-session",
+      "selectionGuidance": "reference-only-employee-360"
     },
     {
       "id": "vw-perfil-heroi-options-by-ids",
       "httpFile": "http/views/vw_perfil_heroi_options_by_ids.http",
       "status": [
-        "runtime-confirmed",
+        "illustrative-only",
         "recommended"
       ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
-      "requiresTenantHeaders": true,
+      "requiresTenantHeaders": false,
       "canonicalFor": [
         "rehydrating selected aggregated hero profile options"
       ],
@@ -1388,16 +1412,19 @@
         "full entity projection"
       ],
       "sourceOfTruth": [
-        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java"
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwPerfilHeroiController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java"
       ],
-      "lastVerified": "2026-03-15",
-      "sessionAuthRequired": false,
-      "tenantScopedHeadersRequired": true,
+      "lastVerified": "2026-07-16",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
       "responseShapeHint": "array<option>",
-      "runtimeRecordConfirmed": true,
+      "runtimeRecordConfirmed": false,
       "selectorConfirmed": true,
       "publishedBackendConfirmed": false,
-      "knownPublishedFailure": false
+      "knownPublishedFailure": false,
+      "accessMode": "authenticated-session",
+      "selectionGuidance": "reference-only-employee-360"
     },
     {
       "id": "vw-ranking-reputacao-filter-basic",
@@ -1941,14 +1968,14 @@
         "payloads/views/vw_analytics_folha_pagamento_payroll_profile_options_filter.json"
       ],
       "status": [
-        "runtime-confirmed",
+        "illustrative-only",
         "recommended"
       ],
       "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
-      "requiresTenantHeaders": true,
+      "requiresTenantHeaders": false,
       "canonicalFor": [
         "canonical optionSource.dependsOn cascade with dependencyFilterMap",
         "Angular runtime payload after mapping UI field universo to backend filter universoContexto"
@@ -1960,16 +1987,19 @@
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/VwAnalyticsFolhaPagamentoService.java",
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/filter/VwAnalyticsFolhaPagamentoFilterDTO.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java",
         "../praxis-metadata-starter/docs/spec/x-ui-option-source-rfc.md"
       ],
-      "lastVerified": "2026-04-15",
-      "sessionAuthRequired": false,
-      "tenantScopedHeadersRequired": true,
+      "lastVerified": "2026-07-16",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
       "responseShapeHint": "page<option>",
-      "runtimeRecordConfirmed": true,
+      "runtimeRecordConfirmed": false,
       "selectorConfirmed": true,
       "publishedBackendConfirmed": false,
-      "knownPublishedFailure": false
+      "knownPublishedFailure": false,
+      "accessMode": "authenticated-session",
+      "selectionGuidance": "reference-only-nominal-payroll-option-source"
     },
     {
       "id": "vw-resumo-missoes-options-by-ids",
@@ -4019,27 +4049,76 @@
         "editing payroll records"
       ],
       "sourceOfTruth": [
-        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwAnalyticsFolhaPagamentoController.java"
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwAnalyticsFolhaPagamentoController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java"
       ],
       "responseShapeHint": "stats-group-by",
       "status": [
-        "runtime-confirmed",
+        "illustrative-only",
         "recommended"
       ],
-      "llmOperational": true,
+      "llmOperational": false,
+      "referenceOnly": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
-      "lastVerified": "2026-05-26",
-      "sessionAuthRequired": false,
-      "tenantScopedHeadersRequired": true,
-      "requiresTenantHeaders": true,
-      "runtimeRecordConfirmed": true,
+      "lastVerified": "2026-07-16",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "requiresTenantHeaders": false,
+      "runtimeRecordConfirmed": false,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": true,
+      "publishedBackendConfirmed": false,
       "knownPublishedFailure": false,
-      "accessMode": "auth-light",
-      "selectionGuidance": "safe-first-auth-light"
+      "accessMode": "authenticated-session",
+      "selectionGuidance": "reference-only-nominal-payroll-analytics"
+    },
+    {
+      "id": "vw-analytics-folha-pagamento-stats-comparison-departamento",
+      "httpFile": "http/views/vw_analytics_folha_pagamento_stats_comparison_departamento.http",
+      "payloadFiles": [
+        "payloads/views/vw_analytics_folha_pagamento_stats_comparison_departamento.json"
+      ],
+      "canonicalFor": [
+        "period-over-period payroll mass comparison by effective department",
+        "stable department key cross-filtering with human-readable labels",
+        "multi-metric gross, discount and net payroll comparison"
+      ],
+      "notFor": [
+        "reading employee-level payroll rows",
+        "using department labels as authorization or filter identity",
+        "safe-first execution without an authenticated aggregate analytics session"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/docs/technical/STATS-COMPARISON-RFC.md",
+        "../praxis-api-quickstart/docs/PAYROLL-ANALYTICS-DASHBOARDS.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/VwAnalyticsFolhaPagamentoController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/VwAnalyticsFolhaPagamentoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java",
+        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/PayrollAnalyticsComparisonHttpTest.java",
+        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/hr/PayrollAnalyticsPostgresOperationalProofTest.java"
+      ],
+      "responseShapeHint": "stats-comparison",
+      "status": [
+        "illustrative-only",
+        "recommended"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "lastVerified": "2026-07-16",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "requiresTenantHeaders": false,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "accessMode": "authenticated-session",
+      "selectionGuidance": "reference-only-aggregate-payroll-comparison"
     },
     {
       "id": "extraordinary-benefit-requests-shadow-compare",

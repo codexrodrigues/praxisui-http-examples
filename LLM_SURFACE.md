@@ -2,7 +2,7 @@
 
 Operational surface for LLM-driven discovery against the published Praxis backend.
 
-Last reviewed: `2026-07-15`
+Last reviewed: `2026-07-16`
 
 This file is generated from [`examples.manifest.json`](./examples.manifest.json).
 Current validation commands:
@@ -82,7 +82,6 @@ When you need label/value choices from a dataset, begin with an options filter e
 |---|---|---|---|---|
 | `funcionarios-options-filter` | `http/resources/funcionarios_options_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | remote options lookup; form select hydration |
 | `departamentos-options-filter` | `http/resources/departamentos_options_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | department remote options lookup; form select hydration; inline filter async select hydration |
-| `vw-perfil-heroi-options-filter` | `http/views/vw_perfil_heroi_options_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | lookup options from aggregated hero profiles |
 | `vw-ranking-reputacao-options-filter` | `http/views/vw_ranking_reputacao_options_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | lookup options from ranking views |
 
 ### Step 6. Rehydrate With Options By Ids
@@ -92,7 +91,6 @@ After selecting ids, use by-ids examples to rehydrate option labels deterministi
 | Id | File | Access (minimum) | Recommended stable | Purpose |
 |---|---|---|---|---|
 | `cargos-options-by-ids` | `http/resources/cargos_options_by_ids.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | options rehydration by ids |
-| `vw-perfil-heroi-by-ids` | `http/views/vw_perfil_heroi_by_ids.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | rehydrating aggregated hero profiles by id |
 
 ### Step 7. Move To Views Filter
 
@@ -103,7 +101,6 @@ Use filter endpoints for table-like operational reads after schema and option gr
 | `funcionarios-filter-basic` | `http/resources/funcionarios_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | typed server-side filtering; table data loading |
 | `veiculos-filter-basic` | `http/resources/veiculos_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | operational vehicle filtering; assets domain discovery |
 | `incidentes-filter-basic` | `http/resources/incidentes_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | incident investigation filtering; operations domain discovery |
-| `vw-perfil-heroi-filter-basic` | `http/views/vw_perfil_heroi_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | aggregated hero profile filtering |
 | `vw-ranking-reputacao-filter-basic` | `http/views/vw_ranking_reputacao_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | aggregated reputation ranking filtering |
 | `vw-resumo-missoes-filter-basic` | `http/views/vw_resumo_missoes_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | operational mission summary filtering |
 | `vw-indicadores-incidentes-filter-basic` | `http/views/vw_indicadores_incidentes_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | risk incident analytics filtering |
@@ -124,7 +121,6 @@ Use stats examples when a runtime page or chart needs backend-owned aggregate pr
 |---|---|---|---|---|
 | `vw-resumo-missoes-stats-status` | `http/views/vw_resumo_missoes_stats_status.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | analytics projection for mission status charts |
 | `vw-resumo-missoes-stats-prioridade` | `http/views/vw_resumo_missoes_stats_prioridade.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | runtime value-discovery evidence for mission priority categorical semantics |
-| `vw-analytics-folha-pagamento-stats-payroll-profile` | `http/views/vw_analytics_folha_pagamento_stats_payroll_profile.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | payroll analytics dashboard stats; payroll profile chart composition |
 
 ### Step 10. Inspect Dashboard Alert Rows
 
@@ -181,9 +177,6 @@ Use these read-only examples when the task is to verify that a published semanti
 | `cargos-options-by-ids` | `http/resources/cargos_options_by_ids.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | options rehydration by ids |
 | `funcionarios-filter-basic` | `http/resources/funcionarios_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | typed server-side filtering; table data loading |
 | `funcionarios-options-filter` | `http/resources/funcionarios_options_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | remote options lookup; form select hydration |
-| `vw-perfil-heroi-filter-basic` | `http/views/vw_perfil_heroi_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | aggregated hero profile filtering |
-| `vw-perfil-heroi-by-ids` | `http/views/vw_perfil_heroi_by_ids.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | rehydrating aggregated hero profiles by id |
-| `vw-perfil-heroi-options-filter` | `http/views/vw_perfil_heroi_options_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | lookup options from aggregated hero profiles |
 | `vw-ranking-reputacao-filter-basic` | `http/views/vw_ranking_reputacao_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | aggregated reputation ranking filtering |
 | `vw-ranking-reputacao-options-filter` | `http/views/vw_ranking_reputacao_options_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | lookup options from ranking views |
 | `vw-resumo-missoes-filter-basic` | `http/views/vw_resumo_missoes_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | operational mission summary filtering |
@@ -204,7 +197,6 @@ Use these read-only examples when the task is to verify that a published semanti
 | `equipamento-alocacoes-filter-status-danificado` | `http/resources/equipamento_alocacoes_filter_status_danificado.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | equipment custody exception filters; damaged allocation dashboard rows |
 | `licencas-operacao-filter-expiring` | `http/operations/licencas_operacao_filter_expiring.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | operational license compliance filters; expired and near-expiry license dashboards |
 | `ameacas-filter-confronto` | `http/resources/ameacas_filter_confronto.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | risk intelligence threat filters; active confrontation dashboard rows |
-| `vw-analytics-folha-pagamento-stats-payroll-profile` | `http/views/vw_analytics_folha_pagamento_stats_payroll_profile.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | payroll analytics dashboard stats; payroll profile chart composition |
 
 ## Not In This Surface
 

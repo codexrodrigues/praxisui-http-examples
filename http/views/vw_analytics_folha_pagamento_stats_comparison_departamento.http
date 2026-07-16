@@ -13,15 +13,15 @@
 ### publishedBackendConfirmed: false
 ### knownPublishedFailure: false
 ### accessMode: authenticated-session
-### selectionGuidance: reference-only-employee-360
-### note: Requires an authenticated session whose principal has HR_EMPLOYEE_360_READ.
+### selectionGuidance: reference-only-aggregate-payroll-comparison
+### note: Requires an authenticated session whose principal has HR_ANALYTICS_AGGREGATE_READ and a server-resolved department scope. Reapply bucket.key as departamentoId; labels are display-only.
 
 @baseUrl = https://praxis-api-quickstart.onrender.com
 @sessionCookie = replace-with-session-cookie-value
 
-POST {{baseUrl}}/api/human-resources/vw-perfil-heroi/filter/cursor?size=10
+POST {{baseUrl}}/api/human-resources/vw-analytics-folha-pagamento/stats/comparison
 Content-Type: application/json
 Accept: application/json
 Cookie: SESSION={{sessionCookie}}
 
-< ../../payloads/views/vw_perfil_heroi_filter_basic.json
+< ../../payloads/views/vw_analytics_folha_pagamento_stats_comparison_departamento.json

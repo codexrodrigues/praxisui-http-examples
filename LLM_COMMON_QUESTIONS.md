@@ -142,7 +142,6 @@ Good default examples:
 - `funcionarios-options-filter`
 - `cargos-options-by-ids`
 - `funcionarios-filter-basic`
-- `vw-perfil-heroi-by-ids`
 - `vw-resumo-missoes-filter-basic`
 - `expansion-detail-perfil-heroi-advanced`
 

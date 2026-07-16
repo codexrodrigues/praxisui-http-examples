@@ -1,31 +1,27 @@
-### status: runtime-confirmed,recommended
+### status: illustrative-only,recommended
 ### public: false
 ### authRequired: true
-### sessionAuthRequired: false
-### tenantScopedHeadersRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
 ### destructive: false
-### requiresTenantHeaders: true
-### llmOperational: true
+### requiresTenantHeaders: false
+### llmOperational: false
 ### protectedContract: false
-### referenceOnly: false
-### runtimeRecordConfirmed: true
+### referenceOnly: true
+### runtimeRecordConfirmed: false
 ### selectorConfirmed: true
-### publishedBackendConfirmed: true
+### publishedBackendConfirmed: false
 ### knownPublishedFailure: false
-### accessMode: auth-light
-### selectionGuidance: safe-first-auth-light
-### note: Payroll analytics stats example for dashboard composition by payroll profile.
+### accessMode: authenticated-session
+### selectionGuidance: reference-only-nominal-payroll-analytics
+### note: Requires an authenticated session whose principal has HR_ANALYTICS_NOMINAL_READ and a server-resolved department scope.
 
 @baseUrl = https://praxis-api-quickstart.onrender.com
-@tenantId = demo
-@userId = example-user
-@envId = public
+@sessionCookie = replace-with-session-cookie-value
 
 POST {{baseUrl}}/api/human-resources/vw-analytics-folha-pagamento/stats/group-by
 Content-Type: application/json
 Accept: application/json
-X-Tenant-ID: {{tenantId}}
-X-User-ID: {{userId}}
-X-Env: {{envId}}
+Cookie: SESSION={{sessionCookie}}
 
 < ../../payloads/views/vw_analytics_folha_pagamento_stats_payroll_profile.json

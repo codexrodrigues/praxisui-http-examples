@@ -1,31 +1,24 @@
-### status: runtime-confirmed,recommended
+### status: illustrative-only,recommended
 ### public: false
 ### authRequired: true
-### sessionAuthRequired: false
-### tenantScopedHeadersRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
 ### destructive: false
-### requiresTenantHeaders: true
-### llmOperational: true
+### requiresTenantHeaders: false
+### llmOperational: false
 ### protectedContract: false
-### referenceOnly: false
-### runtimeRecordConfirmed: true
+### referenceOnly: true
+### runtimeRecordConfirmed: false
 ### selectorConfirmed: true
-### publishedBackendConfirmed: true
+### publishedBackendConfirmed: false
 ### knownPublishedFailure: false
-### accessMode: auth-light
-### selectionGuidance: safe-first-auth-light
-### note: This example does not require login, cookies, or bearer auth.
-### note: authRequired is a legacy compatibility alias here; read sessionAuthRequired and tenantScopedHeadersRequired instead.
-### note: Accepted now on the published backend: Accept.
-### note: Default recommended stable scoped trio: X-Tenant-ID, X-User-ID, X-Env.
+### accessMode: authenticated-session
+### selectionGuidance: reference-only-employee-360
+### note: Requires an authenticated session whose principal has HR_EMPLOYEE_360_READ.
 
 @baseUrl = https://praxis-api-quickstart.onrender.com
-@tenantId = demo
-@userId = example-user
-@envId = public
+@sessionCookie = replace-with-session-cookie-value
 
 GET {{baseUrl}}/api/human-resources/vw-perfil-heroi/by-ids?ids=1,2,3
 Accept: application/json
-X-Tenant-ID: {{tenantId}}
-X-User-ID: {{userId}}
-X-Env: {{envId}}
+Cookie: SESSION={{sessionCookie}}

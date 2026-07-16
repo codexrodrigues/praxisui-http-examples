@@ -1,0 +1,30 @@
+{
+  "filter": {},
+  "field": "departamento",
+  "periodField": "competencia",
+  "period": {
+    "from": "2026-07-01",
+    "to": "2026-07-31",
+    "timezone": "America/Sao_Paulo",
+    "mode": "PREVIOUS_ALIGNED"
+  },
+  "metrics": [
+    {
+      "operation": "SUM",
+      "field": "salarioBruto",
+      "alias": "bruto"
+    },
+    {
+      "operation": "SUM",
+      "field": "totalDescontos",
+      "alias": "descontos"
+    },
+    {
+      "operation": "SUM",
+      "field": "salarioLiquido",
+      "alias": "liquido"
+    }
+  ],
+  "orderBy": "VALUE_DESC",
+  "limit": 12
+}
