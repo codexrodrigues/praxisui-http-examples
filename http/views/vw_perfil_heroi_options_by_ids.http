@@ -1,26 +1,24 @@
-### status: runtime-confirmed,recommended
+### status: illustrative-only,recommended
 ### public: false
 ### authRequired: true
-### sessionAuthRequired: false
-### tenantScopedHeadersRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
 ### destructive: false
-### requiresTenantHeaders: true
+### requiresTenantHeaders: false
 ### llmOperational: false
 ### protectedContract: false
 ### referenceOnly: true
-### runtimeRecordConfirmed: true
+### runtimeRecordConfirmed: false
 ### selectorConfirmed: true
 ### publishedBackendConfirmed: false
 ### knownPublishedFailure: false
-### selectionGuidance: avoid-by-default-reference
+### accessMode: authenticated-session
+### selectionGuidance: reference-only-employee-360
+### note: Requires an authenticated session whose principal has HR_EMPLOYEE_360_READ.
 
 @baseUrl = https://praxis-api-quickstart.onrender.com
-@tenantId = demo
-@userId = example-user
-@envId = public
+@sessionCookie = replace-with-session-cookie-value
 
 GET {{baseUrl}}/api/human-resources/vw-perfil-heroi/options/by-ids?ids=1,2,3
 Accept: application/json
-X-Tenant-ID: {{tenantId}}
-X-User-ID: {{userId}}
-X-Env: {{envId}}
+Cookie: SESSION={{sessionCookie}}

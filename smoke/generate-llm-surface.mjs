@@ -47,14 +47,13 @@ const playbookSteps = [
     ids: [
       'funcionarios-options-filter',
       'departamentos-options-filter',
-      'vw-perfil-heroi-options-filter',
       'vw-ranking-reputacao-options-filter',
     ],
   },
   {
     title: 'Step 6. Rehydrate With Options By Ids',
     description: 'After selecting ids, use by-ids examples to rehydrate option labels deterministically.',
-    ids: ['cargos-options-by-ids', 'vw-perfil-heroi-by-ids'],
+    ids: ['cargos-options-by-ids'],
   },
   {
     title: 'Step 7. Move To Views Filter',
@@ -63,7 +62,6 @@ const playbookSteps = [
       'funcionarios-filter-basic',
       'veiculos-filter-basic',
       'incidentes-filter-basic',
-      'vw-perfil-heroi-filter-basic',
       'vw-ranking-reputacao-filter-basic',
       'vw-resumo-missoes-filter-basic',
       'vw-indicadores-incidentes-filter-basic',
@@ -80,7 +78,6 @@ const playbookSteps = [
     ids: [
       'vw-resumo-missoes-stats-status',
       'vw-resumo-missoes-stats-prioridade',
-      'vw-analytics-folha-pagamento-stats-payroll-profile',
     ],
   },
   {

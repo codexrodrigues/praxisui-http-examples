@@ -1,33 +1,30 @@
-### status: runtime-confirmed,recommended
+### status: illustrative-only,recommended
 ### public: false
 ### authRequired: true
-### sessionAuthRequired: false
-### tenantScopedHeadersRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
 ### destructive: false
-### requiresTenantHeaders: true
+### requiresTenantHeaders: false
 ### llmOperational: false
 ### protectedContract: false
 ### referenceOnly: true
-### runtimeRecordConfirmed: true
+### runtimeRecordConfirmed: false
 ### selectorConfirmed: true
 ### publishedBackendConfirmed: false
 ### knownPublishedFailure: false
-### accessMode: auth-light
-### selectionGuidance: canonical-reference
+### accessMode: authenticated-session
+### selectionGuidance: reference-only-nominal-payroll-option-source
 ### note: Demonstrates x-ui.optionSource.dependsOn with dependencyFilterMap.
 ### note: Angular reads the UI field universo and sends universoContexto to the option-source endpoint.
 ### note: Requires the quickstart version that publishes payrollProfile dependencyFilterMap.
+### note: Requires an authenticated session whose principal has HR_ANALYTICS_NOMINAL_READ and a server-resolved department scope.
 
 @baseUrl = https://praxis-api-quickstart.onrender.com
-@tenantId = demo
-@userId = example-user
-@envId = public
+@sessionCookie = replace-with-session-cookie-value
 
 POST {{baseUrl}}/api/human-resources/vw-analytics-folha-pagamento/option-sources/payrollProfile/options/filter?page=0&size=5
 Content-Type: application/json
 Accept: application/json
-X-Tenant-ID: {{tenantId}}
-X-User-ID: {{userId}}
-X-Env: {{envId}}
+Cookie: SESSION={{sessionCookie}}
 
 < ../../payloads/views/vw_analytics_folha_pagamento_payroll_profile_options_filter.json

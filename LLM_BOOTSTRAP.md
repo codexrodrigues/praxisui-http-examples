@@ -40,9 +40,6 @@ These do not require login cookies, bearer tokens, or a server-side session boot
 - `funcionarios-options-filter` -> `http/resources/funcionarios_options_filter.http`
 - `veiculos-filter-basic` -> `http/resources/veiculos_filter_basic.http`
 - `incidentes-filter-basic` -> `http/resources/incidentes_filter_basic.http`
-- `vw-perfil-heroi-filter-basic` -> `http/views/vw_perfil_heroi_filter_basic.http`
-- `vw-perfil-heroi-by-ids` -> `http/views/vw_perfil_heroi_by_ids.http`
-- `vw-perfil-heroi-options-filter` -> `http/views/vw_perfil_heroi_options_filter.http`
 - `vw-ranking-reputacao-filter-basic` -> `http/views/vw_ranking_reputacao_filter_basic.http`
 - `vw-ranking-reputacao-options-filter` -> `http/views/vw_ranking_reputacao_options_filter.http`
 - `vw-resumo-missoes-filter-basic` -> `http/views/vw_resumo_missoes_filter_basic.http`
