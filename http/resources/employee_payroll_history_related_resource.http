@@ -1,0 +1,30 @@
+### status: runtime-confirmed,recommended
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: true
+### protectedContract: false
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: true
+### knownPublishedFailure: false
+### accessMode: auth-light
+### selectionGuidance: safe-first-auth-light
+### note: Read-only related-resource proof for the employee payroll-history tab.
+### note: This route exposes governed nominal payroll data; production hosts must preserve backend authorization and masking policies.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@userId = example-user
+@envId = public
+@employeeId = 194
+
+GET {{baseUrl}}/api/human-resources/funcionarios/{{employeeId}}/payroll-history
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}
+X-Env: {{envId}}
