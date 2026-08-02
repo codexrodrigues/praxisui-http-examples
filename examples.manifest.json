@@ -742,6 +742,115 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "employee-state-snapshot-actions",
+      "httpFile": "http/resources/employee_state_snapshot_actions.http",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "state-aware employee action discovery",
+        "deactivate and reactivate availability derived from persisted employee state"
+      ],
+      "notFor": [
+        "executing employee workflow mutations",
+        "client-side reconstruction of lifecycle rules"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FuncionarioController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/FuncionarioService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/QuickstartResourceStateSnapshotProvider.java",
+        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/QuickstartMetadataMigrationIntegrationTest.java"
+      ],
+      "lastVerified": "2026-08-02",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "actions-catalog",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false,
+      "accessMode": "auth-light",
+      "selectionGuidance": "safe-first-auth-light"
+    },
+    {
+      "id": "employee-equipment-custody-surface",
+      "httpFile": "http/resources/employee_equipment_custody_surface.http",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "employee equipment custody related-resource surface",
+        "read-only asset allocation context inside an employee dossier"
+      ],
+      "notFor": [
+        "creating or mutating equipment allocations",
+        "equipment workflow action execution"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FuncionarioController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operationalassets/service/EquipamentoAlocacaoService.java",
+        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/hr/FuncionarioEntityLookupIntegrationTest.java"
+      ],
+      "lastVerified": "2026-08-02",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<row>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false,
+      "accessMode": "auth-light",
+      "selectionGuidance": "safe-first-auth-light"
+    },
+    {
+      "id": "employee-payroll-history-related-resource",
+      "httpFile": "http/resources/employee_payroll_history_related_resource.http",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "employee payroll-history related-resource surface",
+        "governed nominal payroll context inside an employee dossier"
+      ],
+      "notFor": [
+        "editing payroll records",
+        "aggregate payroll analytics without the corresponding authority"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FuncionarioController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/VwAnalyticsFolhaPagamentoService.java",
+        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/QuickstartMetadataMigrationIntegrationTest.java"
+      ],
+      "lastVerified": "2026-08-02",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "array<row>",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false,
+      "accessMode": "auth-light",
+      "selectionGuidance": "safe-first-auth-light"
+    },
+    {
       "id": "funcionarios-filter-basic",
       "httpFile": "http/resources/funcionarios_filter_basic.http",
       "payloadFiles": [

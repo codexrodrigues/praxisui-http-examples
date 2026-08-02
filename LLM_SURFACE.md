@@ -2,7 +2,7 @@
 
 Operational surface for LLM-driven discovery against the published Praxis backend.
 
-Last reviewed: `2026-07-16`
+Last reviewed: `2026-08-02`
 
 This file is generated from [`examples.manifest.json`](./examples.manifest.json).
 Current validation commands:
@@ -175,6 +175,9 @@ Use these read-only examples when the task is to verify that a published semanti
 |---|---|---|---|---|
 | `departamentos-options-filter` | `http/resources/departamentos_options_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | department remote options lookup; form select hydration; inline filter async select hydration |
 | `cargos-options-by-ids` | `http/resources/cargos_options_by_ids.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | options rehydration by ids |
+| `employee-state-snapshot-actions` | `http/resources/employee_state_snapshot_actions.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | state-aware employee action discovery; deactivate and reactivate availability derived from persisted employee state |
+| `employee-equipment-custody-surface` | `http/resources/employee_equipment_custody_surface.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | employee equipment custody related-resource surface; read-only asset allocation context inside an employee dossier |
+| `employee-payroll-history-related-resource` | `http/resources/employee_payroll_history_related_resource.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | employee payroll-history related-resource surface; governed nominal payroll context inside an employee dossier |
 | `funcionarios-filter-basic` | `http/resources/funcionarios_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | typed server-side filtering; table data loading |
 | `funcionarios-options-filter` | `http/resources/funcionarios_options_filter.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | remote options lookup; form select hydration |
 | `vw-ranking-reputacao-filter-basic` | `http/views/vw_ranking_reputacao_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | aggregated reputation ranking filtering |

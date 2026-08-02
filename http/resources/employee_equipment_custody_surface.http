@@ -1,0 +1,30 @@
+### status: runtime-confirmed,recommended
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: true
+### protectedContract: false
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: true
+### knownPublishedFailure: false
+### accessMode: auth-light
+### selectionGuidance: safe-first-auth-light
+### note: Read-only employee surface backed by the canonical assets.equipamento-alocacoes relationship.
+### note: An empty data array is a valid confirmed custody state for the selected employee.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@userId = example-user
+@envId = public
+@employeeId = 194
+
+GET {{baseUrl}}/api/human-resources/funcionarios/{{employeeId}}/equipment-custody
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}
+X-Env: {{envId}}
