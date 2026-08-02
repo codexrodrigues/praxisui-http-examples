@@ -2925,14 +2925,14 @@
         "../praxis-config-starter/docs/ai/semantic-decision-governance-public-proof-plan.md",
         "../praxisui-http-examples/DOMAIN_RULES_PUBLICATION_RUNBOOK.md"
       ],
-      "lastVerified": "2026-04-29",
+      "lastVerified": "2026-08-02",
       "sessionAuthRequired": false,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "config-record",
       "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": true,
-      "knownPublishedFailure": false
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": true
     },
     {
       "id": "domain-knowledge-change-set-lifecycle",
@@ -3000,14 +3000,14 @@
         "../praxis-api-quickstart/docs/DOMAIN-KNOWLEDGE-CHANGE-SET-TIMELINE-RC37-ROLLOUT.md",
         "../praxisui-http-examples/DOMAIN_KNOWLEDGE_TIMELINE_RUNBOOK.md"
       ],
-      "lastVerified": "2026-05-01",
+      "lastVerified": "2026-08-02",
       "sessionAuthRequired": false,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "config-record",
       "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": true,
-      "knownPublishedFailure": false
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": true
     },
     {
       "id": "domain-rules-supplier-eligibility-materializations-confirmed",

@@ -10,11 +10,11 @@
 ### referenceOnly: false
 ### runtimeRecordConfirmed: true
 ### selectorConfirmed: true
-### publishedBackendConfirmed: true
-### knownPublishedFailure: false
+### publishedBackendConfirmed: false
+### knownPublishedFailure: true
 ### responseShapeHint: config-record
 ### selectionGuidance: protected-contract-domain-knowledge-change-set-timeline-read
-### note: Contract example for the safe Domain Knowledge change-set timeline endpoint. Published backend confirmed on 2026-05-01 after praxis-config-starter:0.1.0-rc.37.
+### note: Contract example for the safe Domain Knowledge change-set timeline endpoint. The historical selector returned 404 on the published backend on 2026-08-02; keep it for contract discovery, not as a current record proof.
 
 @baseUrl = https://praxis-api-quickstart.onrender.com
 @tenantId = desenv
