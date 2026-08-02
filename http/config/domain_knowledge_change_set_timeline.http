@@ -10,7 +10,7 @@
 ### referenceOnly: false
 ### runtimeRecordConfirmed: true
 ### selectorConfirmed: true
-### publishedBackendConfirmed: false
+### publishedBackendConfirmed: true
 ### knownPublishedFailure: true
 ### responseShapeHint: config-record
 ### selectionGuidance: protected-contract-domain-knowledge-change-set-timeline-read
