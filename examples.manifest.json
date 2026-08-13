@@ -407,7 +407,8 @@
         "runtime-confirmed",
         "recommended"
       ],
-      "referenceOnly": true,
+      "referenceOnly": false,
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
@@ -434,7 +435,7 @@
       "expectedStatus": 200,
       "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": false,
+      "publishedBackendConfirmed": true,
       "knownPublishedFailure": false
     },
     {
@@ -446,7 +447,8 @@
       "status": [
         "runtime-confirmed"
       ],
-      "referenceOnly": true,
+      "referenceOnly": false,
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
@@ -472,7 +474,7 @@
       "expectedStatus": 422,
       "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": false,
+      "publishedBackendConfirmed": true,
       "knownPublishedFailure": false
     },
     {
@@ -485,7 +487,8 @@
         "runtime-confirmed",
         "recommended"
       ],
-      "referenceOnly": true,
+      "referenceOnly": false,
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
@@ -512,7 +515,7 @@
       "expectedStatus": 200,
       "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": false,
+      "publishedBackendConfirmed": true,
       "knownPublishedFailure": false
     },
     {
@@ -525,7 +528,8 @@
         "runtime-confirmed",
         "recommended"
       ],
-      "referenceOnly": true,
+      "referenceOnly": false,
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
@@ -552,7 +556,7 @@
       "expectedStatus": 200,
       "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": false,
+      "publishedBackendConfirmed": true,
       "knownPublishedFailure": false
     },
     {
@@ -564,7 +568,8 @@
       "status": [
         "runtime-confirmed"
       ],
-      "referenceOnly": true,
+      "referenceOnly": false,
+      "protectedContract": true,
       "public": false,
       "authRequired": true,
       "destructive": false,
@@ -590,7 +595,7 @@
       "expectedStatus": 422,
       "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": false,
+      "publishedBackendConfirmed": true,
       "knownPublishedFailure": false
     },
     {

@@ -90,7 +90,7 @@ for (const [id, expectation] of metadataExpectations) {
 for (const [id, expectation] of executionExpectations) {
   const example = requireExample(id);
   if (!example) continue;
-  requireReferenceOnlyPrePublication(example);
+  requirePublishedProtectedExecution(example);
   requireFlags(example, {
     authRequired: true,
     sessionAuthRequired: true,
@@ -125,11 +125,11 @@ function requireExample(id) {
   return example;
 }
 
-function requireReferenceOnlyPrePublication(example) {
-  requireEqual(example.referenceOnly, true, `${example.id} referenceOnly`);
+function requirePublishedProtectedExecution(example) {
+  requireEqual(example.referenceOnly === true, false, `${example.id} referenceOnly`);
   requireEqual(example.llmOperational === true, false, `${example.id} llmOperational`);
-  requireEqual(example.protectedContract === true, false, `${example.id} protectedContract`);
-  requireEqual(example.publishedBackendConfirmed, false, `${example.id} publishedBackendConfirmed`);
+  requireEqual(example.protectedContract, true, `${example.id} protectedContract`);
+  requireEqual(example.publishedBackendConfirmed, true, `${example.id} publishedBackendConfirmed`);
   requireEqual(example.runtimeRecordConfirmed, true, `${example.id} runtimeRecordConfirmed`);
   requireEqual(example.selectorConfirmed, true, `${example.id} selectorConfirmed`);
   requireEqual(example.destructive, false, `${example.id} destructive`);

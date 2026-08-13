@@ -6,11 +6,11 @@
 ### destructive: false
 ### requiresTenantHeaders: false
 ### llmOperational: false
-### protectedContract: false
-### referenceOnly: true
+### protectedContract: true
+### referenceOnly: false
 ### runtimeRecordConfirmed: true
 ### selectorConfirmed: true
-### publishedBackendConfirmed: false
+### publishedBackendConfirmed: true
 ### knownPublishedFailure: false
 ### accessMode: authenticated-session
 ### selectionGuidance: local-reference-reactive-determination-negative-path
