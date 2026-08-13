@@ -4260,7 +4260,7 @@
       "sessionAuthRequired": true,
       "tenantScopedHeadersRequired": false,
       "requiresTenantHeaders": false,
-      "runtimeRecordConfirmed": true,
+      "runtimeRecordConfirmed": false,
       "selectorConfirmed": true,
       "publishedBackendConfirmed": false,
       "knownPublishedFailure": false,
@@ -4343,7 +4343,7 @@
       "publishedBackendConfirmed": false,
       "knownPublishedFailure": false,
       "accessMode": "authenticated-session",
-      "selectionGuidance": "reference-only-non-persisting-form-determination"
+      "selectionGuidance": "reference-only-authenticated-execution-not-confirmed"
     }
   ]
 }
