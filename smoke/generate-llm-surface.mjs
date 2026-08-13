@@ -38,8 +38,12 @@ const playbookSteps = [
   },
   {
     title: 'Step 4. Read Filtered Schemas',
-    description: 'Use filtered schemas to ground request and response fields before composing operational requests.',
-    ids: ['filtered-schema-request-funcionarios', 'filtered-schema-response-funcionarios'],
+    description: 'Use filtered schemas to ground request and response fields, including backend-owned form effects, before composing operational requests.',
+    ids: [
+      'filtered-schema-request-funcionarios',
+      'filtered-schema-response-funcionarios',
+      'filtered-schema-request-enderecos-form-effects',
+    ],
   },
   {
     title: 'Step 5. Start With Options Filter',

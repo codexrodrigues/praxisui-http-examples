@@ -1,0 +1,26 @@
+### status: illustrative-only,recommended
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: false
+### requiresTenantHeaders: false
+### llmOperational: false
+### protectedContract: false
+### referenceOnly: true
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### accessMode: authenticated-session
+### selectionGuidance: reference-only-non-persisting-form-determination
+### note: The published backend requires a real authenticated session for direct execution.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+
+POST {{baseUrl}}/api/human-resources/enderecos/determinations/postal-address
+Content-Type: application/json
+Accept: application/json
+
+< ../../payloads/resources/enderecos_postal_address_determination.json
+
