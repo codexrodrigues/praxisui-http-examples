@@ -4266,6 +4266,84 @@
       "knownPublishedFailure": false,
       "accessMode": "authenticated-session",
       "selectionGuidance": "local-lab-reference-only-rule-shadow-proof"
+    },
+    {
+      "id": "filtered-schema-request-enderecos-form-effects",
+      "httpFile": "http/metadata/filtered_schema_request_enderecos_form_effects.http",
+      "canonicalFor": [
+        "public discovery of backend-owned x-ui.formEffects",
+        "typed postal-address determination bindings for the address create schema"
+      ],
+      "notFor": [
+        "executing the determination operation",
+        "authoring local callbacks or persisted workflow transitions"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/docs/guides/FORM-EFFECTS.md",
+        "../praxis-metadata-starter/docs/spec/x-ui-form-effects.schema.json",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/EnderecoController.java"
+      ],
+      "responseShapeHint": "filtered-schema",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "protectedContract": false,
+      "referenceOnly": false,
+      "public": true,
+      "authRequired": false,
+      "destructive": false,
+      "lastVerified": "2026-08-12",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": false,
+      "requiresTenantHeaders": false,
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false,
+      "selectionGuidance": "safe-first-public-form-effects-discovery"
+    },
+    {
+      "id": "enderecos-postal-address-determination",
+      "httpFile": "http/resources/enderecos_postal_address_determination.http",
+      "payloadFiles": [
+        "payloads/resources/enderecos_postal_address_determination.json"
+      ],
+      "canonicalFor": [
+        "typed non-persisting postal-address determination request",
+        "reference execution shape for a form effect operation"
+      ],
+      "notFor": [
+        "safe-first anonymous execution",
+        "persisting an address or bypassing authenticated resource policy"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/docs/guides/FORM-EFFECTS.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/EnderecoController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/PostalAddressDeterminationService.java"
+      ],
+      "responseShapeHint": "mutation-result",
+      "status": [
+        "illustrative-only",
+        "recommended"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "lastVerified": "2026-08-12",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "requiresTenantHeaders": false,
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "accessMode": "authenticated-session",
+      "selectionGuidance": "reference-only-non-persisting-form-determination"
     }
   ]
 }

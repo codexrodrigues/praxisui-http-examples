@@ -6,6 +6,25 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'examples.manifest.json'), 'utf8'));
 const baseUrl = process.env.BASE_URL || manifest.defaultBaseUrl;
 
+function assertExampleResponse(example, payload) {
+  if (example.id !== 'filtered-schema-request-enderecos-form-effects') return;
+
+  const effects = payload?.['x-ui']?.formEffects;
+  const postalAddressEffect = effects?.find(
+    (effect) => effect.id === 'address-from-postal-code',
+  );
+  if (
+    !postalAddressEffect ||
+    postalAddressEffect.operation?.path !==
+      '/api/human-resources/enderecos/determinations/postal-address' ||
+    postalAddressEffect.operation?.method !== 'POST'
+  ) {
+    throw new Error(
+      `${example.id}: published schema does not expose the expected postal-address form effect`,
+    );
+  }
+}
+
 const publicExamples = (manifest.examples ?? []).filter(
   (example) =>
     example.public === true &&
@@ -35,7 +54,10 @@ for (const example of publicExamples) {
   console.log(`${example.id}: ${response.status} ${url}`);
   if (!response.ok) {
     process.exitCode = 1;
+    continue;
   }
+
+  assertExampleResponse(example, await response.json());
 }
 
 process.exit(process.exitCode ?? 0);

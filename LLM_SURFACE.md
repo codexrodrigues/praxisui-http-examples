@@ -2,7 +2,7 @@
 
 Operational surface for LLM-driven discovery against the published Praxis backend.
 
-Last reviewed: `2026-08-02`
+Last reviewed: `2026-08-13`
 
 This file is generated from [`examples.manifest.json`](./examples.manifest.json).
 Current validation commands:
@@ -67,12 +67,13 @@ Use the lightweight schemas catalog to discover available resources and views wi
 
 ### Step 4. Read Filtered Schemas
 
-Use filtered schemas to ground request and response fields before composing operational requests.
+Use filtered schemas to ground request and response fields, including backend-owned form effects, before composing operational requests.
 
 | Id | File | Access (minimum) | Recommended stable | Purpose |
 |---|---|---|---|---|
 | `filtered-schema-request-funcionarios` | `http/metadata/filtered_schema_request_funcionarios.http` | Public | none | request-side filtered schema |
 | `filtered-schema-response-funcionarios` | `http/metadata/filtered_schema_response_funcionarios.http` | Public | none | response-side filtered schema |
+| `filtered-schema-request-enderecos-form-effects` | `http/metadata/filtered_schema_request_enderecos_form_effects.http` | Public | none | public discovery of backend-owned x-ui.formEffects; typed postal-address determination bindings for the address create schema |
 
 ### Step 5. Start With Options Filter
 
@@ -168,6 +169,7 @@ Use these read-only examples when the task is to verify that a published semanti
 | `filtered-schema-request-funcionarios` | `http/metadata/filtered_schema_request_funcionarios.http` | Public | none | request-side filtered schema |
 | `filtered-schema-response-funcionarios` | `http/metadata/filtered_schema_response_funcionarios.http` | Public | none | response-side filtered schema |
 | `filtered-schema-request-procurement-purchase-orders-entity-lookup` | `http/metadata/filtered_schema_request_procurement_purchase_orders_entity_lookup.http` | Public | none | request-side filtered schema for procurement purchase orders; entityLookup controlType discovery; RESOURCE_ENTITY optionSource metadata |
+| `filtered-schema-request-enderecos-form-effects` | `http/metadata/filtered_schema_request_enderecos_form_effects.http` | Public | none | public discovery of backend-owned x-ui.formEffects; typed postal-address determination bindings for the address create schema |
 
 ### Auth-Light Operational Examples
 
