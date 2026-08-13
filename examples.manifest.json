@@ -254,6 +254,346 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "reactive-determination-address-create-schema",
+      "httpFile": "http/metadata/filtered_schema_request_enderecos_create_reactive_determination.http",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": true,
+      "authRequired": false,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "createAddress request-schema projection of the postal-address reactive determination",
+        "tenant-neutral x-ui.reactiveDeterminations discovery without tenant or user headers"
+      ],
+      "notFor": [
+        "tenant-specific business decision materialization",
+        "authenticated capability execution"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/docs/spec/reactive-determinations.md",
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/ReactiveDeterminationPilotConfiguration.java",
+        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/OpenApiGroupResolutionIsolatedIntegrationTest.java"
+      ],
+      "lastVerified": "2026-08-13",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "filtered-schema",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "reactive-determination-address-edit-schema",
+      "httpFile": "http/metadata/filtered_schema_request_enderecos_edit_reactive_determination.http",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": true,
+      "authRequired": false,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "updateAddress request-schema projection of the postal-address reactive determination",
+        "tenant-neutral edit binding scoped by exact operationId"
+      ],
+      "notFor": [
+        "tenant-specific business decision materialization",
+        "authenticated capability execution"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/docs/spec/reactive-determinations.md",
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/ReactiveDeterminationPilotConfiguration.java",
+        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/OpenApiGroupResolutionIsolatedIntegrationTest.java"
+      ],
+      "lastVerified": "2026-08-13",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "filtered-schema",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "reactive-determination-payroll-create-schema",
+      "httpFile": "http/metadata/filtered_schema_request_payroll_create_reactive_determination.http",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": true,
+      "authRequired": false,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "createPayroll request-schema projection of the multi-input net-salary determination",
+        "tenant-neutral x-ui.reactiveDeterminations discovery without tenant or user headers"
+      ],
+      "notFor": [
+        "tenant-specific payroll policy payload",
+        "authenticated capability execution"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/docs/spec/reactive-determinations.md",
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/ReactiveDeterminationPilotConfiguration.java",
+        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/OpenApiGroupResolutionIsolatedIntegrationTest.java"
+      ],
+      "lastVerified": "2026-08-13",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "filtered-schema",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "reactive-determination-payroll-edit-schema",
+      "httpFile": "http/metadata/filtered_schema_request_payroll_edit_reactive_determination.http",
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "llmOperational": true,
+      "public": true,
+      "authRequired": false,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "updatePayroll request-schema projection of the multi-input net-salary determination",
+        "tenant-neutral edit binding scoped by exact operationId"
+      ],
+      "notFor": [
+        "tenant-specific payroll policy payload",
+        "authenticated capability execution"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/docs/spec/reactive-determinations.md",
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/ReactiveDeterminationPilotConfiguration.java",
+        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/OpenApiGroupResolutionIsolatedIntegrationTest.java"
+      ],
+      "lastVerified": "2026-08-13",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "filtered-schema",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "reactive-determination-address-known-cep",
+      "httpFile": "http/resources/reactive_determination_address_known_cep.http",
+      "payloadFiles": [
+        "payloads/resources/reactive_determination_address_known_cep.json"
+      ],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "authenticated idempotent execution of determinePostalAddress",
+        "non-persisting postal-address derivation for a known fictional CEP"
+      ],
+      "notFor": [
+        "public unauthenticated execution",
+        "authoritative national postal data",
+        "final create or update enforcement"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/EnderecoController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/PostalAddressDeterminationService.java",
+        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/OpenApiGroupResolutionIsolatedIntegrationTest.java"
+      ],
+      "lastVerified": "2026-08-13",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "reactive-determination-result",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "reactive-determination-address-unknown-cep-422",
+      "httpFile": "http/resources/reactive_determination_address_unknown_cep.http",
+      "payloadFiles": [
+        "payloads/resources/reactive_determination_address_unknown_cep.json"
+      ],
+      "status": [
+        "runtime-confirmed"
+      ],
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "HTTP 422 for a CEP outside the deterministic host directory",
+        "fail-closed postal determination without invented fallback"
+      ],
+      "notFor": [
+        "successful address derivation",
+        "public unauthenticated execution",
+        "published Render claims before deployment confirmation"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/PostalAddressDeterminationService.java",
+        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/OpenApiGroupResolutionIsolatedIntegrationTest.java"
+      ],
+      "lastVerified": "2026-08-13",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "error-response",
+      "expectedStatus": 422,
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "reactive-determination-payroll-net-salary",
+      "httpFile": "http/resources/reactive_determination_payroll_net_salary.http",
+      "payloadFiles": [
+        "payloads/resources/reactive_determination_payroll_valid.json"
+      ],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "authenticated idempotent execution of determinePayrollNetSalary",
+        "non-persisting multi-input net salary calculation with versioned formula"
+      ],
+      "notFor": [
+        "public unauthenticated execution",
+        "tenant-specific payroll policy publication",
+        "final create or update enforcement"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FolhasPagamentoController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/PayrollNetSalaryDeterminationService.java",
+        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/OpenApiGroupResolutionIsolatedIntegrationTest.java"
+      ],
+      "lastVerified": "2026-08-13",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "reactive-determination-result",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "reactive-determination-payroll-payment-date",
+      "httpFile": "http/resources/reactive_determination_payroll_payment_date.http",
+      "payloadFiles": [
+        "payloads/resources/reactive_determination_payroll_payment_date.json"
+      ],
+      "status": [
+        "runtime-confirmed",
+        "recommended"
+      ],
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "authenticated idempotent execution of determinePayrollPaymentDate",
+        "second capability of the payroll reactive-determination chain"
+      ],
+      "notFor": [
+        "public unauthenticated execution",
+        "complete holiday-aware corporate calendar",
+        "client-side calculation of salarioLiquido"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FolhasPagamentoController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/PayrollPaymentDateDeterminationService.java",
+        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/OpenApiGroupResolutionIsolatedIntegrationTest.java"
+      ],
+      "lastVerified": "2026-08-13",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "reactive-determination-result",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "reactive-determination-payroll-invalid-discounts-422",
+      "httpFile": "http/resources/reactive_determination_payroll_invalid_discounts.http",
+      "payloadFiles": [
+        "payloads/resources/reactive_determination_payroll_invalid_discounts.json"
+      ],
+      "status": [
+        "runtime-confirmed"
+      ],
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "HTTP 422 when totalDescontos exceeds salarioBruto",
+        "fail-closed payroll determination for inconsistent financial facts"
+      ],
+      "notFor": [
+        "successful net salary calculation",
+        "public unauthenticated execution",
+        "published Render claims before deployment confirmation"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/PayrollNetSalaryDeterminationService.java",
+        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/OpenApiGroupResolutionIsolatedIntegrationTest.java"
+      ],
+      "lastVerified": "2026-08-13",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "error-response",
+      "expectedStatus": 422,
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
       "id": "cargos-options-filter",
       "httpFile": "http/resources/cargos_options_filter.http",
       "payloadFiles": [
@@ -3013,10 +3353,9 @@
       "id": "domain-rules-supplier-eligibility-materializations-confirmed",
       "httpFile": "http/config/domain_rules_supplier_eligibility_materializations_confirmed.http",
       "status": [
-        "runtime-confirmed",
-        "recommended"
+        "illustrative-only"
       ],
-      "llmOperational": true,
+      "referenceOnly": true,
       "protectedContract": false,
       "public": false,
       "authRequired": true,
@@ -3037,14 +3376,14 @@
         "../praxis-config-starter/README.md",
         "../praxis-config-starter/docs/ai/contracts/praxis-ai-api-contract-v1.1.openapi.yaml"
       ],
-      "lastVerified": "2026-04-26",
+      "lastVerified": "2026-08-13",
       "sessionAuthRequired": false,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "array<row>",
       "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": true,
-      "knownPublishedFailure": false
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": true
     },
     {
       "id": "procurement-suppliers-governed-domain-rules-lookup",

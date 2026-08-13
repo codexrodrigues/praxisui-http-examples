@@ -37,6 +37,7 @@ const allowedResponseShapeHints = new Set([
   'ai-clarification-response',
   'domain-catalog-rag-status',
   'shadow-observation',
+  'reactive-determination-result',
 ]);
 
 const errors = [];
@@ -174,6 +175,13 @@ for (const example of manifest.examples ?? []) {
 
   if (typeof example.responseShapeHint !== 'string' || !allowedResponseShapeHints.has(example.responseShapeHint)) {
     errors.push(`Example ${example.id} must declare a valid responseShapeHint.`);
+  }
+
+  if (
+    example.expectedStatus !== undefined &&
+    (!Number.isInteger(example.expectedStatus) || example.expectedStatus < 100 || example.expectedStatus > 599)
+  ) {
+    errors.push(`Example ${example.id} must declare expectedStatus as an HTTP status integer.`);
   }
 
   for (const payloadFile of example.payloadFiles ?? []) {

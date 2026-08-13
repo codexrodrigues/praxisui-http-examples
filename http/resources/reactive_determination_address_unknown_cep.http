@@ -1,0 +1,27 @@
+### status: runtime-confirmed
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: false
+### requiresTenantHeaders: false
+### llmOperational: false
+### protectedContract: false
+### referenceOnly: true
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### accessMode: authenticated-session
+### selectionGuidance: local-reference-reactive-determination-negative-path
+### note: Expected outcome is HTTP 422. The host never invents an address for a CEP outside its deterministic directory.
+
+@baseUrl = http://localhost:8088
+@sessionCookie = replace-with-session-cookie-value
+
+POST {{baseUrl}}/api/human-resources/enderecos/determinations/postal-address
+Accept: application/json
+Content-Type: application/json
+Cookie: SESSION={{sessionCookie}}
+
+< ../../payloads/resources/reactive_determination_address_unknown_cep.json

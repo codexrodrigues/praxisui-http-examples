@@ -56,18 +56,15 @@
       "description": "Read-only proof that a published governed semantic decision materialization is affecting runtime supplier lookup.",
       "minimumHeaders": {
         "Accept": "application/json",
-        "Origin": "http://localhost:4301",
         "X-Tenant-ID": "domain-rules-publication-smoke-enterprise-proof-http-examples-script-20260426",
         "X-Env": "dev",
         "X-User-ID": "example-user"
       },
       "minimumHeadersNotes": [
-        "Origin is required by the protected config materialization read.",
-        "The supplier lookup read does not need Origin, but it accepts the same header set.",
+        "The supplier lookup read is auth-light and does not require Origin.",
         "Add Content-Type: application/json for POST bodies."
       ],
       "exampleIds": [
-        "domain-rules-supplier-eligibility-materializations-confirmed",
         "procurement-suppliers-governed-domain-rules-lookup"
       ]
     }

@@ -2,7 +2,7 @@
 
 Operational surface for LLM-driven discovery against the published Praxis backend.
 
-Last reviewed: `2026-08-02`
+Last reviewed: `2026-08-13`
 
 This file is generated from [`examples.manifest.json`](./examples.manifest.json).
 Current validation commands:
@@ -150,7 +150,6 @@ Use these read-only examples when the task is to verify that a published semanti
 
 | Id | File | Access (minimum) | Recommended stable | Purpose |
 |---|---|---|---|---|
-| `domain-rules-supplier-eligibility-materializations-confirmed` | `http/config/domain_rules_supplier_eligibility_materializations_confirmed.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | read-only inspection of a published governed semantic decision materialization; confirming option_source materializations are derived artifacts |
 | `procurement-suppliers-governed-domain-rules-lookup` | `http/resources/procurement_suppliers_governed_domain_rules_lookup.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | runtime proof that a published domain-rule option_source materialization governs supplier lookup; read-only enterprise proof for supplier eligibility decisions |
 
 ## Full LLM Operational Set
@@ -167,6 +166,10 @@ Use these read-only examples when the task is to verify that a published semanti
 | `schemas-actions-operations-missoes` | `http/metadata/schemas_actions_operations_missoes.http` | Public | none | runtime action discovery for mission pages; workflow affordance discovery before capability checks |
 | `filtered-schema-request-funcionarios` | `http/metadata/filtered_schema_request_funcionarios.http` | Public | none | request-side filtered schema |
 | `filtered-schema-response-funcionarios` | `http/metadata/filtered_schema_response_funcionarios.http` | Public | none | response-side filtered schema |
+| `reactive-determination-address-create-schema` | `http/metadata/filtered_schema_request_enderecos_create_reactive_determination.http` | Public | none | createAddress request-schema projection of the postal-address reactive determination; tenant-neutral x-ui.reactiveDeterminations discovery without tenant or user headers |
+| `reactive-determination-address-edit-schema` | `http/metadata/filtered_schema_request_enderecos_edit_reactive_determination.http` | Public | none | updateAddress request-schema projection of the postal-address reactive determination; tenant-neutral edit binding scoped by exact operationId |
+| `reactive-determination-payroll-create-schema` | `http/metadata/filtered_schema_request_payroll_create_reactive_determination.http` | Public | none | createPayroll request-schema projection of the multi-input net-salary determination; tenant-neutral x-ui.reactiveDeterminations discovery without tenant or user headers |
+| `reactive-determination-payroll-edit-schema` | `http/metadata/filtered_schema_request_payroll_edit_reactive_determination.http` | Public | none | updatePayroll request-schema projection of the multi-input net-salary determination; tenant-neutral edit binding scoped by exact operationId |
 | `filtered-schema-request-procurement-purchase-orders-entity-lookup` | `http/metadata/filtered_schema_request_procurement_purchase_orders_entity_lookup.http` | Public | none | request-side filtered schema for procurement purchase orders; entityLookup controlType discovery; RESOURCE_ENTITY optionSource metadata |
 
 ### Auth-Light Operational Examples
@@ -185,7 +188,6 @@ Use these read-only examples when the task is to verify that a published semanti
 | `vw-resumo-missoes-filter-basic` | `http/views/vw_resumo_missoes_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | operational mission summary filtering |
 | `vw-resumo-missoes-stats-status` | `http/views/vw_resumo_missoes_stats_status.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | analytics projection for mission status charts |
 | `vw-resumo-missoes-stats-prioridade` | `http/views/vw_resumo_missoes_stats_prioridade.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | runtime value-discovery evidence for mission priority categorical semantics |
-| `domain-rules-supplier-eligibility-materializations-confirmed` | `http/config/domain_rules_supplier_eligibility_materializations_confirmed.http` | `Accept` only | `X-Tenant-ID`, `X-Env`, `X-User-ID` | read-only inspection of a published governed semantic decision materialization; confirming option_source materializations are derived artifacts |
 | `procurement-suppliers-governed-domain-rules-lookup` | `http/resources/procurement_suppliers_governed_domain_rules_lookup.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | runtime proof that a published domain-rule option_source materialization governs supplier lookup; read-only enterprise proof for supplier eligibility decisions |
 | `veiculos-filter-basic` | `http/resources/veiculos_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | operational vehicle filtering; assets domain discovery |
 | `incidentes-filter-basic` | `http/resources/incidentes_filter_basic.http` | `Accept` + `Content-Type` | `X-Tenant-ID`, `X-Env`, `X-User-ID` | incident investigation filtering; operations domain discovery |
@@ -209,6 +211,7 @@ The following remain outside the LLM operational surface for now:
 - `ai-context`
 - `ai-registry`
 - `domain-rules` writes
+- reactive determination pilot schemas and authenticated capability executions, which remain `referenceOnly` until the Quickstart deployment is confirmed (`reactive-determination-address-*` and `reactive-determination-payroll-*`)
 - `ai/suggestions`
 - destructive writes
 - unstable published examples

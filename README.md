@@ -130,6 +130,20 @@ Run the governed semantic decision publication proof:
 npm run smoke:domain-rules-publication
 ```
 
+Validate the local reactive determination corpus without starting a backend:
+
+```bash
+npm run verify:reactive-determinations
+```
+
+With the Quickstart running on its canonical local port and an authenticated
+session cookie available, execute create/edit metadata checks, both successful
+capabilities, and their `422` cases:
+
+```bash
+PRAXIS_SESSION_COOKIE=<session-value> REQUIRE_AUTH_EXECUTION=true npm run smoke:reactive-determinations
+```
+
 ## Endpoint Prerequisites Matrix
 
 Use this matrix before copying headers from any individual example.
@@ -170,6 +184,7 @@ Notes:
 - `publishedBackendConfirmed: true` means the example as committed is confirmed against `https://praxis-api-quickstart.onrender.com`, not only from code-backed contract evidence.
 - `knownPublishedFailure: true` means the committed request is known to fail on the published backend, either because it is a deliberate negative-path example or because the published environment is currently unstable for it.
 - Governed lookup examples whose ids contain `entity-lookup` or `light-lookup` must keep their `.http` frontmatter status aligned with [`examples.manifest.json`](./examples.manifest.json). If they are not confirmed on the published backend, they must use `illustrative-only` status even when the local branch proves the contract.
+- Reactive determination examples are code-backed local references until the Quickstart version that publishes them reaches Render. Their `/schemas/filtered` requests deliberately send only `Accept`; authenticated capability examples use a `SESSION` cookie and no caller-authored tenant identity headers. Do not promote them to `llmOperational` or set `publishedBackendConfirmed=true` before `npm run smoke:reactive-determinations` passes against the published host with an authenticated session.
 - `sessionAuthRequired: true` means the example depends on a real authenticated session or equivalent server-side login context.
 - `tenantScopedHeadersRequired: true` means the example has a stable tenant-scoped request form using lightweight headers such as `X-Tenant-ID`, `X-User-ID`, and `X-Env`; this is not the same as login, and it does not imply those headers are the loosest published-backend minimum.
 - `authRequired` remains in the manifest as a deprecated compatibility alias and must be read as `sessionAuthRequired || tenantScopedHeadersRequired`.
