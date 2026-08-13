@@ -1,0 +1,21 @@
+### status: runtime-confirmed,recommended
+### public: true
+### authRequired: false
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: false
+### destructive: false
+### requiresTenantHeaders: false
+### llmOperational: true
+### protectedContract: false
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: true
+### knownPublishedFailure: false
+### selectionGuidance: published-reactive-determination-metadata
+### note: Request-schema discovery is tenant-neutral and intentionally sends no tenant, user, session, authorization, or Origin headers.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+
+GET {{baseUrl}}/schemas/filtered?path=/api/human-resources/enderecos&operation=post&schemaType=request
+Accept: application/json

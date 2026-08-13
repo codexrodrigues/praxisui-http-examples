@@ -1,0 +1,27 @@
+### status: runtime-confirmed,recommended
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: false
+### requiresTenantHeaders: false
+### llmOperational: false
+### protectedContract: false
+### referenceOnly: true
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### accessMode: authenticated-session
+### selectionGuidance: local-reference-reactive-determination-execution
+### note: Second step of the payroll chain. Its input salarioLiquido must come from determinePayrollNetSalary; the committed fixture is deterministic documentation, not client-side business logic.
+
+@baseUrl = http://localhost:8088
+@sessionCookie = replace-with-session-cookie-value
+
+POST {{baseUrl}}/api/human-resources/folhas-pagamento/determinations/payment-date
+Accept: application/json
+Content-Type: application/json
+Cookie: SESSION={{sessionCookie}}
+
+< ../../payloads/resources/reactive_determination_payroll_payment_date.json

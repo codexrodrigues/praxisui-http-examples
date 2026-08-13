@@ -108,7 +108,6 @@ const playbookSteps = [
     title: 'Step 12. Inspect Governed Decision Materialization',
     description: 'Use these read-only examples when the task is to verify that a published semantic decision is governing a runtime lookup without executing domain-rule writes.',
     ids: [
-      'domain-rules-supplier-eligibility-materializations-confirmed',
       'procurement-suppliers-governed-domain-rules-lookup',
     ],
   },
@@ -220,6 +219,7 @@ The following remain outside the LLM operational surface for now:
 - \`ai-context\`
 - \`ai-registry\`
 - \`domain-rules\` writes
+- reactive determination pilot schemas and authenticated capability executions, which remain \`referenceOnly\` until the Quickstart deployment is confirmed (\`reactive-determination-address-*\` and \`reactive-determination-payroll-*\`)
 - \`ai/suggestions\`
 - destructive writes
 - unstable published examples

@@ -61,19 +61,16 @@ Default recommended stable scoped headers:
 
 Use these when the task is to inspect published semantic-decision proof without executing domain-rule writes:
 
-- `domain-rules-supplier-eligibility-materializations-confirmed` -> `http/config/domain_rules_supplier_eligibility_materializations_confirmed.http`
 - `procurement-suppliers-governed-domain-rules-lookup` -> `http/resources/procurement_suppliers_governed_domain_rules_lookup.http`
 
 Accepted now on the published backend:
 - `Accept: application/json`
-- `Origin: http://localhost:4301`
 - `X-Tenant-ID: domain-rules-publication-smoke-enterprise-proof-http-examples-script-20260426`
 - `X-Env: dev`
 - `X-User-ID: example-user`
 - `Content-Type: application/json` for the supplier lookup `POST`
 
 Notes:
-- `Origin` is required by the protected config materialization read.
 - Supplier lookup is an auth-light runtime read, but it uses the same tenant as the confirmed materialization so the governed policy is visible.
 - Do not use this lane to create, approve, or publish new domain rules.
 
