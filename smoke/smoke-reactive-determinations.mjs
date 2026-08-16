@@ -71,11 +71,11 @@ if (!sessionCookie) {
     }
     if (id === 'reactive-determination-payroll-net-salary' && response.status === 200) {
       requireEqual(String(body?.salarioLiquido), '7549.65', `${id} salarioLiquido`);
-      requireEqual(body?.decisionVersion, 'payroll-net-v1', `${id} decisionVersion`);
+      requireEqual(body?.decisionVersion, 'payroll-net-v1-half-even', `${id} decisionVersion`);
     }
     if (id === 'reactive-determination-payroll-payment-date' && response.status === 200) {
       requireEqual(body?.dataPagamento, '2026-05-07', `${id} dataPagamento`);
-      requireEqual(body?.decisionVersion, 'payroll-calendar-v1', `${id} decisionVersion`);
+      requireEqual(body?.decisionVersion, 'payroll-calendar-v1-fifth-weekday', `${id} decisionVersion`);
     }
   }
 }
