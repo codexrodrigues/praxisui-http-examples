@@ -1,0 +1,32 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: false
+### referenceOnly: true
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: true
+### accessMode: auth-light
+### selectionGuidance: avoid-by-default-reference
+### note: Canonical read-only filter contract for the cumulative supplier procurement funnel.
+### note: Keep reference-only until the matching Quickstart release is published and smoke-confirmed.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@userId = example-user
+@envId = public
+
+POST {{baseUrl}}/api/procurement/vw-supplier-procurement-funnel/filter?page=0&size=10
+Content-Type: application/json
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}
+X-Env: {{envId}}
+
+< ../../payloads/views/supplier_procurement_funnel_filter_basic.json
