@@ -2112,6 +2112,79 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "supplier-procurement-funnel-filter-basic",
+      "httpFile": "http/views/supplier_procurement_funnel_filter_basic.http",
+      "payloadFiles": [
+        "payloads/views/supplier_procurement_funnel_filter_basic.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "cumulative supplier procurement funnel rows",
+        "remote analytic table materialization"
+      ],
+      "notFor": [
+        "dynamic supplier selection policy evaluation",
+        "mutation flows"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/db/operational-migrations/V20260826_001__supplier_procurement_funnel_view.sql",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/procurement/controller/VwSupplierProcurementFunnelController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/procurement/dto/filter/VwSupplierProcurementFunnelFilterDTO.java"
+      ],
+      "lastVerified": "2026-08-26",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": true
+    },
+    {
+      "id": "supplier-procurement-funnel-stats-stage",
+      "httpFile": "http/views/supplier_procurement_funnel_stats_stage.http",
+      "payloadFiles": [
+        "payloads/views/supplier_procurement_funnel_stats_stage.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "ordered labeled buckets for supplier procurement funnel and pyramid charts",
+        "supplier-procurement-funnel analytics projection"
+      ],
+      "notFor": [
+        "alphabetical stage ordering",
+        "dynamic supplier selection policy evaluation",
+        "mutation flows"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/docs/spec/x-ui-analytics.schema.json",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/procurement/service/VwSupplierProcurementFunnelService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/procurement/controller/VwSupplierProcurementFunnelController.java"
+      ],
+      "lastVerified": "2026-08-26",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "stats-group-by",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": true
+    },
+    {
       "id": "vw-resumo-missoes-filter-basic",
       "httpFile": "http/views/vw_resumo_missoes_filter_basic.http",
       "payloadFiles": [

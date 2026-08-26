@@ -1,0 +1,11 @@
+{
+  "filter": {},
+  "field": "stage",
+  "metric": {
+    "operation": "SUM",
+    "field": "volume",
+    "alias": "volume"
+  },
+  "limit": 6,
+  "orderBy": "KEY_ASC"
+}
