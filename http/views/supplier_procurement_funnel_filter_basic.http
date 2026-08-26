@@ -1,21 +1,21 @@
-### status: illustrative-only
+### status: runtime-confirmed,recommended
 ### public: false
 ### authRequired: true
 ### sessionAuthRequired: false
 ### tenantScopedHeadersRequired: true
 ### destructive: false
 ### requiresTenantHeaders: true
-### llmOperational: false
+### llmOperational: true
 ### protectedContract: false
-### referenceOnly: true
-### runtimeRecordConfirmed: false
+### referenceOnly: false
+### runtimeRecordConfirmed: true
 ### selectorConfirmed: true
-### publishedBackendConfirmed: false
-### knownPublishedFailure: true
+### publishedBackendConfirmed: true
+### knownPublishedFailure: false
 ### accessMode: auth-light
-### selectionGuidance: avoid-by-default-reference
+### selectionGuidance: safe-first-auth-light
 ### note: Canonical read-only filter contract for the cumulative supplier procurement funnel.
-### note: Keep reference-only until the matching Quickstart release is published and smoke-confirmed.
+### note: Published Quickstart runtime smoke-confirmed with the stable scoped header trio on 2026-08-26.
 
 @baseUrl = https://praxis-api-quickstart.onrender.com
 @tenantId = demo

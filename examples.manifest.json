@@ -2118,9 +2118,11 @@
         "payloads/views/supplier_procurement_funnel_filter_basic.json"
       ],
       "status": [
-        "illustrative-only"
+        "runtime-confirmed",
+        "recommended"
       ],
-      "referenceOnly": true,
+      "llmOperational": true,
+      "referenceOnly": false,
       "public": false,
       "authRequired": true,
       "destructive": false,
@@ -2142,10 +2144,10 @@
       "sessionAuthRequired": false,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "restApiResponse<page<row>>",
-      "runtimeRecordConfirmed": false,
+      "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": false,
-      "knownPublishedFailure": true
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "supplier-procurement-funnel-stats-stage",
@@ -2154,9 +2156,11 @@
         "payloads/views/supplier_procurement_funnel_stats_stage.json"
       ],
       "status": [
-        "illustrative-only"
+        "runtime-confirmed",
+        "recommended"
       ],
-      "referenceOnly": true,
+      "llmOperational": true,
+      "referenceOnly": false,
       "public": false,
       "authRequired": true,
       "destructive": false,
@@ -2179,10 +2183,10 @@
       "sessionAuthRequired": false,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "stats-group-by",
-      "runtimeRecordConfirmed": false,
+      "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": false,
-      "knownPublishedFailure": true
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": false
     },
     {
       "id": "vw-resumo-missoes-filter-basic",
