@@ -45,6 +45,8 @@ const protectedPublishedChecks = (manifest.examples ?? [])
   .filter(
     (example) =>
       example.protectedContract === true &&
+      example.publishedBackendConfirmed === true &&
+      example.sessionAuthRequired !== true &&
       example.runtimeRecordConfirmed === true &&
       example.destructive === false &&
       example.httpFile,

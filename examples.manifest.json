@@ -2897,8 +2897,7 @@
       "id": "ai-context-get-table",
       "httpFile": "http/config/ai_context_get_table.http",
       "status": [
-        "runtime-confirmed",
-        "recommended"
+        "runtime-confirmed"
       ],
       "protectedContract": true,
       "public": false,
@@ -2920,10 +2919,11 @@
       "sessionAuthRequired": false,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "config-record",
+      "expectedStatus": 403,
       "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
       "publishedBackendConfirmed": true,
-      "knownPublishedFailure": false
+      "knownPublishedFailure": true
     },
     {
       "id": "ai-context-post-table",
@@ -2993,8 +2993,7 @@
       "id": "ai-registry-template-get-table",
       "httpFile": "http/config/ai_registry_template_get_table.http",
       "status": [
-        "runtime-confirmed",
-        "recommended"
+        "runtime-confirmed"
       ],
       "protectedContract": true,
       "public": false,
@@ -3015,10 +3014,11 @@
       "sessionAuthRequired": false,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "config-record",
+      "expectedStatus": 403,
       "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
       "publishedBackendConfirmed": true,
-      "knownPublishedFailure": false
+      "knownPublishedFailure": true
     },
     {
       "id": "ai-registry-template-put-table",
