@@ -1,0 +1,22 @@
+### status: illustrative-only
+### public: true
+### authRequired: false
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: false
+### destructive: false
+### requiresTenantHeaders: false
+### llmOperational: true
+### protectedContract: false
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### selectionGuidance: use-after-published-backend-confirmation
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+
+# Request schema da operação parcial de manutenção de contato.
+# O contrato canônico contém somente nomeCompleto, email, telefone e fotoPerfilUrl.
+GET {{baseUrl}}/schemas/filtered?path=/api/human-resources/funcionarios/%7Bid%7D/profile&operation=patch&schemaType=request
+Accept: application/json

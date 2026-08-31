@@ -2,7 +2,7 @@
 
 Operational surface for LLM-driven discovery against the published Praxis backend.
 
-Last reviewed: `2026-08-26`
+Last reviewed: `2026-08-31`
 
 This file is generated from [`examples.manifest.json`](./examples.manifest.json).
 Current validation commands:
@@ -166,6 +166,7 @@ Use these read-only examples when the task is to verify that a published semanti
 | `schemas-surfaces-human-resources-funcionarios` | `http/metadata/schemas_surfaces_human_resources_funcionarios.http` | Public | none | runtime surface discovery for funcionarios pages; modal surface previews |
 | `schemas-actions-operations-missoes` | `http/metadata/schemas_actions_operations_missoes.http` | Public | none | runtime action discovery for mission pages; workflow affordance discovery before capability checks |
 | `filtered-schema-request-funcionarios` | `http/metadata/filtered_schema_request_funcionarios.http` | Public | none | request-side filtered schema |
+| `filtered-schema-request-funcionario-profile` | `http/metadata/filtered_schema_request_funcionario_profile.http` | Public | none | request-side schema for partial employee contact maintenance; separating a PATCH command from the employee read model |
 | `filtered-schema-response-funcionarios` | `http/metadata/filtered_schema_response_funcionarios.http` | Public | none | response-side filtered schema |
 | `reactive-determination-address-create-schema` | `http/metadata/filtered_schema_request_enderecos_create_reactive_determination.http` | Public | none | createAddress request-schema projection of the postal-address reactive determination; tenant-neutral x-ui.reactiveDeterminations discovery without tenant or user headers |
 | `reactive-determination-address-edit-schema` | `http/metadata/filtered_schema_request_enderecos_edit_reactive_determination.http` | Public | none | updateAddress request-schema projection of the postal-address reactive determination; tenant-neutral edit binding scoped by exact operationId |
