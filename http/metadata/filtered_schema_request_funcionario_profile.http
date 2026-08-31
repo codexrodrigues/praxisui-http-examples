@@ -16,7 +16,7 @@
 
 @baseUrl = https://praxis-api-quickstart.onrender.com
 
-# Request schema da operação parcial de manutenção de contato.
-# O contrato canônico contém somente nomeCompleto, email, telefone e fotoPerfilUrl.
+### Request schema da operação parcial de manutenção de contato.
+### O contrato canônico contém somente nomeCompleto, email, telefone e fotoPerfilUrl.
 GET {{baseUrl}}/schemas/filtered?path=/api/human-resources/funcionarios/%7Bid%7D/profile&operation=patch&schemaType=request
 Accept: application/json
