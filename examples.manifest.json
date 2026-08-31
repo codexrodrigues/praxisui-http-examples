@@ -224,6 +224,39 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "filtered-schema-request-funcionario-profile",
+      "httpFile": "http/metadata/filtered_schema_request_funcionario_profile.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": true,
+      "public": true,
+      "authRequired": false,
+      "destructive": false,
+      "canonicalFor": [
+        "request-side schema for partial employee contact maintenance",
+        "separating a PATCH command from the employee read model"
+      ],
+      "notFor": [
+        "employee detail rendering",
+        "full employee update payloads",
+        "backend authorization decisions"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/UpdateFuncionarioProfileDTO.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FuncionarioController.java",
+        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/QuickstartMetadataMigrationIntegrationTest.java"
+      ],
+      "lastVerified": "2026-08-30",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "filtered-schema",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
       "id": "filtered-schema-response-funcionarios",
       "httpFile": "http/metadata/filtered_schema_response_funcionarios.http",
       "status": [
