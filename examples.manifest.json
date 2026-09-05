@@ -4798,6 +4798,50 @@
       "knownPublishedFailure": false,
       "accessMode": "authenticated-session",
       "selectionGuidance": "reference-only-authenticated-execution-not-confirmed"
+    },
+    {
+      "id": "acordos-regulatorios-governed-actions",
+      "httpFile": "http/operations/acordos_regulatorios_governed_actions.http",
+      "payloadFiles": [
+        "payloads/operations/acordos_regulatorios_workflow.json"
+      ],
+      "canonicalFor": [
+        "strong If-Match concurrency on regulatory-agreement item actions",
+        "actor-scoped idempotent replay with the original resource ETag",
+        "cleanup with the ETag returned by the successful transition"
+      ],
+      "notFor": [
+        "unattended execution against shared or irreversible records",
+        "default LLM operational selection",
+        "claiming published-host readiness before the owner migration is applied"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/controller/AcordosRegulatorioController.java",
+        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/AcordosRegulatorioPilotIntegrationTest.java",
+        "../praxis-api-quickstart/db/operational-migrations/V20260905_001__acordos_regulatorios_resource_version.sql",
+        "../praxis-metadata-starter/src/main/java/org/praxisplatform/uischema/concurrency/ResourceVersionPreconditions.java"
+      ],
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 200,
+      "status": [
+        "runtime-confirmed"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "destructive": true,
+      "lastVerified": "2026-09-05",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "requiresTenantHeaders": false,
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "accessMode": "authenticated-session",
+      "selectionGuidance": "protected-contract-manual-governed-action-with-cleanup"
     }
   ]
 }
