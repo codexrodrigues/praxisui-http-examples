@@ -2,7 +2,7 @@
 
 Operational surface for LLM-driven discovery against the published Praxis backend.
 
-Last reviewed: `2026-08-31`
+Last reviewed: `2026-09-05`
 
 This file is generated from [`examples.manifest.json`](./examples.manifest.json).
 Current validation commands:

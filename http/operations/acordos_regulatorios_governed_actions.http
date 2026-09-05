@@ -1,0 +1,69 @@
+### status: runtime-confirmed
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: true
+### requiresTenantHeaders: false
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### accessMode: authenticated-session
+### selectionGuidance: protected-contract-manual-governed-action-with-cleanup
+### note: Execute only against a disposable VIGENTE agreement. Reuse the original ETag and key for replay, then reinstate with the ETag returned by suspend.
+
+@baseUrl = http://localhost:8088
+@sessionCookie = replace-with-session-cookie-value
+@agreementId = 1
+@suspendKey = replace-with-one-unique-suspend-key
+@reinstateKey = replace-with-one-unique-reinstate-key
+
+### Read the opaque resource version before the first mutation.
+GET {{baseUrl}}/api/operations/acordos-regulatorios/{{agreementId}}
+Accept: application/json
+Cookie: SESSION={{sessionCookie}}
+
+> {%
+  client.global.set("agreementOriginalEtag", response.headers.valueOf("ETag"));
+%}
+
+### Suspend exactly once and retain the new ETag returned by the action.
+POST {{baseUrl}}/api/operations/acordos-regulatorios/{{agreementId}}/actions/suspend
+Accept: application/json
+Content-Type: application/json
+Cookie: SESSION={{sessionCookie}}
+If-Match: {{agreementOriginalEtag}}
+Idempotency-Key: {{suspendKey}}
+X-Correlation-ID: corpus-agreement-suspend
+
+< ../../payloads/operations/acordos_regulatorios_workflow.json
+
+> {%
+  client.global.set("agreementSuspendedEtag", response.headers.valueOf("ETag"));
+%}
+
+### Replay: same actor, target, action, command, original ETag and idempotency key.
+POST {{baseUrl}}/api/operations/acordos-regulatorios/{{agreementId}}/actions/suspend
+Accept: application/json
+Content-Type: application/json
+Cookie: SESSION={{sessionCookie}}
+If-Match: {{agreementOriginalEtag}}
+Idempotency-Key: {{suspendKey}}
+X-Correlation-ID: corpus-agreement-suspend-replay
+
+< ../../payloads/operations/acordos_regulatorios_workflow.json
+
+### Cleanup: reinstate with the ETag returned by the successful suspension.
+POST {{baseUrl}}/api/operations/acordos-regulatorios/{{agreementId}}/actions/reinstate
+Accept: application/json
+Content-Type: application/json
+Cookie: SESSION={{sessionCookie}}
+If-Match: {{agreementSuspendedEtag}}
+Idempotency-Key: {{reinstateKey}}
+X-Correlation-ID: corpus-agreement-reinstate
+
+< ../../payloads/operations/acordos_regulatorios_workflow.json
