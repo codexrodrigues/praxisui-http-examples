@@ -211,3 +211,7 @@ Notes:
 - Read runtime-usability fields together: `selectorConfirmed: true` with `publishedBackendConfirmed: false` means the contract or selector is still useful, but the concrete committed record should not be treated as confirmed on the published backend.
 - Do not infer canonical persistence contracts from `illustrative-only` or `legacy` examples.
 - When an example conflicts with runtime behavior, the backend/runtime wins.
+
+## Política de CI e publicação
+
+Validação local durante desenvolvimento; Actions apenas no fechamento necessário de versões. Consulte [ACTIONS-RELEASE-POLICY.md](ACTIONS-RELEASE-POLICY.md) para gatilhos, gates e recuperação.
