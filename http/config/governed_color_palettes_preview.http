@@ -1,0 +1,28 @@
+### status: none
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### selectionGuidance: protected-contract-governed-palette-preview
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@envId = public
+
+POST {{baseUrl}}/api/praxis/config/color-palettes/previews
+Content-Type: application/json
+Accept: application/json
+Origin: http://localhost:4301
+X-Tenant-ID: {{tenantId}}
+X-Env: {{envId}}
+
+< ../../payloads/config/governed_color_palettes_preview.json
