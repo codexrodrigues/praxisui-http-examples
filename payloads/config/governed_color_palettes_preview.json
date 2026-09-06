@@ -1,0 +1,26 @@
+{
+  "paletteKey": "corporate-main",
+  "palette": {
+    "paletteKey": "corporate-main",
+    "displayName": "Corporate main",
+    "familyKey": "corporate",
+    "variant": {
+      "key": "light",
+      "label": "Light"
+    },
+    "entries": [
+      {
+        "token": "surface.default",
+        "label": "Default surface",
+        "value": "#FFFFFF",
+        "onColor": "#1B1B1F"
+      },
+      {
+        "token": "status.critical",
+        "label": "Critical status",
+        "value": "#BA1A1A",
+        "onColor": "#FFFFFF"
+      }
+    ]
+  }
+}
