@@ -3166,13 +3166,13 @@
         "../praxis-config-starter/src/main/java/org/praxisplatform/config/controller/GovernedColorPaletteController.java",
         "../praxis-api-quickstart/docs/governed-color-palette-browser-proof.md"
       ],
-      "lastVerified": "2026-09-06",
+      "lastVerified": "2026-09-07",
       "sessionAuthRequired": false,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "capabilities-snapshot",
-      "runtimeRecordConfirmed": false,
+      "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": false,
+      "publishedBackendConfirmed": true,
       "knownPublishedFailure": false
     },
     {
@@ -3192,13 +3192,13 @@
         "../praxis-config-starter/src/test/java/org/praxisplatform/config/controller/GovernedColorPaletteControllerTest.java",
         "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/GovernedColorPaletteHttpIntegrationTest.java"
       ],
-      "lastVerified": "2026-09-06",
+      "lastVerified": "2026-09-07",
       "sessionAuthRequired": false,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "mutation-result",
-      "runtimeRecordConfirmed": false,
+      "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": false,
+      "publishedBackendConfirmed": true,
       "knownPublishedFailure": false
     },
     {
@@ -3218,14 +3218,14 @@
         "../praxis-config-starter/src/main/java/org/praxisplatform/config/service/GovernedColorPaletteProjectionService.java",
         "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/GovernedColorPaletteHttpIntegrationTest.java"
       ],
-      "lastVerified": "2026-09-06",
+      "lastVerified": "2026-09-07",
       "sessionAuthRequired": false,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "config-record",
-      "runtimeRecordConfirmed": false,
+      "runtimeRecordConfirmed": true,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": false,
-      "knownPublishedFailure": false
+      "publishedBackendConfirmed": true,
+      "knownPublishedFailure": true
     },
     {
       "id": "domain-rules-supplier-eligibility-intake",
