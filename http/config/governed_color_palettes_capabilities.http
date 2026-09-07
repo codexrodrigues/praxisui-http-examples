@@ -8,9 +8,9 @@
 ### llmOperational: false
 ### protectedContract: true
 ### referenceOnly: false
-### runtimeRecordConfirmed: false
+### runtimeRecordConfirmed: true
 ### selectorConfirmed: true
-### publishedBackendConfirmed: false
+### publishedBackendConfirmed: true
 ### knownPublishedFailure: false
 ### selectionGuidance: protected-contract-governed-palette-discovery
 
@@ -20,6 +20,6 @@
 
 GET {{baseUrl}}/api/praxis/config/color-palettes/capabilities
 Accept: application/json
-Origin: http://localhost:4301
+Origin: https://praxisui.dev
 X-Tenant-ID: {{tenantId}}
 X-Env: {{envId}}

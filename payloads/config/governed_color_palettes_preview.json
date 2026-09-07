@@ -6,21 +6,46 @@
     "familyKey": "corporate",
     "variant": {
       "key": "light",
-      "label": "Light"
+      "displayName": "Light",
+      "dimensions": {
+        "colorScheme": "light"
+      }
+    },
+    "scope": {
+      "brand": "praxis",
+      "theme": "adaptive"
     },
     "entries": [
       {
-        "token": "surface.default",
-        "label": "Default surface",
-        "value": "#FFFFFF",
-        "onColor": "#1B1B1F"
+        "tokenId": "content.primary",
+        "displayName": "Primary content",
+        "aliases": [],
+        "semanticRole": "content",
+        "cssReference": "var(--content-primary)",
+        "fallback": "#1B1B1F",
+        "purposes": ["text"]
       },
       {
-        "token": "status.critical",
-        "label": "Critical status",
-        "value": "#BA1A1A",
-        "onColor": "#FFFFFF"
+        "tokenId": "surface.default",
+        "displayName": "Default surface",
+        "aliases": [],
+        "semanticRole": "surface",
+        "cssReference": "var(--surface-default)",
+        "fallback": "#FFFFFF",
+        "purposes": ["surface"]
       }
-    ]
+    ],
+    "contrastEvidence": [
+      {
+        "foregroundTokenId": "content.primary",
+        "backgroundTokenId": "surface.default",
+        "ratio": 16.4,
+        "requiredLevel": "AAA"
+      }
+    ],
+    "provenance": {
+      "source": "Praxis Design System",
+      "approvedBy": "Design Council"
+    }
   }
 }
