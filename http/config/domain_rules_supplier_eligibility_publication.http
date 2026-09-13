@@ -1,7 +1,7 @@
 ### status: none
 ### public: false
 ### authRequired: true
-### sessionAuthRequired: false
+### sessionAuthRequired: true
 ### tenantScopedHeadersRequired: true
 ### destructive: true
 ### requiresTenantHeaders: true
@@ -14,14 +14,22 @@
 ### knownPublishedFailure: false
 ### selectionGuidance: protected-contract-semantic-decision-publication
 
-@baseUrl = https://praxis-api-quickstart.onrender.com
-@tenantId = demo
-@envId = public
+@baseUrl = http://127.0.0.1:8088
+@origin = http://localhost:4003
+@tenantId = domain-rules-local-proof
+@envId = local
+@publisherSession = <SESSION cookie issued to a RULE_SNAPSHOT_PUBLISHER principal>
+
+# This file performs only publication. Its ruleDefinitionId must reference a
+# definition that was created as draft, proposed by the author, and approved by
+# the reviewer in the same isolated tenant and environment.
 
 POST {{baseUrl}}/api/praxis/config/domain-rules/publications
 Content-Type: application/json
 Accept: application/json
+Origin: {{origin}}
 X-Tenant-ID: {{tenantId}}
 X-Env: {{envId}}
+Cookie: SESSION={{publisherSession}}
 
 < ../../payloads/config/domain_rules_supplier_eligibility_publication.json

@@ -2,7 +2,7 @@
   "ruleKey": "procurement.suppliers.rule.selection-eligibility",
   "version": 1,
   "ruleType": "selection_eligibility",
-  "status": "approved",
+  "status": "draft",
   "contextKey": "procurement",
   "resourceKey": "procurement.suppliers",
   "serviceKey": "praxis-api-quickstart",
@@ -15,7 +15,10 @@
   },
   "parameters": {
     "optionSourceKey": "supplier",
-    "validationMessageTemplate": "Supplier is not available for purchase flows."
+    "validationMessageTemplate": "Supplier is not available for purchase flows.",
+    "validationPolicy": {
+      "effect": "BLOCK"
+    }
   },
   "condition": {
     "in": [
@@ -29,10 +32,9 @@
     ]
   },
   "governance": {
-    "requiredApprovals": [],
+    "requiredApprovals": [
+      "<reviewer-actor-ref>"
+    ],
     "auditReason": "Enterprise proof for governed semantic decisions authored by AI."
-  },
-  "createdByType": "llm",
-  "createdBy": "praxis-enterprise-proof-agent",
-  "approvedBy": "procurement-owner"
+  }
 }

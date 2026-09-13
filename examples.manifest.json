@@ -3321,10 +3321,11 @@
       "sourceOfTruth": [
         "../praxis-config-starter/README.md",
         "../praxis-config-starter/docs/ai/contracts/praxis-ai-api-contract-v1.1.openapi.yaml",
+        "../praxis-config-starter/docs/domain-rules/operational-policy-resolution.md",
         "../praxis-api-quickstart/scripts/verify-domain-rules-runtime.sh"
       ],
-      "lastVerified": "2026-04-26",
-      "sessionAuthRequired": false,
+      "lastVerified": "2026-09-13",
+      "sessionAuthRequired": true,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "mutation-result",
       "runtimeRecordConfirmed": false,
@@ -3356,10 +3357,11 @@
       "sourceOfTruth": [
         "../praxis-config-starter/README.md",
         "../praxis-config-starter/docs/ai/contracts/praxis-ai-api-contract-v1.1.openapi.yaml",
+        "../praxis-config-starter/docs/domain-rules/operational-policy-resolution.md",
         "../praxis-config-starter/src/test/java/org/praxisplatform/config/controller/DomainRuleControllerTest.java"
       ],
-      "lastVerified": "2026-04-26",
-      "sessionAuthRequired": false,
+      "lastVerified": "2026-09-13",
+      "sessionAuthRequired": true,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "mutation-result",
       "runtimeRecordConfirmed": false,
@@ -3391,10 +3393,11 @@
       "sourceOfTruth": [
         "../praxis-config-starter/README.md",
         "../praxis-config-starter/docs/ai/contracts/praxis-ai-api-contract-v1.1.openapi.yaml",
+        "../praxis-config-starter/docs/domain-rules/operational-policy-resolution.md",
         "../praxis-config-starter/docs/ai/release-readiness-2026-04-25-domain-rules.md"
       ],
-      "lastVerified": "2026-04-26",
-      "sessionAuthRequired": false,
+      "lastVerified": "2026-09-13",
+      "sessionAuthRequired": true,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "mutation-result",
       "runtimeRecordConfirmed": false,
@@ -3423,10 +3426,11 @@
       "sourceOfTruth": [
         "../praxis-config-starter/README.md",
         "../praxis-config-starter/docs/ai/contracts/praxis-ai-api-contract-v1.1.openapi.yaml",
+        "../praxis-config-starter/docs/domain-rules/operational-policy-resolution.md",
         "../praxis-config-starter/docs/ai/semantic-decision-governance-public-proof-plan.md"
       ],
-      "lastVerified": "2026-04-26",
-      "sessionAuthRequired": false,
+      "lastVerified": "2026-09-13",
+      "sessionAuthRequired": true,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "array<row>",
       "runtimeRecordConfirmed": false,

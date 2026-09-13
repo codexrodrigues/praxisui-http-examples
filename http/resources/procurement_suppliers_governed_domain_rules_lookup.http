@@ -14,7 +14,7 @@
 ### knownPublishedFailure: false
 ### responseShapeHint: page<option>
 ### selectionGuidance: operational-read-governed-option-source
-### note: Uses the tenant from smoke:domain-rules-publication where ACTIVE suppliers are intentionally blocked by the published decision.
+### note: Historical published proof: this committed tenant and decision remain independently confirmed and are not produced by the local isolated smoke.
 
 @baseUrl = https://praxis-api-quickstart.onrender.com
 @tenantId = domain-rules-publication-smoke-enterprise-proof-http-examples-script-20260426

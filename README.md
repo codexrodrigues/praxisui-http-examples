@@ -124,11 +124,39 @@ Run the operational surface most relevant to LLMs:
 npm run smoke:llm-surface
 ```
 
-Run the governed semantic decision publication proof:
+Run the governed semantic decision publication proof only against an isolated local
+environment that provides four authenticated sessions. The author, reviewer, and
+publisher must be distinct; `APPROVER_REF` identifies the governed approval
+requirement, while the review authorization is decided by the reviewer session.
 
 ```bash
+BASE_URL=http://127.0.0.1:8088 \
+ORIGIN=http://localhost:4003 \
+TENANT_ID=domain-rules-local-proof \
+ENVIRONMENT=local \
+AUTHOR_USERNAME='<author>' AUTHOR_PASSWORD='<author-password>' \
+REVIEWER_USERNAME='<reviewer>' REVIEWER_PASSWORD='<reviewer-password>' \
+PUBLISHER_USERNAME='<publisher>' PUBLISHER_PASSWORD='<publisher-password>' \
+READER_USERNAME='<reader>' READER_PASSWORD='<reader-password>' \
+APPROVER_REF='<governed-approver-reference>' \
 npm run smoke:domain-rules-publication
 ```
+
+The smoke logs neither credentials nor `SESSION` cookies. It stops before making
+an HTTP request if any required value is absent, creates a draft, transitions it
+through proposed and approved with separate sessions, then publishes it and reads
+the materialization and option source with the reader session. It is a destructive
+protected-contract proof and does not confirm a published backend surface.
+
+The three lifecycle HTTP files remain separate operations: the definition request
+uses an author `SESSION`; the approval request requires that definition to already
+be `proposed` and uses a reviewer `SESSION`; the publication request requires the
+approved definition and uses a publisher `SESSION`. They are not a paste-and-run
+bundle. The smoke handles the additional `XSRF-TOKEN` refresh and
+`X-XSRF-TOKEN` header required by the protected supplier option-source `POST`.
+The definition fixture carries `<reviewer-actor-ref>` as a placeholder in
+`governance.requiredApprovals`; replace it with the reviewer actor reference for
+the isolated environment before executing the standalone HTTP definition request. The four protected lifecycle/readback entries were structurally audited on 2026-09-13; their `lastVerified` date does not assert an HTTP execution, and `publishedBackendConfirmed` remains false.
 
 Validate the local reactive determination corpus without starting a backend:
 
@@ -153,17 +181,19 @@ It is the canonical per-class prerequisite view for building valid requests.
 |---|---|---|---|---|
 | Public metadata | `health`, `openapi-docs`, `schemas-catalog`, filtered schema endpoints | `Accept: application/json` | none | not required |
 | Auth-light resources/views | `resources`, `views`, and operational `expansion-detail` reads on the published backend | `Accept: application/json`; add `Content-Type: application/json` for `POST` bodies | `X-Tenant-ID: demo`, `X-Env: public`, `X-User-ID: example-user` | not required |
-| Governed decision read-only | published `domain-rules` materialization and governed supplier lookup proof | `Accept: application/json`, proof tenant headers; add `Content-Type: application/json` for supplier lookup `POST` | `X-Tenant-ID: domain-rules-publication-smoke-enterprise-proof-http-examples-script-20260426`, `X-Env: dev`, `X-User-ID: example-user` | required for materialization read |
+| Governed decision read-only | local protected `domain-rules` materialization readback | `Accept: application/json`, `X-Tenant-ID`, `X-Env` | authenticated reader `SESSION` | required |
+| Historical published governed lookup | committed supplier option-source proof on the published backend | `Accept: application/json`, `Content-Type: application/json` | its committed tenant, environment, and user headers | historical published evidence; not part of the local smoke |
 | Protected `config/ui` | canonical remote UI config contracts | `Accept: application/json`, `X-Tenant-ID: demo`, `Origin: http://localhost:4301` | `X-User-ID: demo-user-1`, `X-Env: local`, `Content-Type: application/json` for `PUT` bodies | required on the published backend |
 | Protected `ai-context` / `ai-registry` | canonical AI config contracts | `Accept: application/json`, `X-Tenant-ID: demo`, `Origin: http://localhost:4301` | `X-Env: local`, `Content-Type: application/json` for `POST` and `PUT` bodies | required on the published backend |
-| Protected `domain-rules` writes | governed semantic decision intake, definition, approval and publication | contract-backed writes, not part of the safe-first published LLM lane | isolated tenant, `X-Env`, `Content-Type: application/json` for mutation/simulation bodies | follow the protected config policy before executing against shared environments |
+| Protected `domain-rules` writes | governed semantic decision intake, definition, approval and publication | contract-backed writes, not part of the safe-first published LLM lane | isolated tenant, `X-Env`, `Content-Type: application/json`, and role-specific authenticated `SESSION` cookies | follow the protected config policy before executing against shared environments |
 
 Notes:
 
 - Public metadata should not include tenant or user headers unless a specific debugging task requires them.
 - Auth-light resources/views are currently accepted by the published backend without tenant-scoping headers on the confirmed LLM surface examples.
 - For auth-light usage, prefer the stable scoped trio `X-Tenant-ID: demo`, `X-Env: public`, and `X-User-ID: example-user` when you want deterministic tenant-aware behavior rather than the loosest accepted request.
-- Governed decision read-only examples use the proof tenant from `smoke:domain-rules-publication`; use them to inspect evidence, not to create new decisions.
+- The local governed materialization read uses the isolated proof tenant from `smoke:domain-rules-publication`; use it to inspect evidence, not to create new decisions.
+- The published governed supplier lookup keeps its independently confirmed historical tenant and decision. It is not created or reconfirmed by the local isolated smoke.
 - Protected `config/ui` reads usually need `X-Tenant-ID`, `X-User-ID`, `X-Env`, and an allowed `Origin` for stable behavior, but the committed request may still point to a selector whose concrete record is not confirmed on the published backend.
 - Protected `ai-context` and `ai-registry` reads require an allowed `Origin`; the confirmed published examples currently accept `X-Tenant-ID` as the factual minimum in this repo.
 - If the method is `POST` or `PUT` and the example sends a JSON body, add `Content-Type: application/json` even when the class row lists it under the accepted or recommended lane guidance.
@@ -201,7 +231,7 @@ Notes:
 - Confirmed auth-light operational examples include `cargos-options-by-ids`. The `vw-perfil-heroi/**` and payroll analytics routes are session-authenticated references because they require domain authorities; tenant headers alone are not authorization.
 - Some authenticated examples are intentionally excluded when the published environment is unstable for them. At this stage, `vw-resumo-missoes/options/by-ids` returned `500` and is not part of the auth smoke whitelist.
 - `config/ui`, `ai-context`, `domain-rules` writes, and other protected config surfaces are intentionally excluded from `smoke:auth` until a stable execution profile is confirmed for the published environment as committed, including any required allowed-origin behavior.
-- `domain-rules` write examples model the enterprise proof path for governed semantic decisions authored by AI: intake, simulation, approval, publication, and materialization readback. The read-only examples for confirmed materialization and governed supplier lookup belong to the operational LLM surface.
+- `domain-rules` write examples model the enterprise proof path for governed semantic decisions authored by AI: intake, simulation, approval, publication, and materialization readback. The identity fields formerly present in lifecycle bodies are not authority; approval and publication permissions are governed by their authenticated sessions. These protected examples remain outside the operational LLM surface and do not claim a confirmed published backend.
 - `acordos-regulatorios-governed-actions` documenta a execução manual protegida de um workflow
   versionado: leitura do ETag, suspensão idempotente, replay com o token original e reintegração de
   limpeza. Ele permanece fora da superfície LLM operacional e não deve ser executado no host
