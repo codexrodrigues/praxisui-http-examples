@@ -1,7 +1,7 @@
 ### status: none
 ### public: false
 ### authRequired: true
-### sessionAuthRequired: false
+### sessionAuthRequired: true
 ### tenantScopedHeadersRequired: true
 ### destructive: true
 ### requiresTenantHeaders: true
@@ -14,15 +14,22 @@
 ### knownPublishedFailure: false
 ### selectionGuidance: protected-contract-governance-transition
 
-@baseUrl = https://praxis-api-quickstart.onrender.com
-@tenantId = demo
-@envId = public
+@baseUrl = http://127.0.0.1:8088
+@origin = http://localhost:4003
+@tenantId = domain-rules-local-proof
+@envId = local
+@reviewerSession = <SESSION cookie issued to a RULE_DEFINITION_APPROVER principal>
 @definitionId = 11111111-1111-1111-1111-111111111111
+
+# This file performs only the approval transition. Before executing it, create the
+# definition as draft and transition it to proposed with a distinct author session.
 
 PATCH {{baseUrl}}/api/praxis/config/domain-rules/definitions/{{definitionId}}/status
 Content-Type: application/json
 Accept: application/json
+Origin: {{origin}}
 X-Tenant-ID: {{tenantId}}
 X-Env: {{envId}}
+Cookie: SESSION={{reviewerSession}}
 
 < ../../payloads/config/domain_rules_supplier_eligibility_approve.json

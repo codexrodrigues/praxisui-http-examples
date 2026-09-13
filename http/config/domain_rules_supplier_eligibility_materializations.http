@@ -1,7 +1,7 @@
 ### status: none
 ### public: false
 ### authRequired: true
-### sessionAuthRequired: false
+### sessionAuthRequired: true
 ### tenantScopedHeadersRequired: true
 ### destructive: false
 ### requiresTenantHeaders: true
@@ -14,12 +14,19 @@
 ### knownPublishedFailure: false
 ### selectionGuidance: protected-contract-materialization-read
 
-@baseUrl = https://praxis-api-quickstart.onrender.com
-@tenantId = demo
-@envId = public
+@baseUrl = http://127.0.0.1:8088
+@origin = http://localhost:4003
+@tenantId = domain-rules-local-proof
+@envId = local
+@readerSession = <SESSION cookie issued to a domain-rule read principal>
 @targetArtifactKey = supplier
+
+# This is a protected local readback. Use the same isolated tenant and environment
+# as the publication flow, and a reader session with domain-rule read authority.
 
 GET {{baseUrl}}/api/praxis/config/domain-rules/materializations?targetLayer=option_source&targetArtifactType=resource-option-source&targetArtifactKey={{targetArtifactKey}}&status=applied
 Accept: application/json
+Origin: {{origin}}
 X-Tenant-ID: {{tenantId}}
 X-Env: {{envId}}
+Cookie: SESSION={{readerSession}}

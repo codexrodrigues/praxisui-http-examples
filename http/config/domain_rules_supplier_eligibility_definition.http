@@ -1,7 +1,7 @@
 ### status: none
 ### public: false
 ### authRequired: true
-### sessionAuthRequired: false
+### sessionAuthRequired: true
 ### tenantScopedHeadersRequired: true
 ### destructive: true
 ### requiresTenantHeaders: true
@@ -14,14 +14,22 @@
 ### knownPublishedFailure: false
 ### selectionGuidance: protected-contract-semantic-decision-definition
 
-@baseUrl = https://praxis-api-quickstart.onrender.com
-@tenantId = demo
-@envId = public
+@baseUrl = http://127.0.0.1:8088
+@origin = http://localhost:4003
+@tenantId = domain-rules-local-proof
+@envId = local
+@authorSession = <SESSION cookie issued to a RULE_DEFINITION_AUTHOR principal>
+
+# This file performs only creation. Use an isolated tenant and an author session;
+# replace governance.requiredApprovals[0] in the fixture with the actual reviewer
+# actor reference. The response definition id is the prerequisite for approval.
 
 POST {{baseUrl}}/api/praxis/config/domain-rules/definitions
 Content-Type: application/json
 Accept: application/json
+Origin: {{origin}}
 X-Tenant-ID: {{tenantId}}
 X-Env: {{envId}}
+Cookie: SESSION={{authorSession}}
 
 < ../../payloads/config/domain_rules_supplier_eligibility_definition.json
