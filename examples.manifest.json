@@ -4924,6 +4924,78 @@
       "knownPublishedFailure": false,
       "accessMode": "authenticated-session",
       "selectionGuidance": "protected-contract-manual-governed-action-with-cleanup"
+    },
+    {
+      "id": "eventos-folha-bulk-execution-summary",
+      "httpFile": "http/hr/eventos_folha_bulk_execution_summary.http",
+      "status": [
+        "illustrative-only",
+        "recommended"
+      ],
+      "llmOperational": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "authorized bulk execution summary"
+      ],
+      "notFor": [
+        "creating or confirming a bulk execution",
+        "public anonymous read",
+        "backend readiness"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/EventosFolhaExecutionReadsController.java",
+        "../praxis-api-quickstart/README.md"
+      ],
+      "lastVerified": "2026-09-28",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "row",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "accessMode": "authenticated-session",
+      "selectionGuidance": "reference-only-bulk-execution"
+    },
+    {
+      "id": "eventos-folha-bulk-execution-results",
+      "httpFile": "http/hr/eventos_folha_bulk_execution_results.http",
+      "status": [
+        "illustrative-only",
+        "recommended"
+      ],
+      "llmOperational": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "authorized bulk execution results"
+      ],
+      "notFor": [
+        "creating or confirming a bulk execution",
+        "public anonymous read",
+        "backend readiness"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/EventosFolhaExecutionReadsController.java",
+        "../praxis-api-quickstart/README.md"
+      ],
+      "lastVerified": "2026-09-28",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "accessMode": "authenticated-session",
+      "selectionGuidance": "reference-only-bulk-execution"
     }
   ]
 }
