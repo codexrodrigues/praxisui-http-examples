@@ -1,0 +1,33 @@
+### status: illustrative-only,recommended
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: false
+### requiresTenantHeaders: false
+### llmOperational: false
+### referenceOnly: true
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### protectedContract: false
+### accessMode: authenticated-session
+### selectionGuidance: reference-only-bulk-execution
+### note: Requires lifecycle wiring, an authenticated principal and a retained execution. Not confirmed on the deployed backend.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@bearerToken = replace-with-authorized-token
+@executionId = replace-with-retained-execution-uuid
+@size = 200
+
+GET {{baseUrl}}/api/human-resources/eventos-folha/bulk/executions/{{executionId}}/results?size={{size}}
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
+
+### Continue only with next returned to this same principal and the original size.
+@after = replace-with-next-token
+
+GET {{baseUrl}}/api/human-resources/eventos-folha/bulk/executions/{{executionId}}/results?size={{size}}&after={{after}}
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
