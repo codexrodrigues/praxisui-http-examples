@@ -4890,7 +4890,7 @@
       "canonicalFor": [
         "strong If-Match concurrency on regulatory-agreement item actions",
         "actor-scoped idempotent replay with the original resource ETag",
-        "cleanup with the ETag returned by the successful transition"
+        "cleanup with a fresh GET ETag after the successful transition and replay"
       ],
       "notFor": [
         "unattended execution against shared or irreversible records",
