@@ -1,0 +1,77 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: true
+### requiresTenantHeaders: false
+### llmOperational: false
+### referenceOnly: true
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### accessMode: authenticated-session
+### selectionGuidance: reference-only-bulk-execution
+### note: Illustrative protected flow. Requires approved deployment, current grants, policy and real authorized IDs; no published-host confirmation.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@bearerToken = replace-with-authorized-token
+@xsrfToken = replace-with-XSRF-TOKEN-cookie-value-when-csrf-enabled
+@proposalId = replace-with-reviewed-proposal-uuid
+@executionId = replace-with-retained-execution-uuid
+@idempotencyKey = replace-with-one-stable-client-key
+@size = 200
+
+### When CSRF is enabled, GET /actuator/health first, verify its Set-Cookie XSRF-TOKEN response header, and retain that cookie. Copy that raw cookie value into xsrfToken; keep the cookie and matching header on every POST. Bearer authentication and current grants remain required. Omit the CSRF cookie/header lines only when the host disables CSRF.
+GET {{baseUrl}}/actuator/health
+Accept: application/json
+
+
+### Evaluation captures a protected proposal without mutating domain rows. Obtain target IDs and opaque expectedVersion from authorized current reads.
+POST {{baseUrl}}/api/human-resources/ferias-afastamentos/actions/bulk-plan-coverage/evaluation
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{bearerToken}}
+Cookie: XSRF-TOKEN={{xsrfToken}}
+X-XSRF-TOKEN: {{xsrfToken}}
+
+< ../../payloads/hr/ferias_afastamentos_bulk_evaluation.json
+
+### Read summary and every proposal results page before confirmation. Use only the returned opaque next as after, with the same principal and size.
+GET {{baseUrl}}/api/human-resources/ferias-afastamentos/bulk/proposals/{{proposalId}}
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
+
+### Continue with the separately authorized results request.
+GET {{baseUrl}}/api/human-resources/ferias-afastamentos/bulk/proposals/{{proposalId}}/results?size={{size}}
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
+
+### Confirm only the reviewed proposal. Retry uncertainty with the same proposal and Idempotency-Key.
+POST {{baseUrl}}/api/human-resources/ferias-afastamentos/actions/bulk-plan-coverage
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{bearerToken}}
+Cookie: XSRF-TOKEN={{xsrfToken}}
+X-XSRF-TOKEN: {{xsrfToken}}
+Idempotency-Key: {{idempotencyKey}}
+
+< ../../payloads/hr/ferias_afastamentos_bulk_confirmation.json
+
+### Read current authorized state and all result pages; 200/202 does not mean all items committed.
+GET {{baseUrl}}/api/human-resources/ferias-afastamentos/bulk/executions/{{executionId}}
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
+
+### Continue with the separately authorized results request.
+GET {{baseUrl}}/api/human-resources/ferias-afastamentos/bulk/executions/{{executionId}}/results?size={{size}}
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
+
+### Cancellation stops new units; committed units remain. Reconcile result pages before a new proposal.
+POST {{baseUrl}}/api/human-resources/ferias-afastamentos/bulk/executions/{{executionId}}/cancel
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
+Cookie: XSRF-TOKEN={{xsrfToken}}
+X-XSRF-TOKEN: {{xsrfToken}}

@@ -1,0 +1,17 @@
+{
+  "executionMode": "SYNC",
+  "selection": {
+    "mode": "EXPLICIT",
+    "targets": [
+      {
+        "id": 123,
+        "expectedVersion": "replace-with-current-opaque-resource-version"
+      }
+    ]
+  },
+  "parameters": {
+    "effectiveAt": "2026-10-02",
+    "reasonCode": "FECHAMENTO_CONFERIDO",
+    "comment": "Conferência da competência aprovada."
+  }
+}

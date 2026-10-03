@@ -1,0 +1,17 @@
+{
+  "executionMode": "SYNC",
+  "selection": {
+    "mode": "EXPLICIT",
+    "targets": [
+      {
+        "id": 456,
+        "expectedVersion": "replace-with-current-opaque-resource-version"
+      }
+    ]
+  },
+  "parameters": {
+    "planoCobertura": "Cobertura pela equipe de plantão.",
+    "substitutoFuncionarioId": 12,
+    "justificativa": "Cobertura formal durante a ausência."
+  }
+}

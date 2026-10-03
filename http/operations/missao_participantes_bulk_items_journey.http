@@ -1,0 +1,46 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: true
+### requiresTenantHeaders: false
+### llmOperational: false
+### referenceOnly: true
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### accessMode: authenticated-session
+### selectionGuidance: reference-only-bulk-execution
+### note: P3 PER_ITEM_UPDATE variant. Shared proposal/execution reads and cancellation are in the uniform journey; use real approved versions and IDs.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@bearerToken = replace-with-authorized-token
+@xsrfToken = replace-with-XSRF-TOKEN-cookie-value-when-csrf-enabled
+@idempotencyKey = replace-with-one-stable-client-key-for-items
+
+### When CSRF is enabled, GET /actuator/health first, verify its Set-Cookie XSRF-TOKEN response header, and retain that cookie. Copy that raw cookie value into xsrfToken; keep the cookie and matching header on every POST. Bearer authentication and current grants remain required. Omit the CSRF cookie/header lines only when the host disables CSRF.
+GET {{baseUrl}}/actuator/health
+Accept: application/json
+
+### Evaluate the per-item proposal after the CSRF cookie is available.
+POST {{baseUrl}}/api/operations/missao-participantes/bulk/update-items/evaluation
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{bearerToken}}
+Cookie: XSRF-TOKEN={{xsrfToken}}
+X-XSRF-TOKEN: {{xsrfToken}}
+
+< ../../payloads/operations/missao_participantes_bulk_items_evaluation.json
+
+### Review every proposal page through /bulk/proposals/{proposalId}/results before this confirmation.
+POST {{baseUrl}}/api/operations/missao-participantes/bulk/update-items
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{bearerToken}}
+Cookie: XSRF-TOKEN={{xsrfToken}}
+X-XSRF-TOKEN: {{xsrfToken}}
+Idempotency-Key: {{idempotencyKey}}
+
+< ../../payloads/operations/missao_participantes_bulk_items_confirmation.json
