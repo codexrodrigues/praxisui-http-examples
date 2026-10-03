@@ -5173,6 +5173,96 @@
     "knownPublishedFailure": false,
     "accessMode": "authenticated-session",
     "selectionGuidance": "reference-only-bulk-execution"
+  },
+    {
+    "id": "missao-participantes-bulk-atomic-journey",
+    "httpFile": "http/operations/missao_participantes_bulk_atomic_journey.http",
+    "payloadFiles": [
+      "payloads/operations/missao_participantes_bulk_atomic_evaluation.json",
+      "payloads/operations/missao_participantes_bulk_atomic_confirmation.json"
+    ],
+    "status": [
+      "illustrative-only"
+    ],
+    "llmOperational": false,
+    "protectedContract": false,
+    "referenceOnly": true,
+    "public": false,
+    "authRequired": true,
+    "destructive": true,
+    "requiresTenantHeaders": false,
+    "canonicalFor": [
+      "P3 ATOMIC uniform evaluation, full review, confirmation, shared reads and cooperative cancellation"
+    ],
+    "notFor": [
+      "published backend readiness",
+      "default LLM operational execution",
+      "fabricated production fixture",
+      "PER_ITEM partial-commit semantics"
+    ],
+    "sourceOfTruth": [
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/controller/MissaoParticipanteController.java",
+      "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/MissionParticipantBulkOperationsHttpPostgresTest.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/security/SpaCsrfTokenRequestHandler.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/security/CsrfCookieFilter.java",
+      "../praxis-api-quickstart/README.md"
+    ],
+    "lastVerified": "2026-10-03",
+    "sessionAuthRequired": true,
+    "tenantScopedHeadersRequired": false,
+    "responseShapeHint": "row",
+    "runtimeRecordConfirmed": false,
+    "selectorConfirmed": true,
+    "publishedBackendConfirmed": false,
+    "knownPublishedFailure": false,
+    "accessMode": "authenticated-session",
+    "selectionGuidance": "reference-only-bulk-atomic-execution"
+  },
+  {
+    "id": "missao-participantes-bulk-atomic-items-journey",
+    "httpFile": "http/operations/missao_participantes_bulk_atomic_items_journey.http",
+    "payloadFiles": [
+      "payloads/operations/missao_participantes_bulk_atomic_items_evaluation.json",
+      "payloads/operations/missao_participantes_bulk_atomic_items_confirmation.json"
+    ],
+    "status": [
+      "illustrative-only"
+    ],
+    "llmOperational": false,
+    "protectedContract": false,
+    "referenceOnly": true,
+    "public": false,
+    "authRequired": true,
+    "destructive": true,
+    "requiresTenantHeaders": false,
+    "canonicalFor": [
+      "P3 ATOMIC per-item-change evaluation, full review, confirmation, shared reads and cooperative cancellation"
+    ],
+    "notFor": [
+      "published backend readiness",
+      "default LLM operational execution",
+      "fabricated production fixture",
+      "PER_ITEM partial-commit semantics"
+    ],
+    "sourceOfTruth": [
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/controller/MissaoParticipanteController.java",
+      "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/MissionParticipantBulkOperationsHttpPostgresTest.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/security/SpaCsrfTokenRequestHandler.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/security/CsrfCookieFilter.java",
+      "../praxis-api-quickstart/README.md"
+    ],
+    "lastVerified": "2026-10-03",
+    "sessionAuthRequired": true,
+    "tenantScopedHeadersRequired": false,
+    "responseShapeHint": "row",
+    "runtimeRecordConfirmed": false,
+    "selectorConfirmed": true,
+    "publishedBackendConfirmed": false,
+    "knownPublishedFailure": false,
+    "accessMode": "authenticated-session",
+    "selectionGuidance": "reference-only-bulk-atomic-execution"
   }
   ]
 }

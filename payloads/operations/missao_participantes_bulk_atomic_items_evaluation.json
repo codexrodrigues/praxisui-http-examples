@@ -1,0 +1,16 @@
+{
+  "executionMode": "SYNC",
+  "items": [
+    {
+      "id": 789,
+      "expectedVersion": "replace-with-current-opaque-resource-version",
+      "changes": [
+        {
+          "field": "papel",
+          "operator": "SET",
+          "value": "SUPORTE"
+        }
+      ]
+    }
+  ]
+}
