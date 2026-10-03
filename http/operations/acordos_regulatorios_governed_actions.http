@@ -14,7 +14,7 @@
 ### knownPublishedFailure: false
 ### accessMode: authenticated-session
 ### selectionGuidance: protected-contract-manual-governed-action-with-cleanup
-### note: Execute only against a disposable VIGENTE agreement. Reuse the original ETag and key for replay, then reinstate with the ETag returned by suspend.
+### note: Execute only against a disposable VIGENTE agreement. Reuse the original ETag and key for replay, then read a fresh ETag by GET before reinstate.
 
 @baseUrl = http://localhost:8088
 @sessionCookie = replace-with-session-cookie-value
@@ -31,7 +31,7 @@ Cookie: SESSION={{sessionCookie}}
   client.global.set("agreementOriginalEtag", response.headers.valueOf("ETag"));
 %}
 
-### Suspend exactly once and retain the new ETag returned by the action.
+### Suspend exactly once. Keep the original ETag and key for replay.
 POST {{baseUrl}}/api/operations/acordos-regulatorios/{{agreementId}}/actions/suspend
 Accept: application/json
 Content-Type: application/json
@@ -41,10 +41,6 @@ Idempotency-Key: {{suspendKey}}
 X-Correlation-ID: corpus-agreement-suspend
 
 < ../../payloads/operations/acordos_regulatorios_workflow.json
-
-> {%
-  client.global.set("agreementSuspendedEtag", response.headers.valueOf("ETag"));
-%}
 
 ### Replay: same actor, target, action, command, original ETag and idempotency key.
 POST {{baseUrl}}/api/operations/acordos-regulatorios/{{agreementId}}/actions/suspend
@@ -57,12 +53,21 @@ X-Correlation-ID: corpus-agreement-suspend-replay
 
 < ../../payloads/operations/acordos_regulatorios_workflow.json
 
-### Cleanup: reinstate with the ETag returned by the successful suspension.
+### Read the current resource version after replay before cleanup.
+GET {{baseUrl}}/api/operations/acordos-regulatorios/{{agreementId}}
+Accept: application/json
+Cookie: SESSION={{sessionCookie}}
+
+> {%
+  client.global.set("agreementCleanupEtag", response.headers.valueOf("ETag"));
+%}
+
+### Cleanup: reinstate with the fresh ETag from the current GET.
 POST {{baseUrl}}/api/operations/acordos-regulatorios/{{agreementId}}/actions/reinstate
 Accept: application/json
 Content-Type: application/json
 Cookie: SESSION={{sessionCookie}}
-If-Match: {{agreementSuspendedEtag}}
+If-Match: {{agreementCleanupEtag}}
 Idempotency-Key: {{reinstateKey}}
 X-Correlation-ID: corpus-agreement-reinstate
 
