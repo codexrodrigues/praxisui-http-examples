@@ -1,0 +1,88 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: true
+### requiresTenantHeaders: false
+### llmOperational: false
+### referenceOnly: true
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### accessMode: authenticated-session
+### selectionGuidance: reference-only-bulk-atomic-execution
+### note: Illustrative ATOMIC protected flow. Requires approved deployment, current grants, policy and real authorized IDs; no published-host confirmation.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@bearerToken = replace-with-authorized-token
+@xsrfToken = replace-with-XSRF-TOKEN-cookie-value-when-csrf-enabled
+@proposalId = replace-with-reviewed-proposal-uuid
+@executionId = replace-with-retained-execution-uuid
+@idempotencyKey = replace-with-one-stable-client-key
+@size = 200
+@next = replace-with-opaque-next-from-previous-results-page
+
+### When CSRF is enabled, GET /actuator/health first, verify its Set-Cookie XSRF-TOKEN response header, and retain that cookie. Copy that raw cookie value into xsrfToken; keep the cookie and matching header on every POST. Bearer authentication and current grants remain required. Omit the CSRF cookie/header lines only when the host disables CSRF.
+GET {{baseUrl}}/actuator/health
+Accept: application/json
+
+
+### Evaluation captures a protected proposal without mutating domain rows. Obtain target IDs and opaque expectedVersion from authorized current reads.
+POST {{baseUrl}}/api/operations/missao-participantes/bulk/update-atomic/evaluation
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{bearerToken}}
+Cookie: XSRF-TOKEN={{xsrfToken}}
+X-XSRF-TOKEN: {{xsrfToken}}
+
+< ../../payloads/operations/missao_participantes_bulk_atomic_evaluation.json
+
+### Read summary and every proposal results page before confirmation. Use only the returned opaque next as after, with the same principal and size.
+GET {{baseUrl}}/api/operations/missao-participantes/bulk/proposals/{{proposalId}}
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
+
+### Continue with the separately authorized results request.
+GET {{baseUrl}}/api/operations/missao-participantes/bulk/proposals/{{proposalId}}/results?size={{size}}
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
+
+### Repeat only while next is returned; replace next with that exact opaque value for each subsequent page.
+GET {{baseUrl}}/api/operations/missao-participantes/bulk/proposals/{{proposalId}}/results?size={{size}}&after={{next}}
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
+
+### Confirm only the reviewed proposal. Retry uncertainty with the same proposal and Idempotency-Key.
+POST {{baseUrl}}/api/operations/missao-participantes/bulk/update-atomic
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{bearerToken}}
+Cookie: XSRF-TOKEN={{xsrfToken}}
+X-XSRF-TOKEN: {{xsrfToken}}
+Idempotency-Key: {{idempotencyKey}}
+
+< ../../payloads/operations/missao_participantes_bulk_atomic_confirmation.json
+
+### Read current authorized state and every result page; 200/202 is not proof that the whole ATOMIC set committed. A failed set must not leave partial domain commits.
+GET {{baseUrl}}/api/operations/missao-participantes/bulk/executions/{{executionId}}
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
+
+### Continue with the separately authorized results request.
+GET {{baseUrl}}/api/operations/missao-participantes/bulk/executions/{{executionId}}/results?size={{size}}
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
+
+### Repeat only while next is returned, preserving principal and size. Read back domain rows under current authorization.
+GET {{baseUrl}}/api/operations/missao-participantes/bulk/executions/{{executionId}}/results?size={{size}}&after={{next}}
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
+
+### ATOMIC cancellation requests durable admission through control and may prevent a set not yet admitted. An in-progress set may still commit; the request does not compensate a committed set. Reconcile the terminal receipt, every result page, and authorized domain readback before any new proposal.
+POST {{baseUrl}}/api/operations/missao-participantes/bulk/executions/{{executionId}}/cancel
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
+Cookie: XSRF-TOKEN={{xsrfToken}}
+X-XSRF-TOKEN: {{xsrfToken}}
