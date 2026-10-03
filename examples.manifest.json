@@ -4997,5 +4997,182 @@
       "accessMode": "authenticated-session",
       "selectionGuidance": "reference-only-bulk-execution"
     }
+  ,
+  {
+    "id": "eventos-folha-bulk-journey",
+    "httpFile": "http/hr/eventos_folha_bulk_journey.http",
+    "payloadFiles": [
+      "payloads/hr/eventos_folha_bulk_evaluation.json",
+      "payloads/hr/eventos_folha_bulk_confirmation.json"
+    ],
+    "status": [
+      "illustrative-only"
+    ],
+    "llmOperational": false,
+    "protectedContract": false,
+    "referenceOnly": true,
+    "public": false,
+    "authRequired": true,
+    "destructive": true,
+    "requiresTenantHeaders": false,
+    "canonicalFor": [
+      "protected evaluate, review, confirm, read and cancel journey"
+    ],
+    "notFor": [
+      "published backend readiness",
+      "default LLM operational execution",
+      "fabricated production fixture"
+    ],
+    "sourceOfTruth": [
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/EventosFolhaController.java",
+      "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/EventosFolhaApprovalEvaluationHttpTest.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/security/SpaCsrfTokenRequestHandler.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/security/CsrfCookieFilter.java",
+      "../praxis-api-quickstart/README.md"
+    ],
+    "lastVerified": "2026-10-03",
+    "sessionAuthRequired": true,
+    "tenantScopedHeadersRequired": false,
+    "responseShapeHint": "row",
+    "runtimeRecordConfirmed": false,
+    "selectorConfirmed": true,
+    "publishedBackendConfirmed": false,
+    "knownPublishedFailure": false,
+    "accessMode": "authenticated-session",
+    "selectionGuidance": "reference-only-bulk-execution"
+  },
+  {
+    "id": "ferias-afastamentos-bulk-journey",
+    "httpFile": "http/hr/ferias_afastamentos_bulk_journey.http",
+    "payloadFiles": [
+      "payloads/hr/ferias_afastamentos_bulk_evaluation.json",
+      "payloads/hr/ferias_afastamentos_bulk_confirmation.json"
+    ],
+    "status": [
+      "illustrative-only"
+    ],
+    "llmOperational": false,
+    "protectedContract": false,
+    "referenceOnly": true,
+    "public": false,
+    "authRequired": true,
+    "destructive": true,
+    "requiresTenantHeaders": false,
+    "canonicalFor": [
+      "protected evaluate, review, confirm, read and cancel journey"
+    ],
+    "notFor": [
+      "published backend readiness",
+      "default LLM operational execution",
+      "fabricated production fixture"
+    ],
+    "sourceOfTruth": [
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FeriasAfastamentoController.java",
+      "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/BulkAbsenceCoverageHttpTest.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/security/SpaCsrfTokenRequestHandler.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/security/CsrfCookieFilter.java",
+      "../praxis-api-quickstart/README.md"
+    ],
+    "lastVerified": "2026-10-03",
+    "sessionAuthRequired": true,
+    "tenantScopedHeadersRequired": false,
+    "responseShapeHint": "row",
+    "runtimeRecordConfirmed": false,
+    "selectorConfirmed": true,
+    "publishedBackendConfirmed": false,
+    "knownPublishedFailure": false,
+    "accessMode": "authenticated-session",
+    "selectionGuidance": "reference-only-bulk-execution"
+  },
+  {
+    "id": "missao-participantes-bulk-journey",
+    "httpFile": "http/operations/missao_participantes_bulk_journey.http",
+    "payloadFiles": [
+      "payloads/operations/missao_participantes_bulk_evaluation.json",
+      "payloads/operations/missao_participantes_bulk_confirmation.json"
+    ],
+    "status": [
+      "illustrative-only"
+    ],
+    "llmOperational": false,
+    "protectedContract": false,
+    "referenceOnly": true,
+    "public": false,
+    "authRequired": true,
+    "destructive": true,
+    "requiresTenantHeaders": false,
+    "canonicalFor": [
+      "protected evaluate, review, confirm, read and cancel journey"
+    ],
+    "notFor": [
+      "published backend readiness",
+      "default LLM operational execution",
+      "fabricated production fixture"
+    ],
+    "sourceOfTruth": [
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/controller/MissaoParticipanteController.java",
+      "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/MissionParticipantBulkOperationsHttpPostgresTest.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/security/SpaCsrfTokenRequestHandler.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/security/CsrfCookieFilter.java",
+      "../praxis-api-quickstart/README.md"
+    ],
+    "lastVerified": "2026-10-03",
+    "sessionAuthRequired": true,
+    "tenantScopedHeadersRequired": false,
+    "responseShapeHint": "row",
+    "runtimeRecordConfirmed": false,
+    "selectorConfirmed": true,
+    "publishedBackendConfirmed": false,
+    "knownPublishedFailure": false,
+    "accessMode": "authenticated-session",
+    "selectionGuidance": "reference-only-bulk-execution"
+  },
+  {
+    "id": "missao-participantes-bulk-items-journey",
+    "httpFile": "http/operations/missao_participantes_bulk_items_journey.http",
+    "payloadFiles": [
+      "payloads/operations/missao_participantes_bulk_items_evaluation.json",
+      "payloads/operations/missao_participantes_bulk_items_confirmation.json"
+    ],
+    "status": [
+      "illustrative-only"
+    ],
+    "llmOperational": false,
+    "protectedContract": false,
+    "referenceOnly": true,
+    "public": false,
+    "authRequired": true,
+    "destructive": true,
+    "requiresTenantHeaders": false,
+    "canonicalFor": [
+      "P3 per-item evaluation and confirmation variant"
+    ],
+    "notFor": [
+      "published backend readiness",
+      "default LLM operational execution",
+      "fabricated production fixture"
+    ],
+    "sourceOfTruth": [
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/controller/MissaoParticipanteController.java",
+      "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/MissionParticipantBulkOperationsHttpPostgresTest.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/security/SpaCsrfTokenRequestHandler.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/security/CsrfCookieFilter.java",
+      "../praxis-api-quickstart/README.md"
+    ],
+    "lastVerified": "2026-10-03",
+    "sessionAuthRequired": true,
+    "tenantScopedHeadersRequired": false,
+    "responseShapeHint": "row",
+    "runtimeRecordConfirmed": false,
+    "selectorConfirmed": true,
+    "publishedBackendConfirmed": false,
+    "knownPublishedFailure": false,
+    "accessMode": "authenticated-session",
+    "selectionGuidance": "reference-only-bulk-execution"
+  }
   ]
 }

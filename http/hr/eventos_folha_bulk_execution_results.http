@@ -14,7 +14,7 @@
 ### protectedContract: false
 ### accessMode: authenticated-session
 ### selectionGuidance: reference-only-bulk-execution
-### note: Requires lifecycle wiring, an authenticated principal and a retained execution. Not confirmed on the deployed backend.
+### note: Requires lifecycle wiring, an authenticated principal and a retained execution. Not confirmed on the deployed backend; see BULK_OPERATIONS_RUNBOOK.md for P1/P2/P3 flow and evidence limits.
 
 @baseUrl = https://praxis-api-quickstart.onrender.com
 @bearerToken = replace-with-authorized-token

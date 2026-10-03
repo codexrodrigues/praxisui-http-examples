@@ -96,3 +96,7 @@ When a controller exposes both list and lookup behavior, prefer preserving the f
 - `by-ids`
 - `options/filter`
 - `options/by-ids`
+
+## Governed bulk references
+
+The P1/P2/P3 bulk journey files are `illustrative-only` and `referenceOnly`. Their protected reads and writes require a provisioned host and current grants; example IDs and versions are placeholders. The integrated Quickstart contract is documented in [the bulk runbook](./BULK_OPERATIONS_RUNBOOK.md), while `publishedBackendConfirmed=false` records the absence of proof for the exact requests on the deployed host. They are outside the default LLM operational lane.
