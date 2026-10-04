@@ -1,0 +1,21 @@
+{
+  "executionMode": "SYNC",
+  "selection": {
+    "mode": "QUERY",
+    "filter": {
+      "missaoId": 123,
+      "funcionarioId": 456,
+      "papel": "INTEL",
+      "principal": false,
+      "resultado": "NA"
+    },
+    "excludedIds": [789]
+  },
+  "changes": [
+    {
+      "field": "papel",
+      "operator": "SET",
+      "value": "SUPORTE"
+    }
+  ]
+}
