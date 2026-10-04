@@ -1,0 +1,93 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: true
+### requiresTenantHeaders: false
+### llmOperational: false
+### protectedContract: false
+### referenceOnly: true
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### accessMode: authenticated-session
+### selectionGuidance: reference-only-bulk-query-execution
+### note: Preparatory QUERY reference for a provisioned host. IDs, token and key are placeholders; this exact request is not confirmed on the deployed backend.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@bearerToken = replace-with-authorized-token
+@xsrfToken = replace-with-XSRF-TOKEN-cookie-value-when-csrf-enabled
+@proposalId = replace-with-reviewed-proposal-uuid
+@executionId = replace-with-retained-execution-uuid
+@idempotencyKey = replace-with-one-stable-client-key
+@size = 1
+@next = replace-with-opaque-next-from-previous-results-page
+
+### If CSRF is enabled, GET /actuator/health on the same origin first. Retain its XSRF-TOKEN cookie and copy the raw value to xsrfToken for each POST. Omit the cookie/header only when CSRF is disabled. Bearer authentication and current grants are always required.
+GET {{baseUrl}}/actuator/health
+Accept: application/json
+
+
+### Replace filter values and exclusions with authorized domain values. The five filter fields are optional typed criteria; null means omitted. Exclusions are integer wire IDs, not targets or versions. QUERY captures a server-owned manifest, bounded to 200 targets by this host; it does not promise jobs or ASYNC.
+POST {{baseUrl}}/api/operations/missao-participantes/bulk/update/evaluation
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{bearerToken}}
+Cookie: XSRF-TOKEN={{xsrfToken}}
+X-XSRF-TOKEN: {{xsrfToken}}
+
+< ../../payloads/operations/missao_participantes_bulk_query_evaluation.json
+
+### Read the protected proposal and all pages under the same current principal before confirmation. The public response redacts the filter and exclusions; do not reconstruct targets from the request. Follow only the returned opaque next as after with the same size.
+GET {{baseUrl}}/api/operations/missao-participantes/bulk/proposals/{{proposalId}}
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
+
+GET {{baseUrl}}/api/operations/missao-participantes/bulk/proposals/{{proposalId}}/results?size={{size}}
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
+
+### Use this only if the previous page returned next; replace next with that exact value.
+GET {{baseUrl}}/api/operations/missao-participantes/bulk/proposals/{{proposalId}}/results?size={{size}}&after={{next}}
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
+
+### Confirm the reviewed proposal only. The existing confirmation payload contains proposalId, not filter, targets, versions or changes. Keep the same Idempotency-Key for replay.
+POST {{baseUrl}}/api/operations/missao-participantes/bulk/update
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{bearerToken}}
+Cookie: XSRF-TOKEN={{xsrfToken}}
+X-XSRF-TOKEN: {{xsrfToken}}
+Idempotency-Key: {{idempotencyKey}}
+
+< ../../payloads/operations/missao_participantes_bulk_confirmation.json
+
+### Read current authorized execution state and all result pages before treating the operation as complete. A 200 or 202 confirmation alone does not prove that every selected item committed.
+GET {{baseUrl}}/api/operations/missao-participantes/bulk/executions/{{executionId}}
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
+
+GET {{baseUrl}}/api/operations/missao-participantes/bulk/executions/{{executionId}}/results?size={{size}}
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
+
+### Use only the opaque next returned by the previous execution page, with the same principal and size.
+GET {{baseUrl}}/api/operations/missao-participantes/bulk/executions/{{executionId}}/results?size={{size}}&after={{next}}
+Accept: application/json
+Authorization: Bearer {{bearerToken}}
+
+### Replay after an uncertain response: same proposal and same key, then read the retained execution. Never re-run the filter to infer this execution's membership.
+POST {{baseUrl}}/api/operations/missao-participantes/bulk/update
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{bearerToken}}
+Cookie: XSRF-TOKEN={{xsrfToken}}
+X-XSRF-TOKEN: {{xsrfToken}}
+Idempotency-Key: {{idempotencyKey}}
+
+< ../../payloads/operations/missao_participantes_bulk_confirmation.json
+
+### If current mission/employee coverage is withdrawn while the global grant remains valid, a known execution can become an indistinguishable 404 on protected HTTP reads and replay. That does not erase the durable STOPPED record or authorize another key/proposal. A global 403 denial or global 503 unavailability is distinct from this coverage-only 404.

@@ -27,7 +27,7 @@ Operational LLM-facing summary:
 - [`OPENAPI_COVERAGE.md`](./OPENAPI_COVERAGE.md): generated audit of published OpenAPI bases covered by the HTTP corpus
 
 Local showcase runbooks:
-- [`BULK_OPERATIONS_RUNBOOK.md`](./BULK_OPERATIONS_RUNBOOK.md): protected P1/P2/P3 bulk lifecycle reference and evidence limits
+- [`BULK_OPERATIONS_RUNBOOK.md`](./BULK_OPERATIONS_RUNBOOK.md): protected P1/P2/P3 bulk lifecycle references, preparatory QUERY journey and evidence limits
 - [`HELPDESK_SHOWCASE_RUNBOOK.md`](./HELPDESK_SHOWCASE_RUNBOOK.md): local pilot recipe for the `helpdesk.chamados` semantic showcase across `praxis-helpdesk-service` and `praxis-helpdesk-ui`
 - [`ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md`](./ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md): promotion checklist for the procurement Entity Lookup pilot after the Render backend publishes the quickstart procurement endpoints
 - [`DOMAIN_RULES_PUBLICATION_RUNBOOK.md`](./DOMAIN_RULES_PUBLICATION_RUNBOOK.md): published-runtime proof for governed semantic decisions and supplier eligibility materialization
@@ -64,6 +64,7 @@ Operational flags:
 - [`http/expansion-detail/`](./http/expansion-detail): contextual detail schemas and resource resolver examples
 - [`payloads/`](./payloads): request body fixtures referenced by examples
 - [`payloads/config/`](./payloads/config): payloads for remote config, AI context, registry templates, suggestions, and domain-rule decision lifecycle examples
+- [`http/operations/missao_participantes_bulk_query_journey.http`](./http/operations/missao_participantes_bulk_query_journey.http): preparatory, authenticated QUERY bulk reference; the exact request is not confirmed on the deployed backend
 - [`payloads/views/`](./payloads/views): filter and locate bodies for aggregated view controllers
 - [`env/`](./env): environment templates
 - [`smoke/`](./smoke): validation and smoke scripts

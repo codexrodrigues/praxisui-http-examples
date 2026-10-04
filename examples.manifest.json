@@ -5131,6 +5131,54 @@
     "selectionGuidance": "reference-only-bulk-execution"
   },
   {
+    "id": "missao-participantes-bulk-query-journey",
+    "httpFile": "http/operations/missao_participantes_bulk_query_journey.http",
+    "payloadFiles": [
+      "payloads/operations/missao_participantes_bulk_query_evaluation.json",
+      "payloads/operations/missao_participantes_bulk_confirmation.json"
+    ],
+    "status": [
+      "illustrative-only"
+    ],
+    "llmOperational": false,
+    "protectedContract": false,
+    "referenceOnly": true,
+    "public": false,
+    "authRequired": true,
+    "destructive": true,
+    "requiresTenantHeaders": false,
+    "canonicalFor": [
+      "P3 uniform QUERY evaluation, protected manifest review, confirmation, authorized results and idempotent replay"
+    ],
+    "notFor": [
+      "published backend readiness",
+      "default LLM operational execution",
+      "fabricated production fixture",
+      "client-side target enumeration or QUERY re-selection on replay",
+      "ASYNC jobs or ATOMIC QUERY"
+    ],
+    "sourceOfTruth": [
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/controller/MissaoParticipanteController.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/operations/service/MissionParticipantQueryFilter.java",
+      "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/MissionParticipantUniformQueryHttpPostgresTest.java",
+      "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/operations/controller/MissionParticipantUniformQueryShapeTest.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/security/SpaCsrfTokenRequestHandler.java",
+      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/security/CsrfCookieFilter.java",
+      "../praxis-api-quickstart/README.md"
+    ],
+    "lastVerified": "2026-10-04",
+    "sessionAuthRequired": true,
+    "tenantScopedHeadersRequired": false,
+    "responseShapeHint": "row",
+    "runtimeRecordConfirmed": false,
+    "selectorConfirmed": true,
+    "publishedBackendConfirmed": false,
+    "knownPublishedFailure": false,
+    "accessMode": "authenticated-session",
+    "selectionGuidance": "reference-only-bulk-query-execution"
+  },
+  {
     "id": "missao-participantes-bulk-items-journey",
     "httpFile": "http/operations/missao_participantes_bulk_items_journey.http",
     "payloadFiles": [
