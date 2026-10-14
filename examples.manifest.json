@@ -1444,8 +1444,7 @@
       "destructive": true,
       "requiresTenantHeaders": true,
       "canonicalFor": [
-        "entity update",
-        "write lifecycle examples"
+        "versioned entity update"
       ],
       "notFor": [
         "public smoke",
@@ -1453,10 +1452,13 @@
       ],
       "sourceOfTruth": [
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FuncionarioController.java",
-        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/FuncionarioDTO.java"
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/FuncionarioDTO.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/FuncionarioService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/UpdateFuncionarioDTO.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/CreateFuncionarioDTO.java"
       ],
-      "lastVerified": "2026-03-15",
-      "sessionAuthRequired": false,
+      "lastVerified": "2026-10-14",
+      "sessionAuthRequired": true,
       "tenantScopedHeadersRequired": true,
       "responseShapeHint": "row",
       "runtimeRecordConfirmed": true,

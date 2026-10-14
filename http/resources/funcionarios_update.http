@@ -1,7 +1,7 @@
 ### status: runtime-confirmed
 ### public: false
 ### authRequired: true
-### sessionAuthRequired: false
+### sessionAuthRequired: true
 ### tenantScopedHeadersRequired: true
 ### destructive: true
 ### requiresTenantHeaders: true
@@ -18,9 +18,16 @@
 @tenantId = demo
 @userId = example-user
 @envId = public
+### First run funcionarios_get_by_id.http with the same session/scope/id.
+### Copy its exact strong ETag (including quotes); edit that response snapshot.
+### Never refresh the token immediately before submitting an older payload.
+@resourceEtag = REPLACE_WITH_STRONG_ETAG_FROM_GET
+@csrfToken = REPLACE_WITH_SESSION_XSRF_TOKEN
 
 PUT {{baseUrl}}/api/human-resources/funcionarios/1
 Content-Type: application/json
+If-Match: {{resourceEtag}}
+X-XSRF-TOKEN: {{csrfToken}}
 Accept: application/json
 X-Tenant-ID: {{tenantId}}
 X-User-ID: {{userId}}

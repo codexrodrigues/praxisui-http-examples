@@ -247,3 +247,9 @@ Notes:
 ## Política de CI e publicação
 
 Validação local durante desenvolvimento; Actions apenas no fechamento necessário de versões. Consulte [ACTIONS-RELEASE-POLICY.md](ACTIONS-RELEASE-POLICY.md) para gatilhos, gates e recuperação.
+
+## Atualização versionada de funcionário
+
+O exemplo `http/resources/funcionarios_update.http` exige sessão autenticada e, quando habilitado pelo host, token CSRF. Execute primeiro `funcionarios_get_by_id.http` no mesmo recurso e escopo. Preserve o ETag forte exato da resposta (inclusive aspas), prepare o payload a partir dessa leitura e copie o token para `resourceEtag`. O payload estático é ilustrativo; não deve substituir dados de um registro compartilhado.
+
+O PUT envia `If-Match`; 428 indica precondição ausente e 412 indica revisão obsoleta. Nesse caso recarregue e reconcilie os dados antes de uma nova tentativa. Nunca obtenha um ETag novo para reenviar automaticamente um payload antigo. Após sucesso, preserve a revisão devolvida pelo servidor. O exemplo permanece `referenceOnly` e sem confirmação de backend publicado: as correções são validadas no candidato e na branch Neon isolada.
