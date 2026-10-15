@@ -1,4 +1,4 @@
-### status: runtime-confirmed
+### status: illustrative-only
 ### public: false
 ### authRequired: true
 ### sessionAuthRequired: true
@@ -8,7 +8,7 @@
 ### llmOperational: false
 ### protectedContract: false
 ### referenceOnly: true
-### runtimeRecordConfirmed: true
+### runtimeRecordConfirmed: false
 ### selectorConfirmed: true
 ### publishedBackendConfirmed: false
 ### knownPublishedFailure: false
@@ -20,6 +20,8 @@
 @envId = public
 ### First run funcionarios_get_by_id.http with the same session/scope/id.
 ### Copy its exact strong ETag (including quotes); edit that response snapshot.
+### Include only fields declared by the update schema; do not copy ativo from the GET.
+### Use deactivate/reactivate actions to change lifecycle state.
 ### Never refresh the token immediately before submitting an older payload.
 @resourceEtag = REPLACE_WITH_STRONG_ETAG_FROM_GET
 @csrfToken = REPLACE_WITH_SESSION_XSRF_TOKEN
