@@ -79,7 +79,8 @@
       "authRequired": false,
       "destructive": false,
       "canonicalFor": [
-        "lightweight metadata discovery"
+        "lightweight metadata discovery",
+        "single-call resourcePath, resourceReadOnly, and resourceCapabilities discovery"
       ],
       "notFor": [
         "full per-resource x-ui contract"

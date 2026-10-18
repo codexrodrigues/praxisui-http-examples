@@ -2,7 +2,7 @@
 
 Operational surface for LLM-driven discovery against the published Praxis backend.
 
-Last reviewed: `2026-10-15`
+Last reviewed: `2026-10-18`
 
 This file is generated from [`examples.manifest.json`](./examples.manifest.json).
 Current validation commands:
@@ -59,11 +59,11 @@ Use OpenAPI for broad route discovery, but do not stop here when the corpus alre
 
 ### Step 3. Read Schemas Catalog
 
-Use the lightweight schemas catalog to discover available resources and views without parsing the full OpenAPI document.
+Use the lightweight schemas catalog to discover available resources, views, canonical resourcePath, resourceReadOnly, and resourceCapabilities in a single call without parsing the full OpenAPI document.
 
 | Id | File | Access (minimum) | Recommended stable | Purpose |
 |---|---|---|---|---|
-| `schemas-catalog` | `http/metadata/schemas_catalog.http` | Public | none | lightweight metadata discovery |
+| `schemas-catalog` | `http/metadata/schemas_catalog.http` | Public | none | lightweight metadata discovery; single-call resourcePath, resourceReadOnly, and resourceCapabilities discovery |
 
 ### Step 4. Read Filtered Schemas
 
@@ -161,7 +161,7 @@ Use these read-only examples when the task is to verify that a published semanti
 |---|---|---|---|---|
 | `health` | `http/metadata/health.http` | Public | none | service availability check |
 | `openapi-docs` | `http/metadata/openapi_docs.http` | Public | none | public endpoint discovery; request and response shapes |
-| `schemas-catalog` | `http/metadata/schemas_catalog.http` | Public | none | lightweight metadata discovery |
+| `schemas-catalog` | `http/metadata/schemas_catalog.http` | Public | none | lightweight metadata discovery; single-call resourcePath, resourceReadOnly, and resourceCapabilities discovery |
 | `schemas-surfaces-operations-missoes` | `http/metadata/schemas_surfaces_operations_missoes.http` | Public | none | runtime surface discovery for mission pages; modal surface previews |
 | `schemas-surfaces-human-resources-funcionarios` | `http/metadata/schemas_surfaces_human_resources_funcionarios.http` | Public | none | runtime surface discovery for funcionarios pages; modal surface previews |
 | `schemas-actions-operations-missoes` | `http/metadata/schemas_actions_operations_missoes.http` | Public | none | runtime action discovery for mission pages; workflow affordance discovery before capability checks |

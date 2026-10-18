@@ -33,7 +33,7 @@ const playbookSteps = [
   },
   {
     title: 'Step 3. Read Schemas Catalog',
-    description: 'Use the lightweight schemas catalog to discover available resources and views without parsing the full OpenAPI document.',
+    description: 'Use the lightweight schemas catalog to discover available resources, views, canonical resourcePath, resourceReadOnly, and resourceCapabilities in a single call without parsing the full OpenAPI document.',
     ids: ['schemas-catalog'],
   },
   {
