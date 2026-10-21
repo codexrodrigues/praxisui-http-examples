@@ -2,7 +2,7 @@
 
 Operational surface for LLM-driven discovery against the published Praxis backend.
 
-Last reviewed: `2026-10-18`
+Last reviewed: `2026-10-21`
 
 This file is generated from [`examples.manifest.json`](./examples.manifest.json).
 Current validation commands:
@@ -216,6 +216,7 @@ The following remain outside the LLM operational surface for now:
 - `ai-context`
 - `ai-registry`
 - `domain-rules` writes
+- the authenticated rule-parameter catalog read (`domain-rules-definition-parameters`); it requires a reader session plus tenant/environment scope and has no published-backend confirmation
 - reactive determination pilot schemas and authenticated capability executions, which remain `referenceOnly` until the Quickstart deployment is confirmed (`reactive-determination-address-*` and `reactive-determination-payroll-*`)
 - `ai/suggestions`
 - destructive writes

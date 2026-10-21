@@ -3410,6 +3410,45 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "domain-rules-definition-parameters",
+      "httpFile": "http/config/domain_rules_definition_parameters.http",
+      "status": [],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "authenticated read of Engine-owned parameter constraints for one governed rule definition",
+        "typed declared/default/effective values without treating host facts as editable product parameters",
+        "grounding the Policy Studio parameter editor from the persisted definition catalog"
+      ],
+      "notFor": [
+        "safe-first operational execution against the published backend before exact request confirmation",
+        "editing the parameter template or structural rule condition",
+        "generic publication or materialization of parameterized decisions",
+        "claiming workspace persistence or snapshot publication evidence from a catalog read"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/src/main/java/org/praxisplatform/config/controller/DomainRuleController.java",
+        "../praxis-config-starter/src/main/java/org/praxisplatform/config/dto/DomainRuleParameterCatalogResponse.java",
+        "../praxis-config-starter/src/main/java/org/praxisplatform/config/dto/DomainRuleParameterDescriptor.java",
+        "../praxis-config-starter/src/main/java/org/praxisplatform/config/service/DomainRuleParameters.java",
+        "../praxis-rules-engine/src/main/java/org/praxisplatform/rules/contract/RuleParameterDefinition.java",
+        "../praxis-rules-engine/src/main/java/org/praxisplatform/rules/parameters/RuleParameterResolver.java"
+      ],
+      "lastVerified": "2026-10-21",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "config-record",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
       "id": "domain-rules-supplier-eligibility-materializations",
       "httpFile": "http/config/domain_rules_supplier_eligibility_materializations.http",
       "status": [],
