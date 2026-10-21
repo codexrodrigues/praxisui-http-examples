@@ -1,0 +1,43 @@
+### status: none
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### selectionGuidance: protected-contract-governed-rule-parameters-read
+
+@baseUrl = http://127.0.0.1:8088
+@origin = http://localhost:4003
+@tenantId = <isolated tenant owning the definition>
+@envId = local
+@readerSession = <SESSION cookie issued to a RULE_DEFINITION_READER principal>
+@definitionId = <definition UUID resolved from the governed definition catalog>
+
+GET {{baseUrl}}/api/praxis/config/domain-rules/definitions/{{definitionId}}/parameters
+Accept: application/json
+Origin: {{origin}}
+X-Tenant-ID: {{tenantId}}
+X-Env: {{envId}}
+Cookie: SESSION={{readerSession}}
+
+### Protected contract read; this exact request is not confirmed on the published backend.
+### Resolve definitionId from the same authenticated tenant/environment scope as the reader session.
+### Response: praxis.domain-rule-parameter-catalog.v1, definitionId/ruleKey/definitionVersion,
+### templateKey/templateVersion and typed parameter descriptors (STRING, NUMBER, INTEGER, BOOLEAN).
+### Constraints include required/nullable/readOnly, unit, inclusive minimum/maximum and allowedValues.
+### origin=DECLARED distinguishes declaredValue:null from an absent declaration using a default.
+### An absent defaultValue property means no default; defaultValue:null is an explicit nullable default.
+### effectiveValue belongs to the persisted definition; workspace values can differ from that base.
+### Definitions without a template return null template identity and an empty parameters list.
+### Parameters bind native scalar sites declared in the Engine template. Host var facts keep their meaning.
+### This read does not authorize editing the template, facts, condition or other parameter metadata.
+### Parameterized changes follow the ETag-controlled workspace and reviewed snapshot lifecycle.
+### Generic publications/materializations are not the publication route for parameter templates.
