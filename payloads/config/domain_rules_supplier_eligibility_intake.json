@@ -21,6 +21,9 @@
   },
   "parameters": {
     "optionSourceKey": "supplier",
+    "validationPolicy": {
+      "effect": "BLOCK"
+    },
     "targetForms": [
       "procurement.purchase-orders.create",
       "procurement.purchase-orders.edit"

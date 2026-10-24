@@ -18,6 +18,9 @@
     "runtimeSurfacesAreDerived": true
   },
   "parameters": {
+    "validationPolicy": {
+      "effect": "BLOCK"
+    },
     "targetLayers": [
       "option_source",
       "backend_validation"
