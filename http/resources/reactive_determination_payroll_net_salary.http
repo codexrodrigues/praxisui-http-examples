@@ -1,4 +1,4 @@
-### status: runtime-confirmed,recommended
+### status: illustrative-only
 ### public: false
 ### authRequired: true
 ### sessionAuthRequired: true
@@ -8,20 +8,22 @@
 ### llmOperational: false
 ### protectedContract: true
 ### referenceOnly: false
-### runtimeRecordConfirmed: true
+### runtimeRecordConfirmed: false
 ### selectorConfirmed: true
-### publishedBackendConfirmed: true
+### publishedBackendConfirmed: false
 ### knownPublishedFailure: false
 ### accessMode: authenticated-session
-### selectionGuidance: local-reference-reactive-determination-execution
-### note: Published, idempotent, non-persisting multi-input calculation. Requires an authenticated Quickstart session and an applied governed Config decision.
+### selectionGuidance: source-derived-payroll-g4-contract
+### note: Source-derived G4 candidate; not admitted or confirmed on the published host. Requires the matching stack, isolated operational branch, current PAYROLL_APPROVE coverage and admitted governed composition. No client-authored tenant headers.
 
 @baseUrl = http://localhost:8088
 @sessionCookie = replace-with-session-cookie-value
+@xsrfToken = replace-with-XSRF-TOKEN-cookie-value
 
 POST {{baseUrl}}/api/human-resources/folhas-pagamento/determinations/net-salary
 Accept: application/json
 Content-Type: application/json
-Cookie: SESSION={{sessionCookie}}
+Cookie: SESSION={{sessionCookie}}; XSRF-TOKEN={{xsrfToken}}
+X-XSRF-TOKEN: {{xsrfToken}}
 
 < ../../payloads/resources/reactive_determination_payroll_valid.json

@@ -220,7 +220,7 @@ The following remain outside the LLM operational surface for now:
 - \`ai-registry\`
 - \`domain-rules\` writes
 - the authenticated rule-parameter catalog read (\`domain-rules-definition-parameters\`); it requires a reader session plus tenant/environment scope and has no published-backend confirmation
-- reactive determination pilot schemas and authenticated capability executions, which remain \`referenceOnly\` until the Quickstart deployment is confirmed (\`reactive-determination-address-*\` and \`reactive-determination-payroll-*\`)
+- G4 payroll schemas, previews, financial commands and administrative publication (\`reactive-determination-payroll-*\`, \`payroll-g4-*\`): source-derived protected contracts or mutation references, without G4 admission or published-backend confirmation; administrative references require current publication grants and exact control generation; see [Payroll G4 contract](./PAYROLL_G4_CONTRACT.md)
 - \`ai/suggestions\`
 - destructive writes
 - unstable published examples

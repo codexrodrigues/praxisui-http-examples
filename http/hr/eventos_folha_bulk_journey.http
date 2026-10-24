@@ -28,7 +28,7 @@ GET {{baseUrl}}/actuator/health
 Accept: application/json
 
 
-### Evaluation captures a protected proposal without mutating domain rows. Obtain target IDs and opaque expectedVersion from authorized current reads.
+### Evaluation captures a protected proposal without mutating domain rows. Obtain target IDs and opaque expectedVersion from authorized current reads. G4 admits at most one event per payroll and captures financial impact plus exact authority; any changed parent revision/facts/agenda/authority requires a new reviewed proposal, even when outputs remain equal. See PAYROLL_G4_CONTRACT.md; no G4 published admission is claimed.
 POST {{baseUrl}}/api/human-resources/eventos-folha/actions/bulk-approve/evaluation
 Accept: application/json
 Content-Type: application/json

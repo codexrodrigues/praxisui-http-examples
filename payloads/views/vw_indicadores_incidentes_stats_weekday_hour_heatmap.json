@@ -1,0 +1,31 @@
+{
+  "filter": {},
+  "dimensions": [
+    {
+      "field": "ocorridoEm",
+      "extraction": "DAY_OF_WEEK",
+      "alias": "weekday"
+    },
+    {
+      "field": "ocorridoEm",
+      "extraction": "HOUR_OF_DAY",
+      "alias": "hour"
+    }
+  ],
+  "timezone": "UTC",
+  "from": "2026-03-01",
+  "to": "2026-03-31",
+  "fillGaps": true,
+  "metrics": [
+    {
+      "operation": "AVG_PER_CYCLE_OCCURRENCE",
+      "alias": "mediaPorCiclo"
+    },
+    {
+      "operation": "COUNT",
+      "alias": "incidentes"
+    }
+  ],
+  "limit": 168,
+  "orderBy": "KEY_ASC"
+}

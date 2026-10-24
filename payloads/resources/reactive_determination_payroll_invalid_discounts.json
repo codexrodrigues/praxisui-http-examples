@@ -1,4 +1,7 @@
 {
-  "salarioBruto": 1000.00,
-  "totalDescontos": 1000.01
+  "funcionarioId": 31,
+  "ano": 2026,
+  "mes": 4,
+  "salarioBruto": 1000,
+  "descontosBase": 1000.01
 }

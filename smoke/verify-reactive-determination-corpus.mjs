@@ -41,17 +41,17 @@ const executionExpectations = new Map([
   }],
   ['reactive-determination-payroll-net-salary', {
     path: '/api/human-resources/folhas-pagamento/determinations/net-salary',
-    payload: { salarioBruto: 10000, totalDescontos: 2450.35 },
+    payload: { funcionarioId: 31, ano: 2026, mes: 4, salarioBruto: 10000, descontosBase: 2450.35 },
     expectedStatus: 200,
   }],
   ['reactive-determination-payroll-payment-date', {
     path: '/api/human-resources/folhas-pagamento/determinations/payment-date',
-    payload: { ano: 2026, mes: 4, salarioLiquido: 7549.65 },
+    payload: { funcionarioId: 31, ano: 2026, mes: 4, salarioBruto: 10000, descontosBase: 2450.35, salarioLiquido: 7549.65 },
     expectedStatus: 200,
   }],
   ['reactive-determination-payroll-invalid-discounts-422', {
     path: '/api/human-resources/folhas-pagamento/determinations/net-salary',
-    payload: { salarioBruto: 1000, totalDescontos: 1000.01 },
+    payload: { funcionarioId: 31, ano: 2026, mes: 4, salarioBruto: 1000, descontosBase: 1000.01 },
     expectedStatus: 422,
   }],
 ]);
@@ -59,7 +59,8 @@ const executionExpectations = new Map([
 for (const [id, expectation] of metadataExpectations) {
   const example = requireExample(id);
   if (!example) continue;
-  requirePublishedOperationalMetadata(example);
+  if (id === 'reactive-determination-payroll-create-schema' || id === 'reactive-determination-payroll-edit-schema') requireG4Candidate(example);
+  else requirePublishedOperationalMetadata(example);
   requireFlags(example, {
     authRequired: false,
     sessionAuthRequired: false,
@@ -90,7 +91,9 @@ for (const [id, expectation] of metadataExpectations) {
 for (const [id, expectation] of executionExpectations) {
   const example = requireExample(id);
   if (!example) continue;
-  requirePublishedProtectedExecution(example);
+  const payroll = new Set(['reactive-determination-payroll-net-salary', 'reactive-determination-payroll-payment-date', 'reactive-determination-payroll-invalid-discounts-422']).has(id);
+  if (payroll) requireG4Candidate(example);
+  else requirePublishedProtectedExecution(example);
   requireFlags(example, {
     authRequired: true,
     sessionAuthRequired: true,
@@ -106,7 +109,10 @@ for (const [id, expectation] of executionExpectations) {
   requireEqual(url.pathname, expectation.path, `${id} endpoint`);
   requireEqual(request.headers.Accept, 'application/json', `${id} Accept header`);
   requireEqual(request.headers['Content-Type'], 'application/json', `${id} Content-Type header`);
-  requireEqual(request.headers.Cookie, 'SESSION=replace-with-session-cookie-value', `${id} session header`);
+  requireEqual(request.headers.Cookie, payroll
+    ? 'SESSION=replace-with-session-cookie-value; XSRF-TOKEN=replace-with-XSRF-TOKEN-cookie-value'
+    : 'SESSION=replace-with-session-cookie-value', `${id} session header`);
+  if (payroll) requireEqual(request.headers['X-XSRF-TOKEN'], 'replace-with-XSRF-TOKEN-cookie-value', `${id} CSRF header`);
   if ('X-Tenant-ID' in request.headers || 'X-Env' in request.headers || 'X-User-ID' in request.headers) {
     errors.push(`${id} execution must use the authenticated principal instead of caller-authored tenant identity headers.`);
   }
@@ -123,6 +129,16 @@ function requireExample(id) {
   const example = byId.get(id);
   if (!example) errors.push(`Missing reactive determination example: ${id}`);
   return example;
+}
+
+function requireG4Candidate(example) {
+  requireEqual(example.llmOperational, false, `${example.id} llmOperational`);
+  requireEqual(example.referenceOnly, false, `${example.id} referenceOnly`);
+  requireEqual(example.protectedContract, true, `${example.id} protectedContract`);
+  requireEqual(example.runtimeRecordConfirmed, false, `${example.id} runtimeRecordConfirmed`);
+  requireEqual(example.publishedBackendConfirmed, false, `${example.id} publishedBackendConfirmed`);
+  requireEqual(example.destructive, false, `${example.id} destructive`);
+  requireEqual(JSON.stringify(example.status), JSON.stringify(['illustrative-only']), `${example.id} candidate status`);
 }
 
 function requirePublishedProtectedExecution(example) {

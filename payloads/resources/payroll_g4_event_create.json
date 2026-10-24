@@ -1,0 +1,12 @@
+{
+  "descricao": "Adicional conferido",
+  "tipo": "ADICIONAL",
+  "valor": 150,
+  "folhaPagamentoId": 42,
+  "precondicoesFolhas": [
+    {
+      "folhaPagamentoId": 42,
+      "resourceVersion": "\"replace-with-exact-destination-payroll-ETag\""
+    }
+  ]
+}

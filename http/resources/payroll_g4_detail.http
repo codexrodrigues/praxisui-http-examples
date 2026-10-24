@@ -1,0 +1,26 @@
+### status: illustrative-only
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: false
+### requiresTenantHeaders: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### accessMode: authenticated-session
+### selectionGuidance: source-derived-payroll-g4-contract
+### note: Source-derived G4 candidate, not admitted or confirmed on the published host. Capture the authorized body and its complete strong ETag together. Pending history omits operational money and exposes exact decimal strings only with current and original financial coverage.
+
+@baseUrl = http://localhost:8088
+@sessionCookie = replace-with-session-cookie-value
+@folhaId = 42
+@eventoId = 21
+
+GET {{baseUrl}}/api/human-resources/folhas-pagamento/{{folhaId}}
+Accept: application/json
+Cookie: SESSION={{sessionCookie}}

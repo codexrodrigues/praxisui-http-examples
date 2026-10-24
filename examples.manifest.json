@@ -363,73 +363,82 @@
       "id": "reactive-determination-payroll-create-schema",
       "httpFile": "http/metadata/filtered_schema_request_payroll_create_reactive_determination.http",
       "status": [
-        "runtime-confirmed",
-        "recommended"
+        "illustrative-only"
       ],
-      "llmOperational": true,
-      "public": true,
+      "llmOperational": false,
+      "public": false,
       "authRequired": false,
       "destructive": false,
       "requiresTenantHeaders": false,
       "canonicalFor": [
-        "createPayroll request-schema projection of the multi-input net-salary determination",
-        "tenant-neutral x-ui.reactiveDeterminations discovery without tenant or user headers"
+        "G4 createPayroll request schema with base discounts and declared outputs"
       ],
       "notFor": [
-        "tenant-specific payroll policy payload",
-        "authenticated capability execution"
+        "published G4 readiness or deployment confirmation",
+        "caller-authored policy, authority, event sums or derived formulas",
+        "default LLM operational execution"
       ],
       "sourceOfTruth": [
-        "../praxis-metadata-starter/docs/spec/reactive-determinations.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/FolhasPagamentoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialEvaluationService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialExecutors.java",
         "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/CreateFolhasPagamentoDTO.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/FolhaPagamentoCommandFields.java",
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/ReactiveDeterminationPilotConfiguration.java",
-        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/OpenApiGroupResolutionIsolatedIntegrationTest.java"
+        "../praxis-metadata-starter/docs/spec/reactive-determinations.md"
       ],
-      "lastVerified": "2026-08-13",
+      "lastVerified": "2026-10-22",
       "sessionAuthRequired": false,
       "tenantScopedHeadersRequired": false,
       "responseShapeHint": "filtered-schema",
       "expectedStatus": 200,
-      "runtimeRecordConfirmed": true,
+      "runtimeRecordConfirmed": false,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": true,
-      "knownPublishedFailure": false
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "protectedContract": true,
+      "referenceOnly": false
     },
     {
       "id": "reactive-determination-payroll-edit-schema",
       "httpFile": "http/metadata/filtered_schema_request_payroll_edit_reactive_determination.http",
       "status": [
-        "runtime-confirmed",
-        "recommended"
+        "illustrative-only"
       ],
-      "llmOperational": true,
-      "public": true,
+      "llmOperational": false,
+      "public": false,
       "authRequired": false,
       "destructive": false,
       "requiresTenantHeaders": false,
       "canonicalFor": [
-        "updatePayroll request-schema projection of the multi-input net-salary determination",
-        "tenant-neutral edit binding scoped by exact operationId"
+        "G4 updatePayroll request schema with required body id and operation-specific reactive bindings"
       ],
       "notFor": [
-        "tenant-specific payroll policy payload",
-        "authenticated capability execution"
+        "published G4 readiness or deployment confirmation",
+        "caller-authored policy, authority, event sums or derived formulas",
+        "default LLM operational execution"
       ],
       "sourceOfTruth": [
-        "../praxis-metadata-starter/docs/spec/reactive-determinations.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/FolhasPagamentoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialEvaluationService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialExecutors.java",
         "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/UpdateFolhasPagamentoDTO.java",
         "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/ReactiveDeterminationPilotConfiguration.java",
-        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/OpenApiGroupResolutionIsolatedIntegrationTest.java"
+        "../praxis-metadata-starter/docs/spec/reactive-determinations.md"
       ],
-      "lastVerified": "2026-08-13",
+      "lastVerified": "2026-10-22",
       "sessionAuthRequired": false,
       "tenantScopedHeadersRequired": false,
       "responseShapeHint": "filtered-schema",
       "expectedStatus": 200,
-      "runtimeRecordConfirmed": true,
+      "runtimeRecordConfirmed": false,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": true,
-      "knownPublishedFailure": false
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "protectedContract": true,
+      "referenceOnly": false
     },
     {
       "id": "reactive-determination-address-known-cep",
@@ -518,8 +527,7 @@
         "payloads/resources/reactive_determination_payroll_valid.json"
       ],
       "status": [
-        "runtime-confirmed",
-        "recommended"
+        "illustrative-only"
       ],
       "referenceOnly": false,
       "protectedContract": true,
@@ -528,29 +536,29 @@
       "destructive": false,
       "requiresTenantHeaders": false,
       "canonicalFor": [
-        "authenticated idempotent execution of determinePayrollNetSalary",
-        "non-persisting multi-input net salary calculation with versioned formula"
+        "authenticated non-persisting single governed chain over employee, competence, gross, base and captured approved events"
       ],
       "notFor": [
-        "public unauthenticated execution",
-        "tenant-specific payroll policy publication",
-        "final create or update enforcement"
+        "published G4 readiness or deployment confirmation",
+        "caller-authored policy, authority, event sums or derived formulas",
+        "default LLM operational execution"
       ],
       "sourceOfTruth": [
-        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
-        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FolhasPagamentoController.java",
-        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/PayrollNetSalaryDeterminationService.java",
-        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/OpenApiGroupResolutionIsolatedIntegrationTest.java"
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/FolhasPagamentoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialEvaluationService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialExecutors.java",
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md"
       ],
-      "lastVerified": "2026-08-13",
+      "lastVerified": "2026-10-22",
       "sessionAuthRequired": true,
       "tenantScopedHeadersRequired": false,
       "responseShapeHint": "reactive-determination-result",
       "expectedStatus": 200,
-      "runtimeRecordConfirmed": true,
+      "runtimeRecordConfirmed": false,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": true,
-      "knownPublishedFailure": false
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "llmOperational": false
     },
     {
       "id": "reactive-determination-payroll-payment-date",
@@ -559,8 +567,7 @@
         "payloads/resources/reactive_determination_payroll_payment_date.json"
       ],
       "status": [
-        "runtime-confirmed",
-        "recommended"
+        "illustrative-only"
       ],
       "referenceOnly": false,
       "protectedContract": true,
@@ -569,29 +576,29 @@
       "destructive": false,
       "requiresTenantHeaders": false,
       "canonicalFor": [
-        "authenticated idempotent execution of determinePayrollPaymentDate",
-        "second capability of the payroll reactive-determination chain"
+        "full-tuple single-chain preview with comparison of the declared upstream net and a dataPagamentoPrevista result"
       ],
       "notFor": [
-        "public unauthenticated execution",
-        "complete holiday-aware corporate calendar",
-        "client-side calculation of salarioLiquido"
+        "published G4 readiness or deployment confirmation",
+        "caller-authored policy, authority, event sums or derived formulas",
+        "default LLM operational execution"
       ],
       "sourceOfTruth": [
-        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
-        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FolhasPagamentoController.java",
-        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/PayrollPaymentDateDeterminationService.java",
-        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/OpenApiGroupResolutionIsolatedIntegrationTest.java"
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/FolhasPagamentoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialEvaluationService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialExecutors.java",
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md"
       ],
-      "lastVerified": "2026-08-13",
+      "lastVerified": "2026-10-22",
       "sessionAuthRequired": true,
       "tenantScopedHeadersRequired": false,
       "responseShapeHint": "reactive-determination-result",
       "expectedStatus": 200,
-      "runtimeRecordConfirmed": true,
+      "runtimeRecordConfirmed": false,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": true,
-      "knownPublishedFailure": false
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "llmOperational": false
     },
     {
       "id": "reactive-determination-payroll-invalid-discounts-422",
@@ -600,7 +607,7 @@
         "payloads/resources/reactive_determination_payroll_invalid_discounts.json"
       ],
       "status": [
-        "runtime-confirmed"
+        "illustrative-only"
       ],
       "referenceOnly": false,
       "protectedContract": true,
@@ -609,28 +616,29 @@
       "destructive": false,
       "requiresTenantHeaders": false,
       "canonicalFor": [
-        "HTTP 422 when totalDescontos exceeds salarioBruto",
-        "fail-closed payroll determination for inconsistent financial facts"
+        "HTTP 422 when descontosBase exceeds gross plus approved additions under the admitted composition"
       ],
       "notFor": [
-        "successful net salary calculation",
-        "public unauthenticated execution",
-        "published Render claims before deployment confirmation"
+        "published G4 readiness or deployment confirmation",
+        "caller-authored policy, authority, event sums or derived formulas",
+        "default LLM operational execution"
       ],
       "sourceOfTruth": [
-        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
-        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/PayrollNetSalaryDeterminationService.java",
-        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/OpenApiGroupResolutionIsolatedIntegrationTest.java"
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/FolhasPagamentoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialEvaluationService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialExecutors.java",
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md"
       ],
-      "lastVerified": "2026-08-13",
+      "lastVerified": "2026-10-22",
       "sessionAuthRequired": true,
       "tenantScopedHeadersRequired": false,
       "responseShapeHint": "error-response",
       "expectedStatus": 422,
-      "runtimeRecordConfirmed": true,
+      "runtimeRecordConfirmed": false,
       "selectorConfirmed": true,
-      "publishedBackendConfirmed": true,
-      "knownPublishedFailure": false
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "llmOperational": false
     },
     {
       "id": "cargos-options-filter",
@@ -3806,6 +3814,78 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "vw-indicadores-incidentes-stats-severidade-local-crosstab",
+      "httpFile": "http/views/vw_indicadores_incidentes_stats_severidade_local_crosstab.http",
+      "payloadFiles": [
+        "payloads/views/vw_indicadores_incidentes_stats_severidade_local_crosstab.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "multidimensional 2D categorical cross-tab group-by stats (severidade x local) with multi-metric aggregation"
+      ],
+      "notFor": [
+        "mutation flows"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/docs/technical/STATS-MULTIDIMENSIONAL-AND-TEMPORAL-EXTRACTION-RFC.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/riskintelligence/controller/VwIndicadoresIncidenteController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/riskintelligence/service/VwIndicadoresIncidenteService.java"
+      ],
+      "lastVerified": "2026-10-24",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "stats-group-by",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "vw-indicadores-incidentes-stats-weekday-hour-heatmap",
+      "httpFile": "http/views/vw_indicadores_incidentes_stats_weekday_hour_heatmap.http",
+      "payloadFiles": [
+        "payloads/views/vw_indicadores_incidentes_stats_weekday_hour_heatmap.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "multidimensional 2D cyclic temporal heatmap group-by stats (DAY_OF_WEEK x HOUR_OF_DAY) with finite-domain fillGaps and AVG_PER_CYCLE_OCCURRENCE"
+      ],
+      "notFor": [
+        "mutation flows"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/docs/technical/STATS-MULTIDIMENSIONAL-AND-TEMPORAL-EXTRACTION-RFC.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/riskintelligence/controller/VwIndicadoresIncidenteController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/riskintelligence/service/VwIndicadoresIncidenteService.java"
+      ],
+      "lastVerified": "2026-10-24",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "stats-group-by",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
       "id": "missao-participantes-stats-papel",
       "httpFile": "http/operations/missao_participantes_stats_papel.http",
       "payloadFiles": [
@@ -5042,49 +5122,53 @@
     }
   ,
   {
-    "id": "eventos-folha-bulk-journey",
-    "httpFile": "http/hr/eventos_folha_bulk_journey.http",
-    "payloadFiles": [
-      "payloads/hr/eventos_folha_bulk_evaluation.json",
-      "payloads/hr/eventos_folha_bulk_confirmation.json"
-    ],
-    "status": [
-      "illustrative-only"
-    ],
-    "llmOperational": false,
-    "protectedContract": false,
-    "referenceOnly": true,
-    "public": false,
-    "authRequired": true,
-    "destructive": true,
-    "requiresTenantHeaders": false,
-    "canonicalFor": [
-      "protected evaluate, review, confirm, read and cancel journey"
-    ],
-    "notFor": [
-      "published backend readiness",
-      "default LLM operational execution",
-      "fabricated production fixture"
-    ],
-    "sourceOfTruth": [
-      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/EventosFolhaController.java",
-      "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/EventosFolhaApprovalEvaluationHttpTest.java",
-      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java",
-      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/security/SpaCsrfTokenRequestHandler.java",
-      "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/security/CsrfCookieFilter.java",
-      "../praxis-api-quickstart/README.md"
-    ],
-    "lastVerified": "2026-10-03",
-    "sessionAuthRequired": true,
-    "tenantScopedHeadersRequired": false,
-    "responseShapeHint": "row",
-    "runtimeRecordConfirmed": false,
-    "selectorConfirmed": true,
-    "publishedBackendConfirmed": false,
-    "knownPublishedFailure": false,
-    "accessMode": "authenticated-session",
-    "selectionGuidance": "reference-only-bulk-execution"
-  },
+      "id": "eventos-folha-bulk-journey",
+      "httpFile": "http/hr/eventos_folha_bulk_journey.http",
+      "payloadFiles": [
+        "payloads/hr/eventos_folha_bulk_evaluation.json",
+        "payloads/hr/eventos_folha_bulk_confirmation.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": true,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "protected evaluate, review, confirm, read and cancel journey",
+        "G4 one-event-per-payroll proposal with immutable financial impact and authority evidence; candidate contract only"
+      ],
+      "notFor": [
+        "published backend readiness",
+        "default LLM operational execution",
+        "fabricated production fixture"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/EventosFolhaController.java",
+        "../praxis-api-quickstart/src/test/java/com/example/praxis/apiquickstart/config/EventosFolhaApprovalEvaluationHttpTest.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/SecurityConfig.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/security/SpaCsrfTokenRequestHandler.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/security/CsrfCookieFilter.java",
+        "../praxis-api-quickstart/README.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/EventosFolhaApprovalEvaluationProvider.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/EventosFolhaApprovalExecutionService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/EventosFolhaApprovalProposalProjector.java"
+      ],
+      "lastVerified": "2026-10-22",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "responseShapeHint": "row",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "accessMode": "authenticated-session",
+      "selectionGuidance": "reference-only-bulk-execution"
+    },
   {
     "id": "ferias-afastamentos-bulk-journey",
     "httpFile": "http/hr/ferias_afastamentos_bulk_journey.http",
@@ -5354,6 +5438,601 @@
     "knownPublishedFailure": false,
     "accessMode": "authenticated-session",
     "selectionGuidance": "reference-only-bulk-atomic-execution"
-  }
+  },
+    {
+      "id": "payroll-g4-detail",
+      "httpFile": "http/resources/payroll_g4_detail.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Capture the authorized body and its complete strong ETag together. Pending history omits operational money and exposes exact decimal strings only with current and original financial coverage."
+      ],
+      "notFor": [
+        "published G4 readiness",
+        "default LLM operational execution",
+        "shared or production data mutation"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/FolhasPagamentoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialEvaluationService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialExecutors.java",
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FolhasPagamentoController.java"
+      ],
+      "lastVerified": "2026-10-22",
+      "responseShapeHint": "row",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "payroll-g4-create",
+      "httpFile": "http/resources/payroll_g4_create.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": true,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Replace sample employee with an authorized isolated fixture. Copy outputs from the admitted preview; submit re-evaluates once under fresh write authority and compares all declared outputs. Never send id, agenda or payment facts on create."
+      ],
+      "notFor": [
+        "published G4 readiness",
+        "default LLM operational execution",
+        "shared or production data mutation"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/FolhasPagamentoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialEvaluationService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialExecutors.java",
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FolhasPagamentoController.java"
+      ],
+      "lastVerified": "2026-10-22",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 201,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "payloadFiles": [
+        "payloads/resources/payroll_g4_create.json"
+      ]
+    },
+    {
+      "id": "payroll-g4-edit",
+      "httpFile": "http/resources/payroll_g4_edit.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": true,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Use the exact GET body/ETag pair. Body id must equal route id. Unchanged determinant facts preserve the persisted authority without selecting a new head; changed output alone conflicts. Paid/history writes are unavailable."
+      ],
+      "notFor": [
+        "published G4 readiness",
+        "default LLM operational execution",
+        "shared or production data mutation"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/FolhasPagamentoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialEvaluationService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialExecutors.java",
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FolhasPagamentoController.java"
+      ],
+      "lastVerified": "2026-10-22",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "payloadFiles": [
+        "payloads/resources/payroll_g4_edit.json"
+      ]
+    },
+    {
+      "id": "payroll-g4-event-detail",
+      "httpFile": "http/resources/payroll_g4_event_detail.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Capture event body, response ETag and precondicaoFolhaAtual as one snapshot. Never fetch the origin payroll again to refresh its token. Current and original coverage govern exact historical strings."
+      ],
+      "notFor": [
+        "published G4 readiness",
+        "default LLM operational execution",
+        "shared or production data mutation"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/FolhasPagamentoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialEvaluationService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialExecutors.java",
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/EventosFolhaService.java"
+      ],
+      "lastVerified": "2026-10-22",
+      "responseShapeHint": "row",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "payroll-g4-event-create",
+      "httpFile": "http/resources/payroll_g4_event_create.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": true,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "GET the selected destination payroll first; copy its complete strong ETag into exactly one precondicoesFolhas entry. Only ADICIONAL/DESCONTO are writable; new event is PENDENTE and invalidates the schedule without changing totals."
+      ],
+      "notFor": [
+        "published G4 readiness",
+        "default LLM operational execution",
+        "shared or production data mutation"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/FolhasPagamentoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialEvaluationService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialExecutors.java",
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/EventosFolhaService.java"
+      ],
+      "lastVerified": "2026-10-22",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 201,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "payloadFiles": [
+        "payloads/resources/payroll_g4_event_create.json"
+      ]
+    },
+    {
+      "id": "payroll-g4-event-move",
+      "httpFile": "http/resources/payroll_g4_event_move.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": true,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Pending event only. If-Match is the captured event ETag. Keep origin 42 token from the event snapshot and capture destination 43 by official payroll GET; same-parent edit needs only one entry. Missing/duplicate/extra/stale tokens fail closed; no automatic refresh/retry."
+      ],
+      "notFor": [
+        "published G4 readiness",
+        "default LLM operational execution",
+        "shared or production data mutation"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/FolhasPagamentoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialEvaluationService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialExecutors.java",
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/EventosFolhaService.java"
+      ],
+      "lastVerified": "2026-10-22",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "payloadFiles": [
+        "payloads/resources/payroll_g4_event_move.json"
+      ]
+    },
+    {
+      "id": "payroll-g4-event-reject",
+      "httpFile": "http/resources/payroll_g4_event_reject.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": true,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Reject a pending event with its original parent token, event If-Match and stable Idempotency-Key. The receipt/audit is atomic; exact retry rechecks current authority and returns the historical result. Physical delete is unavailable."
+      ],
+      "notFor": [
+        "published G4 readiness",
+        "default LLM operational execution",
+        "shared or production data mutation"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/FolhasPagamentoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialEvaluationService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialExecutors.java",
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/EventosFolhaService.java"
+      ],
+      "lastVerified": "2026-10-22",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "payloadFiles": [
+        "payloads/resources/payroll_g4_event_reject.json"
+      ]
+    },
+    {
+      "id": "payroll-g4-schedule",
+      "httpFile": "http/resources/payroll_g4_schedule.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": true,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Agenda is independent from dataPagamentoPrevista and effective payment. Replace the illustrative date with today or later in America/Sao_Paulo, after state/CAS review. No positive disbursement means no schedule; unchanged schedule has no new effect."
+      ],
+      "notFor": [
+        "published G4 readiness",
+        "default LLM operational execution",
+        "shared or production data mutation"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/FolhasPagamentoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialEvaluationService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialExecutors.java",
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FolhasPagamentoController.java"
+      ],
+      "lastVerified": "2026-10-22",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "payloadFiles": [
+        "payloads/resources/payroll_g4_schedule.json"
+      ]
+    },
+    {
+      "id": "payroll-g4-mark-paid",
+      "httpFile": "http/resources/payroll_g4_mark_paid.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": true,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Only an admissible PROGRAMADA payroll with positive disbursement can be confirmed. Payment effective date comes from the confirmed transition; an old date or prediction is never proof of payment."
+      ],
+      "notFor": [
+        "published G4 readiness",
+        "default LLM operational execution",
+        "shared or production data mutation"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/FolhasPagamentoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialEvaluationService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialExecutors.java",
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FolhasPagamentoController.java"
+      ],
+      "lastVerified": "2026-10-22",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "payloadFiles": [
+        "payloads/resources/payroll_g4_workflow.json"
+      ]
+    },
+    {
+      "id": "payroll-g4-redetermine",
+      "httpFile": "http/resources/payroll_g4_redetermine.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": true,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Explicitly apply the current governed composition to stored facts with If-Match and stable Idempotency-Key. It invalidates the agenda and requires fresh authority; opening or unchanged editing never performs this action."
+      ],
+      "notFor": [
+        "published G4 readiness",
+        "default LLM operational execution",
+        "shared or production data mutation"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/service/FolhasPagamentoService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialEvaluationService.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/PayrollFinancialExecutors.java",
+        "../praxis-api-quickstart/docs/REACTIVE-DETERMINATION-PILOT.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/FolhasPagamentoController.java"
+      ],
+      "lastVerified": "2026-10-22",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "payloadFiles": [
+        "payloads/resources/payroll_g4_workflow.json"
+      ]
+    },
+    {
+      "id": "payroll-g4-event-create-schema",
+      "httpFile": "http/metadata/filtered_schema_request_payroll_event_create.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": false,
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": false,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "G4 typed precondicoesFolhas array with hidden fields and canonical submitPolicy include"
+      ],
+      "notFor": [
+        "published G4 readiness",
+        "client-authored transport schema overrides"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/CreateEventosFolhaDTO.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/PayrollParentPreconditionDTO.java"
+      ],
+      "lastVerified": "2026-10-22",
+      "responseShapeHint": "filtered-schema",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "payroll-g4-event-edit-schema",
+      "httpFile": "http/metadata/filtered_schema_request_payroll_event_edit.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": false,
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": false,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "G4 typed precondicoesFolhas array with hidden fields and canonical submitPolicy include"
+      ],
+      "notFor": [
+        "published G4 readiness",
+        "client-authored transport schema overrides"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/UpdateEventosFolhaDTO.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/dto/PayrollParentPreconditionDTO.java"
+      ],
+      "lastVerified": "2026-10-22",
+      "responseShapeHint": "filtered-schema",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "payroll-g4-bulk-publish",
+      "httpFile": "http/resources/payroll_g4_bulk_publish.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": true,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Administrative G4 candidate only; not published-backend confirmed. Requires an active persisted SESSION, current BULK_PUBLICATION_PUBLISH grant and the exact protected control generation. The committed generation is illustrative; never discover or refresh it by mutating retries. The server fixes payroll operation and binding namespace. This affects the global deployment OpenAPI photograph, grants no financial access, and does not approve events. Uncertain 503 is not rollback; stop and inspect protected state. No automatic retry/rebase."
+      ],
+      "notFor": [
+        "published G4 readiness",
+        "default LLM operational execution",
+        "shared or production data mutation"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/EventosFolhaBulkPublicationController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/core/bulk/BulkPublicationAdministration.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/core/bulk/BulkPublicationTarget.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/BulkOperationalMigrationConfiguration.java",
+        "../praxis-api-quickstart/docs/PAYROLL-BULK-PUBLICATION-OPERATIONS.md"
+      ],
+      "lastVerified": "2026-10-22",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "payloadFiles": [
+        "payloads/resources/payroll_g4_bulk_publish.json"
+      ]
+    },
+    {
+      "id": "payroll-g4-bulk-reconcile",
+      "httpFile": "http/resources/payroll_g4_bulk_reconcile.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": true,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Administrative G4 candidate only; not published-backend confirmed. Requires an active persisted SESSION, current BULK_PUBLICATION_RECONCILE grant and the exact protected control generation. The committed generation is illustrative; never discover or refresh it by mutating retries. The server fixes payroll operation and binding namespace. This affects the global deployment OpenAPI photograph, grants no financial access, and does not approve events. Uncertain 503 is not rollback; stop and inspect protected state. No automatic retry/rebase."
+      ],
+      "notFor": [
+        "published G4 readiness",
+        "default LLM operational execution",
+        "shared or production data mutation"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/EventosFolhaBulkPublicationController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/core/bulk/BulkPublicationAdministration.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/core/bulk/BulkPublicationTarget.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/BulkOperationalMigrationConfiguration.java",
+        "../praxis-api-quickstart/docs/PAYROLL-BULK-PUBLICATION-OPERATIONS.md"
+      ],
+      "lastVerified": "2026-10-22",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "payloadFiles": [
+        "payloads/resources/payroll_g4_bulk_reconcile.json"
+      ]
+    },
+    {
+      "id": "payroll-g4-bulk-suspend",
+      "httpFile": "http/resources/payroll_g4_bulk_suspend.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": true,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Administrative G4 candidate only; not published-backend confirmed. Requires an active persisted SESSION, current BULK_PUBLICATION_SUSPEND grant and the exact protected control generation. The committed generation is illustrative; never discover or refresh it by mutating retries. The server fixes payroll operation and binding namespace. This affects the global deployment OpenAPI photograph, grants no financial access, and does not approve events. Uncertain 503 is not rollback; stop and inspect protected state. No automatic retry/rebase."
+      ],
+      "notFor": [
+        "published G4 readiness",
+        "default LLM operational execution",
+        "shared or production data mutation"
+      ],
+      "sourceOfTruth": [
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/hr/controller/EventosFolhaBulkPublicationController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/core/bulk/BulkPublicationAdministration.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/core/bulk/BulkPublicationTarget.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/BulkOperationalMigrationConfiguration.java",
+        "../praxis-api-quickstart/docs/PAYROLL-BULK-PUBLICATION-OPERATIONS.md"
+      ],
+      "lastVerified": "2026-10-22",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "payloadFiles": [
+        "payloads/resources/payroll_g4_bulk_suspend.json"
+      ]
+    }
   ]
 }

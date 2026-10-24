@@ -1,0 +1,31 @@
+### status: illustrative-only
+### llmOperational: false
+### protectedContract: false
+### referenceOnly: true
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: true
+### requiresTenantHeaders: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### accessMode: authenticated-session
+### selectionGuidance: source-derived-payroll-g4-contract
+### note: Source-derived G4 candidate, not admitted or confirmed on the published host. GET the selected destination payroll first; copy its complete strong ETag into exactly one precondicoesFolhas entry. Only ADICIONAL/DESCONTO are writable; new event is PENDENTE and invalidates the schedule without changing totals.
+
+@baseUrl = http://localhost:8088
+@sessionCookie = replace-with-session-cookie-value
+@folhaId = 42
+@eventoId = 21
+@xsrfToken = replace-with-XSRF-TOKEN-cookie-value
+
+POST {{baseUrl}}/api/human-resources/eventos-folha
+Accept: application/json
+Content-Type: application/json
+Cookie: SESSION={{sessionCookie}}; XSRF-TOKEN={{xsrfToken}}
+X-XSRF-TOKEN: {{xsrfToken}}
+
+< ../../payloads/resources/payroll_g4_event_create.json

@@ -6,7 +6,7 @@
   "scripts": {
     "generate:llm-surface": "node ./smoke/generate-llm-surface.mjs",
     "generate:openapi-coverage": "node ./smoke/generate-openapi-coverage.mjs",
-    "verify:manifest": "node ./smoke/verify-manifest.mjs && node ./smoke/verify-reactive-determination-corpus.mjs",
+    "verify:manifest": "node ./smoke/verify-manifest.mjs && node ./smoke/verify-reactive-determination-corpus.mjs && node ./smoke/verify-payroll-g4-corpus.mjs",
     "verify:reactive-determinations": "node ./smoke/verify-reactive-determination-corpus.mjs",
     "smoke:public": "node ./smoke/smoke-public-examples.mjs",
     "smoke:auth": "node ./smoke/smoke-auth-examples.mjs",
@@ -14,6 +14,8 @@
     "smoke:corpus-promises": "node ./smoke/smoke-corpus-promises.mjs",
     "smoke:bootstrap-minimums": "node ./smoke/smoke-bootstrap-minimums.mjs",
     "smoke:domain-rules-publication": "node ./smoke/smoke-domain-rules-publication.mjs",
-    "smoke:reactive-determinations": "node ./smoke/smoke-reactive-determinations.mjs"
+    "smoke:reactive-determinations": "node ./smoke/smoke-reactive-determinations.mjs",
+    "verify:payroll-g4": "node ./smoke/verify-payroll-g4-corpus.mjs",
+    "smoke:payroll-g4": "node ./smoke/smoke-reactive-determinations.mjs --payroll-g4"
   }
 }

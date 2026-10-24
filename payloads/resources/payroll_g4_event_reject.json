@@ -1,0 +1,11 @@
+{
+  "effectiveAt": "2026-04-30",
+  "reasonCode": "DUPLICADO",
+  "comment": "Duplicidade conferida na competência.",
+  "precondicoesFolhas": [
+    {
+      "folhaPagamentoId": 42,
+      "resourceVersion": "\"replace-with-exact-original-parent-token-from-event-GET\""
+    }
+  ]
+}

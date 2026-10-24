@@ -1,0 +1,29 @@
+### status: illustrative-only
+### llmOperational: false
+### protectedContract: false
+### referenceOnly: true
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: true
+### requiresTenantHeaders: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### accessMode: authenticated-session
+### selectionGuidance: source-derived-payroll-g4-administration
+### note: Administrative G4 candidate only; not published-backend confirmed. Requires an active persisted SESSION, current BULK_PUBLICATION_PUBLISH grant and the exact protected control generation. The committed generation is illustrative; never discover or refresh it by mutating retries. The server fixes payroll operation and binding namespace. This affects the global deployment OpenAPI photograph, grants no financial access, and does not approve events. Uncertain 503 is not rollback; stop and inspect protected state. No automatic retry/rebase.
+
+@baseUrl = http://localhost:8088
+@sessionCookie = replace-with-session-cookie-value
+@xsrfToken = replace-with-XSRF-TOKEN-cookie-value
+
+POST {{baseUrl}}/api/human-resources/eventos-folha/actions/bulk-approve/publication/publish
+Accept: application/json
+Content-Type: application/json
+Cookie: SESSION={{sessionCookie}}; XSRF-TOKEN={{xsrfToken}}
+X-XSRF-TOKEN: {{xsrfToken}}
+
+< ../../payloads/resources/payroll_g4_bulk_publish.json
