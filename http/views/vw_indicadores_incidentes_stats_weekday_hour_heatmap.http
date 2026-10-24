@@ -1,0 +1,32 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: false
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: false
+### referenceOnly: true
+### runtimeRecordConfirmed: true
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### accessMode: auth-light
+### selectionGuidance: reference-only-until-published
+### note: Canonical 2D Cyclic Temporal x Cyclic Temporal 7x24 Heatmap example (DAY_OF_WEEK x HOUR_OF_DAY on ocorridoEm) with finite-domain fillGaps=true and AVG_PER_CYCLE_OCCURRENCE.
+### note: Proven in praxis-metadata-starter#301 and praxis-api-quickstart VwIndicadoresIncidenteController; promote to llmOperational after redeploying published backend with praxis-metadata-starter >= 8.0.0-rc.179.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@userId = example-user
+@envId = public
+
+POST {{baseUrl}}/api/risk-intelligence/vw-indicadores-incidentes/stats/group-by
+Content-Type: application/json
+Accept: application/json
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}
+X-Env: {{envId}}
+
+< ../../payloads/views/vw_indicadores_incidentes_stats_weekday_hour_heatmap.json

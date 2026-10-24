@@ -1,0 +1,28 @@
+{
+  "filter": {},
+  "dimensions": [
+    {
+      "field": "severidade",
+      "extraction": "NONE",
+      "alias": "severidade"
+    },
+    {
+      "field": "local",
+      "extraction": "NONE",
+      "alias": "local"
+    }
+  ],
+  "metrics": [
+    {
+      "operation": "COUNT",
+      "alias": "incidentes"
+    },
+    {
+      "operation": "SUM",
+      "field": "totalPago",
+      "alias": "totalPago"
+    }
+  ],
+  "limit": 100,
+  "orderBy": "VALUE_DESC"
+}

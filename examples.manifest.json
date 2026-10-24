@@ -3814,6 +3814,78 @@
       "knownPublishedFailure": false
     },
     {
+      "id": "vw-indicadores-incidentes-stats-severidade-local-crosstab",
+      "httpFile": "http/views/vw_indicadores_incidentes_stats_severidade_local_crosstab.http",
+      "payloadFiles": [
+        "payloads/views/vw_indicadores_incidentes_stats_severidade_local_crosstab.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "multidimensional 2D categorical cross-tab group-by stats (severidade x local) with multi-metric aggregation"
+      ],
+      "notFor": [
+        "mutation flows"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/docs/technical/STATS-MULTIDIMENSIONAL-AND-TEMPORAL-EXTRACTION-RFC.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/riskintelligence/controller/VwIndicadoresIncidenteController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/riskintelligence/service/VwIndicadoresIncidenteService.java"
+      ],
+      "lastVerified": "2026-10-24",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "stats-group-by",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "vw-indicadores-incidentes-stats-weekday-hour-heatmap",
+      "httpFile": "http/views/vw_indicadores_incidentes_stats_weekday_hour_heatmap.http",
+      "payloadFiles": [
+        "payloads/views/vw_indicadores_incidentes_stats_weekday_hour_heatmap.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "multidimensional 2D cyclic temporal heatmap group-by stats (DAY_OF_WEEK x HOUR_OF_DAY) with finite-domain fillGaps and AVG_PER_CYCLE_OCCURRENCE"
+      ],
+      "notFor": [
+        "mutation flows"
+      ],
+      "sourceOfTruth": [
+        "../praxis-metadata-starter/docs/technical/STATS-MULTIDIMENSIONAL-AND-TEMPORAL-EXTRACTION-RFC.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/riskintelligence/controller/VwIndicadoresIncidenteController.java",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/riskintelligence/service/VwIndicadoresIncidenteService.java"
+      ],
+      "lastVerified": "2026-10-24",
+      "sessionAuthRequired": false,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "stats-group-by",
+      "runtimeRecordConfirmed": true,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
       "id": "missao-participantes-stats-papel",
       "httpFile": "http/operations/missao_participantes_stats_papel.http",
       "payloadFiles": [
