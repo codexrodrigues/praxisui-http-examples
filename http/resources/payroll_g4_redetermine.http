@@ -1,0 +1,33 @@
+### status: illustrative-only
+### llmOperational: false
+### protectedContract: false
+### referenceOnly: true
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: true
+### requiresTenantHeaders: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### accessMode: authenticated-session
+### selectionGuidance: source-derived-payroll-g4-contract
+### note: Source-derived G4 candidate, not admitted or confirmed on the published host. Explicitly apply the current governed composition to stored facts with If-Match and stable Idempotency-Key. It invalidates the agenda and requires fresh authority; opening or unchanged editing never performs this action.
+
+@baseUrl = http://localhost:8088
+@sessionCookie = replace-with-session-cookie-value
+@folhaId = 42
+@eventoId = 21
+@xsrfToken = replace-with-XSRF-TOKEN-cookie-value
+
+POST {{baseUrl}}/api/human-resources/folhas-pagamento/{{folhaId}}/actions/redetermine
+Accept: application/json
+Content-Type: application/json
+Cookie: SESSION={{sessionCookie}}; XSRF-TOKEN={{xsrfToken}}
+X-XSRF-TOKEN: {{xsrfToken}}
+If-Match: "replace-with-exact-resource-ETag-from-the-same-GET-snapshot"
+Idempotency-Key: replace-with-one-stable-command-key
+
+< ../../payloads/resources/payroll_g4_workflow.json

@@ -2,7 +2,7 @@
 
 Operational surface for LLM-driven discovery against the published Praxis backend.
 
-Last reviewed: `2026-10-21`
+Last reviewed: `2026-10-24`
 
 This file is generated from [`examples.manifest.json`](./examples.manifest.json).
 Current validation commands:
@@ -170,8 +170,6 @@ Use these read-only examples when the task is to verify that a published semanti
 | `filtered-schema-response-funcionarios` | `http/metadata/filtered_schema_response_funcionarios.http` | Public | none | response-side filtered schema |
 | `reactive-determination-address-create-schema` | `http/metadata/filtered_schema_request_enderecos_create_reactive_determination.http` | Public | none | createAddress request-schema projection of the postal-address reactive determination; tenant-neutral x-ui.reactiveDeterminations discovery without tenant or user headers |
 | `reactive-determination-address-edit-schema` | `http/metadata/filtered_schema_request_enderecos_edit_reactive_determination.http` | Public | none | updateAddress request-schema projection of the postal-address reactive determination; tenant-neutral edit binding scoped by exact operationId |
-| `reactive-determination-payroll-create-schema` | `http/metadata/filtered_schema_request_payroll_create_reactive_determination.http` | Public | none | createPayroll request-schema projection of the multi-input net-salary determination; tenant-neutral x-ui.reactiveDeterminations discovery without tenant or user headers |
-| `reactive-determination-payroll-edit-schema` | `http/metadata/filtered_schema_request_payroll_edit_reactive_determination.http` | Public | none | updatePayroll request-schema projection of the multi-input net-salary determination; tenant-neutral edit binding scoped by exact operationId |
 | `filtered-schema-request-procurement-purchase-orders-entity-lookup` | `http/metadata/filtered_schema_request_procurement_purchase_orders_entity_lookup.http` | Public | none | request-side filtered schema for procurement purchase orders; entityLookup controlType discovery; RESOURCE_ENTITY optionSource metadata |
 | `filtered-schema-request-enderecos-form-effects` | `http/metadata/filtered_schema_request_enderecos_form_effects.http` | Public | none | public discovery of backend-owned x-ui.formEffects; typed postal-address determination bindings for the address create schema |
 
@@ -217,7 +215,7 @@ The following remain outside the LLM operational surface for now:
 - `ai-registry`
 - `domain-rules` writes
 - the authenticated rule-parameter catalog read (`domain-rules-definition-parameters`); it requires a reader session plus tenant/environment scope and has no published-backend confirmation
-- reactive determination pilot schemas and authenticated capability executions, which remain `referenceOnly` until the Quickstart deployment is confirmed (`reactive-determination-address-*` and `reactive-determination-payroll-*`)
+- G4 payroll schemas, previews, financial commands and administrative publication (`reactive-determination-payroll-*`, `payroll-g4-*`): source-derived protected contracts or mutation references, without G4 admission or published-backend confirmation; administrative references require current publication grants and exact control generation; see [Payroll G4 contract](./PAYROLL_G4_CONTRACT.md)
 - `ai/suggestions`
 - destructive writes
 - unstable published examples

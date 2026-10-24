@@ -172,6 +172,7 @@ capabilities, and their `422` cases:
 
 ```bash
 PRAXIS_SESSION_COOKIE=<session-value> REQUIRE_AUTH_EXECUTION=true npm run smoke:reactive-determinations
+# Payroll G4 is a separate source-derived lane; see PAYROLL_G4_CONTRACT.md for assigned-host prerequisites.
 ```
 
 ## Endpoint Prerequisites Matrix
@@ -216,7 +217,7 @@ Notes:
 - `publishedBackendConfirmed: true` means the example as committed is confirmed against `https://praxis-api-quickstart.onrender.com`, not only from code-backed contract evidence.
 - `knownPublishedFailure: true` means the committed request is known to fail on the published backend, either because it is a deliberate negative-path example or because the published environment is currently unstable for it.
 - Governed lookup examples whose ids contain `entity-lookup` or `light-lookup` must keep their `.http` frontmatter status aligned with [`examples.manifest.json`](./examples.manifest.json). If they are not confirmed on the published backend, they must use `illustrative-only` status even when the local branch proves the contract.
-- Reactive determination schemas and authenticated capabilities are confirmed against the published Quickstart. Their `/schemas/filtered` requests deliberately send only `Accept`; capability examples use a `SESSION` cookie and no caller-authored tenant identity headers. Public schema discovery belongs to the operational LLM surface, while authenticated executions remain protected-contract examples. Before changing their publication flags or expected `decisionVersion`, rerun `npm run smoke:reactive-determinations` with a real session against the published host.
+- Payroll G4 schemas, previews and financial command examples are source-derived candidates, with no published-backend confirmation. They use the full employee/competence/gross/base tuple, declared outputs and independent event/parent preconditions. Read [Payroll G4 contract](./PAYROLL_G4_CONTRACT.md) before using any reference. `npm run verify:manifest` includes the offline G4 verifier; future preview smoke is explicit via `npm run smoke:payroll-g4` against an assigned provisioned host. Existing address examples retain their own published classification.
 - `sessionAuthRequired: true` means the example depends on a real authenticated session or equivalent server-side login context.
 - `tenantScopedHeadersRequired: true` means the example has a stable tenant-scoped request form using lightweight headers such as `X-Tenant-ID`, `X-User-ID`, and `X-Env`; this is not the same as login, and it does not imply those headers are the loosest published-backend minimum.
 - `authRequired` remains in the manifest as a deprecated compatibility alias and must be read as `sessionAuthRequired || tenantScopedHeadersRequired`.

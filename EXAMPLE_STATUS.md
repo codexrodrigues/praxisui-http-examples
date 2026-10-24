@@ -100,3 +100,7 @@ When a controller exposes both list and lookup behavior, prefer preserving the f
 ## Governed bulk references
 
 The P1/P2/P3 bulk journey files are `illustrative-only` and `referenceOnly`. Their protected reads and writes require a provisioned host and current grants; example IDs and versions are placeholders. The integrated Quickstart contract is documented in [the bulk runbook](./BULK_OPERATIONS_RUNBOOK.md), while `publishedBackendConfirmed=false` records the absence of proof for the exact requests on the deployed host. They are outside the default LLM operational lane.
+
+## Payroll G4 source-derived candidates
+
+The G4 payroll examples are `illustrative-only` with `runtimeRecordConfirmed=false` and `publishedBackendConfirmed=false`. Schemas/previews/authorized captures use `protectedContract`; mutation references use `referenceOnly` and `destructive=true`. They are outside the default LLM operational lane. Source tests and local corpus checks do not certify deployment/admission. See [Payroll G4 contract](./PAYROLL_G4_CONTRACT.md); existing address examples retain their separate evidence.

@@ -1,21 +1,21 @@
-### status: runtime-confirmed,recommended
-### public: true
+### status: illustrative-only
+### public: false
 ### authRequired: false
 ### sessionAuthRequired: false
 ### tenantScopedHeadersRequired: false
 ### destructive: false
 ### requiresTenantHeaders: false
-### llmOperational: true
-### protectedContract: false
+### llmOperational: false
+### protectedContract: true
 ### referenceOnly: false
-### runtimeRecordConfirmed: true
+### runtimeRecordConfirmed: false
 ### selectorConfirmed: true
-### publishedBackendConfirmed: true
+### publishedBackendConfirmed: false
 ### knownPublishedFailure: false
-### selectionGuidance: published-reactive-determination-metadata
-### note: Edit-schema discovery is tenant-neutral and intentionally sends no tenant, user, session, authorization, or Origin headers.
+### selectionGuidance: source-derived-payroll-g4-contract
+### note: Source-derived G4 candidate; not admitted or confirmed on the published host. Requires the matching stack, isolated operational branch, current PAYROLL_APPROVE coverage and admitted governed composition. No client-authored tenant headers.
 
-@baseUrl = https://praxis-api-quickstart.onrender.com
+@baseUrl = http://localhost:8088
 
 GET {{baseUrl}}/schemas/filtered?path=/api/human-resources/folhas-pagamento/%7Bid%7D&operation=put&schemaType=request
 Accept: application/json
