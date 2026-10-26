@@ -1,0 +1,38 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: true
+### requiresTenantHeaders: false
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### selectionGuidance: protected-contract-governed-pages-head-publish
+
+@baseUrl = http://127.0.0.1:8088
+@origin = http://127.0.0.1:4302
+@pageId = 00000000-0000-4000-8000-000000000020
+@contextVersion = <contextVersion returned by GET /api/praxis/runtime/context>
+@csrfToken = <raw CSRF token issued by the authenticated session>
+@publisherSession = <SESSION cookie issued to an authenticated page publisher>
+
+# Publishes an APPROVED frozen release as the active scoped head for the page.
+# Uses If-None-Match: * for first publication or strong If-Match: "<headEtag>"
+# when updating an existing head. Acquires deterministic group+page locks and
+# verifies that all referenced navigation groups are currently active.
+
+POST {{baseUrl}}/api/praxis/config/ui-layouts/release-head/publish?rootComponentType=praxis-dynamic-page&rootComponentId={{pageId}}
+Content-Type: application/json
+Accept: application/json
+Origin: {{origin}}
+X-Praxis-Context-Version: {{contextVersion}}
+If-None-Match: *
+X-CSRF-TOKEN: {{csrfToken}}
+Cookie: SESSION={{publisherSession}}
+
+< ../../payloads/config/pages_head_publish.json

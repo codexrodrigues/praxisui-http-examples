@@ -1,0 +1,87 @@
+{
+  "commandRef": "00000000-0000-4000-8000-000000000030",
+  "target": {
+    "componentType": "praxis-dynamic-page",
+    "componentId": "00000000-0000-4000-8000-000000000020"
+  },
+  "reason": "Atualiza formulário de solicitação, tabela de acompanhamento e vínculos de menu",
+  "authoringDocument": {
+    "kind": "praxis.dynamic-page.editor",
+    "version": 1,
+    "config": {
+      "definition": {
+        "widgets": [
+          {
+            "key": "00000000-0000-4000-8000-000000000040",
+            "definition": {
+              "id": "praxis-dynamic-form",
+              "inputs": {
+                "config": {
+                  "title": "Dados da Solicitação",
+                  "fieldMetadata": [
+                    {
+                      "name": "solicitante",
+                      "label": "Nome do solicitante",
+                      "controlType": "input",
+                      "placeholder": "Informe o nome",
+                      "validators": []
+                    }
+                  ],
+                  "sections": [
+                    {
+                      "id": "sec-1",
+                      "title": "Identificação",
+                      "rows": [
+                        {
+                          "columns": [
+                            {
+                              "fields": ["solicitante"],
+                              "items": [
+                                {
+                                  "type": "field",
+                                  "fieldName": "solicitante"
+                                }
+                              ],
+                              "span": { "xs": 12, "md": 12 }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "key": "00000000-0000-4000-8000-000000000041",
+            "definition": {
+              "id": "praxis-table",
+              "inputs": {
+                "config": {
+                  "columns": [],
+                  "columnProjection": {
+                    "source": "schema"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "presentation": {
+        "title": "Solicitação Corporativa de Operação",
+        "icon": "dashboard"
+      },
+      "navigation": [
+        {
+          "id": "00000000-0000-4000-8000-000000000050",
+          "groupId": "00000000-0000-4000-8000-000000000060",
+          "label": "Solicitação Corporativa",
+          "icon": "dashboard",
+          "order": 100
+        }
+      ]
+    }
+  }
+}

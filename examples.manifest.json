@@ -6033,6 +6033,439 @@
       "payloadFiles": [
         "payloads/resources/payroll_g4_bulk_suspend.json"
       ]
+    },
+    {
+      "id": "pages-create-from-native-seed",
+      "httpFile": "http/config/pages_create_from_native_seed.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": true,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Atomically creating a governed page catalog identity, root target registration (praxis-dynamic-page), baseline capture, and initial draft from a server-admitted native template seed under an authenticated session and CSRF token"
+      ],
+      "notFor": [
+        "default LLM operational execution",
+        "publishing arbitrary client JSON without an admitted host sourceId and revision"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/docs/ai/contracts/page-publication-p0/README.md",
+        "../praxis-config-starter/docs/ai/contracts/page-publication-p0/TECHNICAL-PLAN.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/QuickstartPageConfiguration.java"
+      ],
+      "lastVerified": "2026-10-25",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 201,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "payloadFiles": [
+        "payloads/config/pages_create_native.json"
+      ]
+    },
+    {
+      "id": "pages-copy-from-published-source",
+      "httpFile": "http/config/pages_copy_from_published_source.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": true,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Creating an independent governed page and draft by copying a pinned published page revision (copySource), remapping widget/link identities, and clearing navigation bindings, approvals, and release head pointers"
+      ],
+      "notFor": [
+        "default LLM operational execution",
+        "copying effectiveLayout, drafts, or personal user preferences"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/docs/ai/contracts/page-publication-p0/README.md",
+        "../praxis-config-starter/docs/ai/contracts/page-publication-p0/TECHNICAL-PLAN.md"
+      ],
+      "lastVerified": "2026-10-25",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 201,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "payloadFiles": [
+        "payloads/config/pages_copy_published.json"
+      ]
+    },
+    {
+      "id": "pages-create-unadmitted-source-denied",
+      "httpFile": "http/config/pages_create_unadmitted_source_denied.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Negative contract proof showing that valid JSON schema with an unadmitted sourceId or revision is rejected (403/422) before any catalog or draft persistence"
+      ],
+      "notFor": [
+        "default LLM operational execution",
+        "valid page creation"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/docs/ai/contracts/page-publication-p0/README.md",
+        "../praxis-api-quickstart/src/main/java/com/example/praxis/apiquickstart/config/QuickstartPageConfiguration.java"
+      ],
+      "lastVerified": "2026-10-25",
+      "responseShapeHint": "error-response",
+      "expectedStatus": 403,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "payloadFiles": [
+        "payloads/config/pages_create_unadmitted_source.json"
+      ]
+    },
+    {
+      "id": "pages-reconcile-by-creation-key",
+      "httpFile": "http/config/pages_reconcile_by_creation_key.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Read-only lost-response reconciliation for page creation/copy by creationKey without replaying POST or mutating state"
+      ],
+      "notFor": [
+        "default LLM operational execution",
+        "creating a page when the original POST did not commit"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/docs/ai/contracts/page-publication-p0/README.md",
+        "../praxis-config-starter/docs/ai/contracts/page-publication-p0/TECHNICAL-PLAN.md"
+      ],
+      "lastVerified": "2026-10-25",
+      "responseShapeHint": "config-record",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "pages-catalog-list",
+      "httpFile": "http/config/pages_catalog_list.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Listing published governed pages authorized in the caller's scope, resolved from the active release head with cursor pagination"
+      ],
+      "notFor": [
+        "default LLM operational execution",
+        "listing unpublished drafts"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/docs/ai/contracts/page-publication-p0/README.md",
+        "../praxis-config-starter/docs/ai/contracts/page-publication-p0/TECHNICAL-PLAN.md"
+      ],
+      "lastVerified": "2026-10-25",
+      "responseShapeHint": "config-record",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "pages-published-read",
+      "httpFile": "http/config/pages_published_read.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Reading a published governed page by UUID (catalog -> target -> head) with its frozen PageAuthoringDocument and correlated copySource"
+      ],
+      "notFor": [
+        "default LLM operational execution",
+        "reading unpublished drafts or withdrawn pages"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/docs/ai/contracts/page-publication-p0/README.md",
+        "../praxis-config-starter/docs/ai/contracts/page-publication-p0/TECHNICAL-PLAN.md"
+      ],
+      "lastVerified": "2026-10-25",
+      "responseShapeHint": "config-record",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "pages-revision-save",
+      "httpFile": "http/config/pages_revision_save.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": true,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Saving an immutable revision of praxis.dynamic-page.editor containing praxis-dynamic-form and praxis-table widgets, presentation metadata, and menu navigation bindings under strong If-Match"
+      ],
+      "notFor": [
+        "default LLM operational execution",
+        "direct publication without review and release freeze"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/src/main/java/org/praxisplatform/config/controller/UiLayoutLifecycleController.java",
+        "../praxis-config-starter/docs/ai/contracts/page-publication-p0/README.md"
+      ],
+      "lastVerified": "2026-10-25",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 201,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "payloadFiles": [
+        "payloads/config/pages_revision_save.json"
+      ]
+    },
+    {
+      "id": "pages-navigation-groups-revision",
+      "httpFile": "http/config/pages_navigation_groups_revision.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": true,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Saving an immutable revision of praxis.navigation-groups.editor on praxis-app-shell/default as an independent aggregate from page bindings"
+      ],
+      "notFor": [
+        "default LLM operational execution",
+        "embedding page lists inside navigation groups"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/src/main/java/org/praxisplatform/config/controller/UiLayoutLifecycleController.java",
+        "../praxis-config-starter/docs/ai/contracts/page-publication-p0/TECHNICAL-PLAN.md"
+      ],
+      "lastVerified": "2026-10-25",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 201,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "payloadFiles": [
+        "payloads/config/pages_navigation_groups_revision.json"
+      ]
+    },
+    {
+      "id": "pages-head-publish",
+      "httpFile": "http/config/pages_head_publish.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": true,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Publishing an approved frozen page release as the active scoped head under If-None-Match: * or strong If-Match with deterministic group+page referential integrity locks"
+      ],
+      "notFor": [
+        "default LLM operational execution",
+        "bypassing review approval"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/src/main/java/org/praxisplatform/config/controller/UiLayoutLifecycleController.java",
+        "../praxis-config-starter/docs/ai/contracts/page-publication-p0/P3A-IMPLEMENTATION.md"
+      ],
+      "lastVerified": "2026-10-25",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "payloadFiles": [
+        "payloads/config/pages_head_publish.json"
+      ]
+    },
+    {
+      "id": "pages-head-rollback",
+      "httpFile": "http/config/pages_head_rollback.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": true,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Rolling the active release head of a governed page back to a prior approved release under strong If-Match and deterministic referential locks"
+      ],
+      "notFor": [
+        "default LLM operational execution",
+        "mutating other pages or navigation groups"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/src/main/java/org/praxisplatform/config/controller/UiLayoutLifecycleController.java",
+        "../praxis-config-starter/docs/ai/contracts/page-publication-p0/P3A-IMPLEMENTATION.md"
+      ],
+      "lastVerified": "2026-10-25",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "payloadFiles": [
+        "payloads/config/pages_head_rollback.json"
+      ]
+    },
+    {
+      "id": "pages-head-withdraw",
+      "httpFile": "http/config/pages_head_withdraw.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": true,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Withdrawing the active release head of a governed page under strong If-Match so it leaves the operational catalog, runtime navigation, and published URL resolution"
+      ],
+      "notFor": [
+        "default LLM operational execution",
+        "deleting historical revisions or audit evidence"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/src/main/java/org/praxisplatform/config/controller/UiLayoutLifecycleController.java",
+        "../praxis-config-starter/docs/ai/contracts/page-publication-p0/P3A-IMPLEMENTATION.md"
+      ],
+      "lastVerified": "2026-10-25",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false,
+      "payloadFiles": [
+        "payloads/config/pages_head_withdraw.json"
+      ]
+    },
+    {
+      "id": "runtime-navigation-read",
+      "httpFile": "http/config/runtime_navigation_read.http",
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": false,
+      "destructive": false,
+      "requiresTenantHeaders": false,
+      "canonicalFor": [
+        "Reading paginated runtime navigation nodes (groups and bound page items with icons and /pages/{pageId} routes) projected from the same authorized release heads"
+      ],
+      "notFor": [
+        "default LLM operational execution",
+        "inferring page authorization without server head verification"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/src/main/java/org/praxisplatform/config/controller/EnterpriseRuntimeContextController.java",
+        "../praxis-config-starter/docs/ai/contracts/page-publication-p0/TECHNICAL-PLAN.md"
+      ],
+      "lastVerified": "2026-10-25",
+      "responseShapeHint": "config-record",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     }
   ]
 }

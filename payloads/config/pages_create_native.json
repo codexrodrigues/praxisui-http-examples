@@ -1,0 +1,9 @@
+{
+  "creationKey": "00000000-0000-4000-8000-000000000010",
+  "title": "Solicitação Corporativa de Operação",
+  "source": {
+    "kind": "registered-native",
+    "sourceId": "quickstart:corporate-page",
+    "revision": "2"
+  }
+}

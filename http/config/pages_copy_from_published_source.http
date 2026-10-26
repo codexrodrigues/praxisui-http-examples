@@ -1,0 +1,36 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: true
+### requiresTenantHeaders: false
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### selectionGuidance: protected-contract-governed-pages-copy-published
+
+@baseUrl = http://127.0.0.1:8088
+@origin = http://127.0.0.1:4302
+@contextVersion = <contextVersion returned by GET /api/praxis/runtime/context>
+@csrfToken = <raw CSRF token issued by the authenticated session>
+@authorSession = <SESSION cookie issued to an authenticated page author>
+
+# Creates a new independent page and draft by copying a pinned published page
+# revision (copySource returned by GET /api/praxis/config/pages/{pageId}/published).
+# Remaps widget/link identities, clears navigation bindings, approvals, and
+# release heads, and never copies effectiveLayout, drafts, or personal state.
+
+POST {{baseUrl}}/api/praxis/config/pages
+Content-Type: application/json
+Accept: application/json
+Origin: {{origin}}
+X-Praxis-Context-Version: {{contextVersion}}
+X-CSRF-TOKEN: {{csrfToken}}
+Cookie: SESSION={{authorSession}}
+
+< ../../payloads/config/pages_copy_published.json

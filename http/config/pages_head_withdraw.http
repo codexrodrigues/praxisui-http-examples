@@ -1,0 +1,38 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: true
+### requiresTenantHeaders: false
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### selectionGuidance: protected-contract-governed-pages-head-withdraw
+
+@baseUrl = http://127.0.0.1:8088
+@origin = http://127.0.0.1:4302
+@pageId = 00000000-0000-4000-8000-000000000020
+@headEtag = "00000000-0000-4000-8000-000000000029"
+@contextVersion = <contextVersion returned by GET /api/praxis/runtime/context>
+@csrfToken = <raw CSRF token issued by the authenticated session>
+@publisherSession = <SESSION cookie issued to an authenticated page publisher>
+
+# Withdraws the active release head of a governed page under strong If-Match.
+# Removes the page from the operational catalog, runtime navigation, and
+# published URL resolution (which then returns 404 without draft fallback).
+
+POST {{baseUrl}}/api/praxis/config/ui-layouts/release-head/withdraw?rootComponentType=praxis-dynamic-page&rootComponentId={{pageId}}
+Content-Type: application/json
+Accept: application/json
+Origin: {{origin}}
+X-Praxis-Context-Version: {{contextVersion}}
+If-Match: {{headEtag}}
+X-CSRF-TOKEN: {{csrfToken}}
+Cookie: SESSION={{publisherSession}}
+
+< ../../payloads/config/pages_head_withdraw.json

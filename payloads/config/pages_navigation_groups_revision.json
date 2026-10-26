@@ -1,0 +1,28 @@
+{
+  "commandRef": "00000000-0000-4000-8000-000000000031",
+  "target": {
+    "componentType": "praxis-app-shell",
+    "componentId": "default"
+  },
+  "reason": "Define grupos corporativos de navegação para vínculo de páginas",
+  "authoringDocument": {
+    "kind": "praxis.navigation-groups.editor",
+    "version": 1,
+    "config": {
+      "groups": [
+        {
+          "id": "00000000-0000-4000-8000-000000000060",
+          "label": "Operações Táticas",
+          "icon": "shield",
+          "order": 100
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000061",
+          "label": "Governança e Auditoria",
+          "icon": "verified_user",
+          "order": 200
+        }
+      ]
+    }
+  }
+}

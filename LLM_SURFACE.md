@@ -211,6 +211,7 @@ Use these read-only examples when the task is to verify that a published semanti
 The following remain outside the LLM operational surface for now:
 
 - `config/ui` as canonical remote layout storage
+- governed page lifecycle and navigation-group endpoints (`pages-*`, `runtime-navigation-read` under `/api/praxis/config/pages/**`, `/api/praxis/config/ui-layouts/**`, and `/api/praxis/runtime/navigation`): classified as `protectedContract` or `referenceOnly` because they require an authenticated `SESSION`, CSRF token for writes, `X-Praxis-Context-Version`, and server-admitted provenance (`sourceId`+`revision` or pinned `copySource` — valid JSON schema alone does not admit an arbitrary origin)
 - `ai-context`
 - `ai-registry`
 - `domain-rules` writes

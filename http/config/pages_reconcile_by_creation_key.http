@@ -1,0 +1,32 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: false
+### requiresTenantHeaders: false
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### selectionGuidance: protected-contract-governed-pages-reconcile-by-key
+
+@baseUrl = http://127.0.0.1:8088
+@origin = http://127.0.0.1:4302
+@creationKey = 00000000-0000-4000-8000-000000000010
+@contextVersion = <contextVersion returned by GET /api/praxis/runtime/context>
+@authorSession = <SESSION cookie issued to the same authenticated page author>
+
+# Read-only lost-response reconciliation for POST /api/praxis/config/pages.
+# Returns 200 with the original creation receipt and strong draft ETag when the
+# creation committed in the caller's scope, or 404 when no committed creation
+# exists for that creationKey. Never mutates or replays creation.
+
+GET {{baseUrl}}/api/praxis/config/pages/by-creation-key?creationKey={{creationKey}}
+Accept: application/json
+Origin: {{origin}}
+X-Praxis-Context-Version: {{contextVersion}}
+Cookie: SESSION={{authorSession}}

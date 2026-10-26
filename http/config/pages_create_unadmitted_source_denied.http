@@ -1,0 +1,35 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: false
+### requiresTenantHeaders: false
+### llmOperational: false
+### protectedContract: false
+### referenceOnly: true
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### selectionGuidance: reference-only-governed-pages-unadmitted-source-denied
+
+@baseUrl = http://127.0.0.1:8088
+@origin = http://127.0.0.1:4302
+@contextVersion = <contextVersion returned by GET /api/praxis/runtime/context>
+@csrfToken = <raw CSRF token issued by the authenticated session>
+@authorSession = <SESSION cookie issued to an authenticated page author>
+
+# Negative contract example: structurally valid JSON with an unadmitted sourceId
+# or revision is rejected (403/422) before any catalog or draft persistence.
+# Distinguishes valid JSON schema from server-admitted provenance.
+
+POST {{baseUrl}}/api/praxis/config/pages
+Content-Type: application/json
+Accept: application/json
+Origin: {{origin}}
+X-Praxis-Context-Version: {{contextVersion}}
+X-CSRF-TOKEN: {{csrfToken}}
+Cookie: SESSION={{authorSession}}
+
+< ../../payloads/config/pages_create_unadmitted_source.json

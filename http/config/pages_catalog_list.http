@@ -1,0 +1,30 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: false
+### requiresTenantHeaders: false
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### selectionGuidance: protected-contract-governed-pages-catalog
+
+@baseUrl = http://127.0.0.1:8088
+@origin = http://127.0.0.1:4302
+@contextVersion = <contextVersion returned by GET /api/praxis/runtime/context>
+@readerSession = <SESSION cookie issued to an authenticated reader/author>
+
+# Lists published governed pages authorized in the current tenant, application,
+# and environment scope. Resolves title, icon, route (/pages/{pageId}), and head
+# from the same authorized release head pointer, with cursor pagination.
+
+GET {{baseUrl}}/api/praxis/config/pages
+Accept: application/json
+Origin: {{origin}}
+X-Praxis-Context-Version: {{contextVersion}}
+Cookie: SESSION={{readerSession}}

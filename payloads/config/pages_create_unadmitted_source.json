@@ -1,0 +1,9 @@
+{
+  "creationKey": "00000000-0000-4000-8000-000000000019",
+  "title": "Tentativa com Origem Não Admitida",
+  "source": {
+    "kind": "registered-native",
+    "sourceId": "unregistered:arbitrary-client-template",
+    "revision": "1"
+  }
+}
