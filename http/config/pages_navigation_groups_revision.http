@@ -1,0 +1,39 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: true
+### requiresTenantHeaders: false
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### selectionGuidance: protected-contract-governed-pages-navigation-groups
+
+@baseUrl = http://127.0.0.1:8088
+@origin = http://127.0.0.1:4302
+@draftId = 00000000-0000-4000-8000-000000000070
+@draftEtag = "00000000-0000-4000-8000-000000000071"
+@contextVersion = <contextVersion returned by GET /api/praxis/runtime/context>
+@csrfToken = <raw CSRF token issued by the authenticated session>
+@authorSession = <SESSION cookie issued to an authenticated navigation author>
+
+# Compiles and persists an immutable revision of praxis.navigation-groups.editor
+# on root target praxis-app-shell/default. Groups are managed as a separate
+# aggregate from pages; removing a group referenced by an active published page
+# is blocked under deterministic transactional locks during publish/rollback/withdraw.
+
+POST {{baseUrl}}/api/praxis/config/ui-layouts/drafts/{{draftId}}/revisions?rootComponentType=praxis-app-shell&rootComponentId=default
+Content-Type: application/json
+Accept: application/json
+Origin: {{origin}}
+X-Praxis-Context-Version: {{contextVersion}}
+If-Match: {{draftEtag}}
+X-CSRF-TOKEN: {{csrfToken}}
+Cookie: SESSION={{authorSession}}
+
+< ../../payloads/config/pages_navigation_groups_revision.json

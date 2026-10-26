@@ -1,0 +1,32 @@
+### status: illustrative-only
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: false
+### destructive: false
+### requiresTenantHeaders: false
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### selectionGuidance: protected-contract-governed-pages-published-read
+
+@baseUrl = http://127.0.0.1:8088
+@origin = http://127.0.0.1:4302
+@pageId = 00000000-0000-4000-8000-000000000020
+@contextVersion = <contextVersion returned by GET /api/praxis/runtime/context>
+@readerSession = <SESSION cookie issued to an authenticated reader>
+
+# Resolves a published page by its stable UUID (catalog -> target -> head),
+# returning the frozen PageAuthoringDocument, head receipt, and correlated
+# copySource (pageId, releaseId, revisionId). Returns 404 when unpublished or
+# withdrawn, with no fallback to draft or baseline.
+
+GET {{baseUrl}}/api/praxis/config/pages/{{pageId}}/published
+Accept: application/json
+Origin: {{origin}}
+X-Praxis-Context-Version: {{contextVersion}}
+Cookie: SESSION={{readerSession}}
