@@ -1,0 +1,37 @@
+### status: none
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### responseShapeHint: capabilities-snapshot
+### selectionGuidance: protected-contract-governed-audio-readiness
+### note: Corporate identity must be resolved server-side from the authenticated session; headers are scope hints, not identity or permission.
+### note: Returns only { "available": boolean } with Cache-Control: no-store. Availability means local provider support and effective credential configuration; it does not prove connectivity, key validity or quota and makes no provider call.
+### note: Query before microphone permission. Only available=true permits capture; false, missing, failed or unauthorized discovery must not trigger browser-speech or direct-provider fallback.
+### note: This contract example has no published-runtime confirmation. Quickstart enterprise admission requires the current context stamp and may reject session/scope/version/source before readiness (401/403/409/503). Provider/configuration readiness failures return available=false without sensitive details.
+
+@baseUrl = https://praxis-api-quickstart.onrender.com
+@tenantId = demo
+@userId = example-user
+@envId = public
+@allowedOrigin = http://localhost:4301
+@sessionCookie = replace-with-authenticated-session-cookie
+@contextVersion = replace-with-current-runtime-effective-context-version
+
+GET {{baseUrl}}/api/praxis/config/ai/transcriptions/capabilities
+Accept: application/json
+Origin: {{allowedOrigin}}
+X-Tenant-ID: {{tenantId}}
+X-User-ID: {{userId}}
+X-Env: {{envId}}
+X-Praxis-Context-Version: {{contextVersion}}
+Cookie: SESSION={{sessionCookie}}

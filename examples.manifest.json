@@ -6466,6 +6466,41 @@
       "selectorConfirmed": true,
       "publishedBackendConfirmed": false,
       "knownPublishedFailure": false
+    },
+    {
+      "id": "ai-audio-transcription-capabilities",
+      "httpFile": "http/config/ai_audio_transcription_capabilities.http",
+      "payloadFiles": [],
+      "status": [],
+      "protectedContract": true,
+      "public": false,
+      "authRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "governed composer audio transcription local readiness discovery before microphone permission"
+      ],
+      "notFor": [
+        "safe-first LLM execution",
+        "provider connectivity, key validity or quota proof",
+        "frontend provider selection or credentials",
+        "automatic assistant turn submission"
+      ],
+      "sourceOfTruth": [
+        "../praxis-config-starter/docs/ai/contracts/praxis-ai-api-contract-v1.1.openapi.yaml",
+        "../praxis-config-starter/docs/ai/contracts/README.md",
+        "../praxis-config-starter/src/main/java/org/praxisplatform/config/controller/AiAudioTranscriptionController.java",
+        "../praxis-config-starter/src/main/java/org/praxisplatform/config/service/AiProviderManagementService.java",
+        "../praxis-ui-angular/projects/praxis-ai/README.md"
+      ],
+      "lastVerified": "2026-10-28",
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": true,
+      "responseShapeHint": "capabilities-snapshot",
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     }
   ]
 }
