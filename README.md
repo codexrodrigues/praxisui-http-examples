@@ -1,6 +1,6 @@
 # Praxis UI HTTP Examples
 
-Executable HTTP examples and payload fixtures for the public Praxis platform surfaces.
+Executable HTTP examples and payload fixtures for the public **Praxis Platform** surfaces—proving in practice how a semantically oriented platform for AI-native enterprise applications describes resources, rules, actions, data, and policies once so the application is, by definition, readable and operable by traditional interfaces, generative interfaces, AI agents, and HTTP integrations.
 
 This repository is not the canonical source of truth for platform contracts.
 

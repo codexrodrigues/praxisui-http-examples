@@ -1,6 +1,6 @@
 # LLM Bootstrap
 
-Canonical safe-first entry point for a cold LLM using the published Praxis backend.
+Canonical safe-first entry point for a cold LLM or AI agent operating a published **Praxis Platform** backend—where resources, rules, actions, data, and policies are described once so the enterprise application is, by definition, readable and operable by AI within fail-closed governance boundaries.
 
 Last reviewed: `2026-04-26`
 
