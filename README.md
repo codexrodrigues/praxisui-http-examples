@@ -32,6 +32,7 @@ Local showcase runbooks:
 - [`ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md`](./ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md): promotion checklist for the procurement Entity Lookup pilot after the Render backend publishes the quickstart procurement endpoints
 - [`DOMAIN_RULES_PUBLICATION_RUNBOOK.md`](./DOMAIN_RULES_PUBLICATION_RUNBOOK.md): published-runtime proof for governed semantic decisions and supplier eligibility materialization
 - [`DOMAIN_KNOWLEDGE_TIMELINE_RUNBOOK.md`](./DOMAIN_KNOWLEDGE_TIMELINE_RUNBOOK.md): protected timeline proof for AI-authored Domain Knowledge change sets
+- [`ERGON_CHEFIA_SUBSTITUICOES_RUNBOOK.md`](./ERGON_CHEFIA_SUBSTITUICOES_RUNBOOK.md): source-derived HTTP corpus contract and local runbook for Ergon Chefia e Substituições (`FuncaoConfianca`, `VagaFuncao`, `DesignacaoFuncao`, `SubstituicaoFuncao`, and `RadarChefiaSubstituicao`) in `praxis-ergon-showcase`
 
 Core labels:
 - `runtime-confirmed`

@@ -1,0 +1,31 @@
+### status: illustrative-only
+### llmOperational: false
+### protectedContract: false
+### referenceOnly: true
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: true
+### destructive: true
+### requiresTenantHeaders: true
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### accessMode: authenticated-session
+### selectionGuidance: source-derived-ergon-chefia-contract
+### note: Source-derived Ergon Showcase two-phase domain command evaluation reference (localhost:8080), not deployed on the public Quickstart host. Evaluates homologar-designacoes-lote against explicit target versions and vacancy availability without mutating domain rows.
+
+@baseUrl = http://localhost:8080
+@sessionCookie = replace-with-ERGONSESSION-cookie-value
+@xsrfToken = replace-with-XSRF-TOKEN-cookie-value
+@orgao = 2
+
+POST {{baseUrl}}/api/ergon/designacoes/bulk/homologar-designacoes-lote/evaluation
+Accept: application/json
+Content-Type: application/json
+Cookie: ERGONSESSION={{sessionCookie}}; XSRF-TOKEN={{xsrfToken}}
+X-XSRF-TOKEN: {{xsrfToken}}
+X-Tenant: {{orgao}}
+
+< ../../payloads/hr/ergon_chefia_designacoes_homologar_lote_evaluation.json

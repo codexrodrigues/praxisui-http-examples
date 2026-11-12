@@ -1,0 +1,27 @@
+### status: illustrative-only
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### accessMode: authenticated-session
+### selectionGuidance: source-derived-ergon-chefia-contract
+### note: Source-derived Ergon Showcase contract (localhost:8080), not deployed on the public Quickstart host. Reads the 360° item surface of RadarChefiaSubstituicao with titularNome, substitutoNome, substitutoPessoaId, and chefeEmExercicioNome (ERGadm00480).
+
+@baseUrl = http://localhost:8080
+@sessionCookie = replace-with-ERGONSESSION-cookie-value
+@orgao = 2
+@radarId = 30
+
+GET {{baseUrl}}/api/ergon/radar-chefias-substituicoes/{{radarId}}/detail
+Accept: application/json
+Cookie: ERGONSESSION={{sessionCookie}}
+X-Tenant: {{orgao}}

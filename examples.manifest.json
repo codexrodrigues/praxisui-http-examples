@@ -6501,6 +6501,314 @@
       "selectorConfirmed": true,
       "publishedBackendConfirmed": false,
       "knownPublishedFailure": false
+    },
+    {
+      "id": "ergon-chefia-radar-filter-hierarquia",
+      "httpFile": "http/hr/ergon_chefia_radar_filter_hierarquia.http",
+      "payloadFiles": [
+        "payloads/hr/ergon_chefia_radar_filter_hierarquia.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "Ergon Chefia e Substituições — Radar executivo de chefias, titularidade, substituto em exercício, interinidade e árvore hierárquica de setor (H4)"
+      ],
+      "notFor": [
+        "safe-first LLM execution against praxis-api-quickstart",
+        "unauthenticated calls without ERGONSESSION and X-Tenant"
+      ],
+      "sourceOfTruth": [
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/controller/RadarChefiaSubstituicaoController.java",
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/dto/RadarChefiaSubstituicaoFilterDTO.java",
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/dto/RadarChefiaSubstituicaoResponseDTO.java",
+        "../praxisui-http-examples/ERGON_CHEFIA_SUBSTITUICOES_RUNBOOK.md"
+      ],
+      "lastVerified": "2026-11-09",
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "ergon-chefia-radar-detail",
+      "httpFile": "http/hr/ergon_chefia_radar_detail.http",
+      "payloadFiles": [],
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "Ergon Chefia e Substituições — Quick View 360° e detalhe do radar de chefias distinguindo titular (titularNome) do chefe em exercício (chefeEmExercicioNome)"
+      ],
+      "notFor": [
+        "safe-first LLM execution against praxis-api-quickstart",
+        "unauthenticated calls without ERGONSESSION and X-Tenant"
+      ],
+      "sourceOfTruth": [
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/controller/RadarChefiaSubstituicaoController.java",
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/dto/RadarChefiaSubstituicaoResponseDTO.java",
+        "../praxisui-http-examples/ERGON_CHEFIA_SUBSTITUICOES_RUNBOOK.md"
+      ],
+      "lastVerified": "2026-11-09",
+      "responseShapeHint": "row",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "ergon-chefia-substituicoes-previa",
+      "httpFile": "http/hr/ergon_chefia_substituicoes_previa.http",
+      "payloadFiles": [
+        "payloads/hr/ergon_chefia_substituicoes_previa.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "Ergon Chefia e Substituições — Determinação reativa não-persistente de substituição (elegibilidade, titularidade, impedimento legal ou ausência eventual, e diferença remuneratória)"
+      ],
+      "notFor": [
+        "safe-first LLM execution against praxis-api-quickstart",
+        "persisting a substitution record"
+      ],
+      "sourceOfTruth": [
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/controller/SubstituicaoFuncaoController.java",
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/service/ErgonDeterminationService.java",
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/dto/ChefiaDeterminationDTO.java",
+        "../praxisui-http-examples/ERGON_CHEFIA_SUBSTITUICOES_RUNBOOK.md"
+      ],
+      "lastVerified": "2026-11-09",
+      "responseShapeHint": "reactive-determination-result",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "ergon-chefia-substituicoes-create-ausencia-eventual",
+      "httpFile": "http/hr/ergon_chefia_substituicoes_create_ausencia_eventual.http",
+      "payloadFiles": [
+        "payloads/hr/ergon_chefia_substituicoes_create_ausencia_eventual.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": true,
+      "destructive": true,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "Ergon Chefia e Substituições — Registro de substituição de função por AUSENCIA_EVENTUAL (com justificativa formal sem exigir licença/férias concomitantes, conforme C_ERGON.SUBS_EXIGE_AFASTAMENTO)"
+      ],
+      "notFor": [
+        "safe-first LLM execution against praxis-api-quickstart",
+        "unauthenticated or missing X-XSRF-TOKEN mutation calls"
+      ],
+      "sourceOfTruth": [
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/controller/SubstituicaoFuncaoController.java",
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/dto/CreateSubstituicaoFuncaoDTO.java",
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/rules/SubstituicaoFuncaoRuleSet.java",
+        "../praxisui-http-examples/ERGON_CHEFIA_SUBSTITUICOES_RUNBOOK.md"
+      ],
+      "lastVerified": "2026-11-09",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 201,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "ergon-chefia-substituicoes-filter-auditoria",
+      "httpFile": "http/hr/ergon_chefia_substituicoes_filter_auditoria.http",
+      "payloadFiles": [
+        "payloads/hr/ergon_chefia_substituicoes_filter_auditoria.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "Ergon Chefia e Substituições — Pesquisa de substituições de função com filtros hierárquicos de setor (setorPai, caminhoHierarquicoPrefixo) e auditoria documental"
+      ],
+      "notFor": [
+        "safe-first LLM execution against praxis-api-quickstart",
+        "unauthenticated calls without ERGONSESSION and X-Tenant"
+      ],
+      "sourceOfTruth": [
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/controller/SubstituicaoFuncaoController.java",
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/dto/SubstituicaoFuncaoFilterDTO.java",
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/dto/SubstituicaoFuncaoResponseDTO.java",
+        "../praxisui-http-examples/ERGON_CHEFIA_SUBSTITUICOES_RUNBOOK.md"
+      ],
+      "lastVerified": "2026-11-09",
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "ergon-chefia-designacoes-filter-hierarquia",
+      "httpFile": "http/hr/ergon_chefia_designacoes_filter_hierarquia.http",
+      "payloadFiles": [
+        "payloads/hr/ergon_chefia_designacoes_filter_hierarquia.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "Ergon Chefia e Substituições — Pesquisa de designações de função com filtros de hierarquia organizacional (setorPai, caminhoHierarquicoPrefixo) e interinidade"
+      ],
+      "notFor": [
+        "safe-first LLM execution against praxis-api-quickstart",
+        "unauthenticated calls without ERGONSESSION and X-Tenant"
+      ],
+      "sourceOfTruth": [
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/controller/DesignacaoFuncaoController.java",
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/dto/DesignacaoFuncaoFilterDTO.java",
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/dto/DesignacaoFuncaoResponseDTO.java",
+        "../praxisui-http-examples/ERGON_CHEFIA_SUBSTITUICOES_RUNBOOK.md"
+      ],
+      "lastVerified": "2026-11-09",
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "ergon-chefia-vagas-funcao-filter-hierarquia",
+      "httpFile": "http/hr/ergon_chefia_vagas_funcao_filter_hierarquia.http",
+      "payloadFiles": [
+        "payloads/hr/ergon_chefia_vagas_funcao_filter_hierarquia.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": true,
+      "referenceOnly": false,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": true,
+      "destructive": false,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "Ergon Chefia e Substituições — Pesquisa de vagas de função autorizadas por lotação (PROVIMENTO_FUNCAO_VAGA_LOTACAO) com filtros de hierarquia organizacional (setorPai, caminhoHierarquicoPrefixo)"
+      ],
+      "notFor": [
+        "safe-first LLM execution against praxis-api-quickstart",
+        "unauthenticated calls without ERGONSESSION and X-Tenant"
+      ],
+      "sourceOfTruth": [
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/controller/VagaFuncaoController.java",
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/dto/VagaFuncaoFilterDTO.java",
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/dto/VagaFuncaoResponseDTO.java",
+        "../praxisui-http-examples/ERGON_CHEFIA_SUBSTITUICOES_RUNBOOK.md"
+      ],
+      "lastVerified": "2026-11-09",
+      "responseShapeHint": "restApiResponse<page<row>>",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
+    },
+    {
+      "id": "ergon-chefia-designacoes-homologar-lote-evaluation",
+      "httpFile": "http/hr/ergon_chefia_designacoes_homologar_lote_evaluation.http",
+      "payloadFiles": [
+        "payloads/hr/ergon_chefia_designacoes_homologar_lote_evaluation.json"
+      ],
+      "status": [
+        "illustrative-only"
+      ],
+      "llmOperational": false,
+      "protectedContract": false,
+      "referenceOnly": true,
+      "public": false,
+      "authRequired": true,
+      "sessionAuthRequired": true,
+      "tenantScopedHeadersRequired": true,
+      "destructive": true,
+      "requiresTenantHeaders": true,
+      "canonicalFor": [
+        "Ergon Chefia e Substituições — Avaliação de operação em lote (DOMAIN_COMMAND) para homologação coletiva de designações de função (homologar-designacoes-lote)"
+      ],
+      "notFor": [
+        "safe-first LLM execution against praxis-api-quickstart",
+        "unauthenticated or missing X-XSRF-TOKEN command evaluation calls"
+      ],
+      "sourceOfTruth": [
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/controller/DesignacaoFuncaoController.java",
+        "../praxis-ergon-showcase/src/main/java/br/com/praxis/ergonshowcase/bulk/ErgonBulkOperations.java",
+        "../praxisui-http-examples/ERGON_CHEFIA_SUBSTITUICOES_RUNBOOK.md"
+      ],
+      "lastVerified": "2026-11-09",
+      "responseShapeHint": "mutation-result",
+      "expectedStatus": 200,
+      "runtimeRecordConfirmed": false,
+      "selectorConfirmed": true,
+      "publishedBackendConfirmed": false,
+      "knownPublishedFailure": false
     }
   ]
 }

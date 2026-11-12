@@ -1,0 +1,15 @@
+{
+  "executionMode": "SYNC",
+  "selection": {
+    "mode": "EXPLICIT",
+    "targets": [
+      {
+        "id": 30,
+        "expectedVersion": "v0"
+      }
+    ]
+  },
+  "input": {
+    "dtExercicio": "2026-01-15"
+  }
+}

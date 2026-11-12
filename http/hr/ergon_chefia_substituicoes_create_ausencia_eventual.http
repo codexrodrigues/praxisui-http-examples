@@ -1,0 +1,31 @@
+### status: illustrative-only
+### llmOperational: false
+### protectedContract: false
+### referenceOnly: true
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: true
+### destructive: true
+### requiresTenantHeaders: true
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### accessMode: authenticated-session
+### selectionGuidance: source-derived-ergon-chefia-contract
+### note: Source-derived Ergon Showcase mutation reference (localhost:8080), not deployed on the public Quickstart host. Creates an interim substitution for AUSENCIA_EVENTUAL (ERGadm00364 / PCK_SUBST_AUSENC_EV / ERG-01311) using composite wire identity substitutoId without requiring a formal vacation or leave impediment record.
+
+@baseUrl = http://localhost:8080
+@sessionCookie = replace-with-ERGONSESSION-cookie-value
+@xsrfToken = replace-with-XSRF-TOKEN-cookie-value
+@orgao = 2
+
+POST {{baseUrl}}/api/ergon/substituicoes
+Accept: application/json
+Content-Type: application/json
+Cookie: ERGONSESSION={{sessionCookie}}; XSRF-TOKEN={{xsrfToken}}
+X-XSRF-TOKEN: {{xsrfToken}}
+X-Tenant: {{orgao}}
+
+< ../../payloads/hr/ergon_chefia_substituicoes_create_ausencia_eventual.json

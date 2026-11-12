@@ -1,0 +1,31 @@
+### status: illustrative-only
+### llmOperational: false
+### protectedContract: true
+### referenceOnly: false
+### public: false
+### authRequired: true
+### sessionAuthRequired: true
+### tenantScopedHeadersRequired: true
+### destructive: false
+### requiresTenantHeaders: true
+### runtimeRecordConfirmed: false
+### selectorConfirmed: true
+### publishedBackendConfirmed: false
+### knownPublishedFailure: false
+### accessMode: authenticated-session
+### selectionGuidance: source-derived-ergon-chefia-contract
+### note: Source-derived Ergon Showcase contract (localhost:8080), not deployed on the public Quickstart host. Filters RadarChefiaSubstituicao by parent sector and hierarchical path prefix, projecting both titularNome (GET_CHF_TIT) and chefeEmExercicioNome / substitutoNome (GET_CHF_EXERC, ERGadm00480).
+
+@baseUrl = http://localhost:8080
+@sessionCookie = replace-with-ERGONSESSION-cookie-value
+@xsrfToken = replace-with-XSRF-TOKEN-cookie-value
+@orgao = 2
+
+POST {{baseUrl}}/api/ergon/radar-chefias-substituicoes/filter
+Accept: application/json
+Content-Type: application/json
+Cookie: ERGONSESSION={{sessionCookie}}; XSRF-TOKEN={{xsrfToken}}
+X-XSRF-TOKEN: {{xsrfToken}}
+X-Tenant: {{orgao}}
+
+< ../../payloads/hr/ergon_chefia_radar_filter_hierarquia.json

@@ -1,0 +1,10 @@
+{
+  "empCodigo": 2,
+  "descricao": "Substituição por ausência eventual em comissão externa",
+  "dtini": "2026-01-10",
+  "dtfim": "2026-01-24",
+  "situacao": "EM_EXERCICIO",
+  "designacaoId": 30,
+  "substitutoId": "202:1",
+  "motivo": "AUSENCIA_EVENTUAL"
+}
