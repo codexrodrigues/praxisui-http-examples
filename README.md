@@ -1,50 +1,58 @@
 # Praxis UI HTTP Examples
 
-Executable HTTP examples and payload fixtures for the public **Praxis Platform** surfaces—proving in practice how a semantically oriented platform for AI-native enterprise applications describes resources, rules, actions, data, and policies once so the application is, by definition, readable and operable by traditional interfaces, generative interfaces, AI agents, and HTTP integrations.
+Exemplos HTTP executáveis e *fixtures* de payload para as superfícies públicas da [**Praxis Platform**](https://praxisui.dev/) — comprovando na prática como uma plataforma semanticamente orientada para aplicações corporativas *AI-native* descreve **recursos, regras, ações, dados e políticas uma única vez** para operar uniformemente por **interfaces tradicionais, interfaces generativas, agentes de IA e integrações HTTP**.
 
-This repository is not the canonical source of truth for platform contracts.
+Este repositório não é a fonte canônica de verdade dos contratos da plataforma; ele atua como o corpus executável de provas e contrato de referência para LLMs e CI.
 
-Source-of-truth hierarchy:
-- `praxis-metadata-starter`: canonical metadata vocabulary, x-ui schemas, backend-first contract rules
-- `praxis-config-starter`: canonical config, AI support, and governed semantic decision contracts
-- `praxis-api-quickstart`: public operational backend deployed on Render
-- `praxisui-http-examples`: executable requests, curated payloads, and smoke validation
+## Hierarquia Canônica no Ecossistema Praxis
 
-Default targets:
-- Public API: `https://praxis-api-quickstart.onrender.com`
-- Local Angular host: `http://localhost:4003`, `http://127.0.0.1:4003`
-- Local landing host for Render validation: `http://localhost:4301`, `http://127.0.0.1:4301`
+| Projeto | Papel Canônico e Problema Resolvido |
+| :--- | :--- |
+| [`praxis-metadata-starter`](https://github.com/codexrodrigues/praxis-metadata-starter) | Vocabulário canônico de metadados (`@ApiResource`, `x-ui`, `/schemas/filtered`, `/schemas/domain`, `@WorkflowAction`, `@UiSurface`, stats e exportação). |
+| [`praxis-config-starter`](https://github.com/codexrodrigues/praxis-config-starter) / [`praxis-config-contracts`](https://github.com/codexrodrigues/praxis-config-contracts) | Plano de controle (PAP): persistência de configuração de UI, `ai_registry`, grounding RAG, turnos agênticos e ciclo *maker-checker* de decisões (`/api/praxis/config/**`). |
+| [`praxis-rules-engine`](https://github.com/codexrodrigues/praxis-rules-engine) | Motor determinístico de 5 estados em JSON Logic para **regras de negócio (`decisionKind = BUSINESS`)** avaliadas no Passo 12 sobre estado real sem mascaramento. |
+| [`praxis-authz-contracts`](https://github.com/codexrodrigues/praxis-authz-contracts) · [`praxis-authz-enforcement-core`](https://github.com/codexrodrigues/praxis-authz-enforcement-core) · [`praxis-authz-opa`](https://github.com/codexrodrigues/praxis-authz-opa) · [`praxis-authz-starter`](https://github.com/codexrodrigues/praxis-authz-starter) (`0.1.0-beta.1`) | Família de **autorização e proteção de dados (`decisionKind = AUTHORIZATION`)**: PEP de 15 etapas, pushdown SQL Kleene 3VL (`DATA_SCOPE`), bloqueio pré-hidratação (`FIELD_WRITE`/`FIELD_USE`), mascaramento em 7 níveis, OPA Rego v1 e introspecção *Zero-Blueprint* (`PLAT-EVO-10`). |
+| [`praxis-policy-studio`](https://github.com/codexrodrigues/praxis-policy-studio) | Workstation dual-lens (**Lente de Regras de Negócio** e **Lente de Acesso e Proteção de Dados**) para autoria, simulação e aprovação governada. |
+| [`praxis-api-quickstart`](https://github.com/codexrodrigues/praxis-api-quickstart) & [`praxis-ui-angular`](https://github.com/codexrodrigues/praxis-ui-angular) | Backend operacional público implantado no Render e runtime oficial Angular `@praxisui/*`. |
+| **`praxisui-http-examples`** *(este repositório)* | Requisições HTTP executáveis, payloads curados, manifesto de superfície LLM (`examples.manifest.json`) e smokes automatizados. |
 
-## Status Model
+### Valor para Grandes Sistemas, LLMs e Ganho em Tokens
 
-Examples are classified in [`EXAMPLE_STATUS.md`](./EXAMPLE_STATUS.md) and in [`examples.manifest.json`](./examples.manifest.json).
+Em integrações corporativas convencionais, agentes de IA desperdiçam milhares de tokens lendo controllers Java, DTOs, filtros SQL e configurações Spring para adivinhar headers, contratos de erro e formatos de resposta — e frequentemente erram contratos protegidos por falta de contexto mínimo. Com o corpus curado deste repositório (`llm_bootstrap.json`, `LLM_SURFACE.md`, `responseShapeHint` e matriz de pré-requisitos), uma LLM descobre **em uma única leitura compacta** quais rotas exigem sessão, ETag `If-Match` ou escopo de tenant, reduzindo alucinações, evitando loops de tentativas HTTP falhas e acelerando integrações automatizadas.
 
-Operational LLM-facing summary:
-- [`LLM_BOOTSTRAP.md`](./LLM_BOOTSTRAP.md): canonical "start here" guide for a cold LLM
-- [`llm_bootstrap.json`](./llm_bootstrap.json): machine-readable bootstrap with safe-first lanes and minimum headers
-- [`LLM_COMMON_QUESTIONS.md`](./LLM_COMMON_QUESTIONS.md): short guide for routing common questions to the right evidence
-- [`LLM_SURFACE.md`](./LLM_SURFACE.md): human-readable summary of the examples marked `llmOperational: true`
-- [`OPENAPI_COVERAGE.md`](./OPENAPI_COVERAGE.md): generated audit of published OpenAPI bases covered by the HTTP corpus
+Alvos padrão:
+- API pública: `https://praxis-api-quickstart.onrender.com`
+- Host Angular local: `http://localhost:4003`, `http://127.0.0.1:4003`
+- Host de landing local para validação Render: `http://localhost:4301`, `http://127.0.0.1:4301`
 
-Local showcase runbooks:
-- [`BULK_OPERATIONS_RUNBOOK.md`](./BULK_OPERATIONS_RUNBOOK.md): protected P1/P2/P3 bulk lifecycle references, preparatory QUERY journey and evidence limits
-- [`HELPDESK_SHOWCASE_RUNBOOK.md`](./HELPDESK_SHOWCASE_RUNBOOK.md): local pilot recipe for the `helpdesk.chamados` semantic showcase across `praxis-helpdesk-service` and `praxis-helpdesk-ui`
-- [`ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md`](./ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md): promotion checklist for the procurement Entity Lookup pilot after the Render backend publishes the quickstart procurement endpoints
-- [`DOMAIN_RULES_PUBLICATION_RUNBOOK.md`](./DOMAIN_RULES_PUBLICATION_RUNBOOK.md): published-runtime proof for governed semantic decisions and supplier eligibility materialization
-- [`DOMAIN_KNOWLEDGE_TIMELINE_RUNBOOK.md`](./DOMAIN_KNOWLEDGE_TIMELINE_RUNBOOK.md): protected timeline proof for AI-authored Domain Knowledge change sets
-- [`ERGON_CHEFIA_SUBSTITUICOES_RUNBOOK.md`](./ERGON_CHEFIA_SUBSTITUICOES_RUNBOOK.md): source-derived HTTP corpus contract and local runbook for Ergon Chefia e Substituições (`FuncaoConfianca`, `VagaFuncao`, `DesignacaoFuncao`, `SubstituicaoFuncao`, and `RadarChefiaSubstituicao`) in `praxis-ergon-showcase`
+## Modelo de Status
 
-Core labels:
+Os exemplos são classificados em [`EXAMPLE_STATUS.md`](./EXAMPLE_STATUS.md) e em [`examples.manifest.json`](./examples.manifest.json).
+
+Resumo operacional voltado para LLMs:
+- [`LLM_BOOTSTRAP.md`](./LLM_BOOTSTRAP.md): guia canônico de entrada ("comece por aqui") para uma LLM sem contexto prévio
+- [`llm_bootstrap.json`](./llm_bootstrap.json): bootstrap legível por máquina com trilhas seguras primeiro (*safe-first lanes*) e headers mínimos
+- [`LLM_COMMON_QUESTIONS.md`](./LLM_COMMON_QUESTIONS.md): roteador curto para perguntas recorrentes apontando para a evidência exata
+- [`LLM_SURFACE.md`](./LLM_SURFACE.md): resumo legível dos exemplos marcados com `llmOperational: true`
+- [`OPENAPI_COVERAGE.md`](./OPENAPI_COVERAGE.md): auditoria gerada das bases OpenAPI publicadas cobertas pelo corpus HTTP
+
+Runbooks locais de vitrine (*showcase*):
+- [`BULK_OPERATIONS_RUNBOOK.md`](./BULK_OPERATIONS_RUNBOOK.md): referências protegidas do ciclo de lote P1/P2/P3, jornada preparatória `QUERY` e limites de evidência
+- [`ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md`](./ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md): checklist de promoção para o piloto de *Entity Lookup* de compras após o backend Render publicar os endpoints do quickstart
+- [`DOMAIN_RULES_PUBLICATION_RUNBOOK.md`](./DOMAIN_RULES_PUBLICATION_RUNBOOK.md): prova em runtime publicado de decisões semânticas governadas e materialização de elegibilidade de fornecedores
+- [`DOMAIN_KNOWLEDGE_TIMELINE_RUNBOOK.md`](./DOMAIN_KNOWLEDGE_TIMELINE_RUNBOOK.md): prova protegida de timeline para *change sets* de Conhecimento de Domínio criados por IA
+
+Rótulos principais:
 - `runtime-confirmed`
 - `recommended`
 - `legacy`
 - `illustrative-only`
 
-Operational flags:
+Flags operacionais:
 - `public`
 - `session-auth-required`
 - `tenant-scoped-headers-required`
-- `auth-required` (deprecated alias for `sessionAuthRequired || tenantScopedHeadersRequired`)
+- `auth-required` (alias obsoleto para `sessionAuthRequired || tenantScopedHeadersRequired`)
 - `destructive`
 - `requires-tenant-headers`
 - `llmOperational`
@@ -56,81 +64,77 @@ Operational flags:
 - `publishedBackendConfirmed`
 - `knownPublishedFailure`
 
-## Layout
+## Estrutura de Pastas
 
-- [`http/`](./http): executable request examples
-- [`http/resources/`](./http/resources): CRUD resources with filter/options examples across `human-resources`, `operations`, and `assets`
-- [`http/config/`](./http/config): remote UI config, AI context, AI registry, AI suggestions, and governed domain-rule examples
-- [`http/views/`](./http/views): read-oriented view controllers such as `VwPerfilHeroi`, `VwResumoMissoes`, `VwRankingReputacao`, and `VwIndicadoresIncidentes`
-- [`http/expansion-detail/`](./http/expansion-detail): contextual detail schemas and resource resolver examples
-- [`payloads/`](./payloads): request body fixtures referenced by examples
-- [`payloads/config/`](./payloads/config): payloads for remote config, AI context, registry templates, suggestions, and domain-rule decision lifecycle examples
-- [`http/operations/missao_participantes_bulk_query_journey.http`](./http/operations/missao_participantes_bulk_query_journey.http): preparatory, authenticated QUERY bulk reference; the exact request is not confirmed on the deployed backend
-- [`payloads/views/`](./payloads/views): filter and locate bodies for aggregated view controllers
-- [`env/`](./env): environment templates
-- [`smoke/`](./smoke): validation and smoke scripts
-- [`examples.manifest.json`](./examples.manifest.json): canonical index for all examples
-- [`LLM_BOOTSTRAP.md`](./LLM_BOOTSTRAP.md): short canonical entry point for LLM bootstrap
-- [`llm_bootstrap.json`](./llm_bootstrap.json): machine-readable bootstrap companion
-- [`LLM_COMMON_QUESTIONS.md`](./LLM_COMMON_QUESTIONS.md): short router for recurring LLM questions
-- [`LLM_SURFACE.md`](./LLM_SURFACE.md): curated summary of the operational LLM surface
-- [`HELPDESK_SHOWCASE_RUNBOOK.md`](./HELPDESK_SHOWCASE_RUNBOOK.md): derived local recipe for the helpdesk showcase outside the public Render corpus
+- [`http/`](./http): exemplos de requisições executáveis
+- [`http/resources/`](./http/resources): recursos CRUD com exemplos de filtro/opções em `human-resources`, `operations` e `assets`
+- [`http/config/`](./http/config): configuração remota de UI, contexto AI, `ai-registry`, sugestões AI e decisões de domínio governadas
+- [`http/views/`](./http/views): controllers de projeções somente leitura como `VwPerfilHeroi`, `VwResumoMissoes`, `VwRankingReputacao` e `VwIndicadoresIncidentes`
+- [`http/expansion-detail/`](./http/expansion-detail): schemas de detalhe contextual e exemplos de resolvedor de recursos
+- [`payloads/`](./payloads): fixtures de corpo de requisição referenciadas pelos exemplos
+- [`payloads/config/`](./payloads/config): payloads de config remota, contexto AI, templates de registry, sugestões e ciclo de vida de decisões de domínio
+- [`http/operations/missao_participantes_bulk_query_journey.http`](./http/operations/missao_participantes_bulk_query_journey.http): referência preparatória autenticada de lote `QUERY`; a requisição exata não está confirmada no backend implantado
+- [`payloads/views/`](./payloads/views): corpos de filtro e `locate` para controllers de visões agregadas
+- [`env/`](./env): templates de ambiente
+- [`smoke/`](./smoke): scripts de validação e smoke
+- [`examples.manifest.json`](./examples.manifest.json): índice canônico de todos os exemplos
+- [`LLM_BOOTSTRAP.md`](./LLM_BOOTSTRAP.md): ponto de entrada curto para bootstrap de LLM
+- [`llm_bootstrap.json`](./llm_bootstrap.json): companheiro legível por máquina de `LLM_BOOTSTRAP.md`
+- [`LLM_COMMON_QUESTIONS.md`](./LLM_COMMON_QUESTIONS.md): roteador rápido para dúvidas recorrentes de LLMs
+- [`LLM_SURFACE.md`](./LLM_SURFACE.md): resumo curado da superfície operacional de LLM
 
-## Catalog Model
+## Modelo do Catálogo
 
-The catalog is organized around Praxis interaction patterns, not only around entities.
+O catálogo é organizado por **padrões de interação Praxis**, não apenas por entidades isoladas.
 
-Primary controller groups:
-- metadata discovery and filtered schemas
-- remote config and AI-support surfaces
-- CRUD resources with filter/options patterns
-- aggregated read-only views with `filter`, `filter/cursor`, `locate`, `all`, `by-ids`, and options endpoints
-- expansion detail controllers that return dynamic layout schemas
+Grupos primários de controllers:
+- descoberta de metadados e schemas filtrados (`/schemas/filtered`)
+- superfícies de configuração remota e suporte de IA (`/api/praxis/config/**`)
+- recursos CRUD com padrões de filtro e *option sources*
+- visões somente leitura agregadas com endpoints `filter`, `filter/cursor`, `locate`, `all`, `by-ids` e `options`
+- controllers de detalhe expansível que retornam schemas dinâmicos de layout
 
-This keeps the examples aligned with how Praxis tables, details, remote options, and host-driven expansion behave at runtime.
+Isso mantém os exemplos alinhados ao comportamento real em runtime de tabelas, detalhes, opções remotas e expansão orientada pelo host.
 
-## Quick Start
+## Quick Start (Execução Local)
 
-Install dependencies:
+Instale as dependências:
 
 ```bash
 npm install
 ```
 
-Validate the catalog:
+Valide o catálogo e integridade do manifesto:
 
 ```bash
 npm run verify:manifest
 ```
 
-Regenerate the published OpenAPI coverage report:
+Regenere o relatório de cobertura OpenAPI publicada:
 
 ```bash
 npm run generate:openapi-coverage
 ```
 
-Run public smoke examples:
+Execute os smokes públicos:
 
 ```bash
 npm run smoke:public
 ```
 
-Run authenticated non-destructive smoke examples:
+Execute os smokes autenticados não destrutivos:
 
 ```bash
 npm run smoke:auth
 ```
 
-Run the operational surface most relevant to LLMs:
+Execute a superfície operacional mais relevante para LLMs:
 
 ```bash
 npm run smoke:llm-surface
 ```
 
-Run the governed semantic decision publication proof only against an isolated local
-environment that provides four authenticated sessions. The author, reviewer, and
-publisher must be distinct; `APPROVER_REF` identifies the governed approval
-requirement, while the review authorization is decided by the reviewer session.
+Execute a prova de publicação de decisões semânticas governadas apenas contra um ambiente local isolado que forneça quatro sessões autenticadas distintas. Autor, revisor e publicador devem ser atores separados; `APPROVER_REF` identifica o requisito governado de aprovação, enquanto a autorização da revisão é decidida pela sessão do revisor:
 
 ```bash
 BASE_URL=http://127.0.0.1:8088 \
@@ -145,106 +149,68 @@ APPROVER_REF='<governed-approver-reference>' \
 npm run smoke:domain-rules-publication
 ```
 
-The smoke logs neither credentials nor `SESSION` cookies. It stops before making
-an HTTP request if any required value is absent, creates a draft, transitions it
-through proposed and approved with separate sessions, then publishes it and reads
-the materialization and option source with the reader session. It is a destructive
-protected-contract proof and does not confirm a published backend surface.
+Esse smoke não registra credenciais nem cookies `SESSION` em log. Ele interrompe antes da primeira chamada HTTP se qualquer variável obrigatória faltar, cria um rascunho (`draft`), transita por `proposed` e `approved` com sessões separadas, publica e lê a materialização e a *option source* com a sessão de leitura. Trata-se de prova destrutiva de contrato protegido e não confirma superfície no backend público.
 
-The three lifecycle HTTP files remain separate operations: the definition request
-uses an author `SESSION`; the approval request requires that definition to already
-be `proposed` and uses a reviewer `SESSION`; the publication request requires the
-approved definition and uses a publisher `SESSION`. They are not a paste-and-run
-bundle. The smoke handles the additional `XSRF-TOKEN` refresh and
-`X-XSRF-TOKEN` header required by the protected supplier option-source `POST`.
-The definition fixture carries `<reviewer-actor-ref>` as a placeholder in
-`governance.requiredApprovals`; replace it with the reviewer actor reference for
-the isolated environment before executing the standalone HTTP definition request. The four protected lifecycle/readback entries were structurally audited on 2026-09-13; their `lastVerified` date does not assert an HTTP execution, and `publishedBackendConfirmed` remains false.
+Os três arquivos HTTP de ciclo de vida permanecem operações separadas: a requisição de definição usa a `SESSION` do autor; a aprovação exige a definição já em `proposed` e usa a `SESSION` do revisor; a publicação exige a definição aprovada e usa a `SESSION` do publicador — não são um pacote único de copiar e colar. O smoke trata ainda a atualização de `XSRF-TOKEN` e o header `X-XSRF-TOKEN` exigido pelo `POST` protegido de *option-source* de fornecedores. A *fixture* de definição carrega `<reviewer-actor-ref>` como placeholder em `governance.requiredApprovals`; substitua-o pela referência do ator revisor do ambiente isolado antes de executar a requisição avulsa. As quatro entradas protegidas foram auditadas estruturalmente em 2026-09-13; sua data `lastVerified` não atesta execução HTTP nem altera `publishedBackendConfirmed: false`.
 
-Validate the local reactive determination corpus without starting a backend:
+Valide o corpus local de determinações reativas sem iniciar backend:
 
 ```bash
 npm run verify:reactive-determinations
 ```
 
-With the Quickstart running on its canonical local port and an authenticated
-session cookie available, execute create/edit metadata checks, both successful
-capabilities, and their `422` cases:
+Com o Quickstart rodando na porta local canônica e um cookie de sessão autenticado disponível, execute checagens de metadados de criação/edição, capacidades bem-sucedidas e casos `422`:
 
 ```bash
 PRAXIS_SESSION_COOKIE=<session-value> REQUIRE_AUTH_EXECUTION=true npm run smoke:reactive-determinations
-# Payroll G4 is a separate source-derived lane; see PAYROLL_G4_CONTRACT.md for assigned-host prerequisites.
+# Folha G4 é uma trilha separada derivada do código-fonte; consulte PAYROLL_G4_CONTRACT.md para pré-requisitos de host.
 ```
 
-## Endpoint Prerequisites Matrix
+## Matriz de Pré-Requisitos de Endpoints
 
-Use this matrix before copying headers from any individual example.
-It is the canonical per-class prerequisite view for building valid requests.
+Consulte esta matriz antes de copiar headers de qualquer exemplo individual — ela é a visão canônica de pré-requisitos por classe para montar requisições válidas:
 
-| Endpoint class | Typical scope | Accepted now on published backend | Recommended stable headers | Origin |
+| Classe de Endpoint | Escopo Típico | Aceito Agora no Backend Publicado | Headers Recomendados Estáveis | Origin |
 |---|---|---|---|---|
-| Public metadata | `health`, `openapi-docs`, `schemas-catalog`, filtered schema endpoints | `Accept: application/json` | none | not required |
-| Auth-light resources/views | `resources`, `views`, and operational `expansion-detail` reads on the published backend | `Accept: application/json`; add `Content-Type: application/json` for `POST` bodies | `X-Tenant-ID: demo`, `X-Env: public`, `X-User-ID: example-user` | not required |
-| Governed decision read-only | local protected `domain-rules` materialization readback | `Accept: application/json`, `X-Tenant-ID`, `X-Env` | authenticated reader `SESSION` | required |
-| Historical published governed lookup | committed supplier option-source proof on the published backend | `Accept: application/json`, `Content-Type: application/json` | its committed tenant, environment, and user headers | historical published evidence; not part of the local smoke |
-| Protected `config/ui` | canonical remote UI config contracts | `Accept: application/json`, `X-Tenant-ID: demo`, `Origin: http://localhost:4301` | `X-User-ID: demo-user-1`, `X-Env: local`, `Content-Type: application/json` for `PUT` bodies | required on the published backend |
-| Protected `ai-context` / `ai-registry` | canonical AI config contracts | `Accept: application/json`, `X-Tenant-ID: demo`, `Origin: http://localhost:4301` | `X-Env: local`, `Content-Type: application/json` for `POST` and `PUT` bodies | required on the published backend |
-| Protected `domain-rules` writes | governed semantic decision intake, definition, approval and publication | contract-backed writes, not part of the safe-first published LLM lane | isolated tenant, `X-Env`, `Content-Type: application/json`, and role-specific authenticated `SESSION` cookies | follow the protected config policy before executing against shared environments |
+| Metadados públicos | `health`, `openapi-docs`, `schemas-catalog`, schemas filtrados | `Accept: application/json` | nenhum | não exigido |
+| Recursos e visões auth-light | Leituras de `resources`, `views` e `expansion-detail` no backend publicado | `Accept: application/json`; adicione `Content-Type: application/json` para `POST` | `X-Tenant-ID: demo`, `X-Env: public`, `X-User-ID: example-user` | não exigido |
+| Leitura protegida de decisão governada | Leitura local de materialização `domain-rules` protegida | `Accept: application/json`, `X-Tenant-ID`, `X-Env` | `SESSION` autenticada de leitor | exigido |
+| Lookup histórico publicado governado | Prova histórica confirmada de *option-source* de fornecedores | `Accept: application/json`, `Content-Type: application/json` | seus headers versionados de tenant, ambiente e usuário | evidência histórica publicada; fora do smoke local |
+| `config/ui` protegido | Contratos canônicos de config remota de UI | `Accept: application/json`, `X-Tenant-ID: demo`, `Origin: http://localhost:4301` | `X-User-ID: demo-user-1`, `X-Env: local`, `Content-Type: application/json` para `PUT` | exigido no backend publicado |
+| `ai-context` / `ai-registry` protegido | Contratos canônicos de configuração de IA | `Accept: application/json`, `X-Tenant-ID: demo`, `Origin: http://localhost:4301` | `X-Env: local`, `Content-Type: application/json` para `POST` e `PUT` | exigido no backend publicado |
+| Escritas protegidas em `domain-rules` | Entrada de decisões semânticas governadas, definição, aprovação e publicação | Escritas amparadas por contrato, fora da trilha segura padrão de LLM | Tenant isolado, `X-Env`, `Content-Type: application/json` e cookies `SESSION` específicos por papel | siga a política de config protegida antes de executar contra ambientes compartilhados |
 
-Notes:
+Observações da matriz:
+- Metadados públicos não devem incluir headers de tenant ou usuário salvo depuração específica.
+- Recursos e visões *auth-light* são atualmente aceitos no backend publicado sem headers de tenant nos exemplos confirmados da superfície de LLM.
+- Para uso *auth-light*, prefira o trio estável `X-Tenant-ID: demo`, `X-Env: public` e `X-User-ID: example-user` quando desejar comportamento determinístico por tenant.
+- A leitura local de materialização usa o tenant isolado de prova de `smoke:domain-rules-publication`; utilize apenas para inspeção de evidência.
+- Leituras de `config/ui` normalmente exigem `X-Tenant-ID`, `X-User-ID`, `X-Env` e `Origin` permitido, embora o exemplo versionado possa apontar para um seletor sem registro concreto confirmado no backend publicado.
+- Leituras de `ai-context` e `ai-registry` exigem `Origin` permitido; os exemplos confirmados atualmente aceitam `X-Tenant-ID` como mínimo factual neste repositório.
+- Em qualquer chamada `POST` ou `PUT` com corpo JSON, envie sempre `Content-Type: application/json`.
 
-- Public metadata should not include tenant or user headers unless a specific debugging task requires them.
-- Auth-light resources/views are currently accepted by the published backend without tenant-scoping headers on the confirmed LLM surface examples.
-- For auth-light usage, prefer the stable scoped trio `X-Tenant-ID: demo`, `X-Env: public`, and `X-User-ID: example-user` when you want deterministic tenant-aware behavior rather than the loosest accepted request.
-- The local governed materialization read uses the isolated proof tenant from `smoke:domain-rules-publication`; use it to inspect evidence, not to create new decisions.
-- The published governed supplier lookup keeps its independently confirmed historical tenant and decision. It is not created or reconfirmed by the local isolated smoke.
-- Protected `config/ui` reads usually need `X-Tenant-ID`, `X-User-ID`, `X-Env`, and an allowed `Origin` for stable behavior, but the committed request may still point to a selector whose concrete record is not confirmed on the published backend.
-- Protected `ai-context` and `ai-registry` reads require an allowed `Origin`; the confirmed published examples currently accept `X-Tenant-ID` as the factual minimum in this repo.
-- If the method is `POST` or `PUT` and the example sends a JSON body, add `Content-Type: application/json` even when the class row lists it under the accepted or recommended lane guidance.
+## Notas Operacionais e Contrato das Flags
 
-## Notes
-
-- Public smoke only covers examples marked `public: true`, `sessionAuthRequired: false`, `tenantScopedHeadersRequired: false`, and `destructive: false`.
-- Auth smoke uses a curated whitelist of non-destructive examples that currently return success on the Render backend.
-- The current whitelist covers a subset of `resources`, `views`, `options`, and `expansion-detail` examples verified against Render.
-- `smoke:llm-surface` combines the public corpus with the auth-light examples that are operationally useful to LLM-driven discovery against the published backend.
-- Procurement Entity Lookup examples are now confirmed on the published Render backend and belong to the operational LLM surface. Use [`ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md`](./ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md) before changing their `knownPublishedFailure`, `publishedBackendConfirmed`, or `llmOperational` flags again.
-- CI currently runs `npm run verify:manifest`, `npm run smoke:llm-surface`, and `npm run smoke:corpus-promises`. `smoke:public` and `smoke:auth` remain available as local verification commands, but they are not part of the current GitHub Actions workflow.
-- `smoke:bootstrap-minimums` validates the accepted-now minima declared in `llm_bootstrap.json` against the published backend so bootstrap guidance stays grounded in runtime behavior.
-- `llmOperational: true` in [`examples.manifest.json`](./examples.manifest.json) marks the examples that belong to the LLM-facing operational surface on the published backend.
-- `responseShapeHint` gives a compact, non-executed answer to "what does this endpoint return?" with values such as `array<option>`, `page<option>`, `restApiResponse<page<row>>`, `detail-schema`, `config-record`, and `shadow-observation`.
-- `runtimeRecordConfirmed: true` means the committed example shape or behavior has direct runtime confirmation somewhere in the corpus evidence model.
-- `selectorConfirmed: true` means the selector, path, or lookup shape used by the example remains canonically useful even if the concrete record is not confirmed on the published backend.
-- `publishedBackendConfirmed: true` means the example as committed is confirmed against `https://praxis-api-quickstart.onrender.com`, not only from code-backed contract evidence.
-- `knownPublishedFailure: true` means the committed request is known to fail on the published backend, either because it is a deliberate negative-path example or because the published environment is currently unstable for it.
-- Governed lookup examples whose ids contain `entity-lookup` or `light-lookup` must keep their `.http` frontmatter status aligned with [`examples.manifest.json`](./examples.manifest.json). If they are not confirmed on the published backend, they must use `illustrative-only` status even when the local branch proves the contract.
-- Payroll G4 schemas, previews and financial command examples are source-derived candidates, with no published-backend confirmation. They use the full employee/competence/gross/base tuple, declared outputs and independent event/parent preconditions. Read [Payroll G4 contract](./PAYROLL_G4_CONTRACT.md) before using any reference. `npm run verify:manifest` includes the offline G4 verifier; future preview smoke is explicit via `npm run smoke:payroll-g4` against an assigned provisioned host. Existing address examples retain their own published classification.
-- `sessionAuthRequired: true` means the example depends on a real authenticated session or equivalent server-side login context.
-- `tenantScopedHeadersRequired: true` means the example has a stable tenant-scoped request form using lightweight headers such as `X-Tenant-ID`, `X-User-ID`, and `X-Env`; this is not the same as login, and it does not imply those headers are the loosest published-backend minimum.
-- `authRequired` remains in the manifest as a deprecated compatibility alias and must be read as `sessionAuthRequired || tenantScopedHeadersRequired`.
-- `requiresTenantHeaders` remains as a legacy compatibility hint; prefer `tenantScopedHeadersRequired` for new tooling and docs.
-- `protectedContract: true` marks examples that are strategically important and canonically relevant, but not part of the main operational LLM surface. This is the right place for `/api/praxis/config/ui`, `ai-context`, and `ai-registry` template contracts.
-- `referenceOnly: true` marks examples that remain important for caveats, protected flows, writes, troubleshooting, destructive behavior, or illustrative/legacy understanding, but should not be treated as the primary operational surface.
-- When flags appear to conflict, the surface layer wins: `referenceOnly` overrides `recommended` for default selection, and `protectedContract` means contract-reading rather than the default operational path.
-- `status: []` means the example remains catalog-relevant, but this repo is intentionally not making a strong runtime-confirmed or recommended claim for the committed request.
-- On the published Render backend, `/api/praxis/config/**` also requires an allowed `Origin` header. Valid local origins for this repo are `http://localhost:4003`, `http://127.0.0.1:4003`, `http://localhost:4301`, and `http://127.0.0.1:4301`.
-- Some protected config examples now include `Origin: http://localhost:4301` directly when that makes the committed request executable on Render without mutating remote state. For protected writes, the examples only document the required `Origin` so they do not become more immediately actionable by accident.
-- `destructive: true` should be read conservatively in this catalog: it covers deletes and also protected writes that mutate remote state on the published backend.
-- `lastVerified` records the last audit date for the example entry and its current claim set. Trust the `status` labels, not the date alone, when judging runtime confidence.
-- Safe-first LLM examples such as `funcionarios-filter-basic`, `veiculos-filter-basic`, `incidentes-filter-basic`, `vw-resumo-missoes-filter-basic`, and `vw-indicadores-incidentes-filter-basic` are auth-light, not session-authenticated. On 2026-04-02, the newly added vehicle, incident, and incident-indicator examples were reconfirmed on the published backend with `Accept: application/json` plus `Content-Type: application/json` on `POST` bodies, while the default recommended stable scoped trio remains `X-Tenant-ID: demo`, `X-Env: public`, and `X-User-ID: example-user`.
-- Confirmed auth-light operational examples include `cargos-options-by-ids`. The `vw-perfil-heroi/**` and payroll analytics routes are session-authenticated references because they require domain authorities; tenant headers alone are not authorization.
-- Some authenticated examples are intentionally excluded when the published environment is unstable for them. At this stage, `vw-resumo-missoes/options/by-ids` returned `500` and is not part of the auth smoke whitelist.
-- `config/ui`, `ai-context`, `domain-rules` writes, and other protected config surfaces are intentionally excluded from `smoke:auth` until a stable execution profile is confirmed for the published environment as committed, including any required allowed-origin behavior.
-- `domain-rules` write examples model the enterprise proof path for governed semantic decisions authored by AI: intake, simulation, approval, publication, and materialization readback. The identity fields formerly present in lifecycle bodies are not authority; approval and publication permissions are governed by their authenticated sessions. These protected examples remain outside the operational LLM surface and do not claim a confirmed published backend.
-- `acordos-regulatorios-governed-actions` documenta a execução manual protegida de um workflow
-  versionado: leitura do ETag, suspensão idempotente, replay com o token original e reintegração de
-  limpeza. Ele permanece fora da superfície LLM operacional e não deve ser executado no host
-  publicado antes da migration operacional proprietária.
-- `ui_get_table.http` remains a protected contract example for selector shape and lookup semantics, but the specific `componentId` currently checked in this repo is not confirmed on the published backend and should not be treated as runtime-confirmed.
-- For `config/ui`, prefer confirmed protected validation examples such as missing-tenant, invalid-origin, and legacy-component-type before using selector-only examples like `ui_get_table.http`.
-- Read runtime-usability fields together: `selectorConfirmed: true` with `publishedBackendConfirmed: false` means the contract or selector is still useful, but the concrete committed record should not be treated as confirmed on the published backend.
-- Do not infer canonical persistence contracts from `illustrative-only` or `legacy` examples.
-- When an example conflicts with runtime behavior, the backend/runtime wins.
+- `smoke:public` cobre somente exemplos com `public: true`, `sessionAuthRequired: false`, `tenantScopedHeadersRequired: false` e `destructive: false`.
+- `smoke:auth` utiliza uma *whitelist* curada de exemplos não destrutivos confirmados com sucesso no backend Render (subconjunto de `resources`, `views`, `options` e `expansion-detail`).
+- `smoke:llm-surface` combina o corpus público com os exemplos *auth-light* úteis operacionalmente para descoberta guiada por LLMs no backend publicado.
+- Exemplos de *Procurement Entity Lookup* já estão confirmados no Render e integram a superfície operacional de LLM (consulte [`ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md`](./ENTITY_LOOKUP_PUBLICATION_RUNBOOK.md) antes de alterar `knownPublishedFailure`, `publishedBackendConfirmed` ou `llmOperational`).
+- O CI executa atualmente `npm run verify:manifest`, `npm run smoke:llm-surface` e `npm run smoke:corpus-promises`. `smoke:public` e `smoke:auth` seguem disponíveis localmente.
+- `smoke:bootstrap-minimums` valida contra o backend publicado os mínimos aceitos declarados em `llm_bootstrap.json`.
+- `llmOperational: true` em [`examples.manifest.json`](./examples.manifest.json) marca os exemplos pertencentes à superfície operacional voltada a LLMs no backend publicado.
+- `responseShapeHint` oferece uma resposta compacta sobre a forma do retorno (`array<option>`, `page<option>`, `restApiResponse<page<row>>`, `detail-schema`, `config-record`, `shadow-observation`).
+- `runtimeRecordConfirmed: true` indica confirmação direta em runtime no modelo de evidências; `selectorConfirmed: true` indica que o caminho/seletor permanece útil mesmo se o registro concreto não estiver no Render; `publishedBackendConfirmed: true` indica confirmação real em `https://praxis-api-quickstart.onrender.com`; `knownPublishedFailure: true` marca falha conhecida (cenário negativo intencional ou instabilidade remota).
+- Exemplos governados de lookup cujo id contenha `entity-lookup` ou `light-lookup` devem manter o *frontmatter* `.http` alinhado ao [`examples.manifest.json`](./examples.manifest.json) usando `illustrative-only` quando não confirmados no backend publicado.
+- Schemas, prévias e comandos financeiros de Folha G4 são candidatos derivados do código-fonte sem confirmação no backend publicado; leia o [Contrato G4 de Folha (`PAYROLL_G4_CONTRACT.md`)](./PAYROLL_G4_CONTRACT.md) antes de referenciá-los (`npm run verify:manifest` executa o verificador G4 offline; `npm run smoke:payroll-g4` mira host provisionado).
+- `sessionAuthRequired: true` exige sessão autenticada real; `tenantScopedHeadersRequired: true` indica uso estável de `X-Tenant-ID`, `X-User-ID` e `X-Env` (`authRequired` e `requiresTenantHeaders` são aliases legados mantidos apenas para compatibilidade).
+- `protectedContract: true` destaca contratos estratégicos (como `/api/praxis/config/ui`, `ai-context` e `ai-registry`) fora da superfície operacional padrão; `referenceOnly: true` marca exemplos para ressalvas, fluxos protegidos, escritas ou troubleshooting (vencendo `recommended` na seleção padrão). `status: []` indica relevância de catálogo sem reivindicação forte de runtime.
+- No backend Render publicado, `/api/praxis/config/**` exige header `Origin` permitido (`http://localhost:4003`, `http://127.0.0.1:4003`, `http://localhost:4301`, `http://127.0.0.1:4301`). Alguns exemplos protegidos de leitura já incluem `Origin: http://localhost:4301`; exemplos de escrita apenas documentam a exigência para evitar mutação acidental.
+- `destructive: true` engloba remoções (`DELETE`) e escritas protegidas que mutam estado remoto no backend publicado; `lastVerified` registra apenas a data da última auditoria do item (avalie confiança pelos rótulos `status`, nunca apenas pela data).
+- Exemplos *auth-light* confirmados como `funcionarios-filter-basic`, `veiculos-filter-basic`, `incidentes-filter-basic`, `vw-resumo-missoes-filter-basic`, `vw-indicadores-incidentes-filter-basic` e `cargos-options-by-ids` não exigem sessão autenticada; já `vw-perfil-heroi/**` e rotas analíticas de folha exigem autoridades de domínio em sessão autenticada (e `vw-resumo-missoes/options/by-ids` permanece excluído do `smoke:auth` por retornar `500` no Render).
+- Os exemplos de escrita em `domain-rules` modelam a prova corporativa ponta a ponta (entrada, simulação, aprovação, publicação e leitura de materialização), em que permissões decorrem exclusivamente das sessões autenticadas.
+- `acordos-regulatorios-governed-actions` documenta a execução manual protegida de um workflow versionado: leitura do ETag, suspensão idempotente, replay com o token original e reintegração de limpeza (fora da superfície LLM operacional antes da migration proprietária).
+- `ui_get_table.http` continua como exemplo de contrato protegido (sem confirmação do `componentId` específico no backend publicado); para `config/ui`, prefira os exemplos confirmados de validação protegida (`missing-tenant`, `invalid-origin`, `legacy-component-type`).
+- Não infira contratos canônicos de persistência a partir de exemplos `illustrative-only` ou `legacy`; em caso de conflito, o comportamento real do backend/runtime prevalece.
 
 ## Política de CI e publicação
 
@@ -254,6 +220,4 @@ Validação local durante desenvolvimento; Actions apenas no fechamento necessá
 
 O exemplo `http/resources/funcionarios_update.http` exige sessão autenticada e, quando habilitado pelo host, token CSRF. Execute primeiro `funcionarios_get_by_id.http` no mesmo recurso e escopo. Preserve o ETag forte exato da resposta (inclusive aspas), prepare o payload com os campos declarados pelo schema de update e copie o token para `resourceEtag`. O payload estático é ilustrativo; não deve substituir dados de um registro compartilhado.
 
-O PUT envia `If-Match`; 428 indica precondição ausente e 412 indica revisão obsoleta. Nesse caso recarregue e reconcilie os dados antes de uma nova tentativa. Nunca obtenha um ETag novo para reenviar automaticamente um payload antigo. Após sucesso, preserve a revisão devolvida pelo servidor. O exemplo permanece `referenceOnly` e sem confirmação de backend publicado: o payload sem lifecycle está preparado para o contrato candidato, mas sua nova prova HTTP em Neon isolado ainda está pendente.
-
-O PUT cadastral não deve enviar `ativo`, nem como `null` ou com o mesmo valor da leitura. O contrato candidato rejeita essa entrada com 400. Use as actions `deactivate`/`reactivate` para transições, com suas precondições e justificativa. O estado continua presente no GET e no contrato de criação; não copie a representação de leitura inteira para o PUT.
+O `PUT` envia `If-Match`; `428` indica precondição ausente e `412` indica revisão obsoleta — nesse caso recarregue e reconcilie os dados antes de nova tentativa, sem obter um ETag novo para reenviar automaticamente um payload antigo. O `PUT` cadastral não deve enviar `ativo` (nem como `null` nem igual à leitura), usando `deactivate`/`reactivate` para transições de ciclo de vida. O exemplo permanece `referenceOnly` enquanto aguarda nova prova HTTP em Neon isolado.
