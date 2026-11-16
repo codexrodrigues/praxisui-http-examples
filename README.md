@@ -67,7 +67,7 @@ Flags operacionais:
 ## Estrutura de Pastas
 
 - [`http/`](./http): exemplos de requisições executáveis
-- [`http/resources/`](./http/resources): recursos CRUD com exemplos de filtro/opções em `human-resources`, `operations` e `assets`
+- [`http/resources/`](./http/resources): recursos de domínio com exemplos de consulta, filtro, ações e opções em `human-resources`, `operations` e `assets`
 - [`http/config/`](./http/config): configuração remota de UI, contexto AI, `ai-registry`, sugestões AI e decisões de domínio governadas
 - [`http/views/`](./http/views): controllers de projeções somente leitura como `VwPerfilHeroi`, `VwResumoMissoes`, `VwRankingReputacao` e `VwIndicadoresIncidentes`
 - [`http/expansion-detail/`](./http/expansion-detail): schemas de detalhe contextual e exemplos de resolvedor de recursos
@@ -90,7 +90,7 @@ O catálogo é organizado por **padrões de interação Praxis**, não apenas po
 Grupos primários de controllers:
 - descoberta de metadados e schemas filtrados (`/schemas/filtered`)
 - superfícies de configuração remota e suporte de IA (`/api/praxis/config/**`)
-- recursos CRUD com padrões de filtro e *option sources*
+- recursos de domínio com operações tipadas, padrões de filtro e *option sources*
 - visões somente leitura agregadas com endpoints `filter`, `filter/cursor`, `locate`, `all`, `by-ids` e `options`
 - controllers de detalhe expansível que retornam schemas dinâmicos de layout
 
