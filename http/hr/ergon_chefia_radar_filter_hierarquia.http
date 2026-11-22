@@ -14,7 +14,7 @@
 ### knownPublishedFailure: false
 ### accessMode: authenticated-session
 ### selectionGuidance: source-derived-ergon-chefia-contract
-### note: Source-derived Ergon Showcase contract (localhost:8080), not deployed on the public Quickstart host. Filters RadarChefiaSubstituicao by parent sector and hierarchical path prefix, projecting both titularNome (GET_CHF_TIT) and chefeEmExercicioNome / substitutoNome (GET_CHF_EXERC, ERGadm00480).
+### note: Source-derived Workforce Showcase contract (localhost:8080), not deployed on the public Quickstart host. Filters RadarChefiaSubstituicao by parent sector and hierarchical path prefix, projecting both titularNome (GET_CHF_TIT) and chefeEmExercicioNome / substitutoNome (GET_CHF_EXERC, workforce.leadership-radar).
 
 @baseUrl = http://localhost:8080
 @sessionCookie = replace-with-ERGONSESSION-cookie-value

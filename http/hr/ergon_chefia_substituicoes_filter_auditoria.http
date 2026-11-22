@@ -14,7 +14,7 @@
 ### knownPublishedFailure: false
 ### accessMode: authenticated-session
 ### selectionGuidance: source-derived-ergon-chefia-contract
-### note: Source-derived Ergon Showcase contract (localhost:8080), not deployed on the public Quickstart host. Filters SubstituicaoFuncao by hierarchical sector predicates (setorPai, caminhoHierarquicoPrefixo) and legal-basis audit predicate (semDocumentoLegal: true) for AUSENCIA_EVENTUAL.
+### note: Source-derived Workforce Showcase contract (localhost:8080), not deployed on the public Quickstart host. Filters SubstituicaoFuncao by hierarchical sector predicates (setorPai, caminhoHierarquicoPrefixo) and legal-basis audit predicate (semDocumentoLegal: true) for AUSENCIA_EVENTUAL.
 
 @baseUrl = http://localhost:8080
 @sessionCookie = replace-with-ERGONSESSION-cookie-value

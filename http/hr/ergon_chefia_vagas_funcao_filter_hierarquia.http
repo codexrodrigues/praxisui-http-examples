@@ -14,7 +14,7 @@
 ### knownPublishedFailure: false
 ### accessMode: authenticated-session
 ### selectionGuidance: source-derived-ergon-chefia-contract
-### note: Source-derived Ergon Showcase contract (localhost:8080), not deployed on the public Quickstart host. Filters VagaFuncao by parent sector (setorPai) and hierarchical path prefix (caminhoHierarquicoPrefixo) for occupied leadership positions (ERGadm00163 / ERGadm00480).
+### note: Source-derived Workforce Showcase contract (localhost:8080), not deployed on the public Quickstart host. Filters VagaFuncao by parent sector (setorPai) and hierarchical path prefix (caminhoHierarquicoPrefixo) for occupied leadership positions (workforce.leadership-vacancies).
 
 @baseUrl = http://localhost:8080
 @sessionCookie = replace-with-ERGONSESSION-cookie-value

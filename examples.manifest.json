@@ -6521,7 +6521,7 @@
       "destructive": false,
       "requiresTenantHeaders": true,
       "canonicalFor": [
-        "Ergon Chefia e Substituições — Radar executivo de chefias, titularidade, substituto em exercício, interinidade e árvore hierárquica de setor (H4)"
+        "Workforce Chefia e Substituições — Radar executivo de chefias, titularidade, substituto em exercício, interinidade e árvore hierárquica de setor (H4)"
       ],
       "notFor": [
         "safe-first LLM execution against praxis-api-quickstart",
@@ -6558,7 +6558,7 @@
       "destructive": false,
       "requiresTenantHeaders": true,
       "canonicalFor": [
-        "Ergon Chefia e Substituições — Quick View 360° e detalhe do radar de chefias distinguindo titular (titularNome) do chefe em exercício (chefeEmExercicioNome)"
+        "Workforce Chefia e Substituições — Quick View 360° e detalhe do radar de chefias distinguindo titular (titularNome) do chefe em exercício (chefeEmExercicioNome)"
       ],
       "notFor": [
         "safe-first LLM execution against praxis-api-quickstart",
@@ -6596,7 +6596,7 @@
       "destructive": false,
       "requiresTenantHeaders": true,
       "canonicalFor": [
-        "Ergon Chefia e Substituições — Determinação reativa não-persistente de substituição (elegibilidade, titularidade, impedimento legal ou ausência eventual, e diferença remuneratória)"
+        "Workforce Chefia e Substituições — Determinação reativa não-persistente de substituição (elegibilidade, titularidade, impedimento legal ou ausência eventual, e diferença remuneratória)"
       ],
       "notFor": [
         "safe-first LLM execution against praxis-api-quickstart",
@@ -6635,7 +6635,7 @@
       "destructive": true,
       "requiresTenantHeaders": true,
       "canonicalFor": [
-        "Ergon Chefia e Substituições — Registro de substituição de função por AUSENCIA_EVENTUAL (com justificativa formal sem exigir licença/férias concomitantes, conforme C_ERGON.SUBS_EXIGE_AFASTAMENTO)"
+        "Workforce Chefia e Substituições — Registro de substituição de função por AUSENCIA_EVENTUAL (com justificativa formal sem exigir licença/férias concomitantes, conforme workforce.subs_exige_afastamento)"
       ],
       "notFor": [
         "safe-first LLM execution against praxis-api-quickstart",
@@ -6674,7 +6674,7 @@
       "destructive": false,
       "requiresTenantHeaders": true,
       "canonicalFor": [
-        "Ergon Chefia e Substituições — Pesquisa de substituições de função com filtros hierárquicos de setor (setorPai, caminhoHierarquicoPrefixo) e auditoria documental"
+        "Workforce Chefia e Substituições — Pesquisa de substituições de função com filtros hierárquicos de setor (setorPai, caminhoHierarquicoPrefixo) e auditoria documental"
       ],
       "notFor": [
         "safe-first LLM execution against praxis-api-quickstart",
@@ -6713,7 +6713,7 @@
       "destructive": false,
       "requiresTenantHeaders": true,
       "canonicalFor": [
-        "Ergon Chefia e Substituições — Pesquisa de designações de função com filtros de hierarquia organizacional (setorPai, caminhoHierarquicoPrefixo) e interinidade"
+        "Workforce Chefia e Substituições — Pesquisa de designações de função com filtros de hierarquia organizacional (setorPai, caminhoHierarquicoPrefixo) e interinidade"
       ],
       "notFor": [
         "safe-first LLM execution against praxis-api-quickstart",
@@ -6752,7 +6752,7 @@
       "destructive": false,
       "requiresTenantHeaders": true,
       "canonicalFor": [
-        "Ergon Chefia e Substituições — Pesquisa de vagas de função autorizadas por lotação (PROVIMENTO_FUNCAO_VAGA_LOTACAO) com filtros de hierarquia organizacional (setorPai, caminhoHierarquicoPrefixo)"
+        "Workforce Chefia e Substituições — Pesquisa de vagas de função autorizadas por lotação (PROVIMENTO_FUNCAO_VAGA_LOTACAO) com filtros de hierarquia organizacional (setorPai, caminhoHierarquicoPrefixo)"
       ],
       "notFor": [
         "safe-first LLM execution against praxis-api-quickstart",
@@ -6791,7 +6791,7 @@
       "destructive": true,
       "requiresTenantHeaders": true,
       "canonicalFor": [
-        "Ergon Chefia e Substituições — Avaliação de operação em lote (DOMAIN_COMMAND) para homologação coletiva de designações de função (homologar-designacoes-lote)"
+        "Workforce Chefia e Substituições — Avaliação de operação em lote (DOMAIN_COMMAND) para homologação coletiva de designações de função (homologar-designacoes-lote)"
       ],
       "notFor": [
         "safe-first LLM execution against praxis-api-quickstart",

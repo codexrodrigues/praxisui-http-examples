@@ -14,7 +14,7 @@
 ### knownPublishedFailure: false
 ### accessMode: authenticated-session
 ### selectionGuidance: source-derived-ergon-chefia-contract
-### note: Source-derived Ergon Showcase mutation reference (localhost:8080), not deployed on the public Quickstart host. Creates an interim substitution for AUSENCIA_EVENTUAL (ERGadm00364 / PCK_SUBST_AUSENC_EV / ERG-01311) using composite wire identity substitutoId without requiring a formal vacation or leave impediment record.
+### note: Source-derived Workforce Showcase mutation reference (localhost:8080), not deployed on the public Quickstart host. Creates an interim substitution for AUSENCIA_EVENTUAL (workforce.substitutions / pkg_legacy_rules.subst_ausenc_ev / WF-01311) using composite wire identity substitutoId without requiring a formal vacation or leave impediment record.
 
 @baseUrl = http://localhost:8080
 @sessionCookie = replace-with-ERGONSESSION-cookie-value

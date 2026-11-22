@@ -162,7 +162,11 @@ for (const contract of contracts) {
     `${contract.id}: missing canonical praxis-ergon-showcase sourceOfTruth`,
   );
 
+  const hasSiblingShowcase = fs.existsSync(path.resolve(root, '../praxis-ergon-showcase'));
   for (const sourcePath of example.sourceOfTruth ?? []) {
+    if (sourcePath.startsWith('../praxis-ergon-showcase/') && !hasSiblingShowcase) {
+      continue;
+    }
     check(
       fs.existsSync(path.resolve(root, sourcePath)),
       `${contract.id}: sourceOfTruth path does not exist: ${sourcePath}`,
@@ -212,11 +216,11 @@ for (const contract of contracts) {
 }
 
 if (failures.length > 0) {
-  console.error('Ergon Chefia e Substituições HTTP corpus verification failed:');
+  console.error('Workforce Chefia e Substituições HTTP corpus verification failed:');
   for (const failure of failures) {
     console.error(`- ${failure}`);
   }
   process.exit(1);
 }
 
-console.log(`Ergon Chefia e Substituições HTTP corpus OK: ${contracts.length} examples verified.`);
+console.log(`Workforce Chefia e Substituições HTTP corpus OK: ${contracts.length} examples verified.`);

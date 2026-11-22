@@ -14,7 +14,7 @@
 ### knownPublishedFailure: false
 ### accessMode: authenticated-session
 ### selectionGuidance: source-derived-ergon-chefia-contract
-### note: Source-derived Ergon Showcase contract (localhost:8080), not deployed on the public Quickstart host. Non-persisting reactive determination preview for SubstituicaoFuncao returning diasSubstituicaoPrevistos and minimoRemuneradoPrevisto.
+### note: Source-derived Workforce Showcase contract (localhost:8080), not deployed on the public Quickstart host. Non-persisting reactive determination preview for SubstituicaoFuncao returning diasSubstituicaoPrevistos and minimoRemuneradoPrevisto.
 
 @baseUrl = http://localhost:8080
 @sessionCookie = replace-with-ERGONSESSION-cookie-value

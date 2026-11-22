@@ -14,7 +14,7 @@
 ### knownPublishedFailure: false
 ### accessMode: authenticated-session
 ### selectionGuidance: source-derived-ergon-chefia-contract
-### note: Source-derived Ergon Showcase contract (localhost:8080), not deployed on the public Quickstart host. Reads the 360° item surface of RadarChefiaSubstituicao with titularNome, substitutoNome, substitutoPessoaId, and chefeEmExercicioNome (ERGadm00480).
+### note: Source-derived Workforce Showcase contract (localhost:8080), not deployed on the public Quickstart host. Reads the 360° item surface of RadarChefiaSubstituicao with titularNome, substitutoNome, substitutoPessoaId, and chefeEmExercicioNome (workforce.leadership-radar).
 
 @baseUrl = http://localhost:8080
 @sessionCookie = replace-with-ERGONSESSION-cookie-value

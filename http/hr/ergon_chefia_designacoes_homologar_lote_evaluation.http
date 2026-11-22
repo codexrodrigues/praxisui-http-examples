@@ -14,7 +14,7 @@
 ### knownPublishedFailure: false
 ### accessMode: authenticated-session
 ### selectionGuidance: source-derived-ergon-chefia-contract
-### note: Source-derived Ergon Showcase two-phase domain command evaluation reference (localhost:8080), not deployed on the public Quickstart host. Evaluates homologar-designacoes-lote against explicit target versions and vacancy availability without mutating domain rows.
+### note: Source-derived Workforce Showcase two-phase domain command evaluation reference (localhost:8080), not deployed on the public Quickstart host. Evaluates homologar-designacoes-lote against explicit target versions and vacancy availability without mutating domain rows.
 
 @baseUrl = http://localhost:8080
 @sessionCookie = replace-with-ERGONSESSION-cookie-value
